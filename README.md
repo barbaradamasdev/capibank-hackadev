@@ -1,1 +1,1 @@
-# sharptroopers-hackadev
+# HackaDev - Sharp Troopers
