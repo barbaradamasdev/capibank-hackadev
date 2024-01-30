@@ -9,7 +9,7 @@ O Sharp Troopers foi criado como um ambiente simulado de trabalho, onde a equipe
 - Permitir a avaliação dos alunos com o apoio de monitores.
 - Criar um ambiente simulado que reproduza os desafios e dinâmicas de uma empresa.
 
-![Sharp Troopers](https://raw.githubusercontent.com/barbaradamasdev/sharptroopers-hackadev/main/imagens/Sharp%20Troopers%20img.jpg?token=GHSAT0AAAAAACGQAHVCH5LGZDAXOKN4NRFYZNZA2XA)
+![Sharp Troopers](https://github.com/barbaradamasdev/sharptroopers-hackadev/blob/main/imagens/Sharp%20Troopers%20img.jpg?raw=true)
 
 ---
 ### 🎯 Task 1
