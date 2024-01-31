@@ -14,5 +14,5 @@ Para acompanhar entregas das sprints (como membro): [Kanban Trello](https://trel
 - [x] Defina cores do grupo
 - [x] Crie um propósito para seu grupo
 - [x] scolher dupla para apresentação
-- [ ] Preparar slide da apresentacao
+- [x] Preparar slide da apresentacao
 - [x] Escolha um Vice Monitor(a)
