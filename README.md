@@ -12,19 +12,6 @@ O Sharp Troopers foi criado como um ambiente simulado de trabalho, onde a equipe
 ![Sharp Troopers](https://github.com/barbaradamasdev/sharptroopers-hackadev/blob/main/imagens/Sharp%20Troopers%20img.jpg?raw=true)
 
 ---
-### 🎯 Task 1
-> **Data de início**: 26/01
-
-> **Data de entrega**: 01/02
-
-> **Data de apresentação**: 02/02
-
-Para acompanhar entregas das sprints (como membro): [Kanban Trello](https://trello.com/b/8CpCHjHh/sharp-troopers-hackadev)
-
-* [Video complementar sobre trello 1 - Metodologia Ágil Scrum](https://www.youtube.com/watch?v=9QZfamejITA&ab_channel=MauroBorgesFran%C3%A7a)
-* [Video complementar sobre trello 2 - Criando Kanban Scrum](https://youtu.be/_HpsaRL9Jug)
-
----
 ### **Equipe**
 
 | Nome (Cargo)                       | Imagem                                                    | Links                                                                                                                             |
