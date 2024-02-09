@@ -16,6 +16,14 @@ a, li, p, span {
 
 }
 
+.flex {
+    display: flex;
+}
+
+.grid {
+    display: grid;
+}
+
 :root {
     --cor-azul-escuro: #00003C;
     --cor-azul-medio: #12115D;
