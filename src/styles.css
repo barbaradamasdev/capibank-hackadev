@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Protest+Strike&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Protest+Strike&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.logo {
+    font-family: "Poppins", sans-serif;
+}
+
+a, li, p, span {
+    font-family: "Inter", sans-serif;
+
+}
+
+:root {
+    --cor-azul-escuro: #00003C;
+    --cor-azul-medio: #12115D;
+    --cor-azul-claro: #23217E;
+    --cor-dourado: #F5BE0C;
+    --cor-branco: #FFFFFF;
+    --cor-cinza: #7F7F7F;
+    --cor-verde: #0BCC35;
+    --cor-vermelho: #EC2F2F;
+}
+
+.botao-principal {
+    padding: 10px 30px;
+    border: none;
+    background: var(--cor-azul-claro);
+    color: white;
+    border-radius: 3px;
+}
+
+
+.botao-secundario {
+    padding: 9.5px 30px;
+    border: 1px solid var(--cor-cinza);
+    background: transparent;
+    color: var(--cor-azul-escuro);
+    border-radius: 3px;
+}
