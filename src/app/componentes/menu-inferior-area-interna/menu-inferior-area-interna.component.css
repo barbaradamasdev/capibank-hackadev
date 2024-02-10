@@ -1,0 +1,29 @@
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 20px;
+  }
+  
+  .footer figure {
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+  
+  .footer figure:hover {
+    transform: translateY(-5px);
+  }
+  .footer figcaption:hover{
+    cursor: pointer;
+  }
+  
+  .footer img {
+    width: 40px;
+    height: auto;
+    cursor: pointer;
+  }
