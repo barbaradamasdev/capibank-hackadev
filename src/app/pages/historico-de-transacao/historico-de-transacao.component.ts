@@ -3,13 +3,14 @@ import { CabecalhoAreaInternaComponent } from "../../componentes/cabecalho-area-
 import { SecaoSaldoComponent } from "../../componentes/secao-saldo/secao-saldo.component";
 import { MenuLateralComponent } from "../../componentes/menu-lateral/menu-lateral.component";
 import { HistoricoTransacoesComponent } from "../../componentes/historico-transacoes/historico-transacoes.component";
+import { MenuInferiorAreaInternaComponent } from "../../componentes/menu-inferior-area-interna/menu-inferior-area-interna.component";
 
 @Component({
     selector: 'app-historico-de-transacao',
     standalone: true,
     templateUrl: './historico-de-transacao.component.html',
     styleUrl: './historico-de-transacao.component.css',
-    imports: [CabecalhoAreaInternaComponent, SecaoSaldoComponent, MenuLateralComponent, HistoricoTransacoesComponent]
+    imports: [CabecalhoAreaInternaComponent, SecaoSaldoComponent, MenuLateralComponent, HistoricoTransacoesComponent, MenuInferiorAreaInternaComponent]
 })
 export class HistoricoDeTransacaoComponent {
 

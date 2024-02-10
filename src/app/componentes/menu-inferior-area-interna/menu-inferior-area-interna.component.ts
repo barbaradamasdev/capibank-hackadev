@@ -1,9 +1,10 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-menu-inferior-area-interna',
   standalone: true,
-  imports: [],
+  imports: [ CommonModule ],
   templateUrl: './menu-inferior-area-interna.component.html',
   styleUrl: './menu-inferior-area-interna.component.css'
 })

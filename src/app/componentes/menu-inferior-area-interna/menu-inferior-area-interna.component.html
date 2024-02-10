@@ -1,5 +1,5 @@
 <div class="footer">
-    <figure *NgFor="let icon of icons" 
+    <figure *ngFor="let icon of icons" 
             (mouseenter)="onMouseEnter(icon)" 
             (mouseleave)="onMouseLeave(icon)">
         <img [src]="icon.src" [alt]="icon.alt">
