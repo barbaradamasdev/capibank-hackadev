@@ -8,11 +8,11 @@
 }
 
 .logo {
-    font-family: "Poppins", sans-serif;
+    font-family: "Poppins", "sans-serif";
 }
 
 a, li, p, span {
-    font-family: "Inter", sans-serif;
+    font-family: "Inter", "sans-serif";
 
 }
 
