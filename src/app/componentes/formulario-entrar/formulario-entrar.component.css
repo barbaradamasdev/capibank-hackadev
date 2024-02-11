@@ -1,8 +1,8 @@
-
 .container-form{
   max-width: 700px;
   margin:auto;
 }
+
 .forgot-password {
   color: var(--cor-azul-escuro);
   text-decoration: none;
@@ -39,10 +39,6 @@
   height: 50px;
 }
 
-
-
-
-
 .form-login {
   margin-top: 30px;
 }
@@ -57,19 +53,8 @@
   margin-left: 20px;
 }
 
-.botao-principal {
-  width: 85%;
-  padding: 10px;
-  margin-right: 40px;
-  margin-left: 20px;
-  margin-bottom: 10px;
-}
-
-.botao-secundario {
-  width: 85%;
-  padding: 10px;
-  margin-right: 40px;
-  margin-left: 20px;
+.btn-primary {
+  background-color: var(--cor-azul-escuro);
 }
 
 .forgot-password {
@@ -79,6 +64,3 @@
   margin: 10px 0px 30px 0px;
 }
 
-.register-2 {
-  display: flex;
-}
