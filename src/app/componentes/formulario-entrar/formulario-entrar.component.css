@@ -28,6 +28,10 @@
   line-height: 19.5px;
 }
 
+.p-4 {
+  padding-top: 8px !important;
+}
+
 .login {
   display: flex;
   color: var(--cor-azul-escuro);
@@ -35,12 +39,24 @@
   font-weight: 600;
   font-size: 16px;
   letter-spacing: -0.41px;
-  border-bottom: 4px solid var(--cor-dourado);
   justify-content: center;
   align-items: center;
   height: 50px;
   width: 100%;
   margin-bottom: 30px;
+  position: relative;
+}
+
+.login::after {
+  content: "";
+  border-bottom: 4px solid var(--cor-dourado);
+  position: absolute;
+  bottom: -5px;
+  height: 64px;
+  width: 700px;
+  max-width: 100vw;
+  background: rgba(128, 128, 128, 0.064);
+  border-radius: 25px 25px 0px 0px;
 }
 
 .form-login {
