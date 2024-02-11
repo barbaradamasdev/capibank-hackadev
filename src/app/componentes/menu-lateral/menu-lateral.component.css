@@ -1,0 +1,16 @@
+.container{
+   
+    
+    border-right: 1px solid;
+    width: 190px;
+    margin-left:20px;
+    height: 300px;
+   
+}
+.container a{
+    color: black;
+    font-size: 0.8rem;
+}
+.container img{
+   width: 30px;
+}
