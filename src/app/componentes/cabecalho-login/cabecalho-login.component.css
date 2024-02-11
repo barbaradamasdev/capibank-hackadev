@@ -34,7 +34,6 @@ header {
   height: 47px;
 }
 
-
 .time {
   width: 54px;
   height: 21px;
@@ -57,7 +56,6 @@ header {
   height: 13px;
   top: 14px;
 }
-
 
 .bi-reception {
   width: 18px;
@@ -97,3 +95,14 @@ header {
   margin: auto;
 }
 
+@media screen and (min-width: 745px) {
+  .bank {
+    display: none;
+  }
+
+  .welcome-div{
+    margin-top: 135px;
+    text-align: center;
+    width: 100%;
+  }
+}
