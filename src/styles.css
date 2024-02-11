@@ -48,18 +48,35 @@ a {
 }
 
 /* Estilizacao padrao de botao primario e secundario */
+button  {
+    font-size: 14px !important;
+    height: 56px;
+    border-radius: 3px;
+}
+
 .botao-principal {
     padding: 10px 30px;
     border: none;
+    background: var(--cor-azul-medio);
+    color: white;
+}
+
+.botao-principal:hover {
     background: var(--cor-azul-claro);
     color: white;
-    border-radius: 3px;
 }
 
 .botao-secundario {
     padding: 9.5px 30px;
-    border: 1px solid var(--cor-cinza);
+    border: 1px solid rgba(0, 0, 0, 0.068);
     background: transparent;
     color: var(--cor-azul-escuro);
-    border-radius: 3px;
 }
+
+.botao-secundario:hover {
+    border: 1px solid rgba(0, 0, 0, 0.541);
+}
+
+.gap-15 {
+    gap: 15px;
+  }
