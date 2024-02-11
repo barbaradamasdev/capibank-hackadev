@@ -1,0 +1,101 @@
+
+header {
+  background-color: var(--cor-azul-escuro);
+  color: white;
+  min-height: 230px;
+}
+
+.arrow {
+  display: flex;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.543);
+  justify-content:center;
+  align-items: center;
+  left: 27px;
+}
+
+
+.bi-arrow-left-short {
+  color: white;
+}
+
+.welcome {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24.2px;
+  letter-spacing: -0.41px;
+}
+
+.config {
+  width: 390px;
+  height: 47px;
+}
+
+
+.time {
+  width: 54px;
+  height: 21px;
+  top: 14px;
+  left: 19px;
+  border-radius: 24px;
+}
+
+.space {
+  background-color: black;
+  color: black;
+  width: 156px;
+  height: 33px;
+  top: -2px;
+  border-radius: 0px 0px 20px 20px;
+}
+
+.icons {
+  width: 77.4px;
+  height: 13px;
+  top: 14px;
+}
+
+
+.bi-reception {
+  width: 18px;
+  height:12px;
+  top: 20px;
+  left: 286px;
+}
+
+.bi-wifi-2 {
+  width: 17px;
+  height:11.83px;
+  top: 20px;
+  left: 312px;
+}
+
+.bi-battery-full {
+  width: 27.4px;
+  height: 13px;
+  top: 19px;
+  left: 336px;
+}
+
+.welcome-div {
+  width: 350px;
+  left: 20px;
+}
+
+.bank {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.capibank-title {
+  display: flex;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 36px;
+  height:36px;
+  justify-content: center;
+  align-items: center;
+}
+

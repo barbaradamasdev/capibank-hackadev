@@ -1,0 +1,84 @@
+
+.container-form{
+  max-width: 700px;
+  margin:auto;
+}
+.forgot-password {
+  color: var(--cor-azul-escuro);
+  text-decoration: none;
+}
+
+.register {
+  color: black;
+  text-align: right;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 19.5px;
+}
+
+.account {
+  color: var(--cor-cinza);
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 19.5px;
+}
+
+.login {
+  display: flex;
+  color: var(--cor-azul-escuro);
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height:19.36px;
+  letter-spacing: -0.41px;
+  border-bottom: 4px solid var(--cor-dourado);
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+}
+
+
+
+
+
+.form-login {
+  margin-top: 30px;
+}
+
+.email {
+  margin-right: 40px;
+  margin-left: 20px;
+}
+
+.password{
+  margin-right: 40px;
+  margin-left: 20px;
+}
+
+.botao-principal {
+  width: 85%;
+  padding: 10px;
+  margin-right: 40px;
+  margin-left: 20px;
+  margin-bottom: 10px;
+}
+
+.botao-secundario {
+  width: 85%;
+  padding: 10px;
+  margin-right: 40px;
+  margin-left: 20px;
+}
+
+.forgot-password {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0px 30px 0px;
+}
+
+.register-2 {
+  display: flex;
+}
