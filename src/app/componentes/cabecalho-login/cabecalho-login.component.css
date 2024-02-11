@@ -1,19 +1,21 @@
 
 header {
-  background-color: var(--cor-azul-escuro);
+  background-color: var(--cor-azul-medio);
   color: white;
   min-height: 230px;
 }
 
-.arrow {
-  display: flex;
+.icone-voltar-branco {
   border-radius: 6px;
-  border: 1px solid rgba(255, 255, 255, 0.543);
-  justify-content:center;
-  align-items: center;
-  left: 27px;
+  border: 1px solid rgba(255, 255, 255, 0.229);
+  width: 40px;
+  padding: 5px;
 }
 
+.espaco {
+  border: none;
+  width: 40px;
+}
 
 .bi-arrow-left-short {
   color: white;
@@ -31,7 +33,6 @@ header {
   width: 390px;
   height: 47px;
 }
-
 
 .time {
   width: 54px;
@@ -55,7 +56,6 @@ header {
   height: 13px;
   top: 14px;
 }
-
 
 .bi-reception {
   width: 18px;
@@ -84,18 +84,25 @@ header {
 }
 
 .bank {
+  justify-content: space-between;
   margin-top: 40px;
   margin-bottom: 40px;
 }
 
-.capibank-title {
-  display: flex;
-  font-family: "Poppins", sans-serif;
-  font-weight: 500;
-  font-size: 24px;
-  line-height: 36px;
-  height:36px;
-  justify-content: center;
-  align-items: center;
+.logo {
+  width: 124px;
+  object-fit: contain;
+  margin: auto;
 }
 
+@media screen and (min-width: 745px) {
+  .bank {
+    display: none;
+  }
+
+  .welcome-div{
+    margin-top: 135px;
+    text-align: center;
+    width: 100%;
+  }
+}
