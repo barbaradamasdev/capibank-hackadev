@@ -6,11 +6,6 @@
 .forgot-password {
   color: var(--cor-azul-escuro);
   text-decoration: none;
-  font-family: "Inter", sans-serif;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 16.94px;
-  letter-spacing: -0.41px;
 }
 
 .register {
