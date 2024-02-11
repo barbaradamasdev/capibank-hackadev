@@ -1,6 +1,9 @@
 .container-form{
   max-width: 700px;
   margin:auto;
+  border-radius: 25px 25px 0px 0px;
+  margin-top: -30px;
+  background: white;
 }
 
 .forgot-password {
@@ -31,39 +34,44 @@
   font-family: "Inter", sans-serif;
   font-weight: 600;
   font-size: 16px;
-  line-height:19.36px;
   letter-spacing: -0.41px;
   border-bottom: 4px solid var(--cor-dourado);
   justify-content: center;
   align-items: center;
   height: 50px;
+  width: 100%;
+  margin-bottom: 30px;
 }
 
 .form-login {
   margin-top: 30px;
 }
 
-.email {
-  margin-right: 40px;
-  margin-left: 20px;
+.buttons > * {
+  margin: 7px 0;
 }
 
-.password{
-  margin-right: 40px;
-  margin-left: 20px;
+input {
+  font-size: 13px;
+  padding: 22px 12px;
+  background: rgba(128, 128, 128, 0.017);
 }
 
-.btn-primary {
-  background-color: var(--cor-azul-escuro);
+.form-group {
+  margin-bottom: .7rem;
+}
+
+.email, .password {
+  margin-right: 40px;
+  margin-left: 20px;
 }
 
 .forgot-password {
+  font-size: 14px;
+  font-weight: 500;
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 10px 0px 30px 0px;
 }
 
-.container-form {
-  border-radius: 50px 50px 0px 0px;
-}
