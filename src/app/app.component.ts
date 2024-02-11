@@ -12,4 +12,5 @@ import { InicioLoginComponent } from "./pages/inicio-login/inicio-login.componen
 })
 export class AppComponent {
   title = 'capibank';
+
 }

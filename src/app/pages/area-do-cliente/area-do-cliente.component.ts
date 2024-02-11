@@ -4,13 +4,14 @@ import { AcessoRapidoAreaInternaComponent } from "../../componentes/acesso-rapid
 import { MenuLateralComponent } from "../../componentes/menu-lateral/menu-lateral.component";
 import { SecaoSaldoComponent } from "../../componentes/secao-saldo/secao-saldo.component";
 import { CabecalhoAreaInternaComponent } from "../../componentes/cabecalho-area-interna/cabecalho-area-interna.component";
+import { MenuInferiorAreaInternaComponent } from "../../componentes/menu-inferior-area-interna/menu-inferior-area-interna.component";
 
 @Component({
     selector: 'app-area-do-cliente',
     standalone: true,
     templateUrl: './area-do-cliente.component.html',
     styleUrl: './area-do-cliente.component.css',
-    imports: [HistoricoTransacoesComponent, AcessoRapidoAreaInternaComponent, MenuLateralComponent, SecaoSaldoComponent, CabecalhoAreaInternaComponent]
+    imports: [HistoricoTransacoesComponent, AcessoRapidoAreaInternaComponent, MenuLateralComponent, SecaoSaldoComponent, CabecalhoAreaInternaComponent, MenuInferiorAreaInternaComponent]
 })
 export class AreaDoClienteComponent {
 

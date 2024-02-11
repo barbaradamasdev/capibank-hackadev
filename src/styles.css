@@ -8,20 +8,32 @@
 }
 
 .logo {
-    font-family: "Poppins", sans-serif;
+    font-family: "Poppins", "sans-serif";
 }
 
 a, li, p, span {
-    font-family: "Inter", sans-serif;
-
+    font-family: "Inter", "sans-serif";
 }
 
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Classe para facilitar o uso de flexbox */
 .flex {
     display: flex;
 }
 
+/* Classe para facilitar o uso de grid */
 .grid {
     display: grid;
+}
+
+/* Classe para facilitar padding na tela pequena e tamanho maximo em telas maiores */
+.container {
+    max-width: 1440px;
+    padding: 15px;
 }
 
 :root {
@@ -35,6 +47,7 @@ a, li, p, span {
     --cor-vermelho: #EC2F2F;
 }
 
+/* Estilizacao padrao de botao primario e secundario */
 .botao-principal {
     padding: 10px 30px;
     border: none;
@@ -42,7 +55,6 @@ a, li, p, span {
     color: white;
     border-radius: 3px;
 }
-
 
 .botao-secundario {
     padding: 9.5px 30px;
