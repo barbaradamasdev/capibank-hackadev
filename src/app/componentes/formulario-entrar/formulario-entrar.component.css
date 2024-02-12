@@ -6,6 +6,12 @@
   background: white;
 }
 
+.warn-text {
+  padding-top: 2px;
+  font-size: 12px;
+  font-weight: 600 !important;
+}
+
 .forgot-password {
   color: var(--cor-azul-escuro);
   text-decoration: none;
@@ -93,6 +99,16 @@ input {
   align-items: center;
   margin: 10px 0px 30px 0px;
 }
+
+.btn.disabled, .btn:disabled, fieldset:disabled {
+  color: white;
+  pointer-events: none;
+  background-color: var(--cor-azul-medio);
+  border-color: var(--bs-btn-disabled-border-color);
+  opacity: .8;
+}
+
+
 @media screen and (min-width: 745px) {
   .botao-secundario {
     display: none;

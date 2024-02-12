@@ -1,50 +1,37 @@
 <div class="container-form p-4">
   <h6 class="login">Entre com sua conta</h6>
   <form [formGroup]="formLogin" (submit)="autenticar()">
+    
     <div class="form-group">
 
-      <label for="exampleInputEmail1">Email</label>
+      <!-- <label for="exampleInputEmail1">Email</label> -->
       <input formControlName="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-      <div *ngIf="formLogin.get('email')?.hasError('email') && formLogin.get('email')?.touched" class="error" >
+      <div *ngIf="formLogin.get('email')?.hasError('email') && formLogin.get('email')?.touched" class="warn-text text-danger" >
         Por favor informe um email válido
       </div>
 
-      <div class="text-danger" *ngIf="formLogin.get('email')?.hasError('required') && formLogin.get('email')?.touched">
+      <div class="text-danger warn-text" *ngIf="formLogin.get('email')?.hasError('required') && formLogin.get('email')?.touched">
         Informe um email para prosseguir
       </div>
 
     </div>
     <div class="form-group">
-      <label for="exampleInputPassword1">Senha</label>
-      <input formControlName="senha" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-      <div class="text-danger"  *ngIf="formLogin.get('senha')?.invalid && formLogin.get('senha')?.touched"><strong >Senha obrigatória</strong> </div>
+      <!-- <label for="exampleInputPassword1">Senha</label> -->
+      <input formControlName="senha" type="password" class="form-control" id="exampleInputPassword1" placeholder="Senha">
+      <div class="text-danger warn-text"  *ngIf="formLogin.get('senha')?.invalid && formLogin.get('senha')?.touched">Senha obrigatória</div>
     </div>
 
-
-    <div class="form-group form-check">
+    <!-- <div class="form-group form-check">
       <input type="checkbox" class="form-check-input" id="exampleCheck1">
       <label class="form-check-label" for="exampleCheck1">Check me out</label>
-    </div>
-    <div class="justify-content-center text-center">
-      <button [disabled]="!formLogin.valid" type="submit" class="btn btn-primary btn-lg btn-block">Fazer Login</button>
-    </div>
-  </form>
-    <a class="forgot-password" href="#">Esqueci minha senha</a>
-    <div class="row justify-content-between">
-      <span class="account col-4">Ainda não tem conta?</span>
-      <a class="register col-4" href="#">Faça seu cadastro</a>
+    </div> -->
 
     <div class="buttons justify-content-center text-center">
-      <button type="submit" class="btn botao-principal btn-lg btn-block">
-        Entrar
-      </button>
-      <button type="submit" class="btn botao-secundario btn-lg btn-block">
-        Voltar
-      </button>
+      <button [disabled]="!formLogin.valid" type="submit" class="btn botao-principal btn-lg btn-block">Entrar</button>
+      <button type="submit" class="btn botao-secundario btn-lg btn-block">Voltar</button>
     </div>
-
   </form>
+
   <a class="forgot-password" href="#">Esqueci minha senha</a>
   <div class="d-flex justify-content-center gap-15">
     <span class="account">Ainda não tem conta?</span>
