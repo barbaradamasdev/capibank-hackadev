@@ -1,10 +1,9 @@
 .container{
-   
-    
+   padding-top: 50px;
     border-right: 1px solid;
     width: 190px;
     margin-left:20px;
-    height: 300px;
+    height: 100vh;
    
 }
 .container a{

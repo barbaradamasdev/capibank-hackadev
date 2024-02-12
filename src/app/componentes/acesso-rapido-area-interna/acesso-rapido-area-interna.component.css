@@ -1,0 +1,13 @@
+.container img{
+    width: 100px;
+    height: 100px;
+}
+.container{
+    display: flex;
+    width: 500px;
+    padding-top: 50px;
+    justify-content: space-around;
+}
+.container p{
+    text-align: center;
+}
