@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { CabecalhoAreaInternaComponent } from "../../componentes/cabecalho-area-interna/cabecalho-area-interna.component";
 import { SecaoSaldoComponent } from "../../componentes/secao-saldo/secao-saldo.component";
-import { MenuLateralComponent } from "../../componentes/menu-lateral/menu-lateral.component";
 import { HistoricoTransacoesComponent } from "../../componentes/historico-transacoes/historico-transacoes.component";
 import { MenuInferiorAreaInternaComponent } from "../../componentes/menu-inferior-area-interna/menu-inferior-area-interna.component";
 
@@ -10,7 +9,7 @@ import { MenuInferiorAreaInternaComponent } from "../../componentes/menu-inferio
     standalone: true,
     templateUrl: './historico-de-transacao.component.html',
     styleUrl: './historico-de-transacao.component.css',
-    imports: [CabecalhoAreaInternaComponent, SecaoSaldoComponent, MenuLateralComponent, HistoricoTransacoesComponent, MenuInferiorAreaInternaComponent]
+    imports: [CabecalhoAreaInternaComponent, SecaoSaldoComponent, HistoricoTransacoesComponent, MenuInferiorAreaInternaComponent]
 })
 export class HistoricoDeTransacaoComponent {
 
