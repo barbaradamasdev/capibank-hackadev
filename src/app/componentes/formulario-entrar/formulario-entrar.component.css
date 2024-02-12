@@ -1,8 +1,11 @@
-
 .container-form{
-  max-width: 700px;
+  max-width: 744px;
   margin:auto;
+  border-radius: 25px 25px 0px 0px;
+  margin-top: -30px;
+  background: white;
 }
+
 .forgot-password {
   color: var(--cor-azul-escuro);
   text-decoration: none;
@@ -25,60 +28,77 @@
   line-height: 19.5px;
 }
 
+.p-4 {
+  padding-top: 8px !important;
+}
+
 .login {
   display: flex;
   color: var(--cor-azul-escuro);
   font-family: "Inter", sans-serif;
   font-weight: 600;
   font-size: 16px;
-  line-height:19.36px;
   letter-spacing: -0.41px;
-  border-bottom: 4px solid var(--cor-dourado);
   justify-content: center;
   align-items: center;
   height: 50px;
+  width: 100%;
+  margin-bottom: 30px;
+  position: relative;
 }
 
-
-
-
+.login::after {
+  content: "";
+  border-bottom: 4px solid var(--cor-dourado);
+  position: absolute;
+  bottom: -5px;
+  height: 64px;
+  width: 744px;
+  max-width: 100vw;
+  background: rgba(128, 128, 128, 0.064);
+  border-radius: 25px 25px 0px 0px;
+}
 
 .form-login {
   margin-top: 30px;
 }
 
-.email {
-  margin-right: 40px;
-  margin-left: 20px;
+.buttons > * {
+  margin: 7px 0;
+  max-width: 378px;
 }
 
-.password{
-  margin-right: 40px;
-  margin-left: 20px;
+input {
+  font-size: 13px;
+  padding: 22px 12px;
+  background: rgba(128, 128, 128, 0.017);
+  max-width: 378px;
+  margin: auto;
 }
 
-.botao-principal {
-  width: 85%;
-  padding: 10px;
-  margin-right: 40px;
-  margin-left: 20px;
-  margin-bottom: 10px;
+.form-group {
+  margin-bottom: .7rem;
 }
 
-.botao-secundario {
-  width: 85%;
-  padding: 10px;
+.email, .password {
   margin-right: 40px;
   margin-left: 20px;
 }
 
 .forgot-password {
+  font-size: 14px;
+  font-weight: 500;
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 10px 0px 30px 0px;
 }
+@media screen and (min-width: 745px) {
+  .botao-secundario {
+    display: none;
+  }
 
-.register-2 {
-  display: flex;
+  form {
+    margin-top: 50px;
+  }
 }
