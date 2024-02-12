@@ -8,20 +8,32 @@
 }
 
 .logo {
-    font-family: "Poppins", sans-serif;
+    font-family: "Poppins", "sans-serif";
 }
 
 a, li, p, span {
-    font-family: "Inter", sans-serif;
-
+    font-family: "Inter", "sans-serif";
 }
 
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Classe para facilitar o uso de flexbox */
 .flex {
     display: flex;
 }
 
+/* Classe para facilitar o uso de grid */
 .grid {
     display: grid;
+}
+
+/* Classe para facilitar padding na tela pequena e tamanho maximo em telas maiores */
+.container {
+    max-width: 1440px;
+    padding: 15px;
 }
 
 :root {
@@ -35,19 +47,36 @@ a, li, p, span {
     --cor-vermelho: #EC2F2F;
 }
 
+/* Estilizacao padrao de botao primario e secundario */
+button  {
+    font-size: 14px !important;
+    height: 56px;
+    border-radius: 3px;
+}
+
 .botao-principal {
     padding: 10px 30px;
     border: none;
-    background: var(--cor-azul-claro);
+    background: var(--cor-azul-medio);
     color: white;
-    border-radius: 3px;
 }
 
+.botao-principal:hover {
+    background: var(--cor-azul-claro);
+    color: white;
+}
 
 .botao-secundario {
     padding: 9.5px 30px;
-    border: 1px solid var(--cor-cinza);
+    border: 1px solid rgba(0, 0, 0, 0.068);
     background: transparent;
     color: var(--cor-azul-escuro);
-    border-radius: 3px;
 }
+
+.botao-secundario:hover {
+    border: 1px solid rgba(0, 0, 0, 0.541);
+}
+
+.gap-15 {
+    gap: 15px;
+  }

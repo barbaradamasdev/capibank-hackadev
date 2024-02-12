@@ -1,6 +1,8 @@
 .container img{
     width: 100px;
     height: 100px;
+    background-color: #DCDCDC;
+    border-radius: 25px;;
 }
 .container{
     display: flex;
