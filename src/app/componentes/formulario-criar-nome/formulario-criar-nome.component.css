@@ -93,6 +93,22 @@
     align-items: center;
     margin: 10px 0px 30px 0px;
   }
+
+  .what-email {
+    display: flex;
+    color: var(--cor-azul-escuro);
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: -0.41px;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 100%;
+    margin-bottom: 30px;
+    position: relative;
+  }
+
   @media screen and (min-width: 745px) {
     .botao-secundario {
       display: none;
