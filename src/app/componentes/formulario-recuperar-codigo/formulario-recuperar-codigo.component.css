@@ -94,7 +94,7 @@ input {
   margin: 10px 0px 30px 0px;
 }
 
-.what-email {
+.what-password {
   display: flex;
   color: var(--cor-azul-escuro);
   font-family: "Inter", sans-serif;

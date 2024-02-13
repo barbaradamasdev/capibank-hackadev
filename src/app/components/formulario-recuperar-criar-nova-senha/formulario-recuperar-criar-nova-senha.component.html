@@ -1,1 +1,27 @@
-<p>formulario-recuperar-criar-nova-senha works!</p>
+<div class="container-form p-4">
+    <h6 class="login">Recupere sua senha</h6>
+    <form>
+      <div class="form-group">
+        <p class="what-password">Digite a nova senha</p>
+        <input type="password" class="form-control" [(ngModel)]="newPassword" placeholder="Nova senha" name="newPassword" required>
+      </div>
+      <div class="form-group">
+        <input type="password" class="form-control" [(ngModel)]="confirmPassword" placeholder="Repita a nova senha" name="confirmPassword" required>
+    </div>
+    <ul class="text-muted">
+        <li id="length" class="hidden">A senha deve ter no mínimo 8 caracteres</li>
+        <li id="number" class="hidden">A senha deve conter ao menos 1 número</li>
+        <li id="lowercase" class="hidden">A senha deve conter ao menos 1 letra minúscula</li>
+        <li id="uppercase" class="hidden">A senha deve conter ao menos 1 letra maiúscula</li>
+    </ul>
+  
+      <div class="buttons justify-content-center text-center">
+        <button type="submit" class="btn botao-principal btn-lg btn-block">
+          Atualizar senha
+        </button>
+        <button type="submit" class="btn botao-secundario btn-lg btn-block">
+          Voltar
+        </button>
+      </div>
+    </form>
+  </div>
