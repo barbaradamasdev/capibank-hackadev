@@ -17,7 +17,8 @@ export class HistoricoTransacoesComponent {
     {tipo:'Transferência', valor: 200.00, motivo:'Poupança', data: '20/01/2024'},
     {tipo:'Pix Recebido', valor: 1000.00,motivo:'Sandra Lima',  data: '21/01/2024'},
     {tipo:'Pix Enviado', valor: 100.00,motivo:'Anderson José',  data: '25/01/2024'},
-    {tipo:'Pgto Boleto', valor: 100.00,motivo:'Condominio',  data: '29/01/2024'}
+    {tipo:'Pgto Boleto', valor: 100.00,motivo:'Condominio',  data: '29/01/2024'},
+    {tipo:'Pgto Boleto', valor: 1000.00,motivo:'Aluguel',  data: '30/01/2024'}
   ]
     
   
