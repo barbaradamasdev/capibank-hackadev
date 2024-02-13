@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Transacao } from '../../Models/Transacao';
 
 @Component({
   selector: 'app-historico-transacoes',
@@ -8,5 +9,16 @@ import { Component } from '@angular/core';
   styleUrl: './historico-transacoes.component.css'
 })
 export class HistoricoTransacoesComponent {
-
+  
+  transacoes: Transacao[] =[
+    {tipo:'Pix Recebido', valor: 1000.00, data: '15/01/2024'},
+    {tipo:'Pix Enviado', valor: 100.00, data: '15/01/2024'},
+    {tipo:'Pgto Boleto', valor: 500.00, data: '17/01/2024'},
+    {tipo:'Transferência', valor: 200.00, data: '20/01/2024'},
+    {tipo:'Pix Recebido', valor: 1000.00, data: '21/01/2024'},
+    {tipo:'Pix Enviado', valor: 100.00, data: '25/01/2024'},
+    {tipo:'Pgto Boleto', valor: 100.00, data: '29/01/2024'}
+  ]
+    
+  
 }
