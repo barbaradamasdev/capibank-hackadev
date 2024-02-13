@@ -14,4 +14,5 @@ import { MenuLateralComponent } from "../../componentes/menu-lateral/menu-latera
 })
 export class HistoricoDeTransacaoComponent {
 
+    
 }
