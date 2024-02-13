@@ -1,21 +1,53 @@
-.container{
+.header {
     display: flex;
-    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: var(--cor-branco);
+  }
+  
+  .menu-icon,
+  .notification-icon {
     height: 40px;
-    margin-left: 40px;
-    margin-top: 10px;
-    align-items:center;
-    /* border-bottom: 1px solid; */
-    justify-content:space-evenly;
-}
-.sairdaconta:hover{
-   cursor: pointer;
-}
-.container .nomedobanco{
-    color:#23217E;
-    font-family: 'Poppins', sans-serif; ;
-    
-}
-.container .sairdaconta{
-    font-family:'Inter', sans-serif;
-}
+    border: solid 1px rgba(0, 0, 0, 0.032);
+    border-radius: 5px;
+    padding: 6px;
+  }
+  .menu-icon,
+  .notification-icon:hover{
+    cursor: pointer;
+  }
+  
+  
+  .logo {
+    width: 125px;
+    max-width: 40vw;
+  }
+
+  .logout {
+    display: none;
+    color: var(--cor-cinza);
+  }
+
+  @media (min-width: 744px) {
+    .header {
+      padding: 20px;
+    }
+
+    .logo {
+      width: 180px;
+    } 
+
+    .menu-icon {
+      display: none;
+    }
+
+    .notification-icon {
+      margin-left: auto;
+      margin-right: 10px;
+    }
+
+    .logout {
+      display: inherit;
+    }
+  }
