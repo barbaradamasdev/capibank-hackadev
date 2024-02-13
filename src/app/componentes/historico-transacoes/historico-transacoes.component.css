@@ -9,3 +9,9 @@
 .table{
     width:100%;
 }
+.descricao{
+    font-weight: 600;
+    font-size: 0.7rem;
+    color:rgb(163, 146, 146);
+    
+}
