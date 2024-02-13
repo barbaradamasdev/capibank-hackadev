@@ -13,4 +13,5 @@ import { MenuInferiorAreaInternaComponent } from "../../componentes/menu-inferio
 })
 export class HistoricoDeTransacaoComponent {
 
+    
 }
