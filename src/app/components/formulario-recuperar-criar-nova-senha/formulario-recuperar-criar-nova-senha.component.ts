@@ -30,5 +30,15 @@ export class FormularioRecuperarCriarNovaSenhaComponent {
     this.passwordRequirements.lowercase = lowercasePattern.test(this.newPassword);
     this.passwordRequirements.uppercase = uppercasePattern.test(this.newPassword);
   }
+  passwordIsValid() {
+    return this.passwordRequirements.length &&
+           this.passwordRequirements.number &&
+           this.passwordRequirements.lowercase &&
+           this.passwordRequirements.uppercase;
+  }
+
+  passwordsMatch() {
+    return this.newPassword === this.confirmPassword;
+  }
 
 }

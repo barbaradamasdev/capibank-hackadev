@@ -117,4 +117,29 @@
     form {
       margin-top: 50px;
     }
+    .input-valid {
+      border: 2px solid green;
+    }
+    
+    .input-invalid {
+      border: 2px solid red;
+    }
+    
+    /* Estilos para esconder e mostrar validações */
+    .hidden {
+      display: none;
+    }
+    
+    .validation-list {
+      list-style-type: none; /* Remove bullets da lista */
+      padding-left: 0; /* Remove padding */
+    }
+    
+    .validation-item {
+      color: red; /* Cor para os textos de aviso */
+    }
+    .validation-item.valid {
+      color: green; /* Cor para itens atendidos */
+    }
+    
   }
