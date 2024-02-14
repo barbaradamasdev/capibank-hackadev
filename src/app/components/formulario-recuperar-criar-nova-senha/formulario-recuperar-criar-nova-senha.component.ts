@@ -1,18 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @Component({
   selector: 'app-formulario-recuperar-criar-nova-senha',
   standalone: true,
-  imports: [ReactiveFormsModule, CommonModule],
+  imports: [ReactiveFormsModule, FormsModule, CommonModule],
   templateUrl: './formulario-recuperar-criar-nova-senha.component.html',
   styleUrl: './formulario-recuperar-criar-nova-senha.component.css'
 })
 export class FormularioRecuperarCriarNovaSenhaComponent {
-  newPassword: string = '';
-  confirmPassword: string = '';
+  @Input() newPassword: string = '';
+  @Input() confirmPassword: string = '';
   passwordRequirements = {
     length: false,
     number: false,
