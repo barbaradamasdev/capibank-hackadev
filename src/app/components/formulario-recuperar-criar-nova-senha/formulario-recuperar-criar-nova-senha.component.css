@@ -136,10 +136,15 @@
     }
     
     .validation-item {
-      color: red; /* Cor para os textos de aviso */
+      color: rgb(123, 120, 120); /* Cor para os textos de aviso */
+    }
+    .input-touched .validation-item {
+      color: rgb(242, 51, 51); /* Cor vermelha para indicar requisitos não cumpridos */
     }
     .validation-item.valid {
-      color: green; /* Cor para itens atendidos */
+      color: rgb(13, 240, 13); /* Cor para itens atendidos */
     }
+
+
     
   }

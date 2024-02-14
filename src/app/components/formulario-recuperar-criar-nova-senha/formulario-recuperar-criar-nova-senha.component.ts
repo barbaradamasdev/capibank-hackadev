@@ -19,6 +19,12 @@ export class FormularioRecuperarCriarNovaSenhaComponent {
     lowercase: false,
     uppercase: false
   };
+  hasStartedTyping = false; // Novo campo para rastrear a digitação do usuário
+
+  onPasswordInput() {
+    this.hasStartedTyping = true;
+    this.checkPasswordRequirements();
+  }
 
   checkPasswordRequirements() {
     const numberPattern = /\d/; // Padrão para detectar números
