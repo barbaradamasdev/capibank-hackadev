@@ -1,0 +1,16 @@
+.container{
+    padding-top:40px;
+    width: 500px;
+}
+.container h1{
+    text-align: center;
+}
+
+.table{
+    width:100%;
+}
+.descricao{
+    font-weight: 600;
+    font-size: 0.7rem;
+    color:rgb(163, 146, 146);
+}

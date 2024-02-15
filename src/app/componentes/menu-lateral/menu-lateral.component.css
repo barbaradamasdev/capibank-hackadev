@@ -1,0 +1,15 @@
+.container{
+   padding-top: 40px;
+    border-right: 1px rgb(92, 85, 85);
+    width: 195px;
+    margin-left:20px;
+    height: 100vh;
+   
+}
+.container a{
+    color: black;
+    font-size: 0.8rem;
+}
+.container img{
+   width: 30px;
+}
