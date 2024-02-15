@@ -1,6 +1,8 @@
-# HackaDev - Sharp Troopers
+# Capibank - Projeto Fintech - Sharp Troopers
 
-O Sharp Troopers foi criado como um ambiente simulado de trabalho, onde a equipe embarcará em um projeto seguindo a metodologia Scrum, como parte do Bootcamp SharpCoders, uma iniciativa conjunta da ÍmaTech e da MXM Sistemas.
+## Visão Geral
+
+Bem-vindo ao Capibank, um projeto fintech desenvolvido pela equipe Sharp Troopers como parte do Bootcamp SharpCoders. Este projeto tem como objetivo simular um ambiente de desenvolvimento do mundo real usando a metodologia Scrum. A equipe utilizou várias ferramentas e tecnologias para criar uma solução financeira, combinando habilidades em Angular e C#.
 
 ##### Objetivos:
 - Avaliar e aprimorar as habilidades de trabalho em equipe dos participantes.
@@ -9,11 +11,26 @@ O Sharp Troopers foi criado como um ambiente simulado de trabalho, onde a equipe
 - Permitir a avaliação dos alunos com o apoio de monitores.
 - Criar um ambiente simulado que reproduza os desafios e dinâmicas de uma empresa.
 
-![Sharp Troopers](https://github.com/barbaradamasdev/capibank-hackadev/blob/main/Documenta%C3%A7%C3%A3o/imagens/Sharp%20Troopers%20img.jpg?raw=true)
+## Detalhes do Projeto
 
----
-### **Equipe**
+- **Nome:** Capibank
+- **Tipo:** Fintech
+- **Metodologia:** Scrum
+- **Controle de Versão:** GitFlow
+- **Frontend:** Angular
+- **Backend:** C#
+- **Gerenciamento de Projeto:** Trello
+- **Design de Telas:** Figma
+- **Documentação:** Notion
+- **Comunicação:** Discord, WhatsApp
+- **IDE:** Visual Studio Code
+- **Repositório:** [Repositório GitHub do Capibank](https://github.com/barbaradamasdev/capibank-hackadev)
 
+## Equipe - Sharp Troopers
+
+A equipe Sharp Troopers é um grupo de desenvolvedores habilidosos participando do projeto Capibank. Cada membro contribui para o sucesso do projeto, trazendo um conjunto diversificado de habilidades e experiências.
+
+### Membros da Equipe
 
 <table>
   <tr>
@@ -125,4 +142,8 @@ O Sharp Troopers foi criado como um ambiente simulado de trabalho, onde a equipe
     
   </tr>
 </table>
+
+![Sharp Troopers](https://github.com/barbaradamasdev/capibank-hackadev/blob/main/Documenta%C3%A7%C3%A3o/imagens/Sharp%20Troopers%20img.jpg?raw=true)
+
+Sinta-se à vontade para explorar o projeto!
 
