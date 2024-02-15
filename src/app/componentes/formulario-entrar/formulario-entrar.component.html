@@ -5,7 +5,7 @@
     <div class="form-group">
 
       <!-- <label for="exampleInputEmail1">Email</label> -->
-      <input formControlName="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+      <input formControlName="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email">
       <div *ngIf="formLogin.get('email')?.hasError('email') && formLogin.get('email')?.touched" class="warn-text text-danger" >
         Por favor informe um email válido
       </div>

@@ -93,6 +93,22 @@
     align-items: center;
     margin: 10px 0px 30px 0px;
   }
+  
+  .what-email {
+    display: flex;
+    color: var(--cor-azul-escuro);
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: -0.41px;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 100%;
+    margin-bottom: 30px;
+    position: relative;
+  }
+  
   @media screen and (min-width: 745px) {
     .botao-secundario {
       display: none;
@@ -101,4 +117,39 @@
     form {
       margin-top: 50px;
     }
+    .input-valid {
+      border: 2px solid green;
+    }
+    
+    .input-invalid {
+      border: 2px solid red;
+    }
+    
+    /* Estilos para esconder e mostrar validações */
+    .hidden {
+      display: none;
+    }
+    
+    .validation-list {
+      list-style-type: none; /* Remove bullets da lista */
+      padding-left: 0; /* Remove padding */
+    }
+    
+    .validation-item {
+      color: rgb(123, 120, 120); /* Cor para os textos de aviso */
+    }
+    .input-touched .validation-item {
+      color: rgb(242, 51, 51); /* Cor vermelha para indicar requisitos não cumpridos */
+    }
+    .validation-item.valid {
+      color: rgb(13, 240, 13); /* Cor para itens atendidos */
+    }
+
+
+    
   }
+
+
+
+
+  

@@ -4,13 +4,13 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @Component({
-  selector: 'app-formulario-recuperar-criar-nova-senha',
+  selector: 'app-formulario-recuperar-pg-dois',
   standalone: true,
   imports: [ReactiveFormsModule, FormsModule, CommonModule],
-  templateUrl: './formulario-recuperar-criar-nova-senha.component.html',
-  styleUrl: './formulario-recuperar-criar-nova-senha.component.css'
+  templateUrl: './formulario-recuperar-pg-dois.component.html',
+  styleUrl: './formulario-recuperar-pg-dois.component.css'
 })
-export class FormularioRecuperarCriarNovaSenhaComponent {
+export class FormularioRecuperarPgDoisComponent {
   @Input() newPassword: string = '';
   @Input() confirmPassword: string = '';
   passwordRequirements = {
