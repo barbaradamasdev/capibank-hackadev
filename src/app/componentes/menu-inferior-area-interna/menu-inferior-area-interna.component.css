@@ -30,3 +30,9 @@
     height: auto;
     cursor: pointer;
   }
+
+  @media (min-width: 390px) {
+    .footer {
+      display: none;
+    }
+  }
