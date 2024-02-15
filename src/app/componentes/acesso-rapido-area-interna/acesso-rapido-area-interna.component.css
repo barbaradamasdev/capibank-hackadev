@@ -1,15 +1,41 @@
-.container img{
-    width: 100px;
-    height: 100px;
-    background-color: #DCDCDC;
-    border-radius: 25px;;
-}
-.container{
+.header {
     display: flex;
-    width: 500px;
-    padding-top: 50px;
-    justify-content: space-around;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    max-width: 800px;
+    margin: 0 auto;
+    margin-left: 1px;
+    width: 135%; 
+    box-sizing: border-box;
 }
-.container p{
+
+.header h2 {
+    font-weight: bold;
+    margin: 0;
+}
+
+.see-all {
+    color: blue;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.icons-container {
+    display: flex;
+    justify-content:space-evenly;
+    align-items: center; /* Adicionado para centralizar verticalmente os ícones */
+    margin-top: 20px;
     text-align: center;
+    justify-items: center;
+    width: 135%;
+}
+
+.icon img {
+    width: 70px; /* Reduzido o tamanho das imagens dos ícones */
+    height: auto; /* Altura automática para manter a proporção */
+}
+
+.icon p {
+    margin: 10px 0 0 0;
 }
