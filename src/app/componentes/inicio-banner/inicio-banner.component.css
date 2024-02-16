@@ -1,0 +1,98 @@
+body {
+    background-image: url(./banner-cartoes.png);
+    background-size: cover;
+    position: relative;
+    background-repeat: no-repeat;
+    height: 703px;
+    background-position: center;
+    background-color: #0D0E1E;
+}
+
+header {
+    color: white;
+    min-height: 230px;
+}
+
+.bank {
+    justify-content: space-between;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.logo {
+    width: 124px;
+    object-fit: contain;
+    margin: auto;
+}
+
+@media screen and (min-width: 745px) {
+    .bank {
+        display: none;
+    }
+}
+
+.catchphrase {
+    font-family: "Poppins", "sans-serif";
+    font-weight: 500;
+    font-size: 23px;
+    line-height: 27.6px;
+    color: white;
+    width: 291px;
+    height: 56px;
+    top: 630px;
+    left: 24px;
+    position: fixed;
+    
+}
+
+.login {
+    background-color: var(--cor-azul-claro);
+    color: var(--cor-branco);
+    font-family: "Poppins", "sans-serif";
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: center;
+    width: 232px;
+    height: 60px;
+    top: 703px;
+    margin-left: 24px;
+    border-radius: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.221);
+}
+
+footer {
+    border-top: 1px solid #0D0E1E;
+    background-color: #0D0E1E;
+    bottom: 0;
+    height: 141px;
+    position: fixed;
+    width: 100%;   
+}
+
+.register {
+    color: white;
+    text-align: right;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 21px;
+    margin-left: -10px;
+}
+
+.account {
+    color: var(--cor-cinza);
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+}
+
+.do-register {
+    height: 21px;
+    top: 784px;
+    position: fixed; 
+    left: 24px;
+}
+
