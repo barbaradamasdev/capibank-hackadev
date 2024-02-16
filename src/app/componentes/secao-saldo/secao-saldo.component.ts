@@ -8,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './secao-saldo.component.css'
 })
 export class SecaoSaldoComponent {
-
+  nome = localStorage.getItem('nome')
 }

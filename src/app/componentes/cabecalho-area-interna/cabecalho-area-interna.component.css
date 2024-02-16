@@ -32,8 +32,8 @@
 
   .logo {
     width: 180px;
-    max-width: none; 
-  } 
+    max-width: none;
+  }
 
   .menu-icon {
     display: none;
@@ -45,7 +45,7 @@
   }
 
   .logout {
-    display: inline-block; 
-    margin-left: 10px; 
+    display: inline-block;
+    margin-left: 10px;
   }
 }
