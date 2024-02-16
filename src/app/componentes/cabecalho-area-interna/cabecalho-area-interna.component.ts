@@ -9,4 +9,8 @@ import { Component } from '@angular/core';
 })
 export class CabecalhoAreaInternaComponent {
 
+  logout():void{
+    localStorage.clear();
+  }
+
 }

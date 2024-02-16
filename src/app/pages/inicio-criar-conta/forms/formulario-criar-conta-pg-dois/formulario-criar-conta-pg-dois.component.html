@@ -2,23 +2,28 @@
 
     <h6 class="create-account">Abra sua conta</h6>
 
-    <form>
+    <form [formGroup]="entradaCep" >
       <div class="form-group">
 
         <p class="title-form">Onde Você Mora?</p>
 
         <input
+          formControlName="cep"
           type="text"
           class="form-control"
           id="cep"
           placeholder="CEP"
+          [(ngModel)]="cep"
+          (keydown.Tab)="buscarEndereco()"
+          
         />
-
+        
         <input
           type="text"
           class="form-control"
           id="rua"
           placeholder="Rua"
+          value="{{endereco.logradouro}}"
         />
 
         <input
@@ -33,6 +38,7 @@
           class="form-control"
           id="cidade"
           placeholder="Cidade"
+          value="{{endereco.localidade}}"
         />
 
         <input
