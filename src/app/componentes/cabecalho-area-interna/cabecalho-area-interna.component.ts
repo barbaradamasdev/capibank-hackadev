@@ -8,6 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './cabecalho-area-interna.component.css'
 })
 export class CabecalhoAreaInternaComponent {
-  nome = localStorage.getItem('nome')
 
 }

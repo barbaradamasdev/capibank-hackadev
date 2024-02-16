@@ -6,7 +6,7 @@
     max-width: 800px;
     margin: 0 auto;
     margin-left: 1px;
-    width: 135%; 
+    width: 135%;
     box-sizing: border-box;
 }
 
@@ -28,7 +28,7 @@
     margin-top: 20px;
     text-align: center;
     justify-items: center;
-    width: 500px;
+    width: 135%;
 }
 
 .icon img {
@@ -38,7 +38,4 @@
 
 .icon p {
     margin: 10px 0 0 0;
-}
-.container{
-    margin-top:20px;
 }

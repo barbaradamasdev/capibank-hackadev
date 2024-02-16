@@ -1,11 +1,11 @@
 <div class="container-form p-4">
   <h6 class="login">Entre com sua conta</h6>
   <form [formGroup]="formLogin" (submit)="autenticar()">
-    
+
     <div class="form-group">
 
       <!-- <label for="exampleInputEmail1">Email</label> -->
-      <input formControlName="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email">
+      <input formControlName="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
       <div *ngIf="formLogin.get('email')?.hasError('email') && formLogin.get('email')?.touched" class="warn-text text-danger" >
         Por favor informe um email válido
       </div>
