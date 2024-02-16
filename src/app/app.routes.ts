@@ -8,6 +8,7 @@ import { HistoricoDeTransacaoComponent } from './pages/historico-de-transacao/hi
 import { FormularioCriarContaPgUmComponent } from './pages/inicio-criar-conta/forms/formulario-criar-conta-pg-um/formulario-criar-conta-pg-um.component';
 import { FormularioCriarContaPgDoisComponent } from './pages/inicio-criar-conta/forms/formulario-criar-conta-pg-dois/formulario-criar-conta-pg-dois.component';
 import { FormularioCriarContaPgTresComponent } from './pages/inicio-criar-conta/forms/formulario-criar-conta-pg-tres/formulario-criar-conta-pg-tres.component';
+import { autenticarGuard } from './seguranca/autenticar.guard';
 export const routes: Routes = [
     {path:'login',component:InicioLoginComponent},
     {path:'cadastrar',component:InicioCriarContaComponent,
@@ -27,7 +28,7 @@ export const routes: Routes = [
     ]
   },
     {path:'recuperar',component:InicioRecuperarSenhaComponent},
-    {path:'cliente',component:AreaDoClienteComponent},
-    {path:'historico',component:HistoricoDeTransacaoComponent},
-    {path:'',redirectTo:'login',pathMatch:'full'}
+    {path:'cliente',component:AreaDoClienteComponent, canActivate:[autenticarGuard]},
+    {path:'historico',component:HistoricoDeTransacaoComponent,canActivate:[autenticarGuard]},
+    {path:'',redirectTo:'/login',pathMatch:'full'}
 ];
