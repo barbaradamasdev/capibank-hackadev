@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterOutlet } from '@angular/router';
 import { InicioCriarContaComponent } from './pages/inicio-criar-conta/inicio-criar-conta.component';
 import { InicioRecuperarSenhaComponent } from "./pages/inicio-recuperar-senha/inicio-recuperar-senha.component";
 import { InicioLoginComponent } from "./pages/inicio-login/inicio-login.component";
@@ -13,7 +13,7 @@ import { InicioBannerComponent } from './componentes/inicio-banner/inicio-banner
     standalone: true,
     templateUrl: './app.component.html',
     styleUrl: './app.component.css',
-    imports: [CommonModule, RouterOutlet, InicioCriarContaComponent, InicioRecuperarSenhaComponent, InicioLoginComponent, AreaDoClienteComponent, HistoricoDeTransacaoComponent, InicioBannerComponent]
+    imports: [RouterLink,CommonModule, RouterOutlet, InicioCriarContaComponent, InicioRecuperarSenhaComponent, InicioLoginComponent, AreaDoClienteComponent, HistoricoDeTransacaoComponent, InicioBannerComponent]
 })
 export class AppComponent {
   title = 'capibank';
