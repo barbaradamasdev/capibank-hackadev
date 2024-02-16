@@ -1,11 +1,25 @@
 <!-- Rotas prontas apenas para facilitar visualizar as paginas -->
     <div class="flex" style="gap: 20px;">
         <a href="/login">Login</a>
-        <a href="/cadastrar">Cadastrar</a>
+        <a routerLink="cadastrar/passo-1">Cadastrar</a>
         <a href="/recuperar">Recuperar</a>
         <a href="/cliente">Cliente</a>
         <a href="/historico">Historico</a>
-      </div>
+    </div>
 
-      <!-- <app-inicio-banner /> -->
-      <router-outlet></router-outlet>
+    <router-outlet/>
+    <app-inicio-banner></app-inicio-banner>
+
+
+
+<!-- Tela de recuperar senha -->
+<!-- <app-inicio-recuperar-senha />  -->
+
+<!-- Tela de criar senha -->
+<!-- <app-inicio-criar-conta /> -->
+
+<!-- Tela area do cliente -->
+<!-- <app-area-do-cliente /> -->
+
+<!-- Tela historico de transacao -->
+<!-- <app-historico-de-transacao /> -->
