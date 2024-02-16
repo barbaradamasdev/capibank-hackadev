@@ -1,0 +1,36 @@
+<div class="container-form p-4">
+  <h6 class="login">Recupere sua senha</h6>
+  <form (input)="checkPasswordRequirements()">
+    <div class="form-group">
+      <p class="what-password">Digite a nova senha</p>
+      <input type="password" class="form-control"
+             [ngClass]="{'input-valid': passwordIsValid(), 'input-invalid': !passwordIsValid() && newPassword.length > 0, 'input-touched': hasStartedTyping}"
+             [(ngModel)]="newPassword" [ngModelOptions]="{standalone: true}"
+             (input)="onPasswordInput()" placeholder="Nova senha" required>
+    </div>
+    <div class="form-group">
+      <input type="password" class="form-control"
+             [ngClass]="{'input-valid': passwordsMatch() && passwordIsValid(), 'input-invalid': confirmPassword.length > 0 && !passwordsMatch(), 'input-touched': hasStartedTyping}"
+             [(ngModel)]="confirmPassword" [ngModelOptions]="{standalone: true}"
+             (input)="onPasswordInput()" placeholder="Repita a nova senha" required>
+    </div>
+    <div *ngIf="confirmPassword && newPassword !== confirmPassword" class="alert alert-danger">
+      As senhas não coincidem.
+    </div>
+    <ul class="text-muted validation-list">
+      <li [class]="(passwordRequirements.length ? 'validation-item valid' : 'validation-item') + (hasStartedTyping ? ' input-touched' : '')">A senha deve ter no mínimo 8 caracteres</li>
+      <li [class]="(passwordRequirements.number ? 'validation-item valid' : 'validation-item') + (hasStartedTyping ? ' input-touched' : '')">A senha deve conter ao menos 1 número</li>
+      <li [class]="(passwordRequirements.lowercase ? 'validation-item valid' : 'validation-item') + (hasStartedTyping ? ' input-touched' : '')">A senha deve conter ao menos 1 letra minúscula</li>
+      <li [class]="(passwordRequirements.uppercase ? 'validation-item valid' : 'validation-item') + (hasStartedTyping ? ' input-touched' : '')">A senha deve conter ao menos 1 letra maiúscula</li>
+    </ul>
+  
+      <div class="buttons justify-content-center text-center">
+        <button type="submit" class="btn botao-principal btn-lg btn-block">
+          Atualizar senha
+        </button>
+        <button type="submit" class="btn botao-secundario btn-lg btn-block">
+          Voltar
+        </button>
+      </div>
+    </form>
+  </div>

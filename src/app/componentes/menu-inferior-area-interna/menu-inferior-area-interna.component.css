@@ -1,5 +1,4 @@
 .footer {
-    position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
@@ -7,8 +6,7 @@
     justify-content: space-around;
     align-items: center;
     background-color: #ffffff;
-    padding: 20px;
-    border-radius:  40px 40px 0 0;
+    padding: 10px;
     box-shadow: 2px 0px 132px -1px #ededed;
   }
   
@@ -31,7 +29,7 @@
     cursor: pointer;
   }
 
-  @media (min-width: 390px) {
+  @media (min-width: 600px) {
     .footer {
       display: none;
     }

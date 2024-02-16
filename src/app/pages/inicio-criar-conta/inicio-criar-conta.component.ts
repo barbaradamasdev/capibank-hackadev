@@ -1,15 +1,55 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CabecalhoLoginComponent } from "../../componentes/cabecalho-login/cabecalho-login.component";
 import { RodapeLoginComponent } from "../../componentes/rodape-login/rodape-login.component";
-import { FormularioCriarNomeComponent } from "../../componentes/formulario-criar-nome/formulario-criar-nome.component";
+import { FormularioCriarContaPgUmComponent } from './forms/formulario-criar-conta-pg-um/formulario-criar-conta-pg-um.component';
+import { FormularioCriarContaPgDoisComponent } from './forms/formulario-criar-conta-pg-dois/formulario-criar-conta-pg-dois.component';
+import { FormularioCriarContaPgTresComponent } from './forms/formulario-criar-conta-pg-tres/formulario-criar-conta-pg-tres.component';
+import { FormularioCriarContaPgQuatroComponent } from './forms/formulario-criar-conta-pg-quatro/formulario-criar-conta-pg-quatro.component';
+import { CommonModule } from '@angular/common';
+import { RouterOutlet } from '@angular/router';
+import { FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
     selector: 'app-inicio-criar-conta',
     standalone: true,
     templateUrl: './inicio-criar-conta.component.html',
     styleUrl: './inicio-criar-conta.component.css',
-    imports: [CabecalhoLoginComponent, RodapeLoginComponent, FormularioCriarNomeComponent]
+    imports: [CommonModule, RouterOutlet, CabecalhoLoginComponent, RodapeLoginComponent, FormularioCriarContaPgUmComponent, FormularioCriarContaPgDoisComponent, FormularioCriarContaPgTresComponent, FormularioCriarContaPgQuatroComponent]
 })
-export class InicioCriarContaComponent {
+export class InicioCriarContaComponent implements OnInit{
+  form!: FormGroup;
+  constructor(private formBuilder: FormBuilder) {}
 
+  ngOnInit() {
+    this.form = this.formBuilder.group({
+      passo1: this.formBuilder.group({
+        nomeCompleto: '',
+        nascimento: '',
+        telefone: ''
+      }),
+      passo2: this.formBuilder.group({
+        cep: '',
+        rua: '',
+        numero: '',
+        cidade: '',
+        complemento: ''
+      }),
+      passo3: this.formBuilder.group({
+        email: '',
+        senha: '',
+        confirmacaoSenha: ''
+      }),
+    });
+  }
+
+  getStep1Form(): FormGroup {
+    return this.form.get('passo1') as FormGroup;
+  }
+
+  getStep2Form(): FormGroup {
+    return this.form.get('passo2') as FormGroup;
+  }
+  getStep3Form(): FormGroup {
+    return this.form.get('passo3') as FormGroup;
+  }
 }
