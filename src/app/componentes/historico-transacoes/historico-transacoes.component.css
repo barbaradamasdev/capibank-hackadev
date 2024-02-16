@@ -8,11 +8,56 @@
     text-align: center;
 }
 
-.table{
-    width:100%;
-}
 .descricao{
     font-weight: 600;
     font-size: 0.7rem;
     color:rgb(163, 146, 146);
+}
+
+
+.rowTransacao {
+    display: flex;
+}
+
+.col1Saida {
+   width: 10%;
+   background: linear-gradient(0deg, rgba(11, 204, 53, 0.06), rgba(11, 204, 53, 0.06)),
+   linear-gradient(0deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.04));
+   border-radius: 6px;
+   border: 1.15px;
+}
+
+.col1Entrada {
+    width: 10%;
+    background: linear-gradient(0deg, rgba(236, 47, 47, 0.06), rgba(236, 47, 47, 0.06)),
+    linear-gradient(0deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.04));
+    border-radius: 6px;
+    border: 1.15px;
+ }
+
+.col2 {
+    width: 70%;
+    padding-left: 10px;
+}
+
+.col3 {
+    width: 20%;
+    text-align: right;
+}
+
+.itemValorSaida {
+    color: #EC2F2F;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.itemValorEntrada {
+    color: #1FA804;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.divider {
+    background: #F4F4F4;
+    height: 1px;
 }

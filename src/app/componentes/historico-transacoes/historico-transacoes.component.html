@@ -2,21 +2,19 @@
     <h1>Histórico de Transações</h1>
 </div>
 
-<table class="table table-striped">
-    <thead>
-        <th>Transações</th>
-        <th>Valor</th>
-    </thead>
-    <tbody>
-        @for (item of transacoes; track $index) {
-            <tr>
-                <td>{{item.tipo}}</td>
-                <td>{{item.valor}}</td>
-            </tr>
-           <tr class="descricao">
-            <td>{{item.motivo}}</td>
-            <td>{{item.data}}</td>
-           </tr>
-        }
-    </tbody>
-</table>
+<p>Transações</p>
+
+@for (item of transacoes; track $index) {
+    <div class="rowTransacao">
+        <div [class]="{'col1Saida': item.transacaoTipo == 1, 'col1Entrada': item.transacaoTipo == 0 }">ICON</div>
+        <div class="col2">
+            <div>{{item.tipo}}</div>
+            <div class="descricao">{{item.motivo}}</div>
+        </div>
+        <div class="col3">
+            <div [class]="{'itemValorSaida': item.transacaoTipo == 1, 'itemValorEntrada': item.transacaoTipo == 0 }">{{formatarValorTransacao(item)}}</div>
+            <div class="descricao">{{item.data}}</div>
+        </div>
+    </div>
+    <hr class="divider">
+}
