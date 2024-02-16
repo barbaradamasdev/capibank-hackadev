@@ -1,5 +1,5 @@
 body {
-    background-image: url(./banner-cartoes.png);
+    background-image: url(../../../assets/banner-cartoes.png);
     background-size: cover;
     position: relative;
     background-repeat: no-repeat;
@@ -42,7 +42,7 @@ header {
     top: 630px;
     left: 24px;
     position: fixed;
-    
+
 }
 
 .login {
@@ -68,7 +68,7 @@ footer {
     bottom: 0;
     height: 141px;
     position: fixed;
-    width: 100%;   
+    width: 100%;
 }
 
 .register {
@@ -92,7 +92,7 @@ footer {
 .do-register {
     height: 21px;
     top: 784px;
-    position: fixed; 
+    position: fixed;
     left: 24px;
 }
 
