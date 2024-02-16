@@ -1,0 +1,27 @@
+.container{
+    display: flex;
+    justify-content: center;
+    background-color: #12115D;
+    border-radius: 8px;
+    padding: 20px;
+    box-sizing: border-box;
+    margin: auto;
+    width: 90%;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+}
+.dados{
+    padding-left:20px;
+    margin-right: auto;
+}
+.dados:hover{
+    cursor: default;
+}
+.dados h4{
+    color: #FFFFFF;
+    ;
+}
+.dados p{
+    color: #7F7F7F;
+}

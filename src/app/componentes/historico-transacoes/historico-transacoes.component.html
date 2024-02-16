@@ -1,1 +1,25 @@
-<p>historico-transacoes works!</p>
+<div class="container">
+    <h1>Transações</h1> 
+</div>
+
+<table class="table table-striped">
+    <thead>
+        <th>Transações</th>
+        
+        <th>Valor</th>
+    </thead>
+    <tbody>
+        @for (item of transacoes; track $index) {
+            <tr>
+                <td>{{item.tipo}}</td>
+                
+                <td>{{item.valor}}</td>
+            </tr>
+           <tr class="descricao">
+            <td>{{item.motivo}}</td>
+            <td>{{item.data}}</td>
+           </tr>
+            
+        }
+    </tbody>
+</table>
