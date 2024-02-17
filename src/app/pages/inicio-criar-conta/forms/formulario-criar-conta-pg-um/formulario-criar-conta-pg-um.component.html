@@ -8,24 +8,30 @@
         <p class="title-form">Me fale um pouco sobre você</p>
 
         <input
-          type="text"
-          class="form-control"
-          id="nome"
-          placeholder="Nome Completo"
+            formControlName="nome"
+            type="text"
+            class="form-control"
+            placeholder="Nome Completo"
         />
 
         <input
-          type="text"
-          class="form-control"
-          id="nome"
-          placeholder="Data De Nascimento"
+            type="text"
+            class="form-control"
+            id="dataNascimento"
+            placeholder="dd/mm/aaaa"
+            (input)="formatarDataNascimento($event)"
+            (keypress)="apenasNumeros($event)"
+            maxlength="10"
         />
 
         <input
-          type="text"
-          class="form-control"
-          id="telefone"
-          placeholder="Telefone"
+            type="text"
+            class="form-control"
+            id="telefone"
+            placeholder="Telefone"
+            (input)="formatarTelefone($event)"
+            (keypress)="apenasNumeros($event)"
+            maxlength="17"
         />
       </div>
 
