@@ -6,7 +6,6 @@ import { FormularioCriarSucessoComponent } from "../../componentes/formulario-cr
 import { CriarContaLinkComponent } from "../../componentes/criar-conta-link/criar-conta-link.component";
 import { EsqueciSenhaLoginComponent } from "../../componentes/esqueci-senha-login/esqueci-senha-login.component";
 import { FormularioCriarNomeComponent } from "../../componentes/formulario-criar-nome/formulario-criar-nome.component";
-import { FormularioRecuperarCriarNovaSenhaComponent } from "../../components/formulario-recuperar-criar-nova-senha/formulario-recuperar-criar-nova-senha.component";
 import { FormularioRecuperarPgUmComponent } from "../../componentes/formulario-recuperar-pg-um/formulario-recuperar-pg-um.component";
 import { FormularioRecuperarPgTresComponent } from "../../componentes/formulario-recuperar-pg-tres/formulario-recuperar-pg-tres.component";
 import { FormularioRecuperarPgDoisComponent } from "../../componentes/formulario-recuperar-pg-dois/formulario-recuperar-pg-dois.component";
