@@ -1,12 +1,14 @@
-.container-form{
-    max-width: 744px;
-    margin:auto;
-    border-radius: 25px 25px 0px 0px;
-    margin-top: -30px;
-    background: white;
-  }
+.container {
+  margin: auto;
+  border-radius: 25px 25px 0px 0px;
+  margin-top: -55px;
+  background: white;
+  padding: 0 !important;
+  height: 100svh;
+}
 
-  .title-form {
+  .form-title {
+    text-align: center;
     display: flex;
     color: var(--cor-azul-escuro);
     font-family: "Inter", sans-serif;
@@ -28,8 +30,8 @@
   .p-4 {
     padding-top: 8px !important;
   }
-  
-  .create-account {
+
+  .section-title {
     display: flex;
     color: var(--cor-azul-escuro);
     font-family: "Inter", sans-serif;
@@ -43,47 +45,65 @@
     margin-bottom: 30px;
     position: relative;
   }
-  
-  .create-account::after {
+
+  .section-title::after {
     content: "";
     border-bottom: 4px solid var(--cor-dourado);
     position: absolute;
     bottom: -5px;
     height: 64px;
-    width: 744px;
-    max-width: 100vw;
+    left: 0;
+    right: 0;
     background: rgba(128, 128, 128, 0.064);
     border-radius: 25px 25px 0px 0px;
   }
-  
+
   input {
     font-size: 13px;
     padding: 22px 12px;
     background: rgba(128, 128, 128, 0.017);
-    max-width: 378px;
+    max-width: 300px;
     margin: auto;
   }
 
   .validacoes{
     font-size: 13px;
     list-style: none;
-    width: 350px;
+    max-width: 80%;
+    width: 378px;
+    margin: auto;
+    padding-left: 0;
   }
 
   small{
     color: red;
+    padding: 0 20px;
+    margin: auto;
   }
-  
+
   .form-group {
     margin-bottom: .7rem;
   }
-  
+
   .btn-criar-conta{
-    width: 168px;
+    width: 200px;
+    max-width: 540vw;
     height: 56px;
     padding: 16px 20px;
 }
 
+.buttons {
+  max-width: 80%;
+  width: 378px;
+  margin: auto;
+  /* padding-top: 30px; */
+}
 
-
-  
+input {
+  font-size: 13px;
+  padding: 22px 12px;
+  background: rgba(128, 128, 128, 0.017);
+  max-width: 80%;
+  width: 378px;
+  margin: auto;
+}

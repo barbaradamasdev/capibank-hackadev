@@ -1,17 +1,14 @@
-<div class="container-form p-4">
+<div class="container p-4">
 
-    <h6 class="create-account">Abra sua conta</h6>
+    <h6 class="section-title">Abra sua conta</h6>
 
     <form>
       <div class="form-group">
 
-        <p class="title-form">
-            Agora que já temos o seu endereço
-            informe seu E-mail e Senha
-        </p>
+        <p class="form-title">Agora que já temos o seu endereço<br>Informe seu E-mail e Senha</p>
 
-        <small>E-mail inválido!</small>
         <input
+          formControlName="email"
           type="text"
           class="form-control"
           id="email"
@@ -19,6 +16,7 @@
         />
 
         <input
+          formControlName="newPassword"
           type="text"
           class="form-control"
           id="senha"
@@ -26,6 +24,7 @@
         />
 
         <input
+          formControlName="confirmPassword"
           type="text"
           class="form-control"
           id="repeteSenha"
@@ -34,18 +33,18 @@
 
       </div>
 
-      <div class="validacoes">
-        <li>A senha deve conter ao menos 1 número</li>
-        <li>A senha deve conter ao menos 1 letra minúscula</li>
-        <li>A senha deve conter ao menos 1 letra maiúscula</li>
-        <li>A senha deve ter no mínimo 8 caracteres</li>
-      </div>
+      <ul class="text-muted validation-list validacoes">
+        <li [class]="(passwordRequirements.length ? 'validation-item valid' : 'validation-item') + (hasStartedTyping ? ' input-touched' : '')">A senha deve ter no mínimo 8 caracteres</li>
+        <li [class]="(passwordRequirements.number ? 'validation-item valid' : 'validation-item') + (hasStartedTyping ? ' input-touched' : '')">A senha deve conter ao menos 1 número</li>
+        <li [class]="(passwordRequirements.lowercase ? 'validation-item valid' : 'validation-item') + (hasStartedTyping ? ' input-touched' : '')">A senha deve conter ao menos 1 letra minúscula</li>
+        <li [class]="(passwordRequirements.uppercase ? 'validation-item valid' : 'validation-item') + (hasStartedTyping ? ' input-touched' : '')">A senha deve conter ao menos 1 letra maiúscula</li>
+      </ul>
 
-      <div class="buttons justify-content-center text-center d-flex gap-3 mt-5">
+      <div class="buttons text-center d-flex gap-3 mt-5">
         <button  routerLink="/cadastrar/passo-2" type="submit"  class="btn botao-secundario btn-lg btn-criar-conta">
           Voltar
         </button>
-        <button  routerLink="/cadastrar/passo-3" type="submit" class="btn botao-principal btn-lg btn-criar-conta">
+        <button  routerLink="/cadastrar/passo-4" type="submit" class="btn botao-principal btn-lg btn-criar-conta">
           Próximo
         </button>
       </div>

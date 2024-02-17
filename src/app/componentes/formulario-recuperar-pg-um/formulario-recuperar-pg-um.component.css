@@ -1,8 +1,8 @@
-.container-form{
+.container{
   max-width: 744px;
   margin:auto;
   border-radius: 25px 25px 0px 0px;
-  margin-top: -30px;
+  margin-top: -55px;
   background: white;
 }
 
@@ -32,7 +32,7 @@
   padding-top: 8px !important;
 }
 
-.login {
+.section-title {
   display: flex;
   color: var(--cor-azul-escuro);
   font-family: "Inter", sans-serif;
@@ -47,13 +47,13 @@
   position: relative;
 }
 
-.login::after {
+.section-title::after {
   content: "";
   border-bottom: 4px solid var(--cor-dourado);
   position: absolute;
   bottom: -5px;
   height: 64px;
-  width: 744px;
+  width: 113%;
   max-width: 100vw;
   background: rgba(128, 128, 128, 0.064);
   border-radius: 25px 25px 0px 0px;

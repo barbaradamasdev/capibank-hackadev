@@ -9,21 +9,28 @@ import { FormularioCriarContaPgUmComponent } from './pages/inicio-criar-conta/fo
 import { FormularioCriarContaPgDoisComponent } from './pages/inicio-criar-conta/forms/formulario-criar-conta-pg-dois/formulario-criar-conta-pg-dois.component';
 import { FormularioCriarContaPgTresComponent } from './pages/inicio-criar-conta/forms/formulario-criar-conta-pg-tres/formulario-criar-conta-pg-tres.component';
 import { autenticarGuard } from './seguranca/autenticar.guard';
+import { InicioBannerComponent } from './componentes/inicio-banner/inicio-banner.component';
+import { FormularioCriarContaPgQuatroComponent } from './pages/inicio-criar-conta/forms/formulario-criar-conta-pg-quatro/formulario-criar-conta-pg-quatro.component';
 export const routes: Routes = [
     {path:'login',component:InicioLoginComponent},
+    {path:'banner',component:InicioBannerComponent},
     {path:'cadastrar',component:InicioCriarContaComponent,
     children:[
       {
-      path:'passo-1',
-      component: FormularioCriarContaPgUmComponent
+        path:'passo-1',
+        component: FormularioCriarContaPgUmComponent
       },
       {
-      path:'passo-2',
-      component: FormularioCriarContaPgDoisComponent
+        path:'passo-2',
+        component: FormularioCriarContaPgDoisComponent
       },
       {
         path:'passo-3',
         component: FormularioCriarContaPgTresComponent
+      },
+      {
+        path:'passo-4',
+        component: FormularioCriarContaPgQuatroComponent
       }
     ]
   },

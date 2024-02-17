@@ -8,13 +8,14 @@ import { FormularioCriarContaPgQuatroComponent } from './forms/formulario-criar-
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { FormGroup, FormBuilder } from '@angular/forms';
+import { InicioBannerComponent } from "../../componentes/inicio-banner/inicio-banner.component";
 
 @Component({
     selector: 'app-inicio-criar-conta',
     standalone: true,
     templateUrl: './inicio-criar-conta.component.html',
     styleUrl: './inicio-criar-conta.component.css',
-    imports: [CommonModule, RouterOutlet, CabecalhoLoginComponent, RodapeLoginComponent, FormularioCriarContaPgUmComponent, FormularioCriarContaPgDoisComponent, FormularioCriarContaPgTresComponent, FormularioCriarContaPgQuatroComponent]
+    imports: [CommonModule, RouterOutlet, CabecalhoLoginComponent, RodapeLoginComponent, FormularioCriarContaPgUmComponent, FormularioCriarContaPgDoisComponent, FormularioCriarContaPgTresComponent, FormularioCriarContaPgQuatroComponent, InicioBannerComponent]
 })
 export class InicioCriarContaComponent implements OnInit{
   form!: FormGroup;
@@ -45,7 +46,6 @@ export class InicioCriarContaComponent implements OnInit{
   getStep1Form(): FormGroup {
     return this.form.get('passo1') as FormGroup;
   }
-
   getStep2Form(): FormGroup {
     return this.form.get('passo2') as FormGroup;
   }

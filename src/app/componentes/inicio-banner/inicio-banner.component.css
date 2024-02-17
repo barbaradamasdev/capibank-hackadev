@@ -1,77 +1,35 @@
-body {
-    background-image: url(../../../assets/banner-cartoes.png);
-    background-size: cover;
-    position: relative;
-    background-repeat: no-repeat;
-    height: 703px;
-    background-position: center;
-    background-color: #0D0E1E;
-}
-
-header {
-    color: white;
-    min-height: 230px;
-}
-
-.bank {
-    justify-content: space-between;
-    margin-top: 40px;
-    margin-bottom: 40px;
+section {
+  background: #0D0E1E url(../../../assets/banner-cartoes-3.png) center/cover no-repeat;
+  height: 100dvh;
+  flex-direction: column;
+  padding: 25px;
+  width: 100vw;
 }
 
 .logo {
     width: 124px;
     object-fit: contain;
-    margin: auto;
+    margin: 67px auto;
+    display: flex;
+    justify-self: center;
 }
 
-@media screen and (min-width: 745px) {
-    .bank {
-        display: none;
-    }
+.buttons {
+  margin-top: auto;
+  flex-direction: column;
+  margin-bottom: 20px;
 }
 
 .catchphrase {
     font-family: "Poppins", "sans-serif";
     font-weight: 500;
     font-size: 23px;
-    line-height: 27.6px;
     color: white;
     width: 291px;
-    height: 56px;
-    top: 630px;
-    left: 24px;
-    position: fixed;
-
+    margin: 0;
 }
 
-.login {
-    background-color: var(--cor-azul-claro);
-    color: var(--cor-branco);
-    font-family: "Poppins", "sans-serif";
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 24px;
-    letter-spacing: 0em;
-    text-align: center;
-    width: 232px;
-    height: 60px;
-    top: 703px;
-    margin-left: 24px;
-    border-radius: 18px;
-    border: 1px solid rgba(255, 255, 255, 0.221);
-}
-
-footer {
-    border-top: 1px solid #0D0E1E;
-    background-color: #0D0E1E;
-    bottom: 0;
-    height: 141px;
-    position: fixed;
-    width: 100%;
-}
-
-.register {
+.register  > a{
     color: white;
     text-align: right;
     font-family: "Poppins", sans-serif;
@@ -89,10 +47,12 @@ footer {
     line-height: 21px;
 }
 
-.do-register {
-    height: 21px;
-    top: 784px;
-    position: fixed;
-    left: 24px;
-}
+@media (min-width: 744px) {
+  .botao-banner, .register > *{
+    display: none;
+  }
 
+  section {
+    max-width: 50vw;
+  }
+}

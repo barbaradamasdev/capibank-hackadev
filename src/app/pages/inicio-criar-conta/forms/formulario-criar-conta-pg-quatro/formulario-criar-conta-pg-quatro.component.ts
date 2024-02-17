@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-formulario-criar-conta-pg-quatro',
   standalone: true,
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './formulario-criar-conta-pg-quatro.component.html',
   styleUrl: './formulario-criar-conta-pg-quatro.component.css'
 })

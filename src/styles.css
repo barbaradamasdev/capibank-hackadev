@@ -7,6 +7,10 @@
     box-sizing: border-box;
 }
 
+body {
+  overflow: hidden;
+}
+
 .logo {
     font-family: "Poppins", "sans-serif";
 }
@@ -52,6 +56,25 @@ button  {
     font-size: 14px !important;
     height: 56px;
     border-radius: 3px;
+}
+
+.botao-banner {
+  background-color: var(--cor-azul-claro);
+  color: var(--cor-branco);
+  font-family: "Poppins", "sans-serif";
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0em;
+  width: 232px;
+  height: 60px;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.221);
+}
+
+.botao-banner:hover {
+  background: var(--cor-dourado);
+  color: var(--cor-azul-medio);
 }
 
 .botao-principal {

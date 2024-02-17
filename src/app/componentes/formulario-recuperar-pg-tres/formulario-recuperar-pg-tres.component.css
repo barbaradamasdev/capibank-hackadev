@@ -1,16 +1,16 @@
-.container-form{
+.container{
     max-width: 744px;
     margin:auto;
     border-radius: 25px 25px 0px 0px;
-    margin-top: -30px;
+    margin-top: -55px;
     background: white;
   }
-  
+
   .forgot-password {
     color: var(--cor-azul-escuro);
     text-decoration: none;
   }
-  
+
   .register {
     color: black;
     text-align: right;
@@ -19,7 +19,7 @@
     font-size: 13px;
     line-height: 19.5px;
   }
-  
+
   .account {
     color: var(--cor-cinza);
     font-family: "Poppins", sans-serif;
@@ -27,12 +27,12 @@
     font-size: 13px;
     line-height: 19.5px;
   }
-  
+
   .p-4 {
     padding-top: 8px !important;
   }
-  
-  .login {
+
+  .section-title {
     display: flex;
     color: var(--cor-azul-escuro);
     font-family: "Inter", sans-serif;
@@ -53,8 +53,8 @@
     justify-content: center;
     height: 300px;
   }
-  
-  .login::after {
+
+  .section-title::after {
     content: "";
     border-bottom: 4px solid var(--cor-dourado);
     position: absolute;
@@ -65,16 +65,16 @@
     background: rgba(128, 128, 128, 0.064);
     border-radius: 25px 25px 0px 0px;
   }
-  
+
   .form-login {
     margin-top: 30px;
   }
-  
+
   .buttons > * {
     margin: 7px 0;
     max-width: 378px;
   }
-  
+
   input {
     font-size: 13px;
     padding: 22px 12px;
@@ -82,16 +82,16 @@
     max-width: 378px;
     margin: auto;
   }
-  
+
   .form-group {
     margin-bottom: .7rem;
   }
-  
+
   .email, .password {
     margin-right: 40px;
     margin-left: 20px;
   }
-  
+
   .forgot-password {
     font-size: 14px;
     font-weight: 500;
@@ -104,7 +104,7 @@
     .botao-secundario {
       display: none;
     }
-  
+
     form {
       margin-top: 50px;
     }
