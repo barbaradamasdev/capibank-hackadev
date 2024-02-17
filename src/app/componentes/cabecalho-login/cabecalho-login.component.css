@@ -1,3 +1,10 @@
+.flex {
+  width: 100vw;
+}
+
+.container {
+  max-width: 100vw;
+}
 
 header {
   background-color: var(--cor-azul-medio);
@@ -25,62 +32,6 @@ header {
   font-family: "Inter", sans-serif;
   font-weight: 600;
   font-size: 20px;
-  line-height: 24.2px;
-  letter-spacing: -0.41px;
-}
-
-.config {
-  width: 390px;
-  height: 47px;
-}
-
-.time {
-  width: 54px;
-  height: 21px;
-  top: 14px;
-  left: 19px;
-  border-radius: 24px;
-}
-
-.space {
-  background-color: black;
-  color: black;
-  width: 156px;
-  height: 33px;
-  top: -2px;
-  border-radius: 0px 0px 20px 20px;
-}
-
-.icons {
-  width: 77.4px;
-  height: 13px;
-  top: 14px;
-}
-
-.bi-reception {
-  width: 18px;
-  height:12px;
-  top: 20px;
-  left: 286px;
-}
-
-.bi-wifi-2 {
-  width: 17px;
-  height:11.83px;
-  top: 20px;
-  left: 312px;
-}
-
-.bi-battery-full {
-  width: 27.4px;
-  height: 13px;
-  top: 19px;
-  left: 336px;
-}
-
-.welcome-div {
-  width: 350px;
-  left: 20px;
 }
 
 .bank {
@@ -91,18 +42,22 @@ header {
 
 .logo {
   width: 124px;
-  object-fit: contain;
-  margin: auto;
 }
 
-@media screen and (min-width: 745px) {
+@media screen and (min-width: 744px) {
   .bank {
     display: none;
   }
 
   .welcome-div{
-    margin-top: 135px;
+    margin-top: 100px;
     text-align: center;
     width: 100%;
   }
+
+  header {
+    max-width: 50vw;
+    width: 100vw;
+  }
+
 }
