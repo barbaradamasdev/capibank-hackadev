@@ -5,20 +5,36 @@
     <form [formGroup]="entradaCep" >
       <div class="form-group">
 
-        <p class="title-form">Onde Você Mora?</p>
+          <p class="title-form">Onde Você Mora?</p>
 
-        <input formControlName="cep"
-         type="text" 
-         class="form-control"
-          placeholder="CEP"
-           (blur)="buscarEndereco()"
+          <input formControlName="cep"
+          type="text" 
+          class="form-control"
+            placeholder="CEP"
+            (blur)="buscarEndereco()"
 
-        />
-        
-        <input type="text" class="form-control" formControlName="rua" placeholder="Rua"  />
-<input type="text" class="form-control" formControlName="numero" placeholder="Número" />
-<input type="text" class="form-control" formControlName="cidade" placeholder="Cidade" readonly />
-<input type="text" class="form-control" formControlName="complemento" placeholder="Complemento (opcional)" />
+          />
+          
+          <input type="text"
+          class="form-control"
+            formControlName="rua"
+            placeholder="Rua" 
+              />
+            <input type="text"
+            class="form-control"
+              formControlName="numero"
+              placeholder="Número"
+              />
+            <input type="text"
+            class="form-control"
+              formControlName="cidade"
+              placeholder="Cidade" readonly 
+              />
+            <input type="text"
+            class="form-control"
+              formControlName="complemento"
+              placeholder="Complemento (opcional)" 
+            />
       </div>
 
       <div class="buttons justify-content-center text-center d-flex gap-3 mt-5">
