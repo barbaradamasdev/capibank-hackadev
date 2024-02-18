@@ -46,6 +46,11 @@
 .icon img {
   width: 24px;
   margin-top: 15px;
+  transition: all 300ms ease;
+}
+
+.icon:hover img {
+  transform: scale(1.25);
 }
 
 .icon p {
