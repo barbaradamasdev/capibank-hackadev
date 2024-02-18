@@ -1,12 +1,13 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormularioRecuperarPgTresComponent } from '../formulario-recuperar-pg-tres/formulario-recuperar-pg-tres.component';
 
 
 @Component({
   selector: 'app-formulario-recuperar-pg-dois',
   standalone: true,
-  imports: [ReactiveFormsModule, FormsModule, CommonModule],
+  imports: [ReactiveFormsModule, FormsModule, CommonModule,FormularioRecuperarPgTresComponent],
   templateUrl: './formulario-recuperar-pg-dois.component.html',
   styleUrl: './formulario-recuperar-pg-dois.component.css'
 })
