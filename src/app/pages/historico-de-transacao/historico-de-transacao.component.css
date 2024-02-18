@@ -1,6 +1,6 @@
 .grid {
   grid-template-areas:
-    "acesso-rapido acesso-rapido acesso-rapido"
+    "busca busca busca"
     "historico-transacoes historico-transacoes historico-transacoes"
     "historico-transacoes historico-transacoes historico-transacoes";
   gap: 16px; /* Ajuste o valor de gap conforme necessário */
@@ -11,6 +11,14 @@
 /* Defina a largura mínima para cada componente conforme a especificação */
 app-acesso-rapido-area-interna {
   grid-area: acesso-rapido;
+}
+
+app-barra-de-busca {
+  grid-area: busca;
+  padding: 0 10px;
+  width: 100%;
+  max-width: 870px;
+  margin: auto;
 }
 
 app-menu-lateral {
@@ -37,7 +45,7 @@ app-historico-transacoes {
 
   .grid {
     grid-template-areas:
-      "historico-transacoes historico-transacoes historico-transacoes"
+      "busca busca busca"
       "historico-transacoes historico-transacoes historico-transacoes"
       "historico-transacoes historico-transacoes historico-transacoes";
   }
@@ -45,9 +53,11 @@ app-historico-transacoes {
 
 @media (min-width: 746px)  {
   .grid {
+    grid-template-rows: 10% 45% 45%;
     grid-template-areas:
-    "menu-lateral historico-transacoes historico-transacoes"
+    "menu-lateral busca busca"
     "menu-lateral historico-transacoes historico-transacoes"
     "menu-lateral historico-transacoes historico-transacoes";
   }
+
 }
