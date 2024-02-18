@@ -98,5 +98,7 @@ input {
 @media screen and (max-width: 744px) {
   .container {
     margin-top: -27px;
+    max-width: 100vw;
+    margin-left: 0;
   }
 }
