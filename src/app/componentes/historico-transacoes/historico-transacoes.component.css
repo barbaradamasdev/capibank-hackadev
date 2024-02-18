@@ -16,6 +16,26 @@
   max-width: 96vw;
 }
 
+.overflow {
+  overflow-y: auto;
+  padding-right: 15px;
+  max-height: 430px;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(46, 94, 252, 0.321);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+  border-radius: 4px;
+}
+
 .see-all {
     color: var(--cor-azul-medio);
     font-weight: 500;
