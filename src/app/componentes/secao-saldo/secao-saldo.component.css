@@ -13,12 +13,13 @@ section {
     margin: 0 auto;
     text-align: left;
     position: relative;
+    padding: 15px 0;
 }
 
 .container::after {
   content: url(../../../assets/saldo-marca-circulo.png);
   position: absolute;
-  left: 0;
+  left: -18px;
   bottom: -4px;
 }
 
@@ -31,8 +32,6 @@ section {
 
 .dados{
   flex-direction: column;
-    padding-left:20px;
-    margin-right: auto;
 }
 
 .dados h4{
@@ -50,6 +49,11 @@ section {
 }
 
 @media (min-width: 745px) {
+
+  .dados{
+      padding-left:20px;
+  }
+
   section{
     border-radius: 0;
     margin: 0;
