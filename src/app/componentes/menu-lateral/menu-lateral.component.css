@@ -9,15 +9,18 @@
   background: white;
 }
 
-
-
-.sidebar .nav-link {
+.nav-link {
   display: flex;
   align-items: center;
   text-decoration: none;
   color: black;
   font-size: 14px;
   padding: 10px;
+  transition: transform 100ms ease;
+}
+
+.nav-link:hover {
+  transform: translateX(5px);
 }
 
 .sidebar .nav-link img {
@@ -41,6 +44,7 @@
   .sidebar {
     position: absolute;
     top: -150px;
+    left: -5px;
     width: 100vw;
   }
 }

@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { NavigationEnd, Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-menu-inferior-area-interna',
@@ -11,15 +11,31 @@ import { RouterLink } from '@angular/router';
 })
 export class MenuInferiorAreaInternaComponent {
 
+  // Verifica rota para destacar menu inferior
+  destacarIcone: boolean[] = [false, false, false, false];
+
+  constructor(private router: Router) {
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        const url = event.url;
+
+        // Verifica se o link de cada ícone corresponde à página atual
+        this.icons.forEach((icon, index) => {
+          if (url.endsWith(icon.link)) {
+            this.destacarIcone[index] = true;
+          }
+        });
+      }
+    });
+  }
+
   // Definindo as imagens iniciais e cores das legendas
   icons = [
-    { src: 'assets/icones/icone-inicio-cinza.png', alt: 'Início', color: '#666', link:'/historico'},
+    { src: 'assets/icones/icone-inicio-cinza.png', alt: 'Inicio', color: '#666', link:'/cliente'},
     { src: 'assets/icones/icone-transacoes-cinza.png', alt: 'Transações', color: '#666', link:'/historico'},
-    { src: 'assets/icones/icone-cartoes-cinza.png', alt: 'Meus cartões', color: '#666', link:'/historico'},
-    { src: 'assets/icones/icone-config-cinza.png', alt: 'Configurações', color: '#666', link:'/historico' }
+    { src: 'assets/icones/icone-cartoes-cinza.png', alt: 'Meus cartões', color: '#666', link:'/cartoes'},
+    { src: 'assets/icones/icone-config-cinza.png', alt: 'Configurações', color: '#666', link:'/config' }
   ];
-
-  constructor() { }
 
   // Método para alterar a imagem e a cor da legenda quando o mouse entra
   onMouseEnter(icon: any) {
@@ -32,5 +48,4 @@ export class MenuInferiorAreaInternaComponent {
     icon.src = icon.src.replace('-azul.png', '-cinza.png');
     icon.color = '#666';
   }
-
 }
