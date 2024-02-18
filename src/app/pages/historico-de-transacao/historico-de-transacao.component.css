@@ -16,3 +16,46 @@
     font-size: 0.7rem;
     color:rgb(163, 146, 146);
 }
+
+.grid {
+  grid-template-areas:
+    "historico-transacoes historico-transacoes historico-transacoes"
+    "historico-transacoes historico-transacoes historico-transacoes";
+  gap: 16px; /* Ajuste o valor de gap conforme necessário */
+  grid-template-columns: 1fr 2fr 2fr;
+}
+
+app-menu-lateral {
+  grid-area: menu-lateral;
+  width: 210px;
+}
+
+app-historico-transacoes {
+  grid-area: historico-transacoes;
+}
+
+@media (max-width: 745px) {
+  app-menu-lateral {
+    display: none;
+  }
+
+  .grid {
+    grid-template-areas:
+      "historico-transacoes historico-transacoes historico-transacoes"
+      "historico-transacoes historico-transacoes historico-transacoes";
+  }
+}
+
+@media (min-width: 746px) {
+
+  app-menu-lateral {
+    display: inherit;
+  }
+
+
+  .grid {
+    grid-template-areas:
+    "menu-lateral historico-transacoes historico-transacoes"
+    "menu-lateral historico-transacoes historico-transacoes";
+  }
+}
