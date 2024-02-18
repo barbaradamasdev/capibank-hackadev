@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { Transacao } from '../../Models/Transacao';
 import { TransacaoTipo } from '../../Models/TransacaoTipo';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-historico-transacoes',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './historico-transacoes.component.html',
   styleUrl: './historico-transacoes.component.css'
 })

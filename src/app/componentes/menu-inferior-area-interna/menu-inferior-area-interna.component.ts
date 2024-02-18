@@ -1,10 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-menu-inferior-area-interna',
   standalone: true,
-  imports: [ CommonModule ],
+  imports: [ CommonModule , RouterLink],
   templateUrl: './menu-inferior-area-interna.component.html',
   styleUrl: './menu-inferior-area-interna.component.css'
 })
@@ -12,10 +13,10 @@ export class MenuInferiorAreaInternaComponent {
 
   // Definindo as imagens iniciais e cores das legendas
   icons = [
-    { src: 'assets/icones/icone-inicio-cinza.png', alt: 'Início', color: '#666' },
-    { src: 'assets/icones/icone-transacoes-cinza.png', alt: 'Transações', color: '#666' },
-    { src: 'assets/icones/icone-cartoes-cinza.png', alt: 'Meus cartões', color: '#666' },
-    { src: 'assets/icones/icone-config-cinza.png', alt: 'Configurações', color: '#666' }
+    { src: 'assets/icones/icone-inicio-cinza.png', alt: 'Início', color: '#666', link:'/historico'},
+    { src: 'assets/icones/icone-transacoes-cinza.png', alt: 'Transações', color: '#666', link:'/historico'},
+    { src: 'assets/icones/icone-cartoes-cinza.png', alt: 'Meus cartões', color: '#666', link:'/historico'},
+    { src: 'assets/icones/icone-config-cinza.png', alt: 'Configurações', color: '#666', link:'/historico' }
   ];
 
   constructor() { }

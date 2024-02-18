@@ -2,40 +2,74 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
-    max-width: 800px;
-    margin: 0 auto;
-    margin-left: 1px;
-    width: 135%;
     box-sizing: border-box;
 }
 
 .header h2 {
     font-weight: bold;
     margin: 0;
+    font-size: 16px;
+}
+
+.grid {
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.icon > * {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  max-width: 96vw;
 }
 
 .see-all {
-    color: blue;
-    font-weight: bold;
-    cursor: pointer;
+  color: var(--cor-azul-medio);
+  font-weight: 500;
+  font-size: 12px;
+  cursor: pointer;
 }
 
-.icons-container {
-    display: flex;
-    justify-content:space-evenly;
-    align-items: center; /* Adicionado para centralizar verticalmente os ícones */
-    margin-top: 20px;
-    text-align: center;
-    justify-items: center;
-    width: 135%;
+.icon {
+  background: #F7F7F7;
+  padding: 5px;
+  border-radius: 10px;
+  min-width: 80px;
+  max-width: 100%;
 }
 
 .icon img {
-    width: 70px; /* Reduzido o tamanho das imagens dos ícones */
-    height: auto; /* Altura automática para manter a proporção */
+  width: 24px;
+  margin-top: 15px;
 }
 
 .icon p {
-    margin: 10px 0 0 0;
+    margin-top: 10px;
+    font-size: 10px;
+}
+
+@media (min-width: 744px) {
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    grid-template-rows: repeat(auto-fit, minmax(140px, 1fr));
+  }
+
+  .icon {
+    min-width: 140px;
+    height: 140px;
+  }
+
+  .icon img {
+    width: 45px;
+    margin-top: 30px;
+  }
+
+  .icon p {
+      font-size: 14px;
+  }
 }

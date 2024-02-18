@@ -1,20 +1,24 @@
 <div class="container">
-    <h1>Histórico de Transações</h1>
-</div>
 
-<p>Transações</p>
-
-@for (item of transacoes; track $index) {
+  <div class="header">
+    <h2>Transações</h2>
+    <div routerLink="/historico" class="see-all">Veja tudo</div>
+  </div>
+<!-- TODO adicionar barra de busca -->
+  @for (item of transacoes; track $index) {
     <div class="rowTransacao">
-        <div [class]="{'col1Saida': item.transacaoTipo == 1, 'col1Entrada': item.transacaoTipo == 0 }">ICON</div>
-        <div class="col2">
-            <div>{{item.tipo}}</div>
-            <div class="descricao">{{item.motivo}}</div>
-        </div>
-        <div class="col3">
-            <div [class]="{'itemValorSaida': item.transacaoTipo == 1, 'itemValorEntrada': item.transacaoTipo == 0 }">{{formatarValorTransacao(item)}}</div>
-            <div class="descricao">{{item.data}}</div>
+      <div class="icone-transacao" [class]="{'col1Saida': item.transacaoTipo === 1, 'col1Entrada': item.transacaoTipo === 0 }">
+      </div>
+      <div class="col2">
+        <div>{{item.tipo}}</div>
+        <div class="descricao">{{item.motivo}}</div>
+      </div>
+      <div class="col3">
+        <div [class]="{'itemValorSaida': item.transacaoTipo == 1, 'itemValorEntrada': item.transacaoTipo == 0 }">{{formatarValorTransacao(item)}}</div>
+        <div class="descricao">{{item.data}}</div>
         </div>
     </div>
     <hr class="divider">
 }
+
+</div>

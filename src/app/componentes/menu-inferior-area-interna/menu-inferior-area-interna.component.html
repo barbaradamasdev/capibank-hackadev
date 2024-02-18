@@ -1,8 +1,9 @@
 <div class="footer">
-    <figure *ngFor="let icon of icons" 
-            (mouseenter)="onMouseEnter(icon)" 
+    <figure *ngFor="let icon of icons"
+            (mouseenter)="onMouseEnter(icon)"
             (mouseleave)="onMouseLeave(icon)">
-        <img [src]="icon.src" [alt]="icon.alt">
-        <figcaption class="figcaption" [style.color]="icon.color">{{ icon.alt }}</figcaption>
+        <img [routerLink]="icon.link" [src]="icon.src" [alt]="icon.alt">
+        <figcaption [routerLink]="icon.link" class="figcaption" [style.color]="icon.color">{{ icon.alt }}</figcaption>
     </figure>
 </div>
+<!-- TODO funcao para ficar com botao azul dependendo do final da rota -->

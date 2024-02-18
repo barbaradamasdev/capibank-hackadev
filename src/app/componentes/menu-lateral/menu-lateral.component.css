@@ -4,7 +4,7 @@
     width: 195px;
     margin-left:20px;
     height: 100vh;
-   
+
 }
 .container a{
     color: black;
@@ -13,3 +13,12 @@
 .container img{
    width: 30px;
 }
+
+/* TODO editar menu lateral */
+
+/*
+@media (max-width: 743px) {
+  .container {
+    display: none;
+  }
+} */

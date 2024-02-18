@@ -13,6 +13,7 @@
   }
 
   .footer figure {
+    margin-bottom: 0;
     text-align: center;
     transition: transform 0.3s ease;
     font-size: 11px;
@@ -26,12 +27,11 @@
   }
 
   .footer img {
-    width: 40px;
-    height: auto;
+    width: 20px;
     cursor: pointer;
   }
 
-  @media (min-width: 390px) {
+  @media (min-width: 744px) {
     .footer {
       display: none;
     }

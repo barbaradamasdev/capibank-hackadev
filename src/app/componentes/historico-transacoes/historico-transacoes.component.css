@@ -1,11 +1,26 @@
-.container{
-    padding-top:40px;
-    width: 500px;
-    display: flex;
-    margin: auto;
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  margin-top: -20px;
 }
-.container h1{
-    text-align: center;
+
+.header h2 {
+  font-weight: bold;
+  margin: 20px 0;
+  font-size: 16px;
+}
+
+.container {
+  max-width: 96vw;
+}
+
+.see-all {
+    color: var(--cor-azul-medio);
+    font-weight: 500;
+    font-size: 12px;
+    cursor: pointer;
 }
 
 .descricao{
@@ -14,29 +29,30 @@
     color:rgb(163, 146, 146);
 }
 
+.container {
+  max-width: 870px;
+}
 
 .rowTransacao {
-    display: flex;
+  display: flex;
+  justify-content: space-between;
 }
 
 .col1Saida {
-   width: 10%;
-   background: linear-gradient(0deg, rgba(11, 204, 53, 0.06), rgba(11, 204, 53, 0.06)),
-   linear-gradient(0deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.04));
-   border-radius: 6px;
-   border: 1.15px;
+  width: 40px;
+  background: url(../../../assets/icones/icone-enviado.png) no-repeat;
+  background-size: contain;
 }
 
 .col1Entrada {
-    width: 10%;
-    background: linear-gradient(0deg, rgba(236, 47, 47, 0.06), rgba(236, 47, 47, 0.06)),
-    linear-gradient(0deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.04));
-    border-radius: 6px;
-    border: 1.15px;
- }
+  width: 40px;
+  background: url(../../../assets/icones/icone-recebido.png) no-repeat;
+  background-size: contain;
+}
 
 .col2 {
-    width: 70%;
+  justify-self: left;
+    width: 75%;
     padding-left: 10px;
 }
 
@@ -46,13 +62,13 @@
 }
 
 .itemValorSaida {
-    color: #EC2F2F;
+    color: var(--cor-vermelho);
     font-size: 14px;
     font-weight: 600;
 }
 
 .itemValorEntrada {
-    color: #1FA804;
+    color: var(--cor-verde);
     font-size: 14px;
     font-weight: 600;
 }
