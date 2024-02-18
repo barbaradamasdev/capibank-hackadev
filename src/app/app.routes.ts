@@ -9,11 +9,11 @@ import { FormularioCriarContaPgUmComponent } from './pages/inicio-criar-conta/fo
 import { FormularioCriarContaPgDoisComponent } from './pages/inicio-criar-conta/forms/formulario-criar-conta-pg-dois/formulario-criar-conta-pg-dois.component';
 import { FormularioCriarContaPgTresComponent } from './pages/inicio-criar-conta/forms/formulario-criar-conta-pg-tres/formulario-criar-conta-pg-tres.component';
 import { autenticarGuard } from './seguranca/autenticar.guard';
-import { InicioBannerComponent } from './componentes/inicio-banner/inicio-banner.component';
+import { BannerComponent } from './componentes/banner/banner.component';
 import { FormularioCriarContaPgQuatroComponent } from './pages/inicio-criar-conta/forms/formulario-criar-conta-pg-quatro/formulario-criar-conta-pg-quatro.component';
+
 export const routes: Routes = [
     {path:'login',component:InicioLoginComponent},
-    {path:'banner',component:InicioBannerComponent},
     {path:'cadastrar',component:InicioCriarContaComponent,
     children:[
       {
@@ -34,8 +34,8 @@ export const routes: Routes = [
       }
     ]
   },
-    {path:'recuperar',component:InicioRecuperarSenhaComponent},
-    {path:'cliente',component:AreaDoClienteComponent, canActivate:[autenticarGuard]},
-    {path:'historico',component:HistoricoDeTransacaoComponent,canActivate:[autenticarGuard]},
-    {path:'',redirectTo:'/login',pathMatch:'full'}
+  {path:'recuperar',component:InicioRecuperarSenhaComponent},
+  {path:'cliente',component:AreaDoClienteComponent, canActivate:[autenticarGuard]},
+  {path:'historico',component:HistoricoDeTransacaoComponent,canActivate:[autenticarGuard]},
+  {path:'',redirectTo:'/login',pathMatch:'full'},
 ];

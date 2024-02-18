@@ -3,16 +3,16 @@ import { CabecalhoLoginComponent } from "../../componentes/cabecalho-login/cabec
 import { RodapeLoginComponent } from "../../componentes/rodape-login/rodape-login.component";
 import { FormularioEntrarComponent } from "../../pages/inicio-login/formulario-entrar/formulario-entrar.component";
 import { Cliente } from '../../Models/Cliente';
-import { InicioBannerComponent } from "../../componentes/inicio-banner/inicio-banner.component";
+import { BannerComponent } from "../../componentes/banner/banner.component";
+import { CommonModule } from '@angular/common';
 
 @Component({
     selector: 'app-inicio-login',
     standalone: true,
     templateUrl: './inicio-login.component.html',
     styleUrl: './inicio-login.component.css',
-    imports: [CabecalhoLoginComponent, RodapeLoginComponent, FormularioEntrarComponent, InicioBannerComponent]
+    imports: [CabecalhoLoginComponent, RodapeLoginComponent, FormularioEntrarComponent, BannerComponent, CommonModule]
 })
 export class InicioLoginComponent {
-
 
 }

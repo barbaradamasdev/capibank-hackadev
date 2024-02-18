@@ -22,6 +22,7 @@
   align-items: center;
   height: 50px;
   width: 100%;
+  max-width: 100vw;
   margin-bottom: 30px;
   position: relative;
 }
@@ -108,6 +109,7 @@ input {
 
 form {
   padding-top: 50px;
+  max-width: 100vw;
 }
 
 
@@ -133,3 +135,8 @@ form {
 }
 
 
+@media screen and (max-width: 744px) {
+  .container {
+    margin-top: -27px;
+  }
+}

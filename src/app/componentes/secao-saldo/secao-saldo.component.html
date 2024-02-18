@@ -2,7 +2,7 @@
 
   <div class="container">
     <div class="dados flex">
-      <p>Conta Corrente</p>
+      <p class="nome-usuario">Olá, {{nome}}!</p>
       <div class="flex">
         <!-- TODO importar saldo -->
         <h4 *ngIf="saldoVisivel">R$ 1000.00</h4>
@@ -10,7 +10,7 @@
         <h4 *ngIf="!saldoVisivel">R$ ----,--</h4>
         <img *ngIf="!saldoVisivel" src="../../../assets/icones/icone-mostrar.png" alt="Mostrar saldo" (click)="toggleVisibilidadeSaldo()">
       </div>
-      <p>{{nome}}</p>
+      <p class="tipo-conta">Conta Corrente</p>
     </div>
     <div></div>
   </div>

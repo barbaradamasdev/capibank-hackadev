@@ -44,6 +44,11 @@ section {
     color: #7F7F7F;
 }
 
+.tipo-conta {
+  padding-top: 10px;
+}
+
+
 .dados > * > img {
   height: 15px;
   margin: auto 10px;

@@ -5,17 +5,17 @@ import { FormularioCriarContaPgUmComponent } from './forms/formulario-criar-cont
 import { FormularioCriarContaPgDoisComponent } from './forms/formulario-criar-conta-pg-dois/formulario-criar-conta-pg-dois.component';
 import { FormularioCriarContaPgTresComponent } from './forms/formulario-criar-conta-pg-tres/formulario-criar-conta-pg-tres.component';
 import { FormularioCriarContaPgQuatroComponent } from './forms/formulario-criar-conta-pg-quatro/formulario-criar-conta-pg-quatro.component';
+import { BannerComponent } from "../../componentes/banner/banner.component";
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { FormGroup, FormBuilder } from '@angular/forms';
-import { InicioBannerComponent } from "../../componentes/inicio-banner/inicio-banner.component";
 
 @Component({
     selector: 'app-inicio-criar-conta',
     standalone: true,
     templateUrl: './inicio-criar-conta.component.html',
     styleUrl: './inicio-criar-conta.component.css',
-    imports: [CommonModule, RouterOutlet, CabecalhoLoginComponent, RodapeLoginComponent, FormularioCriarContaPgUmComponent, FormularioCriarContaPgDoisComponent, FormularioCriarContaPgTresComponent, FormularioCriarContaPgQuatroComponent, InicioBannerComponent]
+    imports: [CommonModule, RouterOutlet, CabecalhoLoginComponent, RodapeLoginComponent, FormularioCriarContaPgUmComponent, FormularioCriarContaPgDoisComponent, FormularioCriarContaPgTresComponent, FormularioCriarContaPgQuatroComponent, BannerComponent]
 })
 export class InicioCriarContaComponent implements OnInit{
   form!: FormGroup;

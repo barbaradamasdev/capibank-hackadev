@@ -95,16 +95,21 @@ button  {
 }
 
 .botao-secundario {
-    padding: 9.5px 30px;
-    border: 1px solid rgba(0, 0, 0, 0.068);
-    background: transparent;
-    color: var(--cor-azul-escuro);
+  padding: 9.5px 30px;
+  border: 1px solid rgba(0, 0, 0, 0.068);
+  background: transparent;
+  color: var(--cor-azul-escuro);
 }
 
 .botao-secundario:hover {
-    border: 1px solid rgba(0, 0, 0, 0.541);
+  border: 1px solid rgba(0, 0, 0, 0.541);
 }
 
 .gap-15 {
-    gap: 15px;
-  }
+  gap: 15px;
+  max-width: 100vw;
+}
+
+form {
+  max-width: 100vw;
+}

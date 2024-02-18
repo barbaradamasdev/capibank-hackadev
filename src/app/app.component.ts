@@ -6,7 +6,7 @@ import { InicioRecuperarSenhaComponent } from "./pages/inicio-recuperar-senha/in
 import { InicioLoginComponent } from "./pages/inicio-login/inicio-login.component";
 import { AreaDoClienteComponent } from "./pages/area-do-cliente/area-do-cliente.component";
 import { HistoricoDeTransacaoComponent } from "./pages/historico-de-transacao/historico-de-transacao.component";
-import { InicioBannerComponent } from './componentes/inicio-banner/inicio-banner.component';
+import { BannerComponent } from './componentes/banner/banner.component';
 import { CabecalhoAreaInternaComponent } from "./componentes/cabecalho-area-interna/cabecalho-area-interna.component";
 
 @Component({
@@ -14,7 +14,7 @@ import { CabecalhoAreaInternaComponent } from "./componentes/cabecalho-area-inte
     standalone: true,
     templateUrl: './app.component.html',
     styleUrl: './app.component.css',
-    imports: [RouterLink,CommonModule, RouterOutlet, InicioCriarContaComponent, InicioRecuperarSenhaComponent, InicioLoginComponent, AreaDoClienteComponent, HistoricoDeTransacaoComponent, InicioBannerComponent, CabecalhoAreaInternaComponent]
+    imports: [RouterLink,CommonModule, RouterOutlet, InicioCriarContaComponent, InicioRecuperarSenhaComponent, InicioLoginComponent, AreaDoClienteComponent, HistoricoDeTransacaoComponent, BannerComponent, CabecalhoAreaInternaComponent]
 })
 export class AppComponent {
   title = 'capibank';
