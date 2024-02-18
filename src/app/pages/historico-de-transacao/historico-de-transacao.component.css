@@ -1,39 +1,26 @@
-.container{
-    /* padding-top:40px; */
-    width: 500px;
-    display: flex;
-    margin: auto;
-    padding: 0;
-}
-
-.container h1{
-    text-align: center;
-}
-
-.table{
-    width:100%;
-}
-.descricao{
-    font-weight: 600;
-    font-size: 0.7rem;
-    color:rgb(163, 146, 146);
-}
-
 .grid {
   grid-template-areas:
+    "acesso-rapido acesso-rapido acesso-rapido"
     "historico-transacoes historico-transacoes historico-transacoes"
     "historico-transacoes historico-transacoes historico-transacoes";
   gap: 16px; /* Ajuste o valor de gap conforme necessário */
   grid-template-columns: 1fr 2fr 2fr;
+  padding: 0;
+}
+
+/* Defina a largura mínima para cada componente conforme a especificação */
+app-acesso-rapido-area-interna {
+  grid-area: acesso-rapido;
 }
 
 app-menu-lateral {
   grid-area: menu-lateral;
-  width: 210px;
+  width: 250px;
 }
 
 app-historico-transacoes {
   grid-area: historico-transacoes;
+  margin: 0 15px;
 }
 
 @media (max-width: 745px) {
@@ -44,19 +31,20 @@ app-historico-transacoes {
   .grid {
     grid-template-areas:
       "historico-transacoes historico-transacoes historico-transacoes"
+      "historico-transacoes historico-transacoes historico-transacoes"
       "historico-transacoes historico-transacoes historico-transacoes";
   }
 }
 
-@media (min-width: 746px) {
+@media (min-width: 746px)  {
 
   app-menu-lateral {
     display: inherit;
   }
 
-
   .grid {
     grid-template-areas:
+    "menu-lateral historico-transacoes historico-transacoes"
     "menu-lateral historico-transacoes historico-transacoes"
     "menu-lateral historico-transacoes historico-transacoes";
   }
