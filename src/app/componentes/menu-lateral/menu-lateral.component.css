@@ -6,7 +6,10 @@
   gap: 20px;
   box-shadow: 2px 5px 10px 1px rgba(0, 0, 0, 0.033);
   height: 100vh;
+  background: white;
 }
+
+
 
 .sidebar .nav-link {
   display: flex;
@@ -35,7 +38,10 @@
 
 
 @media screen and (max-width: 743px) {
-  /* nav {
-      transform: translateX(100px);
-  } */
+  .sidebar {
+    position: absolute;
+    top: -150px;
+    width: 100vw;
+  }
 }
+

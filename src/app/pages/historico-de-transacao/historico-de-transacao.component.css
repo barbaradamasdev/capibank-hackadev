@@ -25,7 +25,14 @@ app-historico-transacoes {
 
 @media (max-width: 745px) {
   app-menu-lateral {
-    display: none;
+    position: absolute;
+    transform: translateX(-2000px);
+    transition: transform 0.3s ease;
+  }
+
+
+  .menu-open {
+    transform: translateX(0);
   }
 
   .grid {
@@ -37,11 +44,6 @@ app-historico-transacoes {
 }
 
 @media (min-width: 746px)  {
-
-  app-menu-lateral {
-    display: inherit;
-  }
-
   .grid {
     grid-template-areas:
     "menu-lateral historico-transacoes historico-transacoes"

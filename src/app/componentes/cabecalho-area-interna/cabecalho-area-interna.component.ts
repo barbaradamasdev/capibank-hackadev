@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MenuService } from '../../servicos/menu.service'
 
 @Component({
   selector: 'app-cabecalho-area-interna',
@@ -8,9 +9,14 @@ import { Component } from '@angular/core';
   styleUrl: './cabecalho-area-interna.component.css'
 })
 export class CabecalhoAreaInternaComponent {
+  constructor(private menuService: MenuService) {}
 
   logout():void{
     localStorage.clear();
+  }
+
+  toggleMenu() {
+    this.menuService.toggleMenu();
   }
 
 }
