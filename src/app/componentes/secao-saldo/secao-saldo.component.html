@@ -5,9 +5,10 @@
       <p>Conta Corrente</p>
       <div class="flex">
         <!-- TODO importar saldo -->
-        <h4>R$ 1000.00</h4>
-        <!-- TODO funcao para ocultar saldo -->
-        <img src="../../../assets/icones/icone-ocultar.png" alt="Ocultar saldo">
+        <h4 *ngIf="saldoVisivel">R$ 1000.00</h4>
+        <img *ngIf="saldoVisivel" src="../../../assets/icones/icone-ocultar.png" alt="Ocultar saldo" (click)="toggleVisibilidadeSaldo()">
+        <h4 *ngIf="!saldoVisivel">R$ ----,--</h4>
+        <img *ngIf="!saldoVisivel" src="../../../assets/icones/icone-mostrar.png" alt="Mostrar saldo" (click)="toggleVisibilidadeSaldo()">
       </div>
       <p>{{nome}}</p>
     </div>

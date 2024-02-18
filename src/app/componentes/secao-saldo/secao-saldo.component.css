@@ -36,6 +36,8 @@ section {
 
 .dados h4{
     color: #FFFFFF;
+    width: 120px;
+    margin: auto;
 }
 
 .dados p{
@@ -43,8 +45,8 @@ section {
 }
 
 .dados > * > img {
-  height: 11px;
-  margin: auto 20px;
+  height: 15px;
+  margin: auto 10px;
   cursor: pointer;
 }
 
