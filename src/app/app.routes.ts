@@ -12,9 +12,15 @@ import { autenticarGuard } from './seguranca/autenticar.guard';
 import { BannerComponent } from './componentes/banner/banner.component';
 import { FormularioCriarContaPgQuatroComponent } from './pages/inicio-criar-conta/forms/formulario-criar-conta-pg-quatro/formulario-criar-conta-pg-quatro.component';
 
+import { FormularioRecuperarPgUmComponent } from './pages/inicio-recuperar-senha/forms/formulario-recuperar-pg-um/formulario-recuperar-pg-um.component';
+import { FormularioRecuperarPgTresComponent } from './pages/inicio-recuperar-senha/forms/formulario-recuperar-pg-tres/formulario-recuperar-pg-tres.component';
+import { FormularioRecuperarPgDoisComponent } from './pages/inicio-recuperar-senha/forms/formulario-recuperar-pg-dois/formulario-recuperar-pg-dois.component';
+// import { FormularioCriarSucessoComponent } from './componentes/formulario-criar-sucesso/formulario-criar-sucesso.component';
+
 export const routes: Routes = [
-    {path:'login',component:InicioLoginComponent},
-    {path:'cadastrar',component:InicioCriarContaComponent,
+  {path:'',redirectTo:'/login',pathMatch:'full'},
+  {path:'login',component:InicioLoginComponent},
+  {path:'cadastrar',component:InicioCriarContaComponent,
     children:[
       {
         path:'passo-1',
@@ -34,8 +40,22 @@ export const routes: Routes = [
       }
     ]
   },
-  {path:'recuperar',component:InicioRecuperarSenhaComponent},
+  {path:'recuperar',component:InicioRecuperarSenhaComponent,
+    children:[
+      {
+        path:'passo-1',
+        component: FormularioRecuperarPgUmComponent
+      },
+      {
+        path:'passo-2',
+        component: FormularioRecuperarPgDoisComponent
+      },
+      {
+        path:'passo-3',
+        component: FormularioRecuperarPgTresComponent
+      }
+    ]
+  },
   {path:'cliente',component:AreaDoClienteComponent, canActivate:[autenticarGuard]},
-  {path:'historico',component:HistoricoDeTransacaoComponent,canActivate:[autenticarGuard]},
-  {path:'',redirectTo:'/login',pathMatch:'full'},
+  {path:'historico',component:HistoricoDeTransacaoComponent,canActivate:[autenticarGuard]}
 ];
