@@ -8,7 +8,7 @@ import { RouterLink } from '@angular/router';
   standalone: true,
   imports: [ReactiveFormsModule, FormsModule, CommonModule, RouterLink],
   templateUrl: './formulario-criar-conta-pg-tres.component.html',
-  styleUrl: './formulario-criar-conta-pg-tres.component.css'
+  styleUrls: ['../../../../../form.css', './formulario-criar-conta-pg-tres.component.css']
 })
 export class FormularioCriarContaPgTresComponent {
   @Input() email: string = '';

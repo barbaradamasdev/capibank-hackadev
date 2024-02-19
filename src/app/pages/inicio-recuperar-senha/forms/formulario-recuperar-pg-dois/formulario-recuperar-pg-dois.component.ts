@@ -9,7 +9,7 @@ import { RouterLink } from '@angular/router';
   standalone: true,
   imports: [ReactiveFormsModule, FormsModule, CommonModule, RouterLink],
   templateUrl: './formulario-recuperar-pg-dois.component.html',
-  styleUrl: './formulario-recuperar-pg-dois.component.css'
+  styleUrls: ['../../../../../form.css', './formulario-recuperar-pg-dois.component.css'],
 })
 export class FormularioRecuperarPgDoisComponent {
   @Input() newPassword: string = '';

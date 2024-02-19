@@ -6,7 +6,7 @@ import { RouterLink } from '@angular/router';
   standalone: true,
   imports: [RouterLink],
   templateUrl: './formulario-recuperar-pg-tres.component.html',
-  styleUrl: './formulario-recuperar-pg-tres.component.css'
+  styleUrls: ['../../../../../form.css', './formulario-recuperar-pg-tres.component.css'],
 })
 export class FormularioRecuperarPgTresComponent {
 

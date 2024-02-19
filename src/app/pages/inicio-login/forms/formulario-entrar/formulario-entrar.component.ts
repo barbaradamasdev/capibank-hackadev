@@ -2,7 +2,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators, ReactiveFormsModule } from '@angular/forms';
-import { Cliente } from '../../../Models/Cliente';
+import { Cliente } from '../../../../Models/Cliente';
 import { Router, RouterLink } from '@angular/router';
 
 @Component({
@@ -10,7 +10,7 @@ import { Router, RouterLink } from '@angular/router';
   standalone: true,
   imports: [ReactiveFormsModule, CommonModule, RouterLink],
   templateUrl: './formulario-entrar.component.html',
-  styleUrl: './formulario-entrar.component.css'
+  styleUrls: ['../../../../../form.css','./formulario-entrar.component.css']
 })
 export class FormularioEntrarComponent {
 

@@ -1,3 +1,9 @@
+header {
+  background-color: var(--cor-azul-medio);
+  color: white;
+  min-height: 230px;
+}
+
 .flex {
   width: 100vw;
 }
@@ -5,13 +11,6 @@
 button {
   border: none;
   background: none;
-}
-
-header {
-  max-height: 20vh;
-  background-color: var(--cor-azul-medio);
-  color: white;
-  min-height: 230px;
 }
 
 .icone-voltar-branco {
@@ -61,6 +60,21 @@ header {
   header {
     max-width: 50vw;
     width: 100vw;
+  }
+
+}
+
+/* Breakpoint para telas com altura menor */
+@media screen and (max-height: 700px) {
+
+  .welcome-div{
+    margin-top: 30px;
+  }
+
+  header {
+    max-width: 50vw;
+    width: 100vw;
+    min-height: 150px;
   }
 
 }
