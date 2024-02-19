@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 @Component({
@@ -9,4 +9,13 @@ import { RouterLink } from '@angular/router';
   styleUrl: './menu-lateral.component.css'
 })
 export class MenuLateralComponent {
+  @Output() linkClicado: EventEmitter<void> = new EventEmitter<void>();
+
+  onLinkClick() {
+    this.linkClicado.emit();
+  }
+
+  logout():void{
+    localStorage.clear();
+  }
 }
