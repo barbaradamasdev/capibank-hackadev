@@ -4,7 +4,8 @@ footer {
     bottom: 0;
     color: black;
     width: 100%;
-    height: 80px;    
+    max-width: 50vw;
+    height: 50px;
     text-align: center;
     display: flex;
     align-items: center;
@@ -14,4 +15,13 @@ footer {
 .icon-cadeado {
     width: 14px;
     margin-right: 2px;
+}
+
+@media (max-width: 744px) {
+
+  footer {
+    width: 100%;
+    max-width: 100vw;
+    height: 50px;
+  }
 }

@@ -11,27 +11,27 @@
     border-radius:  40px 40px 0 0;
     box-shadow: 2px 0px 132px -1px #ededed;
   }
-  
+
   .footer figure {
+    margin-bottom: 0;
     text-align: center;
     transition: transform 0.3s ease;
     font-size: 11px;
   }
-  
+
   .footer figure:hover {
     transform: translateY(-5px);
   }
   .footer figcaption:hover{
     cursor: pointer;
   }
-  
+
   .footer img {
-    width: 40px;
-    height: auto;
+    width: 20px;
     cursor: pointer;
   }
 
-  @media (min-width: 390px) {
+  @media (min-width: 744px) {
     .footer {
       display: none;
     }

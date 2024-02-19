@@ -1,0 +1,57 @@
+<div class="container p-4">
+
+    <h6 class="section-title">Abra sua conta</h6>
+
+    <form>
+      <div class="form-group">
+
+        <p class="form-title">Agora que já temos o seu endereço<br>Informe seu E-mail e Senha</p>
+
+        <input
+          formControlName="email"
+          type="text"
+          class="form-control"
+          id="email"
+          placeholder="E-mail"
+        />
+
+        <input
+          formControlName="newPassword"
+          type="text"
+          class="form-control"
+          id="senha"
+          placeholder="Senha"
+        />
+
+        <input
+          formControlName="confirmPassword"
+          type="text"
+          class="form-control"
+          id="repeteSenha"
+          placeholder="Repita a Senha"
+        />
+
+      </div>
+
+      <ul class="text-muted validation-list validacoes">
+        <li [class]="(passwordRequirements.length ? 'validation-item valid' : 'validation-item') + (hasStartedTyping ? ' input-touched' : '')">A senha deve ter no mínimo 8 caracteres</li>
+        <li [class]="(passwordRequirements.number ? 'validation-item valid' : 'validation-item') + (hasStartedTyping ? ' input-touched' : '')">A senha deve conter ao menos 1 número</li>
+        <li [class]="(passwordRequirements.lowercase ? 'validation-item valid' : 'validation-item') + (hasStartedTyping ? ' input-touched' : '')">A senha deve conter ao menos 1 letra minúscula</li>
+        <li [class]="(passwordRequirements.uppercase ? 'validation-item valid' : 'validation-item') + (hasStartedTyping ? ' input-touched' : '')">A senha deve conter ao menos 1 letra maiúscula</li>
+      </ul>
+
+      <div class="buttons flex">
+        <button  routerLink="/cadastrar/passo-2" type="submit"  class="botao-secundario">
+          Voltar
+        </button>
+        <button  routerLink="/cadastrar/passo-4" type="submit" class="botao-principal">
+          Próximo
+        </button>
+      </div>
+
+    </form>
+
+  </div>
+
+
+

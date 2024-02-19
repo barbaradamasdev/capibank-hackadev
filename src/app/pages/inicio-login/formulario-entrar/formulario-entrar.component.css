@@ -1,0 +1,144 @@
+.container {
+  margin: auto;
+  border-radius: 25px 25px 0px 0px;
+  margin-top: -55px;
+  background: white;
+  padding: 0 !important;
+  height: 100svh;
+}
+
+.p-4 {
+  padding-top: 8px !important;
+}
+
+.section-title {
+  display: flex;
+  color: var(--cor-azul-escuro);
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: -0.41px;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 100%;
+  max-width: 100vw;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.section-title::after {
+  content: "";
+  border-bottom: 4px solid var(--cor-dourado);
+  position: absolute;
+  bottom: -5px;
+  height: 64px;
+  left: 0;
+  right: 0;
+  background: rgba(128, 128, 128, 0.064);
+  border-radius: 25px 25px 0px 0px;
+}
+
+.form-login {
+  margin-top: 30px;
+}
+
+.forgot-password {
+  color: var(--cor-azul-escuro);
+  text-decoration: none;
+}
+
+.register {
+  color: black;
+  text-align: right;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 19.5px;
+}
+
+.account {
+  color: var(--cor-cinza);
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 19.5px;
+}
+
+.buttons {
+  max-width: 80%;
+  width: 378px;
+  margin: auto;
+  /* padding-top: 30px; */
+}
+
+input {
+  font-size: 13px;
+  padding: 22px 12px;
+  background: rgba(128, 128, 128, 0.017);
+  max-width: 80%;
+  width: 378px;
+  margin: auto;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.email, .password {
+  margin-right: 40px;
+  margin-left: 20px;
+}
+
+.forgot-password {
+  font-size: 14px;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0px 30px 0px;
+}
+
+.btn.disabled, .btn:disabled, fieldset:disabled {
+  color: white;
+  pointer-events: none;
+  background-color: var(--cor-azul-medio);
+  border-color: var(--bs-btn-disabled-border-color);
+  opacity: .8;
+}
+
+form {
+  padding-top: 50px;
+  max-width: 100vw;
+}
+
+
+.warn-text {
+  padding-top: 2px;
+  font-size: 12px;
+  font-weight: 600 !important;
+  width: 376px;
+  margin: auto;
+}
+
+
+@media screen and (min-width: 744px) {
+  .botao-secundario {
+    display: none;
+  }
+
+  .container {
+    height: inherit;
+    padding: 20px;
+    max-width: 100vw;
+  }
+}
+
+
+@media screen and (max-width: 744px) {
+  .container {
+    margin-top: -27px;
+    max-width: 100vw;
+    margin-left: 0;
+  }
+}

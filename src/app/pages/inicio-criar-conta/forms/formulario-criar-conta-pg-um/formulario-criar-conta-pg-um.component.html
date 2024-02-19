@@ -1,0 +1,50 @@
+<div class="container p-4">
+
+    <h6 class="section-title">Abra sua conta</h6>
+
+    <form>
+      <div class="form-group">
+
+        <p class="form-title">Me fale um pouco sobre você</p>
+
+        <input
+            formControlName="nome"
+            type="text"
+            class="form-control"
+            placeholder="Nome Completo"
+        />
+
+        <input
+            type="text"
+            class="form-control"
+            id="dataNascimento"
+            placeholder="dd/mm/aaaa"
+            (input)="formatarDataNascimento($event)"
+            (keypress)="apenasNumeros($event)"
+            maxlength="10"
+        />
+
+        <input
+            type="text"
+            class="form-control"
+            id="telefone"
+            placeholder="Telefone"
+            (input)="formatarTelefone($event)"
+            (keypress)="apenasNumeros($event)"
+            maxlength="17"
+        />
+      </div>
+
+      <div class="buttons flex">
+        <button routerLink="/login" type="submit" class="botao-secundario">
+          Voltar
+        </button>
+        <button routerLink="/cadastrar/passo-2"  type="submit" class="botao-principal">
+          Próximo
+        </button>
+      </div>
+
+    </form>
+
+  </div>
+
