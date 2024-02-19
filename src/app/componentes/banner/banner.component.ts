@@ -13,15 +13,15 @@ import { BannerToggleService } from '../../servicos/banner-toggle.service';
 export class BannerComponent {
   showBanner: boolean = false;
 
-  // constructor(private BannerToggleService: BannerToggleService) {}
+  constructor(private BannerToggleService: BannerToggleService) {}
 
-  // ngOnInit() {
-  //   this.BannerToggleService.bannerToggle$.subscribe((toggle) => {
-  //     this.showBanner = toggle;
-  //   });
-  // }
+  ngOnInit() {
+    this.BannerToggleService.bannerToggle$.subscribe((toggle) => {
+      this.showBanner = toggle;
+    });
+  }
 
-  // toggleBanner() {
-  //   this.BannerToggleService.toggleBanner();
-  // }
+  toggleBanner() {
+    this.BannerToggleService.toggleBanner();
+  }
 }
