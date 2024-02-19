@@ -9,17 +9,37 @@ import { FormularioCriarContaPgUmComponent } from './pages/inicio-criar-conta/fo
 import { FormularioCriarContaPgDoisComponent } from './pages/inicio-criar-conta/forms/formulario-criar-conta-pg-dois/formulario-criar-conta-pg-dois.component';
 import { FormularioCriarContaPgTresComponent } from './pages/inicio-criar-conta/forms/formulario-criar-conta-pg-tres/formulario-criar-conta-pg-tres.component';
 import { autenticarGuard } from './seguranca/autenticar.guard';
+
+import { FormularioRecuperarPgUmComponent } from './componentes/formulario-recuperar-pg-um/formulario-recuperar-pg-um.component';
+import { FormularioRecuperarPgTresComponent } from './componentes/formulario-recuperar-pg-tres/formulario-recuperar-pg-tres.component';
+import { FormularioRecuperarPgDoisComponent } from './componentes/formulario-recuperar-pg-dois/formulario-recuperar-pg-dois.component';
+import { FormularioCriarSucessoComponent } from './componentes/formulario-criar-sucesso/formulario-criar-sucesso.component';
+import { FormularioCriarContaPgQuatroComponent } from './pages/inicio-criar-conta/forms/formulario-criar-conta-pg-quatro/formulario-criar-conta-pg-quatro.component';
 import { BannerComponent } from './componentes/banner/banner.component';
 import { FormularioCriarContaPgQuatroComponent } from './pages/inicio-criar-conta/forms/formulario-criar-conta-pg-quatro/formulario-criar-conta-pg-quatro.component';
 
-import { FormularioRecuperarPgUmComponent } from './pages/inicio-recuperar-senha/forms/formulario-recuperar-pg-um/formulario-recuperar-pg-um.component';
-import { FormularioRecuperarPgTresComponent } from './pages/inicio-recuperar-senha/forms/formulario-recuperar-pg-tres/formulario-recuperar-pg-tres.component';
-import { FormularioRecuperarPgDoisComponent } from './pages/inicio-recuperar-senha/forms/formulario-recuperar-pg-dois/formulario-recuperar-pg-dois.component';
-// import { FormularioCriarSucessoComponent } from './componentes/formulario-criar-sucesso/formulario-criar-sucesso.component';
 
 export const routes: Routes = [
-  {path:'',redirectTo:'/login',pathMatch:'full'},
-  {path:'login',component:InicioLoginComponent},
+    {path:'login',component:InicioLoginComponent},
+    {path:'cliente',component:AreaDoClienteComponent, canActivate:[autenticarGuard]},
+    {path:'historico',component:HistoricoDeTransacaoComponent,canActivate:[autenticarGuard]},
+    {path:'',redirectTo:'/login',pathMatch:'full'},
+    {path:'recuperar',component:InicioRecuperarSenhaComponent,
+    children:[
+      {
+      path:'passo-1',
+      component: FormularioRecuperarPgUmComponent
+      },
+      {
+      path:'passo-2',
+      component: FormularioRecuperarPgDoisComponent
+      },
+      {
+        path:'passo-3',
+        component: FormularioRecuperarPgTresComponent
+      }
+    ]
+  },
   {path:'cadastrar',component:InicioCriarContaComponent,
     children:[
       {
@@ -39,23 +59,6 @@ export const routes: Routes = [
         component: FormularioCriarContaPgQuatroComponent
       }
     ]
-  },
-  {path:'recuperar',component:InicioRecuperarSenhaComponent,
-    children:[
-      {
-        path:'passo-1',
-        component: FormularioRecuperarPgUmComponent
-      },
-      {
-        path:'passo-2',
-        component: FormularioRecuperarPgDoisComponent
-      },
-      {
-        path:'passo-3',
-        component: FormularioRecuperarPgTresComponent
-      }
-    ]
-  },
-  {path:'cliente',component:AreaDoClienteComponent, canActivate:[autenticarGuard]},
-  {path:'historico',component:HistoricoDeTransacaoComponent,canActivate:[autenticarGuard]}
+  }
+
 ];

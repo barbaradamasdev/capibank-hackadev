@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { RouterOutlet } from '@angular/router';
 import { CabecalhoLoginComponent } from "../../componentes/cabecalho-login/cabecalho-login.component";
 import { RodapeLoginComponent } from "../../componentes/rodape-login/rodape-login.component";
 import { FormularioRecuperarPgUmComponent } from "./forms/formulario-recuperar-pg-um/formulario-recuperar-pg-um.component";
