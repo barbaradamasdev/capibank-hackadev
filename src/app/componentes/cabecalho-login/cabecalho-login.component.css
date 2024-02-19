@@ -4,7 +4,7 @@ header {
   min-height: 230px;
 }
 
-.flex {
+header, .flex {
   width: 100vw;
 }
 
@@ -46,13 +46,17 @@ button {
   object-fit: contain;
 }
 
+.welcome-div{
+  margin-top: -30px;
+}
+
 @media screen and (min-width: 744px) {
   .bank {
     display: none;
   }
 
   .welcome-div{
-    margin-top: 100px;
+    margin-top: 120px;
     text-align: center;
     width: 100%;
   }
@@ -68,13 +72,11 @@ button {
 @media screen and (max-height: 700px) {
 
   .welcome-div{
-    margin-top: 30px;
+    margin-top: -30px;
   }
 
   header {
-    max-width: 50vw;
     width: 100vw;
     min-height: 150px;
   }
-
 }
