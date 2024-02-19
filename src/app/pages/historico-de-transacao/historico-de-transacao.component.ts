@@ -8,6 +8,8 @@ import { BarraDeBuscaComponent } from "../../componentes/barra-de-busca/barra-de
 import { Cliente } from '../../Models/Cliente';
 import { MenuService } from '../../servicos/menu.service';
 import { CommonModule } from '@angular/common';
+import { Subscription, filter } from 'rxjs';
+import { NavigationEnd, Router } from '@angular/router';
 
 @Component({
     selector: 'app-historico-de-transacao',
@@ -18,11 +20,27 @@ import { CommonModule } from '@angular/common';
 })
 export class HistoricoDeTransacaoComponent {
   isMenuOpen: boolean = false;
+  private routerSubscription: Subscription;
 
-  constructor(private menuService: MenuService) {
+  constructor(private menuService: MenuService, private router: Router) {
     this.menuService.isMenuOpen$.subscribe((isOpen) => {
       this.isMenuOpen = isOpen;
     });
+
+    this.routerSubscription = this.router.events.pipe(
+      filter((event) => event instanceof NavigationEnd)
+    ).subscribe(() => {
+      this.isMenuOpen = false;
+    });
   }
 
+  onLinkClicked() {
+    this.isMenuOpen = false;
+  }
+
+  ngOnDestroy(): void {
+    if (this.routerSubscription) {
+      this.routerSubscription.unsubscribe();
+    }
+  }
 }
