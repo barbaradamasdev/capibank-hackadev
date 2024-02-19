@@ -7,15 +7,21 @@ form {
   margin-top: -55px;
   background: white;
   padding: 0 !important;
-  /* height: 100svh; */
 }
 
 .side-by-side {
   display: flex;
-  max-width: 80%;
+  justify-content: space-between;
   margin: auto;
-  gap: 20px;
+  gap: 15px;
+  max-width: 80%;
   width: 378px;
+}
+
+.side-by-side > * {
+  margin: 0 0 16px 0;
+  width: 50%;
+  max-width: fit-content;
 }
 
 .form-title {
@@ -97,11 +103,13 @@ input {
 
 .register {
   color: black;
-  text-align: right;
   font-family: "Poppins", sans-serif;
   font-weight: 500;
   font-size: 13px;
   line-height: 19.5px;
+  justify-content: center;
+  text-align: center;
+  margin: auto;
 }
 
 .account {
@@ -171,6 +179,18 @@ form {
   padding: 5px 10px;
 }
 
+@media (max-width: 330px) {
+  .register {
+    flex-direction: column;
+    padding: 0 30px;
+  }
+
+  .register > * {
+    font-size: 12px;
+    margin-top: -15px;
+  }
+}
+
 @media screen and (min-width: 744px) {
   .show-on-mobile {
     display: none;
@@ -189,6 +209,8 @@ form {
   .form-control {
     margin-bottom: 10px;
   }
+
+
 }
 
 @media screen and (max-height: 560px) {
@@ -200,3 +222,5 @@ form {
     max-width: 47%;
   }
 }
+
+
