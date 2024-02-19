@@ -2,9 +2,8 @@
 
     <h6 class="section-title">Abra sua conta</h6>
 
-    <form>
+    <form (input)="checkPasswordRequirements()">
       <div class="form-group">
-
         <p class="form-title">Agora que já temos o seu endereço<br>Informe seu E-mail e Senha</p>
 
         <input
@@ -15,22 +14,19 @@
           placeholder="E-mail"
         />
 
-        <input
-          formControlName="newPassword"
-          type="text"
-          class="form-control"
-          id="senha"
-          placeholder="Senha"
-        />
-
-        <input
-          formControlName="confirmPassword"
-          type="text"
-          class="form-control"
-          id="repeteSenha"
-          placeholder="Repita a Senha"
-        />
-
+          <input type="password" class="form-control"
+                 [ngClass]="{'input-valid': passwordIsValid(), 'input-invalid': !passwordIsValid() && newPassword.length > 0, 'input-touched': hasStartedTyping}"
+                 [(ngModel)]="newPassword" [ngModelOptions]="{standalone: true}"
+                 (input)="onPasswordInput()" placeholder="Nova senha" required>
+        </div>
+        <div class="form-group">
+          <input type="password" class="form-control"
+                 [ngClass]="{'input-valid': passwordsMatch() && passwordIsValid(), 'input-invalid': confirmPassword.length > 0 && !passwordsMatch(), 'input-touched': hasStartedTyping}"
+                 [(ngModel)]="confirmPassword" [ngModelOptions]="{standalone: true}"
+                 (input)="onPasswordInput()" placeholder="Repita a nova senha" required>
+        </div>
+      <div *ngIf="confirmPassword && newPassword !== confirmPassword" class="alert alert-danger">
+        As senhas não coincidem.
       </div>
 
       <ul class="text-muted validation-list validacoes">
@@ -47,11 +43,7 @@
         <button  routerLink="/cadastrar/passo-4" type="submit" class="botao-principal">
           Próximo
         </button>
+
       </div>
-
     </form>
-
   </div>
-
-
-
