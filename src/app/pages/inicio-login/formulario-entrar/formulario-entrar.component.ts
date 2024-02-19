@@ -79,7 +79,7 @@ export class FormularioEntrarComponent {
       this.rota.navigateByUrl('/cliente')
     }else{
       // Exibir modal de erro com a mensagem personalizada
-      this.exibirModalErro("Login falhou, senha ou usuário inválidos!!!");
+      this.exibirModalErro("Senha ou usuário inválidos! Por favor, tente novamente.");
     }
     this.formLogin.reset();
   }
