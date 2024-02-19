@@ -60,7 +60,7 @@ a:hover {
 button  {
     font-size: 14px !important;
     height: 56px;
-    border-radius: 3px;
+    border-radius: 3px !important;
 }
 
 .botao-banner {
