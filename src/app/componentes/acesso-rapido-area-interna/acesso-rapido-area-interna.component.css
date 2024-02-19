@@ -24,6 +24,12 @@
   justify-content: center;
 }
 
+@media (max-width: 390px) {
+  .icon:last-child {
+    display: none;
+  }
+}
+
 .container {
   max-width: 96vw;
 }
