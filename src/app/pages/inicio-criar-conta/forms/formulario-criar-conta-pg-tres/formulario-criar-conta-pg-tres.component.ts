@@ -6,12 +6,11 @@ import { RouterLink } from '@angular/router';
 @Component({
   selector: 'app-formulario-criar-conta-pg-tres',
   standalone: true,
-  imports: [RouterLink, ReactiveFormsModule, FormsModule, CommonModule],
+  imports: [ReactiveFormsModule, FormsModule, CommonModule, RouterLink],
   templateUrl: './formulario-criar-conta-pg-tres.component.html',
   styleUrl: './formulario-criar-conta-pg-tres.component.css'
 })
 export class FormularioCriarContaPgTresComponent {
-
   @Input() email: string = '';
   @Input() newPassword: string = '';
   @Input() confirmPassword: string = '';

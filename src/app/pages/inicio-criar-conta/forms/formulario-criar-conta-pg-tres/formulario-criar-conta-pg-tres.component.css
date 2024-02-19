@@ -109,6 +109,16 @@ input {
   margin: auto;
 }
 
+
+.alert-danger {
+  width: 378px;
+  max-width: 80%;
+  margin: auto;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+
 @media screen and (max-width: 744px) {
   .container {
     margin-top: -27px;

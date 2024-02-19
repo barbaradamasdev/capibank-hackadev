@@ -117,7 +117,8 @@ form {
   padding-top: 2px;
   font-size: 12px;
   font-weight: 600 !important;
-  width: 376px;
+  max-width: 80%;
+  width: 378px;
   margin: auto;
 }
 
