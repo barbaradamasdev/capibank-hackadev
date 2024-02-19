@@ -10,7 +10,7 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [RouterLink, FormsModule, CommonModule, ReactiveFormsModule],
   templateUrl: './formulario-criar-conta-pg-dois.component.html',
-  styleUrls: ['./formulario-criar-conta-pg-dois.component.css'] 
+  styleUrls: ['../../../../../form.css', './formulario-criar-conta-pg-dois.component.css']
 })
 export class FormularioCriarContaPgDoisComponent {
   entradaCep: FormGroup;
@@ -19,9 +19,9 @@ export class FormularioCriarContaPgDoisComponent {
     this.entradaCep = new FormGroup({
       cep: new FormControl('', [Validators.required, Validators.pattern(/^\d{8}$/)]),
       rua: new FormControl({ value: '', disabled: true }),
-      numero: new FormControl(''),  
-      cidade: new FormControl({ value: '', disabled: true }),  
-      complemento: new FormControl(''), 
+      numero: new FormControl(''),
+      cidade: new FormControl({ value: '', disabled: true }),
+      complemento: new FormControl(''),
     });
   }
 
@@ -31,7 +31,7 @@ export class FormularioCriarContaPgDoisComponent {
       alert("CEP deve ter 8 dígitos");
       return;
     }
-  
+
     this.servicoEndereco.buscaCep(cep).subscribe(
       (dados: Endereco) => {
         if (dados && !dados.erro) {
@@ -40,7 +40,7 @@ export class FormularioCriarContaPgDoisComponent {
             rua: dados.logradouro || '',  // Usa o valor retornado ou string vazia se não houver
             cidade: dados.localidade,
           });
-  
+
           // Desabilita o campo rua se o logradouro for retornado pela API
           if (dados.logradouro) {
             this.entradaCep.get('rua')?.disable();

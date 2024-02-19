@@ -6,7 +6,8 @@ import { RouterLink } from '@angular/router';
   standalone: true,
   imports: [RouterLink],
   templateUrl: './formulario-criar-conta-pg-quatro.component.html',
-  styleUrl: './formulario-criar-conta-pg-quatro.component.css'
+  styleUrls: ['../../../../../form.css', './formulario-criar-conta-pg-quatro.component.css']
+
 })
 export class FormularioCriarContaPgQuatroComponent {
 
