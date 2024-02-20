@@ -3,12 +3,11 @@
     "busca busca busca"
     "historico-transacoes historico-transacoes historico-transacoes"
     "historico-transacoes historico-transacoes historico-transacoes";
-  gap: 16px; /* Ajuste o valor de gap conforme necessário */
+  gap: 16px;
   grid-template-columns: 1fr 2fr 2fr;
   padding: 0;
 }
 
-/* Defina a largura mínima para cada componente conforme a especificação */
 app-acesso-rapido-area-interna {
   grid-area: acesso-rapido;
 }
