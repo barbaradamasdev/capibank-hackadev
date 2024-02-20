@@ -1,33 +1,22 @@
 section {
   background-color: #12115D;
   border-radius: 8px;
-  padding: 0 20px;
   margin: auto;
   width: 90%;
   max-width: 744px;
+  padding: 0 !important;
 }
 
 .container{
+  padding: 20px;
     display: flex;
     justify-content: space-between;
     margin: 0 auto;
     text-align: left;
     position: relative;
-    padding: 15px 0;
-}
-
-.container::after {
-  content: url(../../../assets/saldo-marca-circulo.png);
-  position: absolute;
-  left: -18px;
-  bottom: 10px;
-}
-
-.container::before {
-  content: url(../../../assets/saldo-marca-linhas.png);
-  position: absolute;
-  right: 0;
-  top: -4px;
+    background: url(../../../assets/saldo-marca-linhas.png) right top no-repeat,
+              url(../../../assets/saldo-marca-circulo.png) left bottom no-repeat;
+    background-size: contain;
 }
 
 .dados{
@@ -48,7 +37,6 @@ section {
   padding-top: 10px;
 }
 
-
 .dados > * > img {
   height: 15px;
   margin: auto 10px;
@@ -56,52 +44,20 @@ section {
 }
 
 @media (max-width: 390px) {
-  section {
-    height: 120px;
-  }
-
   .container {
-    padding: 10px;
+    padding: 0 10px;
   }
 
   .dados {
     transform: scale(.8);
-    margin-left: -20px;
   }
 }
 
 @media (min-width: 745px) {
-
-  .dados{
-      padding-left:20px;
-  }
-
   section{
     border-radius: 0;
     margin: 0;
     width: 100vw;
     max-width: inherit;
-    padding: 30px 0;
-    align-items: center;
   }
-
-  .container::after {
-    left: 0;
-    bottom: -34px;
-  }
-
-  .container::before {
-    right: 0;
-    top: -34px;
-  }
-}
-
-@media (max-height: 745px) {
- section {
-  padding: 0;
- }
-
- .container::after {
-  bottom: 0;
- }
 }
