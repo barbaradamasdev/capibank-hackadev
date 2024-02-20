@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { HistoricoTransacoesComponent } from "../../componentes/historico-transacoes/historico-transacoes.component";
 import { AcessoRapidoAreaInternaComponent } from "../../componentes/acesso-rapido-area-interna/acesso-rapido-area-interna.component";
 import { SecaoSaldoComponent } from "../../componentes/secao-saldo/secao-saldo.component";
@@ -19,6 +19,11 @@ import { NavigationEnd, Router } from '@angular/router';
     imports: [HistoricoTransacoesComponent, AcessoRapidoAreaInternaComponent, SecaoSaldoComponent, CabecalhoAreaInternaComponent, MenuInferiorAreaInternaComponent, MenuLateralComponent, CommonModule, BarraDeBuscaComponent]
 })
 export class AreaDoClienteComponent {
+  aplicarEstiloOverflowMobile: boolean = false;
+  aplicarEstiloOverflowTablet: boolean = false;
+  aplicarEstiloOverflowPC: boolean = false;
+
+
   isMenuOpen: boolean = false;
   private routerSubscription: Subscription;
 
@@ -32,6 +37,36 @@ export class AreaDoClienteComponent {
     ).subscribe(() => {
       this.isMenuOpen = false;
     });
+
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        this.verificarLarguraTela();
+      }
+    });
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any) {
+    this.verificarLarguraTela();
+  }
+
+  private verificarLarguraTela() {
+    const larguraTela = window.innerWidth;
+
+    if (larguraTela <= 744) {
+      const url = this.router.url;
+      this.aplicarEstiloOverflowMobile = true;
+      this.aplicarEstiloOverflowTablet = false;
+      this.aplicarEstiloOverflowPC = false;
+    } else if  (larguraTela >= 745 && larguraTela <= 1000) {
+      this.aplicarEstiloOverflowMobile = false;
+      this.aplicarEstiloOverflowTablet = true;
+      this.aplicarEstiloOverflowPC = false;
+    } else {
+      this.aplicarEstiloOverflowMobile = false;
+      this.aplicarEstiloOverflowTablet = false;
+      this.aplicarEstiloOverflowPC = true;
+    }
   }
 
   onLinkClicked() {

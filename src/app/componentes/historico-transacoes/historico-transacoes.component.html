@@ -1,10 +1,10 @@
-<div class="container">
+<div class="container" [class.overflow]="aplicarEstiloOverflow">
 
   <div class="header">
     <h2>Transações</h2>
     <div routerLink="/historico" class="see-all">Veja tudo</div>
   </div>
-  <div [class.overflow]="aplicarEstiloOverflow">
+  <div>
     @for (item of transacoes; track $index) {
       <div class="rowTransacao">
         <div class="icone-transacao" [class]="{'col1Saida': item.transacaoTipo === 1, 'col1Entrada': item.transacaoTipo === 0 }">

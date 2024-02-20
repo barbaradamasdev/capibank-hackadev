@@ -57,3 +57,13 @@
     margin-left: 10px;
   }
 }
+
+@media (max-height: 745px) {
+  .header {
+    padding: 10px 20px;
+  }
+
+  .header > * {
+    transform: scale(0.9);
+  }
+}

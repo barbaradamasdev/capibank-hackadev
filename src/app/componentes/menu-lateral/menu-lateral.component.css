@@ -43,9 +43,21 @@
 @media screen and (max-width: 743px) {
   .sidebar {
     position: absolute;
+    /* top: -128px; */
     top: -150px;
     left: -5px;
     width: 100vw;
   }
 }
 
+@media (max-height: 745px) {
+  .sidebar {
+    gap: 10px;
+  }
+
+  .nav-link {
+    font-size: 13px;
+    padding: 5px;
+  }
+
+}
