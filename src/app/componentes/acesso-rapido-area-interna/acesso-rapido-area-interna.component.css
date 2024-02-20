@@ -84,3 +84,21 @@
       font-size: 14px;
   }
 }
+
+@media (min-height: 745px) {
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-template-rows: repeat(auto-fit, minmax(80px, 1fr));
+  }
+
+  .icon {
+    min-width: 100px;
+    height: 100px;
+  }
+
+  .icon img {
+    width: 35px;
+    margin-top: 15px;
+  }
+
+}

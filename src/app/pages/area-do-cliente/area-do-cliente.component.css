@@ -67,3 +67,18 @@ app-historico-transacoes {
     "menu-lateral acesso-rapido historico-transacoes";
   }
 }
+
+@media (max-height: 745px) {
+  app-barra-de-busca {
+    display: none;
+  }
+
+  .grid {
+    grid-template-areas:
+    "menu-lateral acesso-rapido acesso-rapido"
+    "menu-lateral historico-transacoes historico-transacoes"
+    "menu-lateral historico-transacoes historico-transacoes"
+    "menu-lateral historico-transacoes historico-transacoes"
+    "menu-lateral historico-transacoes historico-transacoes";
+  }
+}
