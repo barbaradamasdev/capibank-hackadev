@@ -197,7 +197,11 @@ form {
   }
 }
 
-@media screen and (max-height: 650px) {
+@media screen and (max-height: 744px) {
+  form {
+    padding-top: 20px;
+  }
+
   .botao-principal, .botao-secundario {
     height: 35px;
   }

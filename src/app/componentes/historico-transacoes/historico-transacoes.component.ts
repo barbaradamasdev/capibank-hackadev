@@ -44,7 +44,4 @@ export class HistoricoTransacoesComponent {
     return `${operacaoTransacao}${t.valor}`;
   }
 
-
-
-
 }
