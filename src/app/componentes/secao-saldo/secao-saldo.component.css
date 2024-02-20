@@ -20,7 +20,7 @@ section {
   content: url(../../../assets/saldo-marca-circulo.png);
   position: absolute;
   left: -18px;
-  bottom: -4px;
+  bottom: 10px;
 }
 
 .container::before {
