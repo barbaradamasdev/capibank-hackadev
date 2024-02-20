@@ -66,39 +66,21 @@
 
 @media (min-width: 744px) {
   .grid {
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-    grid-template-rows: repeat(auto-fit, minmax(140px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-template-rows: repeat(auto-fit, minmax(100px, 1fr));
   }
 
-  .icon {
+  /* .icon {
     min-width: 140px;
     height: 140px;
-  }
+  } */
 
   .icon img {
-    width: 45px;
+    width: 40px;
     margin-top: 30px;
   }
 
   .icon p {
-      font-size: 14px;
+      font-size: 12px;
   }
-}
-
-@media (min-height: 745px) {
-  .grid {
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-    grid-template-rows: repeat(auto-fit, minmax(80px, 1fr));
-  }
-
-  .icon {
-    min-width: 100px;
-    height: 100px;
-  }
-
-  .icon img {
-    width: 35px;
-    margin-top: 15px;
-  }
-
 }
