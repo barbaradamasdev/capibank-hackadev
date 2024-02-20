@@ -5,11 +5,9 @@
     "historico-transacoes historico-transacoes historico-transacoes";
   /* gap: 16px; */
   grid-template-columns: 1fr 2fr 2fr;
-  /* grid-template-rows: 1fr .5fr 5fr; */
   padding: 0;
 }
 
-/* Defina a largura mínima para cada componente conforme a especificação */
 app-acesso-rapido-area-interna {
   grid-area: acesso-rapido;
 }
@@ -23,8 +21,8 @@ app-menu-lateral {
 app-barra-de-busca {
   grid-area: busca;
   padding: 0 10px;
-  max-height: 100px; /* Adicione esta linha para limitar a altura máxima */
-  overflow: hidden; /* Adicione isto para esconder o conteúdo além da altura máxima */
+  max-height: 20vh;
+  overflow: hidden;
 
   /* TODO mostrar na reuniao */
   /* background: pink; */
@@ -35,9 +33,13 @@ app-historico-transacoes {
   margin: 0 15px;
 }
 
-@media (min-width: 597px) and (max-width: 799px) {
+@media (min-width: 640px) and (max-width: 799px) {
   .grid {
     grid-template-rows: 1fr .5fr 5fr;
+  }
+
+  app-historico-transacoes {
+    margin-top: -30px;
   }
 }
 
