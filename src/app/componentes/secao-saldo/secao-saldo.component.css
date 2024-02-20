@@ -55,6 +55,21 @@ section {
   cursor: pointer;
 }
 
+@media (max-width: 390px) {
+  section {
+    height: 120px;
+  }
+
+  .container {
+    padding: 10px;
+  }
+
+  .dados {
+    transform: scale(.8);
+    margin-left: -20px;
+  }
+}
+
 @media (min-width: 745px) {
 
   .dados{
