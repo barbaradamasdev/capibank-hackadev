@@ -69,14 +69,14 @@ button {
 }
 
 /* Breakpoint para telas com altura menor */
-@media screen and (max-height: 700px) {
+@media (max-width: 744px) and (max-height: 700px) {
 
   .welcome-div{
-    margin-top: -30px;
+    margin-top: -22px;
   }
 
   header {
     width: 100vw;
-    min-height: 150px;
+    min-height: 170px;
   }
 }
