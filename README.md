@@ -11,6 +11,10 @@ Bem-vindo ao Capibank, um projeto fintech desenvolvido pela equipe Sharp Trooper
 - Permitir a avaliação dos alunos com o apoio de monitores.
 - Criar um ambiente simulado que reproduza os desafios e dinâmicas de uma empresa.
 
+### [👑 Deploy do projeto](https://capibank.vercel.app/)
+
+![Tela Final](https://raw.githubusercontent.com/barbaradamasdev/capibank-hackadev/main/Documenta%C3%A7%C3%A3o/Digital-mockup-02.png?token=GHSAT0AAAAAACGQAHVCL4YYMDS76JDLE4QYZOU2SJQ) 
+
 ## Detalhes do Projeto
 
 - **Nome:** Capibank
@@ -81,7 +85,13 @@ A equipe Sharp Troopers é um grupo de desenvolvedores habilidosos participando 
           <a href="https://www.linkedin.com/in/ana-j%C3%BAlia-medeiros-faustino-50389b226/"><img src="https://github.com/tandpfun/skill-icons/raw/main/icons/LinkedIn.svg" width="20"/></a>
         </sub>
     </td>
-     <td align="center">
+     
+</tr>
+</table>
+
+<table>
+  <tr>
+    <td align="center">
       <a href="https://github.com/Silvana23"> <img src="https://github.com/barbaradamasdev/capibank-hackadev/blob/main/Documenta%C3%A7%C3%A3o/imagens/equipe/equipe-silvana.jpg?raw=true" width="150"/> </a>
       <br>
       <sub>
@@ -90,11 +100,6 @@ A equipe Sharp Troopers é um grupo de desenvolvedores habilidosos participando 
         <a href="https://www.linkedin.com/in/sisisantosdev/"><img src="https://github.com/tandpfun/skill-icons/raw/main/icons/LinkedIn.svg" width="20"/></a>
       </sub>
     </td>
-</tr>
-</table>
-
-<table>
-  <tr>
     <td align="center">
       <a href="https://github.com/IsraelOliveir4"> <img src="https://avatars.githubusercontent.com/u/112810931?v=4" width="150"/> </a>
       <br>
@@ -114,14 +119,6 @@ A equipe Sharp Troopers é um grupo de desenvolvedores habilidosos participando 
       </sub>
     </td>
     <td align="center">
-      <a href="https://github.com/GiovaneRSOliveira"> <img src="" width="150"/> </a>
-      <br>
-      <sub>
-        <p>Giovane Reis</p>
-        <a href="https://github.com/GiovaneRSOliveira"><img src="https://github.com/tandpfun/skill-icons/raw/main/icons/Github-Dark.svg" width="20"/></a>
-      </sub>
-    </td>
-    <td align="center">
       <a href="https://github.com/MarcelaAx"> <img src="https://avatars.githubusercontent.com/u/107064504?v=4" width="150"/> </a>
       <br>
       <sub>
@@ -138,7 +135,14 @@ A equipe Sharp Troopers é um grupo de desenvolvedores habilidosos participando 
         <a href="https://github.com/MarceloJFF"><img src="https://github.com/tandpfun/skill-icons/raw/main/icons/Github-Dark.svg" width="20"/></a>
       </sub>
     </td>
-
+ <td align="center">
+      <a href="https://github.com/GiovaneRSOliveira"> <img src="" width="150"/> </a>
+      <br>
+      <sub>
+        <p>Giovane Reis</p>
+        <a href="https://github.com/GiovaneRSOliveira"><img src="https://github.com/tandpfun/skill-icons/raw/main/icons/Github-Dark.svg" width="20"/></a>
+      </sub>
+    </td>
     
   </tr>
 </table>
