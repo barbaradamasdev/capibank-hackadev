@@ -111,6 +111,23 @@ A equipe Sharp Troopers é um grupo de desenvolvedores habilidosos participando 
       </sub>
     </td>
     <td align="center">
+      <a href="https://github.com/MarcelaAx"> <img src="https://avatars.githubusercontent.com/u/107064504?v=4" width="150"/> </a>
+      <br>
+      <sub>
+        <p>Marcela Machado</p>
+        <a href="https://github.com/MarcelaAx"><img src="https://github.com/tandpfun/skill-icons/raw/main/icons/Github-Dark.svg" width="20"/></a>
+        <a href="https://www.linkedin.com/in/marcela-machado1/"><img src="https://github.com/tandpfun/skill-icons/raw/main/icons/LinkedIn.svg" width="20"/></a>
+      </sub>
+    </td>
+    <td align="center">
+      <a href="https://github.com/MarceloJFF"> <img src="https://avatars.githubusercontent.com/u/120574951?v=4" width="150"/> </a>
+      <br>
+      <sub>
+        <p>Marcelo Jhones</p>
+        <a href="https://github.com/MarceloJFF"><img src="https://github.com/tandpfun/skill-icons/raw/main/icons/Github-Dark.svg" width="20"/></a>
+      </sub>
+    </td>
+      <td align="center">
       <a href="https://github.com/IsraelOliveir4"> <img src="https://avatars.githubusercontent.com/u/112810931?v=4" width="150"/> </a>
       <br>
       <sub>
@@ -126,23 +143,6 @@ A equipe Sharp Troopers é um grupo de desenvolvedores habilidosos participando 
         <p>Alisson Meireles</p>
         <a href="https://github.com/p0llus"><img src="https://github.com/tandpfun/skill-icons/raw/main/icons/Github-Dark.svg" width="20"/></a>
         <a href="https://www.linkedin.com/in/Pollus"><img src="https://github.com/tandpfun/skill-icons/raw/main/icons/LinkedIn.svg" width="20"/></a>
-      </sub>
-    </td>
-    <td align="center">
-      <a href="https://github.com/MarcelaAx"> <img src="https://avatars.githubusercontent.com/u/107064504?v=4" width="150"/> </a>
-      <br>
-      <sub>
-        <p>Marcela Machado</p>
-        <a href="https://github.com/MarcelaAx"><img src="https://github.com/tandpfun/skill-icons/raw/main/icons/Github-Dark.svg" width="20"/></a>
-        <a href="https://www.linkedin.com/in/marcela-machado1/"><img src="https://github.com/tandpfun/skill-icons/raw/main/icons/LinkedIn.svg" width="20"/></a>
-      </sub>
-    </td>
-    <td align="center">
-      <a href="https://github.com/MarceloJFF"> <img src="https://avatars.githubusercontent.com/u/120574951?v=4" width="150"/> </a>
-      <br>
-      <sub>
-        <p>Marcelo Jhones</p>
-        <a href="https://github.com/MarceloJFF"><img src="https://github.com/tandpfun/skill-icons/raw/main/icons/Github-Dark.svg" width="20"/></a>
       </sub>
     </td>
  <td align="center">
