@@ -20,7 +20,7 @@ Bem-vindo ao Capibank, um projeto fintech desenvolvido pela equipe Sharp Trooper
 
 
 <a href="https://capibank.vercel.app/" target="_blank">
-  <img src="https://raw.githubusercontent.com/barbaradamasdev/capibank-hackadev/main/Documenta%C3%A7%C3%A3o/Digital-mockup-02.png?token=GHSAT0AAAAAACGQAHVCL4YYMDS76JDLE4QYZOU2SJQ" alt="Tela Final">
+  <img src="https://github.com/barbaradamasdev/capibank-hackadev/blob/main/Documenta%C3%A7%C3%A3o/Digital-mockup-02.png?raw=true" alt="Tela Final">
 </a>
 
 
