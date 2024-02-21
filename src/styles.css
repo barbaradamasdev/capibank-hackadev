@@ -131,7 +131,7 @@ button  {
 } */
 
 .overflow-pc {
-  overflow-y: auto;
+  /* overflow-y: auto; */
   padding-right: 15px;
 }
 
