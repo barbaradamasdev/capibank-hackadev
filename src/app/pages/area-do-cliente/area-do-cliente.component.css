@@ -17,15 +17,11 @@ app-menu-lateral {
   width: 250px;
 }
 
-/* TODO mostrar na reuniao */
 app-barra-de-busca {
   grid-area: busca;
   padding: 0 10px;
   max-height: 20vh;
   overflow: hidden;
-
-  /* TODO mostrar na reuniao */
-  /* background: pink; */
 }
 
 app-historico-transacoes {
