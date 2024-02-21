@@ -7,6 +7,7 @@
   box-shadow: 2px 5px 10px 1px rgba(0, 0, 0, 0.033);
   height: 100vh;
   background: white;
+  position: absolute;
 }
 
 .nav-link {
@@ -40,13 +41,19 @@
 }
 
 
-@media screen and (max-width: 743px) {
+@media (min-width: 391px) and (max-width: 743px) {
   .sidebar {
-    position: absolute;
-    /* top: -128px; */
-    top: -150px;
+    top: -160px;
     left: -5px;
-    width: 100vw;
+    width: 102vw;
+  }
+}
+
+@media (max-width: 390px) {
+  .sidebar {
+    top: -119px;
+    left: -5px;
+    width: 102vw;
   }
 }
 
