@@ -92,7 +92,8 @@ A equipe Sharp Troopers é um grupo de desenvolvedores habilidosos participando 
 
 ### Membros da Equipe
 
-<table>
+
+<table align="center">
   <tr>
     <td align="center">
       <a href="https://github.com/barbaradamasdev"> <img src="https://avatars.githubusercontent.com/u/115722516?v=4" width="150"/> </a>
@@ -145,7 +146,7 @@ A equipe Sharp Troopers é um grupo de desenvolvedores habilidosos participando 
 </tr>
 </table>
 
-<table>
+<table align="center">
   <tr>
     <td align="center">
       <a href="https://github.com/Silvana23"> <img src="https://github.com/barbaradamasdev/capibank-hackadev/blob/main/Documenta%C3%A7%C3%A3o/imagens/equipe/equipe-silvana.jpg?raw=true" width="150"/> </a>
@@ -163,23 +164,6 @@ A equipe Sharp Troopers é um grupo de desenvolvedores habilidosos participando 
         <p>Marcela Machado</p>
         <a href="https://github.com/MarcelaAx"><img src="https://github.com/tandpfun/skill-icons/raw/main/icons/Github-Dark.svg" width="20"/></a>
         <a href="https://www.linkedin.com/in/marcela-machado1/"><img src="https://github.com/tandpfun/skill-icons/raw/main/icons/LinkedIn.svg" width="20"/></a>
-      </sub>
-    </td>
-    <td align="center">
-      <a href="https://github.com/MarceloJFF"> <img src="https://avatars.githubusercontent.com/u/120574951?v=4" width="150"/> </a>
-      <br>
-      <sub>
-        <p>Marcelo Jhones</p>
-        <a href="https://github.com/MarceloJFF"><img src="https://github.com/tandpfun/skill-icons/raw/main/icons/Github-Dark.svg" width="20"/></a>
-      </sub>
-    </td>
-      <td align="center">
-      <a href="https://github.com/IsraelOliveir4"> <img src="https://avatars.githubusercontent.com/u/112810931?v=4" width="150"/> </a>
-      <br>
-      <sub>
-        <p>Israel Oliveira</p>
-        <a href="https://github.com/IsraelOliveir4"><img src="https://github.com/tandpfun/skill-icons/raw/main/icons/Github-Dark.svg" width="20"/></a>
-        <a href="https://www.linkedin.com/in/israel-oliveira-1819a9247/"><img src="https://github.com/tandpfun/skill-icons/raw/main/icons/LinkedIn.svg" width="20"/></a>
       </sub>
     </td>
     <td align="center">
