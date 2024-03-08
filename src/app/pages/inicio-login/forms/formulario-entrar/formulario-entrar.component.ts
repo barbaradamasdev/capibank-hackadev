@@ -23,7 +23,7 @@ export class FormularioEntrarComponent {
   user: Cliente = {
     email: 'sharp@gmail.com',
     senha:'admin123',
-    nome: 'Antonio Trooper'
+    nome: 'Capitonio Nascimento'
   }
 
   exibirModalErro(mensagem: string): void {
