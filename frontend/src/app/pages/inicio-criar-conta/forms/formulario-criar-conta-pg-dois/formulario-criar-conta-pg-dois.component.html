@@ -1,0 +1,33 @@
+<div class="container-form p-4">
+
+    <h6 class="section-title">Abra sua conta</h6>
+
+    <form [formGroup]="entradaCep" >
+      <div class="form-group">
+
+          <p class="form-title">Onde Você Mora?</p>
+
+          <input formControlName="cep" type="text" class="form-control" placeholder="CEP" (blur)="buscarEndereco()"/>
+          <input type="text" class="form-control" formControlName="rua" placeholder="Rua"/>
+
+          <div class="side-by-side">
+            <input type="text" class="form-control" formControlName="numero" placeholder="Número" />
+            <input type="text" class="form-control" formControlName="cidade" placeholder="Cidade" readonly />
+          </div>
+
+          <input type="text" class="form-control" formControlName="complemento" placeholder="Complemento (opcional)"/>
+      </div>
+
+      <div class="buttons flex">
+        <button routerLink="/cadastrar/passo-1"  class="botao-secundario">
+          Voltar
+        </button>
+        <button routerLink="/cadastrar/passo-3"  class="botao-principal">
+          Próximo
+        </button>
+      </div>
+    </form>
+
+  </div>
+
+
