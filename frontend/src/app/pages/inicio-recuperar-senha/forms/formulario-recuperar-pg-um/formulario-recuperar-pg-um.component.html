@@ -1,0 +1,28 @@
+<div class="container-form p-4">
+  <h6 class="section-title">Recupere sua senha</h6>
+    <form [formGroup]="formRecuperarSenha">
+    <div class="form-group">
+      <p class="form-title">Qual o seu email de cadastro?</p>
+      <input
+        type="email"
+        class="form-control"
+        id="exampleInputEmail1"
+        aria-describedby="emailHelp"
+        placeholder="Email "
+      />
+
+      <div *ngIf="formRecuperarSenha.get('email')?.hasError('email') && formRecuperarSenha.get('email')?.touched" class="warn-text text-danger" >
+        Por favor informe um email válido
+      </div>
+    </div>
+
+    <div class="buttons flex">
+      <button routerLink="/login" type="submit" class="botao-secundario">
+        Voltar
+      </button>
+      <button routerLink="/recuperar/passo-2" type="submit" class="botao-principal">
+        Enviar código
+      </button>
+    </div>
+  </form>
+</div>

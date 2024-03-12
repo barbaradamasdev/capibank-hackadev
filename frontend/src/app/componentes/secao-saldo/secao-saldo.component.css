@@ -1,0 +1,64 @@
+section {
+  background-color: #12115D;
+  border-radius: 8px;
+  margin: auto;
+  width: 90%;
+  max-width: 744px;
+  padding: 0 !important;
+}
+
+.container{
+  padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    text-align: left;
+    position: relative;
+    background: url(../../../assets/saldo-marca-linhas.png) right top no-repeat,
+              url(../../../assets/saldo-marca-circulo.png) left bottom no-repeat;
+    background-size: contain;
+}
+
+.dados{
+  flex-direction: column;
+}
+
+.dados h4{
+    color: #FFFFFF;
+    width: 120px;
+    margin: auto;
+    margin-left: 0;
+}
+
+.dados p{
+    color: #7F7F7F;
+}
+
+.tipo-conta {
+  padding-top: 10px;
+}
+
+.dados > * > img {
+  height: 15px;
+  margin: auto 10px;
+  cursor: pointer;
+}
+
+@media (max-width: 390px) {
+  .container {
+    padding: 0 10px;
+  }
+
+  .dados {
+    transform: scale(.8);
+  }
+}
+
+@media (min-width: 745px) {
+  section{
+    border-radius: 0;
+    margin: 0;
+    width: 100vw;
+    max-width: inherit;
+  }
+}

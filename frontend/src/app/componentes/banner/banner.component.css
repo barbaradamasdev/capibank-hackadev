@@ -1,0 +1,90 @@
+section {
+  background: #0D0E1E url(../../../assets/banner-cartoes-3.png) center/cover no-repeat;
+  height: 100dvh;
+  flex-direction: column;
+  padding: 25px;
+  width: 100vw;
+}
+
+.logo {
+    width: 124px;
+    object-fit: contain;
+    margin: 67px auto;
+    display: flex;
+    justify-self: center;
+}
+
+.buttons {
+  margin-top: auto;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.catchphrase {
+    font-family: "Poppins", "sans-serif";
+    font-weight: 500;
+    font-size: 23px;
+    color: white;
+    width: 291px;
+    margin: 0;
+}
+
+.register  > a {
+    color: white;
+    text-align: right;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 21px;
+    margin-left: -10px;
+}
+
+.account {
+    color: var(--cor-cinza);
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+}
+
+@media (min-width: 744px) {
+  .botao-banner, .register > *{
+    display: none;
+  }
+
+  section {
+    max-width: 50vw;
+  }
+}
+
+
+@media (max-width: 744px) {
+  .hidden {
+    position: absolute;
+    z-index: 1;
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(-800px);
+  }
+
+  .visible {
+    transform: translateX(0px);
+  }
+}
+
+@media (max-width: 330px) {
+  .register {
+    flex-direction: column;
+    justify-content: left;
+  }
+
+  .register > a {
+    text-align: left;
+    margin-left: 0;
+    margin-top: -15px;
+  }
+
+  .catchphrase {
+    width: 201px;
+  }
+
+  }

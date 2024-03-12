@@ -1,0 +1,32 @@
+
+.search-bar {
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.search-bar input[type="text"] {
+  border: 1px solid rgba(128, 128, 128, 0.133);
+  padding: 12px;
+  padding-left: 50px;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.search-bar .search-icon {
+  position: absolute;
+  left: 25px;
+  top: 25px;
+  background-image: url('../../../assets/icones/icone-busca.png');
+  background-size: 30px;
+  background-repeat: no-repeat;
+  width: 30px;
+  height: 30px;
+}
+
+
+@media (max-width: 320px) {
+  :host {
+    display: none;
+  }
+}
