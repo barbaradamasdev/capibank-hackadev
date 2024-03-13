@@ -1,6 +1,0 @@
-@Troppers.Capibank_HostAddress = http://localhost:5114
-
-GET {{Troppers.Capibank_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###
