@@ -1,14 +1,18 @@
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-sizing: border-box;
+.container {
+  padding: 20px;
 }
 
-.header h2 {
-    font-weight: bold;
-    margin: 0;
-    font-size: 16px;
+.section-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.section-top h2 {
+  font-weight: bold;
+  margin: 0;
+  font-size: 16px;
 }
 
 .grid {
@@ -28,10 +32,6 @@
   .icon:last-child {
     display: none;
   }
-}
-
-.container {
-  max-width: 96vw;
 }
 
 .see-all {
@@ -65,22 +65,12 @@
 }
 
 @media (min-width: 744px) {
-  .grid {
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-    grid-template-rows: repeat(auto-fit, minmax(100px, 1fr));
-  }
-
-  /* .icon {
-    min-width: 140px;
-    height: 140px;
-  } */
-
   .icon img {
     width: 40px;
     margin-top: 30px;
   }
 
   .icon p {
-      font-size: 12px;
+    font-size: 12px;
   }
 }
