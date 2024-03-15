@@ -1,10 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Troopers.Capibank.Domain.Entities;
 
 namespace Troppers.Capibank.Data.Context;
 
-public class CapibankContext : DbContext
+public class CapibankContext(DbContextOptions<CapibankContext> options) : DbContext(options)
 {
-    public CapibankContext(DbContextOptions<CapibankContext> options)
-       : base(options) { }
-
+    public DbSet<AddressEntity> Addresses { get; set; }
 }

@@ -4,3 +4,22 @@ GET {{Troopers.Capibank_HostAddress}}/weatherforecast/
 Accept: application/json
 
 ###
+
+POST {{Troopers.Capibank_HostAddress}}/api/v1/auth/signup
+Accept: application/json
+Content-Type: application/json
+
+{
+  "fullname": "string",
+  "email": "string",
+  "password": "string",
+  "birthday": "2024-03-15T00:01:38.450Z",
+  "phone": "string",
+  "address": {
+    "cep": "string",
+    "city": "string",
+    "street": "string",
+    "number": 0,
+    "complement": "string"
+  }
+}

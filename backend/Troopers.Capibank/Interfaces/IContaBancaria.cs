@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generics;
-
 namespace Troopers.Capibank.Interfaces;
 
 public interface IContaBancaria
