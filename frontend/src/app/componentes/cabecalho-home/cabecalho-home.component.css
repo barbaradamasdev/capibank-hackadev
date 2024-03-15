@@ -8,11 +8,11 @@ header {
 
 nav, .buttons {
   position: absolute;
-  top: 90px;
+  top: 85px;
   background: var(--cor-azul-escuro);
   width: 99vw;
   left: 0;
-  padding: 30px;
+  padding: 0;
   margin: auto;
   transform: translateY(-2000px);
   transition: transform 0.3s ease;
@@ -21,11 +21,12 @@ nav, .buttons {
 ul, .buttons {
   padding: 20px 0;
   flex-direction: column;
-  align-items: center;
+  align-items: start;
+  padding-left: 56px;
 }
 
 .buttons {
-  top: 220px;
+  top: 190px;
   padding-bottom: 60px;
 }
 
@@ -65,16 +66,22 @@ a {
 
 .buttons > * {
   max-width: 115px;
-  height: 50px;
+  height: 38px;
 }
 
 .menu-icon {
-  height: 50px;
+  margin: auto 0;
+  height: 30px;
   border-radius: 5px;
   padding: 6px;
-  background: rgba(255, 255, 255, 0.673);
+  background: rgba(255, 255, 255, 0.391);
   cursor: pointer;
 }
+
+.menu-open {
+  transform: translateY(0);
+}
+
 
 @media (min-width: 730px) {
 
@@ -112,6 +119,3 @@ a {
   }
 }
 
-.menu-open {
-  transform: translateY(0);
-}
