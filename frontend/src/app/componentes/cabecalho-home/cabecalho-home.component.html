@@ -3,19 +3,23 @@
   <header class="container">
     <div class="flex">
 
-      <a routerLink="/home">
-        <img class="logo" src="../../../assets/icones/logo-branca.png" alt="">
-      </a>
+      <div class="logo-home">
+        <a routerLink="/home">
+          <img style="z-index: 99;" class="logo" src="../../../assets/icones/logo-branca.png" alt="">
+        </a>
+      </div>
+      <img style="z-index: 99;" src="../../../assets/icones/icone-menu.png" (click)="toggleMenu()" alt="Ícone de Menu" class="menu-icon">
 
-      <nav>
+      <nav [ngClass]="{'menu-open': isMenuOpen}" (linkClicado)="onLinkClicked()">
         <ul class="flex">
           <li><a routerLink="/home">Para empresa</a></li>
           <li><a routerLink="/capivida">CapiVida</a></li>
         </ul>
       </nav>
 
-      <div class="buttons flex">
-        <button routerLink="/login"  class="botao-banner">
+
+      <div class="buttons flex" [ngClass]="{'menu-open': isMenuOpen}" (linkClicado)="onLinkClicked()">
+        <button routerLink="/login" class="botao-banner">
           Login
         </button>
         <button routerLink="/cadastrar/passo-1"  class="botao-banner">

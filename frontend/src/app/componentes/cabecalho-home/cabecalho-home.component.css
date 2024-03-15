@@ -6,6 +6,29 @@ header {
   padding: 20px;
 }
 
+nav, .buttons {
+  position: absolute;
+  top: 90px;
+  background: var(--cor-azul-escuro);
+  width: 99vw;
+  left: 0;
+  padding: 30px;
+  margin: auto;
+  transform: translateY(-2000px);
+  transition: transform 0.3s ease;
+}
+
+ul, .buttons {
+  padding: 20px 0;
+  flex-direction: column;
+  align-items: center;
+}
+
+.buttons {
+  top: 220px;
+  padding-bottom: 60px;
+}
+
 .logo {
   height: 40px;
   margin: auto 0;
@@ -29,6 +52,7 @@ ul {
 
 li {
   list-style-type: none;
+  text-align: center;
 }
 
 a {
@@ -42,4 +66,47 @@ a {
 .buttons > * {
   max-width: 115px;
   height: 50px;
+}
+
+.menu-icon {
+  height: 50px;
+  border-radius: 5px;
+  padding: 6px;
+  background: rgba(255, 255, 255, 0.673);
+  cursor: pointer;
+}
+
+@media (min-width: 730px) {
+  .menu-icon {
+    display: none;
+  }
+
+  .logo-home {
+    width: 80%;
+  }
+
+  nav, .buttons {
+    position: inherit;
+    padding: 10px;
+    transform: translateY(0);
+  transition: transform 0s ease-in-out;
+  }
+
+  ul, .buttons {
+    padding: 0;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  ul {
+    justify-content: center !important;
+  }
+
+  .buttons {
+    justify-content: end;
+  }
+}
+
+.menu-open {
+  transform: translateY(0);
 }
