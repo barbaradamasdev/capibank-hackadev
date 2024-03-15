@@ -1,0 +1,20 @@
+<section>
+  <div class="container">
+
+    <h2>O que falam sobre nós?</h2>
+
+    <article class="grid depoimento-card">
+        <div class="depoimento flex" *ngFor="let depoimento of depoimentos">
+          <p>{{ depoimento.descricao }}</p>
+        <div class="depoimento-imagem flex">
+          <img [src]="depoimento.imagemSrc" alt="Foto do cliente">
+          <div class="depoimento-dados flex">
+            <h3>{{ depoimento.nome }}</h3>
+            <p>{{ depoimento.profissao }}</p>
+          </div>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>

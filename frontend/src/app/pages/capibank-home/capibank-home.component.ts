@@ -8,13 +8,14 @@ import { HomeSecaoInicioComponent } from "../../componentes/home-secao-inicio/ho
 import { HomeBeneficiosComponent } from "../../componentes/home-beneficios/home-beneficios.component";
 import { HomeMaquininhaComponent } from "../../componentes/home-maquininha/home-maquininha.component";
 import { HomeCtaComponent } from "../../componentes/home-cta/home-cta.component";
+import { HomeDepoimentosComponent } from "../../componentes/home-depoimentos/home-depoimentos.component";
 
 @Component({
     selector: 'app-capibank-home',
     standalone: true,
     templateUrl: './capibank-home.component.html',
     styleUrl: './capibank-home.component.css',
-    imports: [RouterOutlet, RouterLink, CabecalhoHomeComponent, RodapeHomeComponent, HomeBannerCheioComponent, CapividaBannerInicialComponent, HomeSecaoInicioComponent, HomeBeneficiosComponent, HomeMaquininhaComponent, HomeCtaComponent]
+    imports: [RouterOutlet, RouterLink, CabecalhoHomeComponent, RodapeHomeComponent, HomeBannerCheioComponent, CapividaBannerInicialComponent, HomeSecaoInicioComponent, HomeBeneficiosComponent, HomeMaquininhaComponent, HomeCtaComponent, HomeDepoimentosComponent]
 })
 export class CapibankHomeComponent {
 
