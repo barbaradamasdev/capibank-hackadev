@@ -12,13 +12,16 @@ import { autenticarGuard } from './seguranca/autenticar.guard';
 import { FormularioRecuperarPgUmComponent } from './pages/inicio-recuperar-senha/forms/formulario-recuperar-pg-um/formulario-recuperar-pg-um.component';
 import { FormularioRecuperarPgDoisComponent } from './pages/inicio-recuperar-senha/forms/formulario-recuperar-pg-dois/formulario-recuperar-pg-dois.component';
 import { FormularioRecuperarPgTresComponent } from './pages/inicio-recuperar-senha/forms/formulario-recuperar-pg-tres/formulario-recuperar-pg-tres.component';
+import { HomeLandingPageComponent } from './pages/home-landing-page/home-landing-page.component';
 
 
 export const routes: Routes = [
+    {path:'',redirectTo:'/home',pathMatch:'full'},
+    //{path:'',redirectTo:'/login',pathMatch:'full'},
+    {path:'home',component:HomeLandingPageComponent},
     {path:'login',component:InicioLoginComponent},
     {path:'cliente',component:AreaDoClienteComponent, canActivate:[autenticarGuard]},
     {path:'historico',component:HistoricoDeTransacaoComponent,canActivate:[autenticarGuard]},
-    {path:'',redirectTo:'/login',pathMatch:'full'},
     {path:'recuperar',component:InicioRecuperarSenhaComponent,
     children:[
       {

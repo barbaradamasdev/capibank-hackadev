@@ -1,35 +1,35 @@
-.header {
+.section-top {
   display: flex;
   justify-content: space-between;
   align-items: center;
   box-sizing: border-box;
 }
 
-.header h2 {
+.section-top h2 {
   font-weight: bold;
   margin: 20px 0;
   font-size: 16px;
 }
 
 .container {
-  max-width: 96vw;
+  padding: 0 20px;
 }
 
 .see-all {
-    color: var(--cor-azul-medio);
-    font-weight: 500;
-    font-size: 12px;
-    cursor: pointer;
+  color: var(--cor-azul-medio);
+  font-weight: 500;
+  font-size: 12px;
+  cursor: pointer;
 }
 
 .descricao{
-    font-weight: 600;
-    font-size: 0.7rem;
-    color:rgb(163, 146, 146);
+  font-weight: 600;
+  font-size: 0.7rem;
+  color:rgb(163, 146, 146);
 }
 
-.container {
-  max-width: 870px;
+table {
+  width: 100%;
 }
 
 .rowTransacao {
@@ -51,30 +51,30 @@
 
 .col2 {
   justify-self: left;
-    width: 75%;
-    padding-left: 10px;
+  width: 75%;
+  padding-left: 10px;
 }
 
 .col3 {
-    width: 20%;
-    text-align: right;
+  width: 20%;
+  text-align: right;
 }
 
 .itemValorSaida {
-    color: var(--cor-vermelho);
-    font-size: 14px;
-    font-weight: 600;
+  color: var(--cor-vermelho);
+  font-size: 14px;
+  font-weight: 600;
 }
 
 .itemValorEntrada {
-    color: var(--cor-verde);
-    font-size: 14px;
-    font-weight: 600;
+  color: var(--cor-verde);
+  font-size: 14px;
+  font-weight: 600;
 }
 
 .divider {
-    background: #F4F4F4;
-    height: 1px;
+  background: #F4F4F4;
+  height: 1px;
 }
 
 
@@ -82,37 +82,10 @@
   .tipo-de-transacao  {
     font-size: 14px !important;
   }
-
 }
 
 @media (max-width: 320px) {
-
-
   .divider {
     margin: 6px 0;
-  }
-
-  .container {
-    margin-top: 20px;
-  }
-}
-
-@media (max-height: 745px) {
-  .header {
-    margin-top: -50px;
-  }
-
-  .divider {
-    margin: 6px 0;
-  }
-
-  .container {
-    margin-top: 20px;
-  }
-}
-
-@media (min-width: 1000px) {
-  .header {
-    margin-top: -70px;
   }
 }

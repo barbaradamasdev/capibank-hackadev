@@ -1,0 +1,29 @@
+.bg {
+  background: var(--cor-azul-escuro);
+  height: 100px;
+}
+
+.logo {
+  max-width: 100px;
+  object-fit: contain;
+}
+
+.flex {
+  justify-content: space-between;
+}
+
+ul {
+  align-items: center;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  color: white;
+}
+
+buttons {
+  
+}

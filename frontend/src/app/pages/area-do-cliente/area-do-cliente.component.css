@@ -1,51 +1,44 @@
+.area-do-cliente {
+  max-height: 100vh;
+  overflow: hidden;
+}
+
 .grid {
   grid-template-areas:
     "acesso-rapido acesso-rapido acesso-rapido"
     "busca busca busca"
     "historico-transacoes historico-transacoes historico-transacoes";
-  /* gap: 16px; */
   grid-template-columns: 1fr 2fr 2fr;
+  grid-template-rows: 10% 5% 45%;
   padding: 0;
 }
 
 app-acesso-rapido-area-interna {
   grid-area: acesso-rapido;
+  max-height: 190px;
+  overflow: hidden;
 }
 
 app-menu-lateral {
   grid-area: menu-lateral;
-  width: 250px;
 }
 
 app-barra-de-busca {
   grid-area: busca;
-  padding: 0 10px;
-  max-height: 20vh;
-  overflow: hidden;
+  padding: 0 5px;
 }
 
 app-historico-transacoes {
   grid-area: historico-transacoes;
-  margin: 0 15px;
-}
-
-@media (min-width: 640px) and (max-width: 799px) {
-  .grid {
-    grid-template-rows: 1fr .5fr 5fr;
-  }
-
-  app-historico-transacoes {
-    margin-top: -30px;
-  }
 }
 
 @media (max-width: 744px) {
   app-menu-lateral {
     position: absolute;
+    top: 55px;
     transform: translateX(-2000px);
     transition: transform 0.3s ease;
   }
-
 
   .menu-open {
     transform: translateX(0);
@@ -65,16 +58,16 @@ app-historico-transacoes {
     "menu-lateral acesso-rapido acesso-rapido"
     "menu-lateral busca busca"
     "menu-lateral historico-transacoes historico-transacoes";
+    grid-template-rows: 12% 5% 45%;
   }
 }
 
 @media (min-width: 1001px){
-   .grid {
-    grid-template-rows: 10% 45% 45%;
-
+  .grid {
     grid-template-areas:
     "menu-lateral acesso-rapido busca"
     "menu-lateral acesso-rapido historico-transacoes"
     "menu-lateral acesso-rapido historico-transacoes";
+    grid-template-rows: 5% 10% 45%;
   }
 }

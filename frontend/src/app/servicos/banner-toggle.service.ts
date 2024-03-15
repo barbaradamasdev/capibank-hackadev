@@ -5,7 +5,7 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class BannerToggleService {
-  private bannerToggleSource = new BehaviorSubject<boolean>(true);
+  private bannerToggleSource = new BehaviorSubject<boolean>(false);
   bannerToggle$ = this.bannerToggleSource.asObservable();
 
   toggleBanner() {
