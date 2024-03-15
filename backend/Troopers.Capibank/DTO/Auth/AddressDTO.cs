@@ -2,7 +2,7 @@ namespace Troopers.Capibank.DTO.Auth;
 
 public class AddressDto
 {
-    public uint Id { get; set; }
+    public int Id { get; set; }
     public string CEP {get; set;}
     public string City {get; set;}
     public string Street {get; set;}
@@ -19,7 +19,7 @@ public class AddressDto
         Complement = string.Empty;
     }
 
-    public AddressDto(uint id, string cep, string city, string street, uint number, string complement)
+    public AddressDto(int id, string cep, string city, string street, uint number, string complement)
     {
         Id = id;
         CEP = cep;

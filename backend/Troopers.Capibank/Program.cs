@@ -5,6 +5,10 @@ using Troopers.Capibank.Util.Validators;
 using Troopers.Capibank.Services;
 using Troopers.Capibank.Exceptions;
 using Troopers.Capibank.Repositories;
+using Troopers.Capibank.Domain.Entities;
+using Troopers.Capibank.Mappers;
+using Troopers.Capibank.DTO.User;
+using Troopers.Capibank.DTO.Auth;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,11 +21,16 @@ var conexao = builder.Configuration.GetConnectionString("SQLite");
 builder.Services.AddDbContext<CapibankContext>(context => context.UseSqlite(conexao));
 
 builder.Services.AddScoped<IAddressRepository, AddressRepository>();
+builder.Services.AddScoped<IUserRepository, UserRepository>();
 
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IAddressService, AddressService>();
+builder.Services.AddScoped<IUserService, UserService>();
 
 builder.Services.AddScoped<IValidator<string>, PasswordValidator>();
+
+builder.Services.AddScoped<IMapper<UserEntity, UserDto>, UserMapper>();
+builder.Services.AddScoped<IMapper<AddressEntity, AddressDto>, AddressMapper>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -41,8 +50,6 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
-app.UseAuthorization();
 
 app.MapControllers();
 

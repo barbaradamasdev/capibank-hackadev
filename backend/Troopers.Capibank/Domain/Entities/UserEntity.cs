@@ -1,11 +1,14 @@
 using System.ComponentModel.DataAnnotations;
+using Microsoft.EntityFrameworkCore;
 using Troopers.Capibank.Domain.Enums;
 
 namespace Troopers.Capibank.Domain.Entities;
 
+[Index(nameof(Email), IsUnique = true)]
+[Index(nameof(Phone), IsUnique = true)]
 public class UserEntity {
     [Key]
-    public uint Id { get; set; }
+    public int Id { get; set; }
 
     [Required]
     [StringLength(128)]
@@ -17,7 +20,7 @@ public class UserEntity {
     public string Email { get; set; }
 
     [Required]
-    [StringLength(256)]
+    [StringLength(512)]
     public string Password { get; set; }
     
     [Required]
@@ -43,5 +46,25 @@ public class UserEntity {
         Phone = string.Empty;
         Address = new();
         Role = UserRole.CLIENT;
+    }
+
+    public UserEntity(
+        int id,
+        string fullname,
+        string email,
+        string password,
+        DateTime birthday,
+        string phone,
+        AddressEntity address,
+        UserRole role
+    ) {
+        Id = id;
+        Fullname = fullname;
+        Email = email;
+        Password = password;
+        Birthday = birthday;
+        Phone = phone;
+        Address = address;
+        Role = role;
     }
 }

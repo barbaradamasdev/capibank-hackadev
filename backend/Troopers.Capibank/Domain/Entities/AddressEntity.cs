@@ -33,4 +33,20 @@ public class AddressEntity
         Number = 0;
         Complement = string.Empty;
     }
+
+    public AddressEntity(
+        int id,
+        string cep,
+        string city,
+        string street,
+        uint number,
+        string complement
+    ) {
+        Id = id;
+        CEP = cep;
+        City = city;
+        Street = street;
+        Number = number;
+        Complement = complement;
+    }
 }

@@ -14,7 +14,7 @@ public class AddressController(IAddressService addressService) : ControllerBase
     {
         AddressEntity entity = addressService.Create(address);
         return new AddressDto(
-            (uint) entity.Id,
+            entity.Id,
             entity.CEP,
             entity.City,
             entity.Street,
@@ -31,7 +31,7 @@ public class AddressController(IAddressService addressService) : ControllerBase
         foreach (var entity in entities)
         {
             var dto = new AddressDto(
-                (uint) entity.Id,
+                entity.Id,
                 entity.CEP,
                 entity.City,
                 entity.Street,
