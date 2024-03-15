@@ -3,7 +3,7 @@
 }
 
 header {
-  padding: 20px 40px;
+  padding: 20px;
 }
 
 nav, .buttons {
@@ -77,6 +77,11 @@ a {
 }
 
 @media (min-width: 730px) {
+
+  header {
+    padding: 20px 40px;
+  }
+
   .menu-icon {
     display: none;
   }

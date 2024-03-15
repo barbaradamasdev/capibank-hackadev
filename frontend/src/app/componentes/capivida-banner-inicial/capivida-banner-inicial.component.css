@@ -1,6 +1,5 @@
 .banner-text {
   width: 60%;
-  height: 600px;
 }
 
 .banner-wrapper {
@@ -10,7 +9,6 @@
 .banner-text {
   padding: 60px 20px;
   flex-direction: column;
-  /* gap: 20px; */
   align-items: center;
   justify-content: center;
   color: white;
@@ -39,9 +37,8 @@ img {
   background-position: center top;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 600px;
+  height: 500px;
   box-shadow: 5px 5px 20px 5px rgba(0, 0, 0, 0.055);
-
 }
 
 @media (max-width: 650px) {
@@ -49,11 +46,17 @@ img {
     flex-direction: column-reverse;
   }
 
+  .banner-full {
+    height: 600px;
+  }
+
   .banner-wrapper {
     height: 100px;
+    display: inherit;
   }
 
   .banner-text {
+    height: 400px;
     width: 100%;
   }
 

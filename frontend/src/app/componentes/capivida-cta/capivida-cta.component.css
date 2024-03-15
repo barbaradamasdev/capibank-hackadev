@@ -12,5 +12,6 @@ footer {
   align-items: center;
   justify-content: center;
   gap: 20px;
+  text-align: center;
   height: 100%;
 }
