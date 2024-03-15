@@ -6,6 +6,19 @@ article {
   flex-direction: column;
 }
 
+h2 {
+  text-align: center;
+  margin: auto;
+  width: 350px;
+  padding-bottom: 10px;
+  margin-top: 30px;
+  color: var(--cor-azul-medio);
+}
+
+h3 {
+  border-bottom: 3px solid var(--cor-dourado);
+  color: var(--cor-azul-medio);
+}
 
 img {
   object-fit: cover;
@@ -17,7 +30,7 @@ img {
     flex-direction: row;
   }
 
-  article:nth-child(2) {
+  article:nth-child(3) {
     flex-direction: row-reverse;
   }
 
@@ -27,8 +40,10 @@ img {
   }
 
   img {
-    width: 300px;
-    height: 600px;
+    width: 180px;
+    height: 370px;
+    border-radius: 15px;
+    box-shadow: 5px 5px 20px 5px rgba(0, 0, 0, 0.055);
   }
 
 }
