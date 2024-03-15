@@ -1,0 +1,66 @@
+.banner-text {
+  width: 60%;
+}
+
+.banner-wrapper {
+  width: 40%;
+}
+
+.banner-text {
+  padding: 60px 20px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.botao-banner {
+  margin-top: 40px;
+  max-width: 200px;
+  margin-right: auto;
+}
+
+.banner-text > * {
+  width: 100%;
+}
+
+img {
+  max-width: 100%;
+}
+
+.flex {
+  align-items: center;
+}
+
+.banner-full {
+  background: url('../../../assets/banner/capi-meditation-2.png');
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 500px;
+  box-shadow: 5px 5px 20px 5px rgba(0, 0, 0, 0.055);
+}
+
+@media (max-width: 650px) {
+  .banner-full > .flex {
+    flex-direction: column-reverse;
+  }
+
+  .banner-full {
+    height: 600px;
+  }
+
+  .banner-wrapper {
+    height: 100px;
+    display: inherit;
+  }
+
+  .banner-text {
+    height: 400px;
+    width: 100%;
+  }
+
+  .banner-full {
+    background-position: 80% center;
+  }
+}
