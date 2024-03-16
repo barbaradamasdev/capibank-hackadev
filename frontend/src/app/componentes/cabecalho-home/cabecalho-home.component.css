@@ -1,29 +1,121 @@
 .bg {
   background: var(--cor-azul-escuro);
-  height: 100px;
+}
+
+header {
+  padding: 20px;
+}
+
+nav, .buttons {
+  position: absolute;
+  top: 85px;
+  background: var(--cor-azul-escuro);
+  width: 99vw;
+  left: 0;
+  padding: 0;
+  margin: auto;
+  transform: translateY(-2000px);
+  transition: transform 0.3s ease;
+}
+
+ul, .buttons {
+  padding: 20px 0;
+  flex-direction: column;
+  align-items: start;
+  padding-left: 56px;
+}
+
+.buttons {
+  top: 190px;
+  padding-bottom: 60px;
 }
 
 .logo {
-  max-width: 100px;
+  height: 40px;
+  margin: auto 0;
   object-fit: contain;
+  margin-top: 5px;
 }
 
 .flex {
   justify-content: space-between;
 }
 
+nav {
+  margin: auto;
+}
+
 ul {
-  align-items: center;
+  margin: 0;
+  justify-content: space-between;
+  gap: 25px;
 }
 
 li {
   list-style-type: none;
+  text-align: center;
 }
 
 a {
   color: white;
 }
 
-buttons {
-  
+.buttons  {
+   gap: 20px;
 }
+
+.buttons > * {
+  max-width: 115px;
+  height: 38px;
+}
+
+.menu-icon {
+  margin: auto 0;
+  height: 30px;
+  border-radius: 5px;
+  padding: 6px;
+  background: rgba(255, 255, 255, 0.391);
+  cursor: pointer;
+}
+
+.menu-open {
+  transform: translateY(0);
+}
+
+
+@media (min-width: 730px) {
+
+  header {
+    padding: 20px 40px;
+  }
+
+  .menu-icon {
+    display: none;
+  }
+
+  .logo-home {
+    width: 80%;
+  }
+
+  nav, .buttons {
+    position: inherit;
+    padding: 10px;
+    transform: translateY(0);
+  transition: transform 0s ease-in-out;
+  }
+
+  ul, .buttons {
+    padding: 0;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  ul {
+    justify-content: center !important;
+  }
+
+  .buttons {
+    justify-content: end;
+  }
+}
+

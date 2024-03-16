@@ -1,0 +1,12 @@
+<section class="container">
+  <h2>Nossos pilares</h2>
+  <article class="flex" *ngFor="let pilar of pilares">
+    <div>
+      <h3>{{ pilar.titulo }}</h3>
+      <p>{{ pilar.descricao }}</p>
+    </div>
+
+    <img [src]="pilar.imagemSrc" alt="{{ pilar.titulo }} Imagem">
+  </article>
+
+</section>
