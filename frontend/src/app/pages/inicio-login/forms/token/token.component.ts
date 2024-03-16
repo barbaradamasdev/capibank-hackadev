@@ -3,11 +3,12 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
 import { Cliente } from '../../../../Models/Cliente';
+import { AdvanceOnInputDirective } from '../../../../Diretivas/advance-on-input-directive';
 
 @Component({
   selector: 'app-token',
   standalone: true,
-  imports: [ReactiveFormsModule, CommonModule, RouterLink],
+  imports: [AdvanceOnInputDirective, ReactiveFormsModule, CommonModule, RouterLink],
   templateUrl: './token.component.html',
   styleUrls: ['../../../../../form.css','./token.component.css']
 
@@ -15,10 +16,6 @@ import { Cliente } from '../../../../Models/Cliente';
 export class TokenComponent {
 
   constructor(private rota: Router){}
-
-  // tokenForm = new FormGroup({
-  //   token: new FormControl('',[Validators.required])
-  // });
 
   tokenForm = new FormGroup({
     digit1: new FormControl('', [Validators.required]),
@@ -106,17 +103,4 @@ export class TokenComponent {
       this.tokenForm.reset();
     }
   }
-
-
-
-
-  // autenticar():void{
-  //   if(this.tokenForm.value.token == this.user.token){
-  //     localStorage.setItem('token', this.user.token)
-  //     this.rota.navigateByUrl('/cliente')
-  //   }else{
-  //     this.exibirModalErro("Token inválido! Por favor, tente novamente.");
-  //   }
-  //   this.tokenForm.reset();
-  // }
 }
