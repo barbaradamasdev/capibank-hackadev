@@ -23,6 +23,7 @@ export class FormularioEntrarComponent {
   user: Cliente = {
     email: 'sharp@gmail.com',
     senha:'admin123',
+    token:'123123',
     nome: 'Capitonio Nascimento'
   }
 
@@ -71,7 +72,7 @@ export class FormularioEntrarComponent {
       localStorage.setItem('email', this.formLogin.value.email)
       localStorage.setItem('senha', this.formLogin.value.senha)
       localStorage.setItem('nome', this.user.nome)
-      this.rota.navigateByUrl('/cliente')
+      this.rota.navigateByUrl('/login/token')
     }else{
       this.exibirModalErro("Senha ou usuário inválidos! Por favor, tente novamente.");
     }

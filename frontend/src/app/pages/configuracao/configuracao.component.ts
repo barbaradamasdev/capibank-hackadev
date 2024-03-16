@@ -3,7 +3,7 @@ import { CabecalhoAreaInternaComponent } from "../../componentes/cabecalho-area-
 import { SecaoSaldoComponent } from "../../componentes/secao-saldo/secao-saldo.component";
 import { MenuInferiorAreaInternaComponent } from "../../componentes/menu-inferior-area-interna/menu-inferior-area-interna.component";
 import { MenuLateralComponent } from "../../componentes/menu-lateral/menu-lateral.component";
-import { FormChamadoComponent } from "../../pages/chamado/form-chamado/form-chamado.component";
+import { FormChamadoComponent } from "../chamado/form-chamado/form-chamado.component";
 import { Subscription, filter } from 'rxjs';
 import { MenuService } from '../../servicos/menu.service';
 import { NavigationEnd, Router } from '@angular/router';
@@ -13,10 +13,10 @@ import { CommonModule } from '@angular/common';
   selector: 'app-config',
   standalone: true,
   imports: [CabecalhoAreaInternaComponent, SecaoSaldoComponent, MenuInferiorAreaInternaComponent, MenuLateralComponent, CommonModule, FormChamadoComponent],
-  templateUrl: './config.component.html',
-  styleUrl: './config.component.css'
+  templateUrl: './configuracao.component.html',
+  styleUrl: './configuracao.component.css'
 })
-export class ConfigComponent {
+export class ConfiguracaoComponent {
   isMenuOpen: boolean = false;
   private routerSubscription: Subscription;
 

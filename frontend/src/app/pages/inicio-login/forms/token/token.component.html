@@ -1,0 +1,33 @@
+<div class="container-form p-4">
+
+  <h6 class="section-title">Enviamos um código para seu email</h6>
+
+  <form [formGroup]="tokenForm" (submit)="autenticar()">
+      <!-- <div class="form-group">
+        <input
+        formControlName="token"
+        type="email"
+        class="form-control"
+        id="exampleInputEmail1"
+        aria-describedby="emailHelp"
+        placeholder="Digite o código de 6 dígitos aqui">
+
+      </div> -->
+
+      <div class="form-group">
+        <div class="token-inputs">
+          <input formControlName="digit1" type="text" maxlength="1" class="form-control" id="digit1" aria-describedby="emailHelp" required>
+          <input formControlName="digit2" type="text" maxlength="1" class="form-control" id="digit2" aria-describedby="emailHelp" required>
+          <input formControlName="digit3" type="text" maxlength="1" class="form-control" id="digit3" aria-describedby="emailHelp" required>
+          <input formControlName="digit4" type="text" maxlength="1" class="form-control" id="digit4" aria-describedby="emailHelp" required>
+          <input formControlName="digit5" type="text" maxlength="1" class="form-control" id="digit5" aria-describedby="emailHelp" required>
+          <input formControlName="digit6" type="text" maxlength="1" class="form-control" id="digit6" aria-describedby="emailHelp" required>
+        </div>
+      </div>
+
+      <div class="buttons justify-content-center text-center">
+        <button type="submit" class="btn botao-principal btn-lg btn-block">Validar código</button>
+      </div>
+    </form>
+
+  </div>
