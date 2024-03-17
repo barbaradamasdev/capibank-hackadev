@@ -1,0 +1,48 @@
+.seguranca {
+  max-height: 100vh;
+  overflow: hidden;
+}
+
+.grid {
+  grid-template-areas:
+    "secao-seguranca secao-seguranca secao-seguranca";
+  gap: 16px;
+  grid-template-columns: 1fr 2fr 2fr;
+  padding: 0;
+}
+
+app-menu-lateral {
+  grid-area: menu-lateral;
+}
+
+app-secao-seguranca {
+  grid-area: secao-seguranca;
+  height: 68vh;
+  overflow-y: scroll;
+}
+
+@media (max-width: 744px) {
+  app-menu-lateral {
+    position: absolute;
+    top: 55px;
+    transform: translateX(-2000px);
+    transition: transform 0.3s ease;
+  }
+
+  .menu-open {
+    transform: translateX(0);
+  }
+
+}
+
+@media (min-width: 745px)  {
+  .grid {
+    grid-template-areas:
+    "menu-lateral secao-seguranca secao-seguranca";
+    grid-template-rows: 12% 5% 45%;
+  }
+
+  app-secao-seguranca {
+    height: 72vh;
+  }
+}

@@ -1,0 +1,13 @@
+
+h2 {
+  margin: auto;
+  text-align: center;
+  padding-bottom: 30px;
+  padding-top: 30px;
+  color: var(--cor-azul-medio);
+}
+
+h3 {
+  color: var(--cor-azul-medio);
+  font-size: 18px;
+}

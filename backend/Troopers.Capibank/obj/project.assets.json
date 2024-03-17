@@ -3059,11 +3059,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\dev\\CapiBankv3\\backend\\Troopers.Capibank\\Troopers.Capibank.csproj",
+      "projectUniqueName": "\\\\wsl.localhost\\Arch\\home\\babidamasdev\\Jobs\\capibank-hackadev\\backend\\Troopers.Capibank\\Troopers.Capibank.csproj",
       "projectName": "Troopers.Capibank",
-      "projectPath": "C:\\dev\\CapiBankv3\\backend\\Troopers.Capibank\\Troopers.Capibank.csproj",
+      "projectPath": "\\\\wsl.localhost\\Arch\\home\\babidamasdev\\Jobs\\capibank-hackadev\\backend\\Troopers.Capibank\\Troopers.Capibank.csproj",
       "packagesPath": "C:\\Users\\barba\\.nuget\\packages\\",
-      "outputPath": "C:\\dev\\CapiBankv3\\backend\\Troopers.Capibank\\obj\\",
+      "outputPath": "\\\\wsl.localhost\\Arch\\home\\babidamasdev\\Jobs\\capibank-hackadev\\backend\\Troopers.Capibank\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\barba\\AppData\\Roaming\\NuGet\\NuGet.Config",

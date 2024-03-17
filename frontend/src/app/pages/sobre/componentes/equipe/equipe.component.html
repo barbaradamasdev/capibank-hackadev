@@ -1,0 +1,19 @@
+<section class="container">
+  <h2>👥 Equipe - Sharp Troopers</h2>
+
+  <p>A equipe Sharp Troopers é um grupo de desenvolvedores habilidosos participando do projeto Capibank. Cada membro contribui para o sucesso do projeto, trazendo um conjunto diversificado de habilidades e experiências.</p>
+
+  <div class="team-members">
+    <div class="team-member" *ngFor="let member of teamMembers">
+      <a [href]="member.github"> <img [src]="member.image" width="150"/> </a>
+      <!-- <br> -->
+      <p>{{ member.name }}</p>
+      <p>({{ member.role }})</p>
+      <sub>
+        <a target="_blank" [href]="member.github"><img src="https://github.com/tandpfun/skill-icons/raw/main/icons/Github-Dark.svg" width="25"/></a>
+        <a target="_blank" [href]="member.linkedin"><img src="https://github.com/tandpfun/skill-icons/raw/main/icons/LinkedIn.svg" width="25"/></a>
+      </sub>
+    </div>
+  </div>
+
+</section>

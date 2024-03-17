@@ -5,13 +5,14 @@ import { FormularioEntrarComponent } from "./forms/formulario-entrar/formulario-
 import { Cliente } from '../../Models/Cliente';
 import { BannerComponent } from "../../componentes/banner/banner.component";
 import { CommonModule } from '@angular/common';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
     selector: 'app-inicio-login',
     standalone: true,
     templateUrl: './inicio-login.component.html',
     styleUrls: ['./inicio-login.component.css'],
-    imports: [CabecalhoLoginComponent, RodapeLoginComponent, FormularioEntrarComponent, BannerComponent, CommonModule]
+    imports: [CabecalhoLoginComponent, RodapeLoginComponent, FormularioEntrarComponent, BannerComponent, CommonModule, RouterOutlet]
 })
 export class InicioLoginComponent {
 
