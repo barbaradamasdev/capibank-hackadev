@@ -1,0 +1,39 @@
+article {
+  padding: 20px;
+  margin-bottom: 20px;
+  align-items: center;
+  flex-direction: column;
+}
+
+img {
+  width: 100%;
+}
+
+h2 {
+  text-align: center;
+  margin: auto;
+  padding-bottom: 30px;
+  padding-top: 30px;
+  color: var(--cor-azul-medio);
+}
+
+h3 {
+  color: var(--cor-azul-medio);
+  font-size: 18px;
+  text-align: center;
+}
+
+button {
+  width: 100%;
+  margin: 30px auto 0;
+}
+
+@media (min-width: 700px) {
+  article {
+    flex-direction: row-reverse;
+  }
+
+  img {
+    width: 50%;
+  }
+}

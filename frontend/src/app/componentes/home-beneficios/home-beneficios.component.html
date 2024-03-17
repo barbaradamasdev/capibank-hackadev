@@ -1,0 +1,12 @@
+<section class="container flex">
+  <h2>Por que ser CapiBank?</h2>
+
+  <article class="grid">
+    <div class="flex" *ngFor="let beneficio of beneficios">
+      <img [src]="beneficio.imagemSrc" alt="Icone">
+      <h3>{{ beneficio.titulo }}</h3>
+      <p>{{ beneficio.descricao }}</p>
+    </div>
+  </article>
+
+</section>

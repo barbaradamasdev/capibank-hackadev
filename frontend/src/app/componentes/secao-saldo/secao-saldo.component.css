@@ -1,22 +1,18 @@
 section {
   background-color: #12115D;
   border-radius: 8px;
-  margin: auto;
-  width: 90%;
-  max-width: 744px;
-  padding: 0 !important;
+  margin: 0 20px;
 }
 
-.container{
+.saldo{
   padding: 20px;
-    display: flex;
-    justify-content: space-between;
-    margin: 0 auto;
-    text-align: left;
-    position: relative;
-    background: url(../../../assets/saldo-marca-linhas.png) right top no-repeat,
-              url(../../../assets/saldo-marca-circulo.png) left bottom no-repeat;
-    background-size: contain;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  text-align: left;
+  background: url(../../../assets/saldo-marca-linhas.png) right top no-repeat,
+            url(../../../assets/saldo-marca-circulo.png) left bottom no-repeat;
+  background-size: contain;
 }
 
 .dados{
@@ -24,18 +20,19 @@ section {
 }
 
 .dados h4{
-    color: #FFFFFF;
-    width: 120px;
-    margin: auto;
-    margin-left: 0;
+  color: #FFFFFF;
+  width: 120px;
+  margin: auto;
+  margin-left: 0;
 }
 
 .dados p{
-    color: #7F7F7F;
+  color: #7F7F7F;
 }
 
 .tipo-conta {
   padding-top: 10px;
+  margin-bottom: 0;
 }
 
 .dados > * > img {
@@ -45,7 +42,7 @@ section {
 }
 
 @media (max-width: 390px) {
-  .container {
+  .saldo {
     padding: 0 10px;
   }
 
@@ -58,7 +55,5 @@ section {
   section{
     border-radius: 0;
     margin: 0;
-    width: 100vw;
-    max-width: inherit;
   }
 }

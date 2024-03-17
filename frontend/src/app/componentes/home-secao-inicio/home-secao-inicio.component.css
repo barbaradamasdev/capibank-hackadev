@@ -1,0 +1,82 @@
+.banner-text {
+  width: 40%;
+  min-width: 50vw;
+}
+
+.banner-text {
+  padding: 60px 20px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  z-index: 90;
+}
+
+.botao-banner {
+  margin-top: 40px;
+  max-width: 200px;
+  margin-right: auto;
+}
+
+.banner-text > * {
+  width: 100%;
+}
+
+img {
+  max-width: 100%;
+}
+
+.flex {
+  align-items: center;
+}
+
+.banner-full {
+  position: relative;
+  background: url('../../../assets/banner/capibank-banner-maquininha.png');
+  background-position: 40% center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 500px;
+  box-shadow: 5px 5px 20px 5px rgba(0, 0, 0, 0.055);
+}
+
+.banner-full::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.961), transparent);
+}
+
+@media (max-width: 650px) {
+  .banner-full::after {
+    background-color: rgba(0, 0, 0, 0.66);
+    background-image: none;
+  }
+
+  .banner-full > .flex {
+    flex-direction: column-reverse;
+  }
+
+  .banner-full {
+    height: 600px;
+  }
+
+  .banner-wrapper {
+    height: 100px;
+    display: inherit;
+  }
+
+  .banner-text {
+    height: 400px;
+    width: 100%;
+  }
+
+  .banner-full {
+    background-position: bottom right -288px;
+
+  }
+}
+

@@ -7,10 +7,6 @@
     box-sizing: border-box;
 }
 
-body {
-  overflow: hidden;
-}
-
 .logo {
     font-family: "Poppins", "sans-serif";
 }
@@ -109,32 +105,6 @@ button  {
   gap: 15px;
   max-width: 100vw;
 }
-
-.overflow {
-  overflow-y: auto;
-  padding-right: 15px;
-  max-height: 67vh;
-}
-
-.overflow-mobile {
-  overflow-y: auto;
-  padding-right: 15px;
-  max-height: 67vh;
-  /* background: pink; */
-}
-
-/* .overflow-tablet {
-  overflow-y: auto;
-  padding-right: 15px;
-  max-height: 67vh;
-  background: pink;
-} */
-
-.overflow-pc {
-  /* overflow-y: auto; */
-  padding-right: 15px;
-}
-
 
 ::-webkit-scrollbar {
   width: 6px;

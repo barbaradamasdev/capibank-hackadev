@@ -12,13 +12,17 @@ import { autenticarGuard } from './seguranca/autenticar.guard';
 import { FormularioRecuperarPgUmComponent } from './pages/inicio-recuperar-senha/forms/formulario-recuperar-pg-um/formulario-recuperar-pg-um.component';
 import { FormularioRecuperarPgDoisComponent } from './pages/inicio-recuperar-senha/forms/formulario-recuperar-pg-dois/formulario-recuperar-pg-dois.component';
 import { FormularioRecuperarPgTresComponent } from './pages/inicio-recuperar-senha/forms/formulario-recuperar-pg-tres/formulario-recuperar-pg-tres.component';
+import { CapividaComponent } from './pages/capivida/capivida.component';
+import { CapibankHomeComponent } from './pages/capibank-home/capibank-home.component';
 
 
 export const routes: Routes = [
+    {path:'',redirectTo:'/home',pathMatch:'full',},
+    {path:'home',component:CapibankHomeComponent},
+    {path:'capivida',component:CapividaComponent},
     {path:'login',component:InicioLoginComponent},
     {path:'cliente',component:AreaDoClienteComponent, canActivate:[autenticarGuard]},
     {path:'historico',component:HistoricoDeTransacaoComponent,canActivate:[autenticarGuard]},
-    {path:'',redirectTo:'/login',pathMatch:'full'},
     {path:'recuperar',component:InicioRecuperarSenhaComponent,
     children:[
       {

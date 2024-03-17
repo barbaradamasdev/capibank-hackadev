@@ -1,0 +1,75 @@
+section {
+  background: var(--cor-azul-escuro);
+}
+
+.container {
+  color: white;
+}
+
+article {
+  padding: 20px;
+  gap: 40px;
+  margin-bottom: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr) );
+  justify-content: center;
+}
+
+.depoimento {
+  margin-bottom: auto;
+  background: white;
+  color: black;
+  padding: 20px;
+  border-radius: 15px;
+}
+
+.depoimento-imagem  {
+  width: 100%;
+}
+
+.depoimento > div {
+  margin-top: 30px;
+}
+
+article > div {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+img {
+  width: 80px;
+  max-width: 18vw;
+  margin-right: 20px;
+  object-fit: contain;
+  border-radius: 50%;
+}
+
+.depoimento-dados {
+  flex-direction: column;
+  justify-content: center;
+}
+
+p {
+  margin: 0;
+}
+
+h2 {
+  text-align: center;
+  margin: auto;
+  width: 350px;
+  max-width: 70vw;
+  padding-bottom: 30px;
+  padding-top: 30px;
+}
+
+h3 {
+  border-bottom: 3px solid var(--cor-dourado);
+  font-size: 18px;
+}
+
+@media (min-width: 700px) {
+  article {
+    flex-direction: row;
+  }
+
+}

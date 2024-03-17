@@ -1,0 +1,54 @@
+.bg {
+  background: var(--cor-azul-escuro);
+  color: white;
+}
+
+footer {
+  padding: 20px;
+  flex-direction: column;
+}
+
+h4 {
+  text-align: center;
+}
+
+ul {
+  margin-bottom: 40px;
+  padding: 0;
+}
+
+.logo-home {
+  margin: auto;
+}
+
+.logo {
+  height: 70px;
+  object-fit: contain;
+  margin-bottom: 40px;
+}
+
+li {
+  list-style-type: none;
+  text-align: center;
+}
+
+a {
+  font-size: 14px;
+  cursor: pointer;
+}
+
+@media (min-width: 740px) {
+  footer {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 40px;
+  }
+
+  .logo {
+    height: 60px;
+  }
+
+  .logo-home {
+    margin: 0;
+  }
+}

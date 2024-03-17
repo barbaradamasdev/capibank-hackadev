@@ -10,6 +10,7 @@ import { RouterLink } from '@angular/router';
   styleUrl: './cabecalho-area-interna.component.css'
 })
 export class CabecalhoAreaInternaComponent {
+  elementRef: any;
   constructor(private menuService: MenuService) {}
 
   logout():void{

@@ -1,62 +1,51 @@
-.grid {
-  grid-template-areas:
-    "busca busca busca"
-    "historico-transacoes historico-transacoes historico-transacoes"
-    "historico-transacoes historico-transacoes historico-transacoes";
-  gap: 16px;
-  grid-template-columns: 1fr 2fr 2fr;
-  padding: 0;
+.transacoes {
+  max-height: 100vh;
+  overflow: hidden;
 }
 
-app-acesso-rapido-area-interna {
-  grid-area: acesso-rapido;
+.grid {
+  grid-template-areas:
+  "busca busca"
+  "historico-transacoes historico-transacoes";
+  gap: 16px;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 7% 90%;
+  padding: 0;
 }
 
 app-barra-de-busca {
   grid-area: busca;
-  padding: 0 10px;
-  width: 100%;
-  max-width: 870px;
-  margin: auto;
+  max-height: 80px;
 }
 
 app-menu-lateral {
   grid-area: menu-lateral;
-  width: 250px;
 }
 
 app-historico-transacoes {
   grid-area: historico-transacoes;
-  margin: 0 15px;
+  height: 72vh;
+  overflow-y: scroll;
 }
 
 @media (max-width: 745px) {
   app-menu-lateral {
     position: absolute;
+    top: 55px;
     transform: translateX(-2000px);
     transition: transform 0.3s ease;
   }
 
-
   .menu-open {
     transform: translateX(0);
-  }
-
-  .grid {
-    grid-template-areas:
-      "busca busca busca"
-      "historico-transacoes historico-transacoes historico-transacoes"
-      "historico-transacoes historico-transacoes historico-transacoes";
   }
 }
 
 @media (min-width: 746px)  {
   .grid {
-    grid-template-rows: 10% 45% 45%;
     grid-template-areas:
-    "menu-lateral busca busca"
-    "menu-lateral historico-transacoes historico-transacoes"
-    "menu-lateral historico-transacoes historico-transacoes";
+    "menu-lateral busca"
+    "menu-lateral historico-transacoes";
   }
 
 }
