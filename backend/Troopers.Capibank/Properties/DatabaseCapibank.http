@@ -1,0 +1,4 @@
+@DatabaseCapibank_HostAddress = http://localhost:5276
+
+GET {{ DatabaseCapibank_HostAddress }} / atendimentos
+Content-Type: application/json;
