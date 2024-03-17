@@ -128,3 +128,14 @@ C:\dev\CapiBankv3\backend\Troopers.Capibank\obj\Debug\net8.0\refint\Troopers.Cap
 C:\dev\CapiBankv3\backend\Troopers.Capibank\obj\Debug\net8.0\Troopers.Capibank.pdb
 C:\dev\CapiBankv3\backend\Troopers.Capibank\obj\Debug\net8.0\Troopers.Capibank.genruntimeconfig.cache
 C:\dev\CapiBankv3\backend\Troopers.Capibank\obj\Debug\net8.0\ref\Troopers.Capibank.dll
+D:\Dev\Sharp Projeto\capibank-hackadev\backend\troopers.capibank\obj\Debug\net8.0\Troopers.Capibank.csproj.AssemblyReference.cache
+D:\Dev\Sharp Projeto\capibank-hackadev\backend\troopers.capibank\obj\Debug\net8.0\Troopers.Capibank.GeneratedMSBuildEditorConfig.editorconfig
+D:\Dev\Sharp Projeto\capibank-hackadev\backend\troopers.capibank\obj\Debug\net8.0\Troopers.Capibank.AssemblyInfoInputs.cache
+D:\Dev\Sharp Projeto\capibank-hackadev\backend\troopers.capibank\obj\Debug\net8.0\Troopers.Capibank.AssemblyInfo.cs
+D:\Dev\Sharp Projeto\capibank-hackadev\backend\troopers.capibank\obj\Debug\net8.0\Troopers.Capibank.csproj.CoreCompileInputs.cache
+D:\Dev\Sharp Projeto\capibank-hackadev\backend\troopers.capibank\obj\Debug\net8.0\Troopers.Capibank.MvcApplicationPartsAssemblyInfo.cs
+D:\Dev\Sharp Projeto\capibank-hackadev\backend\troopers.capibank\obj\Debug\net8.0\Troopers.Capibank.MvcApplicationPartsAssemblyInfo.cache
+D:\Dev\Sharp Projeto\capibank-hackadev\backend\troopers.capibank\obj\Debug\net8.0\Troopers.Capibank.sourcelink.json
+D:\Dev\Sharp Projeto\capibank-hackadev\backend\troopers.capibank\obj\Debug\net8.0\Troopers.Capibank.dll
+D:\Dev\Sharp Projeto\capibank-hackadev\backend\troopers.capibank\obj\Debug\net8.0\refint\Troopers.Capibank.dll
+D:\Dev\Sharp Projeto\capibank-hackadev\backend\troopers.capibank\obj\Debug\net8.0\Troopers.Capibank.pdb

@@ -1,8 +1,12 @@
 {
   "ExpandedNodes": [
     "",
-    "\\backend"
+    "\\backend",
+    "\\backend\\Troopers.Capibank",
+    "\\backend\\Troopers.Capibank\\Domain",
+    "\\backend\\Troopers.Capibank\\DTOs",
+    "\\backend\\Troopers.Capibank\\DTOs\\Profiles"
   ],
-  "SelectedNode": "\\backend\\Troopers.Capibank",
+  "SelectedNode": "\\backend\\Troopers.Capibank\\DTOs\\Profiles\\TransacaoDTO.cs",
   "PreviewInSolutionExplorer": false
 }

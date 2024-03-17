@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Dev\\Sharp Projeto\\capibank-hackadev\\backend\\Troopers.Capibank\\Troopers.Capibank.csproj": {}
+    "D:\\Dev\\Sharp Projeto\\capibank-hackadev\\backend\\troopers.capibank\\Troopers.Capibank.csproj": {}
   },
   "projects": {
-    "D:\\Dev\\Sharp Projeto\\capibank-hackadev\\backend\\Troopers.Capibank\\Troopers.Capibank.csproj": {
+    "D:\\Dev\\Sharp Projeto\\capibank-hackadev\\backend\\troopers.capibank\\Troopers.Capibank.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Dev\\Sharp Projeto\\capibank-hackadev\\backend\\Troopers.Capibank\\Troopers.Capibank.csproj",
+        "projectUniqueName": "D:\\Dev\\Sharp Projeto\\capibank-hackadev\\backend\\troopers.capibank\\Troopers.Capibank.csproj",
         "projectName": "Troopers.Capibank",
-        "projectPath": "D:\\Dev\\Sharp Projeto\\capibank-hackadev\\backend\\Troopers.Capibank\\Troopers.Capibank.csproj",
+        "projectPath": "D:\\Dev\\Sharp Projeto\\capibank-hackadev\\backend\\troopers.capibank\\Troopers.Capibank.csproj",
         "packagesPath": "C:\\Users\\PC1\\.nuget\\packages\\",
-        "outputPath": "D:\\Dev\\Sharp Projeto\\capibank-hackadev\\backend\\Troopers.Capibank\\obj\\",
+        "outputPath": "D:\\Dev\\Sharp Projeto\\capibank-hackadev\\backend\\troopers.capibank\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

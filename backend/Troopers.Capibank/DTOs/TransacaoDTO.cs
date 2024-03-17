@@ -2,8 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Troopers.Capibank.Domain.Enums;
 
-namespace Troopers.Capibank.DTOs.Profiles
+namespace Troopers.Capibank.DTOs
 {
     public class TransacaoDTO
     {

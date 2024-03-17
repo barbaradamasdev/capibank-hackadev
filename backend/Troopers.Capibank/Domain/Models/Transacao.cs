@@ -14,7 +14,7 @@ namespace Troopers.Capibank.Domain.Entities
     public DateTime DataTransacao { get; set; } = DateTime.Now;
     public SituacaoConta Situacao { get; set; }
 
-    public void Transferir ( contaOrigem, contaDestino, decimal valor )
+    public void Transferir ( contaOrigem co, contaDestino cd, decimal valor )
     {
         if (contaOrigem.Saldo < valor)
         {
@@ -51,16 +51,6 @@ namespace Troopers.Capibank.Domain.Entities
     }
 
 
-
-
     }
 
-    public class contaDestino
-    {
-    }
-
-    public class contaOrigem
-    {
-        public static decimal Saldo { get; internal set; }
-    }
 }
