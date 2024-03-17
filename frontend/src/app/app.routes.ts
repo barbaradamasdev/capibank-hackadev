@@ -15,6 +15,7 @@ import { FormularioRecuperarPgDoisComponent } from './pages/inicio-recuperar-sen
 import { FormularioRecuperarPgTresComponent } from './pages/inicio-recuperar-senha/forms/formulario-recuperar-pg-tres/formulario-recuperar-pg-tres.component';
 import { CapividaComponent } from './pages/capivida/capivida.component';
 import { CapibankHomeComponent } from './pages/capibank-home/capibank-home.component';
+import { SobreComponent } from './pages/sobre/sobre.component';
 import { ChamadoComponent } from './pages/chamado/chamado.component';
 import { SegurancaComponent } from './pages/seguranca/seguranca.component';
 import { ConfiguracaoComponent } from './pages/configuracao/configuracao.component';
@@ -24,6 +25,7 @@ export const routes: Routes = [
     {path:'',redirectTo:'/home',pathMatch:'full',},
     {path:'home',component:CapibankHomeComponent},
     {path:'capivida',component:CapividaComponent},
+    {path:'sobre',component:SobreComponent},
     {path:'login',component:InicioLoginComponent,
     children:[
       {
