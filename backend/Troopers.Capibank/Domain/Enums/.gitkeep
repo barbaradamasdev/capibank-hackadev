@@ -1,0 +1,23 @@
+namespace Troopers.Capibank.Domain.Enums
+{
+    public enum Operacao
+    {
+        Deposito,
+        Saque,
+        Transferencia
+    }
+
+    public enum SituacaoTransacao
+    {
+        Pendente,
+        Concluida,
+        Cancelada
+    }
+
+    public enum SituacaoConta
+    {
+        Ativa,
+        Inativa,
+        Bloqueada
+    }
+}
