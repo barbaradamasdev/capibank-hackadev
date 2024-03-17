@@ -1,0 +1,35 @@
+.mockup {
+  width: 99vw;
+  background: #272467;
+  justify-content: center;
+}
+
+.mockup img {
+  max-width: fit-content;
+  width: 100%;
+}
+
+.mobile {
+  width: 500px;
+  max-width: 90vw;
+  margin: auto;
+}
+
+h2 {
+  margin: auto;
+  padding-bottom: 30px;
+  padding-top: 30px;
+  color: var(--cor-azul-medio);
+}
+
+h3 {
+  color: var(--cor-azul-medio);
+  font-size: 18px;
+}
+
+
+@media (max-width: 960px) {
+  .flex {
+    flex-direction: column;
+  }
+}

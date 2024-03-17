@@ -41,6 +41,16 @@ section {
   cursor: pointer;
 }
 
+.rendimento {
+  font-size: 14px;
+  margin: 0 !important;
+}
+
+.rendimento span {
+  color: rgba(38, 229, 38, 0.774);
+  font-weight: 600;
+}
+
 @media (max-width: 390px) {
   .saldo {
     padding: 0 10px;

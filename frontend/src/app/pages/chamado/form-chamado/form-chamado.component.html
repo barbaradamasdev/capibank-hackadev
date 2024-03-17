@@ -1,0 +1,34 @@
+<div class="container-form p-4">
+
+  <div class="section-top">
+    <h2>Detalhe no campo abaixo o seu problema.</h2>
+    <p>Retornaremos o chamado em até 1 dia útil por email</p>
+  </div>
+
+  <form [formGroup]="chamado" (submit)="enviarChamado()">
+    <div class="form-group">
+        <textarea formControlName="descricao" class="form-control" name="" id="" cols="30" rows="10"></textarea>
+    </div>
+
+    <div class="buttons flex">
+      <button type="submit" class="botao-principal">
+        Enviar chamado
+      </button>
+    </div>
+  </form>
+
+  <div class="section-top contato">
+    <h2>Contato:</h2>
+    <div class="buttons flex">
+      <button class="botao-secundario">
+        0800 0111 2134
+      </button>
+      <button class="botao-secundario">
+        atendimento&#64;capibank.com
+      </button>
+    </div>
+  </div>
+
+</div>
+
+
