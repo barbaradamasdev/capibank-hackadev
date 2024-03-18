@@ -1,7 +1,3 @@
-.transacoes {
-  max-height: 100vh;
-  overflow: hidden;
-}
 
 .grid {
   grid-template-areas:

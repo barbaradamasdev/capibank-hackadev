@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
-import { CabecalhoAreaInternaComponent } from "../../componentes/cabecalho-area-interna/cabecalho-area-interna.component";
-import { SecaoSaldoComponent } from "../../componentes/secao-saldo/secao-saldo.component";
-import { MenuInferiorAreaInternaComponent } from "../../componentes/menu-inferior-area-interna/menu-inferior-area-interna.component";
-import { MenuLateralComponent } from "../../componentes/menu-lateral/menu-lateral.component";
-import { FormChamadoComponent } from "../chamado/form-chamado/form-chamado.component";
+import { CabecalhoAreaInternaComponent } from "../../../componentes/cabecalho-area-interna/cabecalho-area-interna.component";
+import { SecaoSaldoComponent } from "../../../componentes/secao-saldo/secao-saldo.component";
+import { MenuInferiorAreaInternaComponent } from "../../../componentes/menu-inferior-area-interna/menu-inferior-area-interna.component";
+import { MenuLateralComponent } from "../../../componentes/menu-lateral/menu-lateral.component";
+import { FormChamadoComponent } from "../../area-do-cliente/chamado/form-chamado/form-chamado.component";
 import { Subscription, filter } from 'rxjs';
-import { MenuService } from '../../servicos/menu.service';
+import { MenuService } from '../../../servicos/menu.service';
 import { NavigationEnd, Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 

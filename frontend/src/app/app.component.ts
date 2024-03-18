@@ -5,7 +5,7 @@ import { InicioCriarContaComponent } from './pages/inicio-criar-conta/inicio-cri
 import { InicioRecuperarSenhaComponent } from "./pages/inicio-recuperar-senha/inicio-recuperar-senha.component";
 import { InicioLoginComponent } from "./pages/inicio-login/inicio-login.component";
 import { AreaDoClienteComponent } from "./pages/area-do-cliente/area-do-cliente.component";
-import { HistoricoDeTransacaoComponent } from "./pages/historico-de-transacao/historico-de-transacao.component";
+import { HistoricoDeTransacaoComponent } from "./pages/area-do-cliente/historico-de-transacao/historico-de-transacao.component";
 import { BannerComponent } from './componentes/banner/banner.component';
 import { CabecalhoAreaInternaComponent } from "./componentes/cabecalho-area-interna/cabecalho-area-interna.component";
 

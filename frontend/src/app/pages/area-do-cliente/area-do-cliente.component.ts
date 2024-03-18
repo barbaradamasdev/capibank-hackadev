@@ -9,14 +9,14 @@ import { BarraDeBuscaComponent } from "../../componentes/barra-de-busca/barra-de
 import { MenuService } from '../../servicos/menu.service';
 import { CommonModule } from '@angular/common';
 import { Subscription, filter } from 'rxjs';
-import { NavigationEnd, Router } from '@angular/router';
+import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
 
 @Component({
     selector: 'app-area-do-cliente',
     standalone: true,
     templateUrl: './area-do-cliente.component.html',
     styleUrl: './area-do-cliente.component.css',
-    imports: [HistoricoTransacoesComponent, AcessoRapidoAreaInternaComponent, SecaoSaldoComponent, CabecalhoAreaInternaComponent, MenuInferiorAreaInternaComponent, MenuLateralComponent, CommonModule, BarraDeBuscaComponent]
+    imports: [RouterOutlet, HistoricoTransacoesComponent, AcessoRapidoAreaInternaComponent, SecaoSaldoComponent, CabecalhoAreaInternaComponent, MenuInferiorAreaInternaComponent, MenuLateralComponent, CommonModule, BarraDeBuscaComponent]
 })
 export class AreaDoClienteComponent {
   logoTipo: string = 'azul';

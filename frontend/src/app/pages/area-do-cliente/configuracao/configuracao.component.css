@@ -1,0 +1,17 @@
+
+app-menu-lateral {
+  grid-area: menu-lateral;
+}
+
+@media (max-width: 745px) {
+  app-menu-lateral {
+    position: absolute;
+    top: 55px;
+    transform: translateX(-2000px);
+    transition: transform 0.3s ease;
+  }
+
+  .menu-open {
+    transform: translateX(0);
+  }
+}

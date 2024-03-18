@@ -4,7 +4,7 @@ import { InicioRecuperarSenhaComponent } from './pages/inicio-recuperar-senha/in
 import { InicioCriarContaComponent } from './pages/inicio-criar-conta/inicio-criar-conta.component';
 import { InicioLoginComponent } from './pages/inicio-login/inicio-login.component';
 import { TokenComponent } from './pages/inicio-login/forms/token/token.component';
-import { HistoricoDeTransacaoComponent } from './pages/historico-de-transacao/historico-de-transacao.component';
+import { HistoricoDeTransacaoComponent } from './pages/area-do-cliente/historico-de-transacao/historico-de-transacao.component';
 import { FormularioCriarContaPgUmComponent } from './pages/inicio-criar-conta/forms/formulario-criar-conta-pg-um/formulario-criar-conta-pg-um.component';
 import { FormularioCriarContaPgDoisComponent } from './pages/inicio-criar-conta/forms/formulario-criar-conta-pg-dois/formulario-criar-conta-pg-dois.component';
 import { FormularioCriarContaPgTresComponent } from './pages/inicio-criar-conta/forms/formulario-criar-conta-pg-tres/formulario-criar-conta-pg-tres.component';
@@ -16,9 +16,9 @@ import { FormularioRecuperarPgTresComponent } from './pages/inicio-recuperar-sen
 import { CapividaComponent } from './pages/capivida/capivida.component';
 import { CapibankHomeComponent } from './pages/capibank-home/capibank-home.component';
 import { SobreComponent } from './pages/sobre/sobre.component';
-import { ChamadoComponent } from './pages/chamado/chamado.component';
-import { SegurancaComponent } from './pages/seguranca/seguranca.component';
-import { ConfiguracaoComponent } from './pages/configuracao/configuracao.component';
+import { ChamadoComponent } from './pages/area-do-cliente/chamado/chamado.component';
+import { SegurancaComponent } from './pages/area-do-cliente/seguranca/seguranca.component';
+import { ConfiguracaoComponent } from './pages/area-do-cliente/configuracao/configuracao.component';
 import { FormularioEntrarComponent } from './pages/inicio-login/forms/formulario-entrar/formulario-entrar.component';
 import { AdminLoginComponent } from './pages/admin-login/admin-login.component';
 import { AdminDashboardComponent } from './pages/admin-dashboard/admin-dashboard.component';
@@ -41,7 +41,17 @@ export const routes: Routes = [
       component: TokenComponent
       }],
     },
-    {path:'cliente',component:AreaDoClienteComponent, canActivate:[autenticarGuard]},
+    {path:'cliente',component:AreaDoClienteComponent, canActivate:[autenticarGuard],
+    children:[
+      {
+      path:'',
+      component: FormularioEntrarComponent
+      },
+      {
+      path:'token',
+      component: TokenComponent
+      }],
+    },
     {path:'historico',component:HistoricoDeTransacaoComponent,canActivate:[autenticarGuard]},
     {path:'chamado',component:ChamadoComponent,canActivate:[autenticarGuard]},
     {path:'seguranca',component:SegurancaComponent,canActivate:[autenticarGuard]},
