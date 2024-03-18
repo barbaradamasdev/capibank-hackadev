@@ -119,3 +119,7 @@ button  {
   background-color: #f1f1f1;
   border-radius: 4px;
 }
+
+.menu-open {
+  z-index: 999;
+}
