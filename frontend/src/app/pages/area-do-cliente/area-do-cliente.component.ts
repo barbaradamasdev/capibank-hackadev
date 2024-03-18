@@ -1,4 +1,4 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, Input } from '@angular/core';
 import { HistoricoTransacoesComponent } from "../../componentes/historico-transacoes/historico-transacoes.component";
 import { AcessoRapidoAreaInternaComponent } from "../../componentes/acesso-rapido-area-interna/acesso-rapido-area-interna.component";
 import { SecaoSaldoComponent } from "../../componentes/secao-saldo/secao-saldo.component";
@@ -19,6 +19,7 @@ import { NavigationEnd, Router } from '@angular/router';
     imports: [HistoricoTransacoesComponent, AcessoRapidoAreaInternaComponent, SecaoSaldoComponent, CabecalhoAreaInternaComponent, MenuInferiorAreaInternaComponent, MenuLateralComponent, CommonModule, BarraDeBuscaComponent]
 })
 export class AreaDoClienteComponent {
+  logoTipo: string = 'azul';
   isMenuOpen: boolean = false;
   private routerSubscription: Subscription;
 

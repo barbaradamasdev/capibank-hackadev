@@ -6,6 +6,10 @@ header {
   height: 55px;
 }
 
+.menu-icon {
+  align-items: center;
+}
+
 .menu-icon,
 .notification-icon {
   height: 35px;
@@ -14,12 +18,12 @@ header {
   padding: 6px;
   margin: 0;
   cursor: pointer;
-  fill: white;
 }
 
 .logo {
   width: 125px;
 }
+
 .logout {
   display: none;
   color: var(--cor-cinza);

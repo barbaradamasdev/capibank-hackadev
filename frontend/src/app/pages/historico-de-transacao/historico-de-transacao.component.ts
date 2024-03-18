@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CabecalhoAreaInternaComponent } from "../../componentes/cabecalho-area-interna/cabecalho-area-interna.component";
 import { SecaoSaldoComponent } from "../../componentes/secao-saldo/secao-saldo.component";
 import { HistoricoTransacoesComponent } from "../../componentes/historico-transacoes/historico-transacoes.component";
@@ -19,6 +19,7 @@ import { NavigationEnd, Router } from '@angular/router';
     imports: [CabecalhoAreaInternaComponent, SecaoSaldoComponent, HistoricoTransacoesComponent, MenuInferiorAreaInternaComponent, MenuLateralComponent, CommonModule, BarraDeBuscaComponent]
 })
 export class HistoricoDeTransacaoComponent {
+  logoTipo: string = 'azul';
   isMenuOpen: boolean = false;
   private routerSubscription: Subscription;
 

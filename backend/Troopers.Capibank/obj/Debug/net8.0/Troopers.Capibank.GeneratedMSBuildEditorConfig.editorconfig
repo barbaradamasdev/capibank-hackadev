@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 is_global = true
 build_property.TargetFramework = net8.0
 build_property.TargetPlatformMinVersion = 
@@ -17,3 +18,24 @@ build_property.SupportLocalizedComponentNames =
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
 build_property.MSBuildProjectDirectory = D:\Dev\Sharp Projeto\capibank-hackadev\backend\troopers.capibank
 build_property._RazorSourceGeneratorDebug = 
+=======
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = Troopers.Capibank
+build_property.RootNamespace = Troopers.Capibank
+build_property.ProjectDir = C:\dev\capibank-windows-sprint4-back\capibank-hackadev\backend\Troopers.Capibank\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\dev\capibank-windows-sprint4-back\capibank-hackadev\backend\Troopers.Capibank
+build_property._RazorSourceGeneratorDebug = 
+>>>>>>> 4423e309bcbbd10041f41452583cc5269d5d8f75

@@ -6,7 +6,7 @@ namespace Troopers.Capibank.Models;
     {
         public ContaPoupanca(int numeroConta, Titular titular) : base(numeroConta, titular)
         {
-            // Inicialização adicional, se necessário
+            
         }
 
     }
