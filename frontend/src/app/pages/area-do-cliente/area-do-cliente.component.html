@@ -1,5 +1,5 @@
 <div class="area-do-cliente">
-  <app-cabecalho-area-interna style="z-index: 90;"></app-cabecalho-area-interna>
+  <app-cabecalho-area-interna style="z-index: 90;" [logoSrc]="logoTipo === 'azul' ? 'assets\\icones\\logo-azul.png' : 'assets\\icones\\logo-branca.png'"></app-cabecalho-area-interna>
   <app-secao-saldo></app-secao-saldo>
   <div class="grid container">
     <app-acesso-rapido-area-interna></app-acesso-rapido-area-interna>

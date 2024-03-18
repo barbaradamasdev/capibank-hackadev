@@ -1,0 +1,52 @@
+<div class="container grid">
+
+    <div class="summary-item">
+      <h3>Tipos de Contas</h3>
+
+      <svg width="400" height="200">
+        <g *ngFor="let data of dados; let i = index">
+          <rect
+            [attr.x]="i * (barWidth + barPadding)"
+            [attr.y]="svgHeight - data.quantidade"
+            [attr.width]="barWidth"
+            [attr.height]="data.quantidade"
+            class="bar">
+          </rect>
+          <text
+            [attr.x]="i * (barWidth + barPadding) + barWidth / 2"
+            [attr.y]="svgHeight - 5"
+            class="bar-text"
+            text-anchor="middle">
+            <tspan>{{ data.tipo }} / </tspan>
+            <tspan>{{ data.quantidade }}</tspan>
+          </text>
+        </g>
+      </svg>
+
+    </div>
+
+    <div class="summary-item">
+      <h3>Resumo financeiro</h3>
+      <p>Saldo total do banco: ${{ saldoTotal }}</p>
+      <p>Dinheiro em caixa: ${{ dinheiroEmCaixa }}</p>
+      <div class="chart">
+      </div>
+  </div>
+  <div class="summary-item">
+      <h3>Contas</h3>
+      <p>Número total de contas: {{ totalContas }}</p>
+      <p>Contas ativas: {{ contasAtivas }}</p>
+      <p>Contas inativas: {{ contasInativas }}</p>
+      <div class="chart">
+      </div>
+  </div>
+  <div class="summary-item">
+      <h3>Clientes</h3>
+      <p>Número total de clientes: {{ totalClientes }}</p>
+      <p>Clientes ativos: {{ clientesAtivos }}</p>
+      <p>Clientes inativos: {{ clientesInativos }}</p>
+      <div class="chart">
+      </div>
+  </div>
+
+</div>

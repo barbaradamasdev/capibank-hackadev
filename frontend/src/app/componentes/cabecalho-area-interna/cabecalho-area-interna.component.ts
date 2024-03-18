@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { MenuService } from '../../servicos/menu.service'
 import { RouterLink } from '@angular/router';
 
@@ -10,6 +10,7 @@ import { RouterLink } from '@angular/router';
   styleUrl: './cabecalho-area-interna.component.css'
 })
 export class CabecalhoAreaInternaComponent {
+  @Input() logoSrc: string | undefined;
   elementRef: any;
   constructor(private menuService: MenuService) {}
 

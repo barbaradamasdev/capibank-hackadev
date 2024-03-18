@@ -1,6 +1,8 @@
 <header class="container">
-    <img src="assets\icones\icone-menu.png" (click)="toggleMenu()" alt="Ícone de Menu" class="menu-icon">
-    <img src="assets\icones\logo-azul.png" alt="Logo" class="logo">
+    <div (click)="toggleMenu()" alt="Ícone de Menu" class="menu-icon flex">
+      <svg xmlns="http://www.w3.org/2000/svg" width="25px" height="25px" viewBox="0 0 512 512"><path fill="none" stroke="black" stroke-linecap="round" stroke-miterlimit="10" stroke-width="48" d="M88 152h336M88 256h336M88 360h336"/></svg>
+    </div>
+    <img [src]="logoSrc" alt="Logo" class="logo">
     <img src="assets\icones\icone-lembrete.png" alt="Ícone de Notificação" class="notification-icon">
     <a class="logout" routerLink="/login" (click)="logout()">Sair da conta</a>
 </header>
