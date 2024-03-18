@@ -1,25 +1,26 @@
 import { Component, HostListener, Input } from '@angular/core';
-import { HistoricoTransacoesComponent } from "../../componentes/historico-transacoes/historico-transacoes.component";
 import { AcessoRapidoAreaInternaComponent } from "../../componentes/acesso-rapido-area-interna/acesso-rapido-area-interna.component";
 import { SecaoSaldoComponent } from "../../componentes/secao-saldo/secao-saldo.component";
 import { CabecalhoAreaInternaComponent } from "../../componentes/cabecalho-area-interna/cabecalho-area-interna.component";
-import { MenuInferiorAreaInternaComponent } from "../../componentes/menu-inferior-area-interna/menu-inferior-area-interna.component";
-import { MenuLateralComponent } from "../../componentes/menu-lateral/menu-lateral.component";
+import { MenuLateralAdminComponent } from "../../pages/admin-dashboard/menu-lateral-admin/menu-lateral-admin.component";
 import { BarraDeBuscaComponent } from "../../componentes/barra-de-busca/barra-de-busca.component";
+import { DashboardComponent } from "../../pages/admin-dashboard/dashboard/dashboard.component";
 import { MenuService } from '../../servicos/menu.service';
 import { CommonModule } from '@angular/common';
 import { Subscription, filter } from 'rxjs';
 import { NavigationEnd, Router } from '@angular/router';
+import { HeaderComponent } from "../admin-login/header/header.component";
+
 
 @Component({
-    selector: 'app-area-do-cliente',
+    selector: 'app-admin-dashboard',
     standalone: true,
-    templateUrl: './area-do-cliente.component.html',
-    styleUrl: './area-do-cliente.component.css',
-    imports: [HistoricoTransacoesComponent, AcessoRapidoAreaInternaComponent, SecaoSaldoComponent, CabecalhoAreaInternaComponent, MenuInferiorAreaInternaComponent, MenuLateralComponent, CommonModule, BarraDeBuscaComponent]
+    templateUrl: './admin-dashboard.component.html',
+    styleUrl: './admin-dashboard.component.css',
+    imports: [DashboardComponent, AcessoRapidoAreaInternaComponent, SecaoSaldoComponent, CabecalhoAreaInternaComponent, MenuLateralAdminComponent, CommonModule, BarraDeBuscaComponent, HeaderComponent]
 })
-export class AreaDoClienteComponent {
-  logoTipo: string = 'azul';
+export class AdminDashboardComponent {
+  logoTipo: string = 'branco';
   isMenuOpen: boolean = false;
   private routerSubscription: Subscription;
 
@@ -44,4 +45,3 @@ export class AreaDoClienteComponent {
     }
   }
 }
-

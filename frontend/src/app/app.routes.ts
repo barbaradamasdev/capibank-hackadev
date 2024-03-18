@@ -20,12 +20,16 @@ import { ChamadoComponent } from './pages/chamado/chamado.component';
 import { SegurancaComponent } from './pages/seguranca/seguranca.component';
 import { ConfiguracaoComponent } from './pages/configuracao/configuracao.component';
 import { FormularioEntrarComponent } from './pages/inicio-login/forms/formulario-entrar/formulario-entrar.component';
+import { AdminLoginComponent } from './pages/admin-login/admin-login.component';
+import { AdminDashboardComponent } from './pages/admin-dashboard/admin-dashboard.component';
 
 export const routes: Routes = [
     {path:'',redirectTo:'/home',pathMatch:'full',},
     {path:'home',component:CapibankHomeComponent},
     {path:'capivida',component:CapividaComponent},
     {path:'sobre',component:SobreComponent},
+    {path:'loginadmin',component:AdminLoginComponent},
+    {path:'admin',component:AdminDashboardComponent},
     {path:'login',component:InicioLoginComponent,
     children:[
       {
@@ -43,40 +47,39 @@ export const routes: Routes = [
     {path:'seguranca',component:SegurancaComponent,canActivate:[autenticarGuard]},
     {path:'config',component:ConfiguracaoComponent,canActivate:[autenticarGuard]},
     {path:'recuperar',component:InicioRecuperarSenhaComponent,
-    children:[
-      {
-      path:'passo-1',
-      component: FormularioRecuperarPgUmComponent
-      },
-      {
-      path:'passo-2',
-      component: FormularioRecuperarPgDoisComponent
-      },
-      {
-        path:'passo-3',
-        component: FormularioRecuperarPgTresComponent
-      }
-    ]
-  },
-  {path:'cadastrar',component:InicioCriarContaComponent,
-    children:[
-      {
+      children:[
+        {
         path:'passo-1',
-        component: FormularioCriarContaPgUmComponent
-      },
-      {
+        component: FormularioRecuperarPgUmComponent
+        },
+        {
         path:'passo-2',
-        component: FormularioCriarContaPgDoisComponent
-      },
-      {
-        path:'passo-3',
-        component: FormularioCriarContaPgTresComponent
-      },
-      {
-        path:'passo-4',
-        component: FormularioCriarContaPgQuatroComponent
-      }
-    ]
-  }
+        component: FormularioRecuperarPgDoisComponent
+        },
+        {
+          path:'passo-3',
+          component: FormularioRecuperarPgTresComponent
+        }]
+    },
+    {path:'cadastrar',component:InicioCriarContaComponent,
+      children:[
+        {
+          path:'passo-1',
+          component: FormularioCriarContaPgUmComponent
+        },
+        {
+          path:'passo-2',
+          component: FormularioCriarContaPgDoisComponent
+        },
+        {
+          path:'passo-3',
+          component: FormularioCriarContaPgTresComponent
+        },
+        {
+          path:'passo-4',
+          component: FormularioCriarContaPgQuatroComponent
+        }
+      ]
+    }
 
 ];
