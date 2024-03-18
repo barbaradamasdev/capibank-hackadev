@@ -1,10 +1,7 @@
 import { Component } from '@angular/core';
-import { SecaoSaldoComponent } from "../../componentes/secao-saldo/secao-saldo.component";
-import { CabecalhoAreaInternaComponent } from "../../componentes/cabecalho-area-interna/cabecalho-area-interna.component";
-import { MenuInferiorAreaInternaComponent } from "../../componentes/menu-inferior-area-interna/menu-inferior-area-interna.component";
-import { MenuLateralComponent } from "../../componentes/menu-lateral/menu-lateral.component";
-import { SecaoSegurancaComponent } from "../../pages/seguranca/secao-seguranca/secao-seguranca.component";
-import { MenuService } from '../../servicos/menu.service';
+import { MenuLateralComponent } from "../../../componentes/menu-lateral/menu-lateral.component";
+import { SecaoSegurancaComponent } from "../../../pages/area-do-cliente/seguranca/secao-seguranca/secao-seguranca.component";
+import { MenuService } from '../../../servicos/menu.service';
 import { CommonModule } from '@angular/common';
 import { Subscription, filter } from 'rxjs';
 import { NavigationEnd, Router } from '@angular/router';
@@ -12,7 +9,7 @@ import { NavigationEnd, Router } from '@angular/router';
 @Component({
   selector: 'app-seguranca',
   standalone: true,
-  imports: [SecaoSegurancaComponent, SecaoSaldoComponent, CabecalhoAreaInternaComponent, MenuInferiorAreaInternaComponent, MenuLateralComponent, CommonModule],
+  imports: [SecaoSegurancaComponent, MenuLateralComponent, CommonModule],
   templateUrl: './seguranca.component.html',
   styleUrl: './seguranca.component.css'
 })

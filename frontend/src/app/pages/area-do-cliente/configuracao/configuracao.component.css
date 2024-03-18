@@ -1,6 +1,11 @@
+.grid {
+  grid-template-areas:
+    "container container container";
+  padding: 0;
+}
 
-app-menu-lateral {
-  grid-area: menu-lateral;
+.container {
+  grid-area: container;
 }
 
 @media (max-width: 745px) {
@@ -13,5 +18,20 @@ app-menu-lateral {
 
   .menu-open {
     transform: translateX(0);
+  }
+}
+
+
+@media (min-width: 745px) and (max-width: 1000px) {
+  .grid {
+    grid-template-areas:
+    "menu-lateral container ";
+  }
+}
+
+@media (min-width: 1001px){
+  .grid {
+    grid-template-areas:
+    "menu-lateral container";
   }
 }

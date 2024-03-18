@@ -22,6 +22,7 @@ import { ConfiguracaoComponent } from './pages/area-do-cliente/configuracao/conf
 import { FormularioEntrarComponent } from './pages/inicio-login/forms/formulario-entrar/formulario-entrar.component';
 import { AdminLoginComponent } from './pages/admin-login/admin-login.component';
 import { AdminDashboardComponent } from './pages/admin-dashboard/admin-dashboard.component';
+import { InicioComponent } from './pages/area-do-cliente/inicio/inicio.component';
 
 export const routes: Routes = [
     {path:'',redirectTo:'/home',pathMatch:'full',},
@@ -45,12 +46,25 @@ export const routes: Routes = [
     children:[
       {
       path:'',
-      component: FormularioEntrarComponent
+      component: InicioComponent
       },
       {
-      path:'token',
-      component: TokenComponent
-      }],
+      path:'historico',
+      component: HistoricoDeTransacaoComponent
+      },
+      {
+      path:'config',
+      component: ConfiguracaoComponent
+      },
+      {
+      path:'chamado',
+      component: ChamadoComponent
+      },
+      {
+      path:'seguranca',
+      component: SegurancaComponent
+      }
+      ],
     },
     {path:'historico',component:HistoricoDeTransacaoComponent,canActivate:[autenticarGuard]},
     {path:'chamado',component:ChamadoComponent,canActivate:[autenticarGuard]},

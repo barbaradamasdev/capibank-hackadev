@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Ci7QM/+TrGOlk00053dxEvgL4uSsJ2AYwVLUXP6u6Lms0CE9vWxgjtRd112tZi55jq4/coXcqFTlZB27hK2xfA==",
+  "dgSpecHash": "5LZf1ImER5Szr3u0cC0pudatBd+MfdvfeCa1yS8VkIX3ZDjEN66QYsgObobQVa3Qcg6EZhNuF9KJ5DdGAnoz6w==",
   "success": true,
-  "projectFilePath": "\\\\wsl.localhost\\Arch\\home\\babidamasdev\\Jobs\\capibank-hackadev\\backend\\Troopers.Capibank\\Troopers.Capibank.csproj",
+  "projectFilePath": "C:\\dev\\capibank-windows-sprint4-back\\capibank-hackadev\\backend\\Troopers.Capibank\\Troopers.Capibank.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\barba\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\barba\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",

@@ -1,8 +1,6 @@
 .grid {
   grid-template-areas:
-  "form-chamado form-chamado";
-  gap: 16px;
-  grid-template-columns: 1fr 2fr;
+  "form-chamado form-chamado form-chamado";
   padding: 0;
 }
 
@@ -16,7 +14,7 @@ app-form-chamado {
   overflow-y: auto;
 }
 
-@media (max-width: 745px) {
+@media (max-width: 744px) {
   app-menu-lateral {
     position: absolute;
     top: 55px;
@@ -29,10 +27,10 @@ app-form-chamado {
   }
 }
 
-@media (min-width: 746px)  {
+@media (min-width: 745px)  {
   .grid {
     grid-template-areas:
     "menu-lateral form-chamado";
+    grid-template-columns: 1fr 4fr;
   }
-
 }

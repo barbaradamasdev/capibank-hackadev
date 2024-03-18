@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "\\\\wsl.localhost\\Arch\\home\\babidamasdev\\Jobs\\capibank-hackadev\\backend\\Troopers.Capibank\\Troopers.Capibank.csproj": {}
+    "C:\\dev\\capibank-windows-sprint4-back\\capibank-hackadev\\backend\\Troopers.Capibank\\Troopers.Capibank.csproj": {}
   },
   "projects": {
-    "\\\\wsl.localhost\\Arch\\home\\babidamasdev\\Jobs\\capibank-hackadev\\backend\\Troopers.Capibank\\Troopers.Capibank.csproj": {
+    "C:\\dev\\capibank-windows-sprint4-back\\capibank-hackadev\\backend\\Troopers.Capibank\\Troopers.Capibank.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "\\\\wsl.localhost\\Arch\\home\\babidamasdev\\Jobs\\capibank-hackadev\\backend\\Troopers.Capibank\\Troopers.Capibank.csproj",
+        "projectUniqueName": "C:\\dev\\capibank-windows-sprint4-back\\capibank-hackadev\\backend\\Troopers.Capibank\\Troopers.Capibank.csproj",
         "projectName": "Troopers.Capibank",
-        "projectPath": "\\\\wsl.localhost\\Arch\\home\\babidamasdev\\Jobs\\capibank-hackadev\\backend\\Troopers.Capibank\\Troopers.Capibank.csproj",
+        "projectPath": "C:\\dev\\capibank-windows-sprint4-back\\capibank-hackadev\\backend\\Troopers.Capibank\\Troopers.Capibank.csproj",
         "packagesPath": "C:\\Users\\barba\\.nuget\\packages\\",
-        "outputPath": "\\\\wsl.localhost\\Arch\\home\\babidamasdev\\Jobs\\capibank-hackadev\\backend\\Troopers.Capibank\\obj\\",
+        "outputPath": "C:\\dev\\capibank-windows-sprint4-back\\capibank-hackadev\\backend\\Troopers.Capibank\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\barba\\AppData\\Roaming\\NuGet\\NuGet.Config",

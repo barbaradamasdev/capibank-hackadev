@@ -1,6 +1,6 @@
 <div class="grid container">
+  <app-menu-lateral [ngClass]="{'menu-open': isMenuOpen}" (linkClicado)="onLinkClicked()" style="z-index: 9;"></app-menu-lateral>
   <app-acesso-rapido-area-interna></app-acesso-rapido-area-interna>
   <app-barra-de-busca></app-barra-de-busca>
-  <app-menu-lateral [ngClass]="{'menu-open': isMenuOpen}" (linkClicado)="onLinkClicked()" style="z-index: 9;"></app-menu-lateral>
   <app-historico-transacoes></app-historico-transacoes>
 </div>
