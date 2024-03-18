@@ -8,6 +8,7 @@
   "form-chamado form-chamado";
   gap: 16px;
   grid-template-columns: 1fr 2fr;
+  grid-template-columns: 1fr 4fr;
   padding: 0;
 }
 

@@ -8,7 +8,7 @@
   "busca busca"
   "historico-transacoes historico-transacoes";
   gap: 16px;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 1fr 4fr;
   grid-template-rows: 7% 90%;
   padding: 0;
 }
