@@ -1,0 +1,29 @@
+<div class="container-form p-4">
+  <form [formGroup]="transferencia">
+
+    <h6 class="section-title">Qual o valor da transferência?</h6>
+
+    <div class="form-group">
+      <input
+        type="number"
+        class="form-control"
+        formControlName="valor"
+        placeholder="R$ 0,00"
+      />
+    </div>
+
+    <!-- <div *ngIf="formRecuperarSenha.get('email')?.hasError('email') && formRecuperarSenha.get('email')?.touched" class="warn-text text-danger" >
+      Por favor informe um email válido
+    </div> -->
+
+    <div class="buttons flex">
+      <button routerLink="/cliente" type="submit" class="botao-secundario">
+        Voltar
+      </button>
+      <button routerLink="/saque/confirmacao" type="submit" class="botao-principal">
+        Confirmar valor
+      </button>
+    </div>
+    
+  </form>
+</div>

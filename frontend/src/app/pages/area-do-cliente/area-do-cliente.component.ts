@@ -9,7 +9,7 @@ import { BarraDeBuscaComponent } from "../../componentes/barra-de-busca/barra-de
 import { MenuService } from '../../servicos/menu.service';
 import { CommonModule } from '@angular/common';
 import { Subscription, filter } from 'rxjs';
-import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
+import { ActivatedRoute, NavigationEnd, Router, RouterOutlet, UrlSegment } from '@angular/router';
 
 @Component({
     selector: 'app-area-do-cliente',
@@ -21,12 +21,23 @@ import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
 export class AreaDoClienteComponent {
   logoTipo: string = 'azul';
   isMenuOpen: boolean = false;
+  isNovaTransacaoRoute: boolean = false;
+  isSmallScreen: boolean = false;
   private routerSubscription: Subscription;
 
-  constructor(private menuService: MenuService, private router: Router) {
+  constructor(private menuService: MenuService, private router: Router, private route: ActivatedRoute) {
     this.menuService.isMenuOpen$.subscribe((isOpen) => {
       this.isMenuOpen = isOpen;
     });
+
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        const urlSegments: UrlSegment[] = this.router.parseUrl(event.url).root.children['primary'].segments;
+        this.isNovaTransacaoRoute = this.isNovaTransacaoRouteCheck(urlSegments);
+      }
+    });
+
+    this.checkScreenWidth();
 
     this.routerSubscription = this.router.events.pipe(
       filter((event) => event instanceof NavigationEnd)
@@ -34,6 +45,16 @@ export class AreaDoClienteComponent {
       this.isMenuOpen = false;
     });
   }
+
+  @HostListener('window:resize')
+  checkScreenWidth(): void {
+    this.isSmallScreen = window.innerWidth > 745;
+  }
+
+  isNovaTransacaoRouteCheck(urlSegments: UrlSegment[]): boolean {
+    return urlSegments.some(segment => segment.path.includes('nova'));
+  }
+
   onLinkClicked() {
     this.isMenuOpen = false;
   }

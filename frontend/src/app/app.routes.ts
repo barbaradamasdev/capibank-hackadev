@@ -23,6 +23,10 @@ import { FormularioEntrarComponent } from './pages/inicio-login/forms/formulario
 import { AdminLoginComponent } from './pages/admin-login/admin-login.component';
 import { AdminDashboardComponent } from './pages/admin-dashboard/admin-dashboard.component';
 import { InicioComponent } from './pages/area-do-cliente/inicio/inicio.component';
+import { NovaTransacaoComponent } from './pages/area-do-cliente/nova-transacao/nova-transacao.component';
+import { SaqueComponent } from './pages/area-do-cliente/nova-transacao/saque/saque.component';
+import { DepositoComponent } from './pages/area-do-cliente/nova-transacao/deposito/deposito.component';
+import { TransferenciaComponent } from './pages/area-do-cliente/nova-transacao/transferencia/transferencia.component';
 
 export const routes: Routes = [
     {path:'',redirectTo:'/home',pathMatch:'full',},
@@ -47,6 +51,24 @@ export const routes: Routes = [
       {
       path:'',
       component: InicioComponent
+      },
+      {
+        path:'nova',
+        component: NovaTransacaoComponent,
+        children: [
+          {
+            path: 'saque',
+            component: SaqueComponent
+          },
+          {
+            path: 'deposito',
+            component: DepositoComponent
+          },
+          {
+            path: 'transferencia',
+            component: TransferenciaComponent
+          }
+        ]
       },
       {
       path:'historico',

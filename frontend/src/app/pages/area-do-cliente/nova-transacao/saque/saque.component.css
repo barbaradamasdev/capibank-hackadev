@@ -1,0 +1,8 @@
+.buttons {
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.buttons > * {
+  width: 50%;
+}
