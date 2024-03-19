@@ -1,6 +1,25 @@
 @Troopers.Capibank_HostAddress = http://localhost:5143
 
-GET {{Troopers.Capibank_HostAddress}}/weatherforecast/
-Accept: application/json
+GET {{Troopers.Capibank_HostAddress}}/contacorrente/Listartodasascontas/
 
 ###
+POST {{Troopers.Capibank_HostAddress}}/contacorrente/criarconta/
+Content-Type: application/json
+{
+  "numeroConta": 12345,
+  "titular": {
+    "nome": "jacksonsdadas tadeu",
+    "email": "jackson@uol.com.br",
+    "cpf": "11111111111",
+    "endereco": {
+      
+      "cep": "12248516",
+      "logradouro": "Rua Cap.Paulo José de Menezes Filho",
+      "numero": "243",
+      "complemento": "Bloco A apto 17",
+      "bairro": "Jd.Santa Ines II",
+      "cidade": "Sao José dos Campos",
+      "uf": "SP"
+    }
+  }
+}

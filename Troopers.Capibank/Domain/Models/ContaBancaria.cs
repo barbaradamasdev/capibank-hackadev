@@ -16,13 +16,19 @@ public abstract class ContaBancaria
     public IEnumerable<Transacao> ListaTransacoes = [];
     
 
-    public bool BloquearConta()
+    public bool BloquearConta(int id)
     {
         return EstaAtiva = false;
     }
-    public bool DesbloquearConta()
+    public bool DesbloquearConta(int id)
     {
         return EstaAtiva = true;
+    }
+    public bool ExcluirConta(int id)
+    {
+        if (Saldo != 0)
+            return false;
+        return true;
     }
     
 }

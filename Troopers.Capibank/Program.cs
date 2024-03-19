@@ -1,4 +1,6 @@
 using Microsoft.EntityFrameworkCore;
+using Troopers.Capibank.Repositories;
+using Troopers.Capibank.Services;
 using Troppers.Capibank.Data.Context;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -8,6 +10,10 @@ var conexao = builder.Configuration.GetConnectionString("SQLite");
 
 builder.Services.AddDbContext<CapibankContext>(context => 
 context.UseSqlite(conexao));
+
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+builder.Services.AddScoped<IContaCorrenteRepository, ContaCorrenteRepository>();
+builder.Services.AddScoped<IContaCorrenteService, ContaCorrenteService>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

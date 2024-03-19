@@ -15,11 +15,14 @@ public class ContaCorrenteRepository : IContaCorrenteRepository
 
     public async Task<IEnumerable<ContaCorrente>> ListarTodos()
     {
-        return await _context.ContasCorrente.AsNoTracking().ToListAsync();
+        return await _context.ContasCorrente.Include(c => c.Titular).
+            Include(t=>t.Titular.Endereco).AsNoTracking().ToListAsync();
     }
     public async Task<ContaCorrente> ListarPorId(int id)
     {
-        var conta = await _context.ContasCorrente.FirstOrDefaultAsync(c => c.Id == id);
+        var conta = await _context.ContasCorrente.Include(c => c.Titular).
+            Include(t=> t.Titular.Endereco).
+            FirstOrDefaultAsync(c => c.Id == id);
         return conta;
     }
     public async Task<ContaCorrente> CriarConta(ContaCorrente contaCorrente)
@@ -31,20 +34,22 @@ public class ContaCorrenteRepository : IContaCorrenteRepository
     public async Task<ContaCorrente> BloquearConta(int id)
     {
         var conta = await ListarPorId(id);
-        conta.BloquearConta();
+        conta.BloquearConta(conta.Id);
+        await _context.SaveChangesAsync();
         return conta;
     }
     public async Task<ContaCorrente> DesbloquearConta(int id)
     {
         var conta = await ListarPorId(id);
-        conta.DesbloquearConta();
+        conta.DesbloquearConta(id);
+        await _context.SaveChangesAsync();
         return conta;
     }
 
     public async Task<ContaCorrente> ExcluirConta(int id)
     {
-        var conta = ListarPorId(id);
-        _context.ContasCorrente.Remove(id);
+        var conta = await ListarPorId(id);
+        _context.ContasCorrente.Remove(conta);
         await _context.SaveChangesAsync();
         return conta;
     }
