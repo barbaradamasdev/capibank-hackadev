@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using System.Reflection;
 using Troopers.Capibank.Repositories;
 using Troopers.Capibank.Services;
 using Troppers.Capibank.Data.Context;
@@ -18,7 +19,12 @@ builder.Services.AddScoped<IContaCorrenteService, ContaCorrenteService>();
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(options =>
+{
+    var xmlComentarios = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+    var xmlComentariosPath = Path.Combine(AppContext.BaseDirectory, xmlComentarios);
+    options.IncludeXmlComments(xmlComentariosPath);
+});
 
 var app = builder.Build();
 

@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Troopers.Capibank</name>
+    </assembly>
+    <members>
+        <member name="M:Troopers.Capibank.Controllers.ContaCorrenteController.ListarTodas">
+            <summary>
+            Método que lista todas as contas cadastradas.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Troopers.Capibank.Controllers.ContaCorrenteController.ListarPorId(System.Int32)">
+            <summary>
+            Método que lista uma conta pelo ID indicado.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Troopers.Capibank.Controllers.ContaCorrenteController.CriarConta(Troopers.Capibank.DTOs.Request.ContaCorrenteCreateRequestDTO)">
+            <summary>
+            Método para criar conta, criando também o titular e o endereco.
+            </summary>
+            <param name="contaDTO"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Troopers.Capibank.Controllers.ContaCorrenteController.BloquearConta(System.Int32)">
+            <summary>
+            Método para bloquear a conta cadastrada no sistema.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Troopers.Capibank.Controllers.ContaCorrenteController.DesbloquearConta(System.Int32)">
+            <summary>
+            Método usado para desbloquear uma conta que esteja bloqueada.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Troopers.Capibank.Controllers.ContaCorrenteController.ExcluirConta(System.Int32)">
+            <summary>
+            Método usado para deletar uma conta do sistema.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Troopers.Capibank.Migrations.inicial">
+            <inheritdoc />
+        </member>
+        <member name="M:Troopers.Capibank.Migrations.inicial.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Troopers.Capibank.Migrations.inicial.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Troopers.Capibank.Migrations.inicial.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>

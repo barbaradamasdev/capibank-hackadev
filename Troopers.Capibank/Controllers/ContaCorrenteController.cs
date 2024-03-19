@@ -13,6 +13,10 @@ public class ContaCorrenteController : DefaultController
     {
         _cs = cs;
     }
+    /// <summary>
+    /// Método que lista todas as contas cadastradas.
+    /// </summary>
+    /// <returns></returns>
     [HttpGet("listarcontas")]
     public async Task<ActionResult<IEnumerable<ContaCorrenteResponseDTO>>> ListarTodas()
     {
@@ -21,6 +25,11 @@ public class ContaCorrenteController : DefaultController
             return NotFound("Conta não encontrada");
         return Ok(conta);
     }
+    /// <summary>
+    /// Método que lista uma conta pelo ID indicado.
+    /// </summary>
+    /// <param name="id"></param>
+    /// <returns></returns>
     [HttpGet("listacontaporid/{id}")]
     public async Task<ActionResult> ListarPorId(int id)
     {
@@ -29,6 +38,11 @@ public class ContaCorrenteController : DefaultController
             return NotFound("Conta não encontrada");
         return Ok(conta);
     }
+    /// <summary>
+    /// Método para criar conta, criando também o titular e o endereco.
+    /// </summary>
+    /// <param name="contaDTO"></param>
+    /// <returns></returns>
     [HttpPost("criarconta")]
     public async Task<ActionResult<ContaCorrenteCreateRequestDTO>> CriarConta(ContaCorrenteCreateRequestDTO contaDTO)
     {
@@ -37,6 +51,11 @@ public class ContaCorrenteController : DefaultController
         await _cs.CriarConta(contaDTO);
         return Ok("Conta cadastrada com sucesso");
     }
+    /// <summary>
+    /// Método para bloquear a conta cadastrada no sistema.
+    /// </summary>
+    /// <param name="id"></param>
+    /// <returns></returns>
     [HttpPut("bloquearconta/{id}")]
     public async Task<IActionResult> BloquearConta(int id)
     {
@@ -46,6 +65,11 @@ public class ContaCorrenteController : DefaultController
         await _cs.BloquearConta(id);
         return Ok("Conta bloqueada com sucesso");
     }
+    /// <summary>
+    /// Método usado para desbloquear uma conta que esteja bloqueada.
+    /// </summary>
+    /// <param name="id"></param>
+    /// <returns></returns>
     [HttpPut("desbloquearconta/{id}")]
     public async Task<IActionResult> DesbloquearConta(int id)
     {
@@ -55,6 +79,11 @@ public class ContaCorrenteController : DefaultController
         await _cs.DesbloquearConta(id);
         return Ok("Conta desbloqueada com sucesso");
     }
+    /// <summary>
+    /// Método usado para deletar uma conta do sistema.
+    /// </summary>
+    /// <param name="id"></param>
+    /// <returns></returns>
     [HttpDelete("excluirconta/{id}")]
     public async Task<IActionResult> ExcluirConta(int id)
     {
