@@ -33,6 +33,10 @@ import { ConfirmacaoTransferenciaComponent } from './pages/area-do-cliente/nova-
 import { DestinatarioComponent } from './pages/area-do-cliente/nova-transacao/transferencia/destinatario/destinatario.component';
 import { ValidacaoComponent } from './pages/area-do-cliente/nova-transacao/transferencia/validacao/validacao.component';
 import { VisaoGeralComponent } from './pages/admin-dashboard/visao-geral/visao-geral.component';
+import { ClientesComponent } from './pages/admin-dashboard/clientes/clientes.component';
+import { TransacoesComponent } from './pages/admin-dashboard/transacoes/transacoes.component';
+import { RelatoriosComponent } from './pages/admin-dashboard/relatorios/relatorios.component';
+import { ConfigAdminComponent } from './pages/admin-dashboard/config-admin/config-admin.component';
 
 export const routes: Routes = [
     {path:'',redirectTo:'/home',pathMatch:'full',},
@@ -45,11 +49,24 @@ export const routes: Routes = [
       {
       path:'',
       component: VisaoGeralComponent
-      // },
-      // {
-      // path:'token',
-      // component: TokenComponent
-      }],
+      },
+      {
+      path:'clientes',
+      component: ClientesComponent
+      },
+      {
+      path:'transacoes',
+      component: TransacoesComponent
+      },
+      {
+      path:'relatorios',
+      component: RelatoriosComponent
+      },
+      {
+      path:'configuracoes',
+      component: ConfigAdminComponent
+      },
+    ],
     },
     {path:'login',component:InicioLoginComponent,
     children:[

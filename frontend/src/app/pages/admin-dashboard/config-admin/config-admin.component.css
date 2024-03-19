@@ -1,0 +1,36 @@
+.grid {
+  grid-template-areas:
+  "dashboard dashboard dashboard";
+  padding: 0;
+}
+
+app-menu-lateral-admin {
+  grid-area: menu-lateral;
+}
+
+app-dashboard {
+  grid-area: dashboard;
+  height: 90vh;
+  overflow-y: auto;
+}
+
+@media (max-width: 744px) {
+  app-menu-lateral-admin {
+    position: absolute;
+    top: 55px;
+    transform: translateX(-2000px);
+    transition: transform 0.3s ease;
+  }
+
+  .menu-open {
+    transform: translateX(0);
+  }
+}
+
+@media (min-width: 745px)  {
+  .grid {
+    grid-template-areas:
+    "menu-lateral dashboard";
+    grid-template-columns: 1fr 4fr;
+  }
+}
