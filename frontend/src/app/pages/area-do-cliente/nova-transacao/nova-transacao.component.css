@@ -1,6 +1,6 @@
 .grid {
   grid-template-areas:
-  "saque saque saque";
+  "conteudo conteudo conteudo";
   padding: 0;
 }
 
@@ -8,10 +8,8 @@ app-menu-lateral {
   grid-area: menu-lateral;
 }
 
-app-saque {
-  grid-area: saque;
-  height: 72vh;
-  overflow-y: auto;
+.conteudo {
+  grid-area: conteudo;
 }
 
 @media (max-width: 744px) {
@@ -30,7 +28,7 @@ app-saque {
 @media (min-width: 745px)  {
   .grid {
     grid-template-areas:
-    "menu-lateral saque saque";
+    "menu-lateral conteudo conteudo";
     grid-template-columns: 1fr 4fr;
   }
 }

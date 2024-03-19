@@ -27,6 +27,9 @@ import { NovaTransacaoComponent } from './pages/area-do-cliente/nova-transacao/n
 import { SaqueComponent } from './pages/area-do-cliente/nova-transacao/saque/saque.component';
 import { DepositoComponent } from './pages/area-do-cliente/nova-transacao/deposito/deposito.component';
 import { TransferenciaComponent } from './pages/area-do-cliente/nova-transacao/transferencia/transferencia.component';
+import { ConfirmacaoDepositoComponent } from './pages/area-do-cliente/nova-transacao/deposito/confirmacao-deposito/confirmacao-deposito.component';
+import { ConfirmacaoSaqueComponent } from './pages/area-do-cliente/nova-transacao/saque/confirmacao-saque/confirmacao-saque.component';
+import { ConfirmacaoTransferenciaComponent } from './pages/area-do-cliente/nova-transacao/transferencia/confirmacao-transferencia/confirmacao-transferencia.component';
 
 export const routes: Routes = [
     {path:'',redirectTo:'/home',pathMatch:'full',},
@@ -58,15 +61,33 @@ export const routes: Routes = [
         children: [
           {
             path: 'saque',
-            component: SaqueComponent
+            component: SaqueComponent,
+            children: [
+              {
+                path: 'ok',
+                component: ConfirmacaoSaqueComponent,
+              }
+            ]
           },
           {
             path: 'deposito',
-            component: DepositoComponent
+            component: DepositoComponent,
+            children: [
+              {
+                path: 'ok',
+                component: ConfirmacaoDepositoComponent,
+              }
+            ]
           },
           {
             path: 'transferencia',
-            component: TransferenciaComponent
+            component: TransferenciaComponent,
+            children: [
+              {
+                path: 'ok',
+                component: ConfirmacaoTransferenciaComponent,
+              }
+            ]
           }
         ]
       },

@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 80vh;
+  height: 70vh;
 }
 
 form {
@@ -22,4 +22,15 @@ form {
 .botao-secundario,
 .botao-principal {
   width: 48%;
+}
+
+@media (min-width: 744px) {
+  .buttons {
+    margin-top: inherit;
+    max-width: 500px;
+  }
+
+  input {
+    max-width: 500px;
+  }
 }
