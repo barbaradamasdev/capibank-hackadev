@@ -1,8 +1,5 @@
 <div class="admin-dashboard">
   <app-cabecalho-area-interna style="z-index: 90;" [logoSrc]="logoTipo === 'azul' ? 'assets\\icones\\logo-azul.png' : 'assets\\icones\\logo-branca.png'"></app-cabecalho-area-interna>
   <span class="gestor">Gestor!</span>
-  <div class="grid container">
-    <app-menu-lateral-admin [ngClass]="{'menu-open': isMenuOpen}" (linkClicado)="onLinkClicked()" style="z-index: 9;"></app-menu-lateral-admin>
-    <app-dashboard></app-dashboard>
-  </div>
+  <router-outlet></router-outlet>
 </div>

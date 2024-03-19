@@ -32,6 +32,7 @@ import { ConfirmacaoSaqueComponent } from './pages/area-do-cliente/nova-transaca
 import { ConfirmacaoTransferenciaComponent } from './pages/area-do-cliente/nova-transacao/transferencia/confirmacao-transferencia/confirmacao-transferencia.component';
 import { DestinatarioComponent } from './pages/area-do-cliente/nova-transacao/transferencia/destinatario/destinatario.component';
 import { ValidacaoComponent } from './pages/area-do-cliente/nova-transacao/transferencia/validacao/validacao.component';
+import { VisaoGeralComponent } from './pages/admin-dashboard/visao-geral/visao-geral.component';
 
 export const routes: Routes = [
     {path:'',redirectTo:'/home',pathMatch:'full',},
@@ -39,7 +40,17 @@ export const routes: Routes = [
     {path:'capivida',component:CapividaComponent},
     {path:'sobre',component:SobreComponent},
     {path:'loginadmin',component:AdminLoginComponent},
-    {path:'admin',component:AdminDashboardComponent},
+    {path:'admin',component:AdminDashboardComponent,
+    children:[
+      {
+      path:'',
+      component: VisaoGeralComponent
+      // },
+      // {
+      // path:'token',
+      // component: TokenComponent
+      }],
+    },
     {path:'login',component:InicioLoginComponent,
     children:[
       {
