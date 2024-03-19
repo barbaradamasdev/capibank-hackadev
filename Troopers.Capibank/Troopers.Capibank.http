@@ -1,4 +1,4 @@
-@Troopers.Capibank_HostAddress = http://localhost:5276
+@Troopers.Capibank_HostAddress = http://localhost:5143
 
 GET {{Troopers.Capibank_HostAddress}}/weatherforecast/
 Accept: application/json

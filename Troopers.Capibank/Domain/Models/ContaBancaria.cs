@@ -1,6 +1,3 @@
-using Troopers.Capibank.Interfaces;
-using System.Collections.Generic;
-using Troopers.Capibank.Domain.Entities;
 using Troopers.Capibank.Domain.Models;
 
 namespace Troopers.Capibank.Models;
@@ -16,7 +13,7 @@ public abstract class ContaBancaria
     public DateTime AlteradaEm { get; set; } = DateTime.Now;
     public DateTime BloqueadaEm { get; set; }
 
-    public IEnumerable<Transacao> Transacoes = [];
+    public IEnumerable<Transacao> ListaTransacoes = [];
     
     
 }

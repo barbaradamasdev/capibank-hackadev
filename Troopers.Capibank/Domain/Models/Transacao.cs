@@ -1,11 +1,7 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Troopers.Capibank.Domain.Enums;
 using Troopers.Capibank.Models;
 
-namespace Troopers.Capibank.Domain.Entities;
+namespace Troopers.Capibank.Domain.Models;
 
 public class Transacao
 {
@@ -13,7 +9,7 @@ public class Transacao
     public Operacao TipoTransacao { get; set; }
     public decimal Valor { get; set; }
     public DateTime DataTransacao { get; set; } = DateTime.Now;
-    public SituacaoConta Situacao { get; set; }
+    public SituacaoTransacao Situacao { get; set; }
     public int ContaDestinoOrigemId { get; set; }
     public int ContaId { get; set; }
     public virtual ContaBancaria? Conta{ get; set; }
