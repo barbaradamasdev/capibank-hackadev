@@ -1,14 +1,14 @@
 <div class="container-form p-4">
   <h6 class="section-title">Confirmação de Deposito</h6>
 
-  <div class="resumo">
+  <div class="resumo" #componentToPrint>
     <p><strong>Id:</strong> {{idTransacao}}</p>
     <p><strong>Valor:</strong> R$ {{valor}}</p>
     <p><strong>Data da transação:</strong> {{dataTransacao}}</p>
   </div>
 
   <div class="buttons flex">
-    <button routerLink="ok" type="submit" class="botao-principal">
+    <button (click)="imprimir()" type="submit" class="botao-principal">
       Baixar comprovante
     </button>
   </div>

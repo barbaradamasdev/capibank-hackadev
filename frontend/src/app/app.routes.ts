@@ -30,6 +30,8 @@ import { TransferenciaComponent } from './pages/area-do-cliente/nova-transacao/t
 import { ConfirmacaoDepositoComponent } from './pages/area-do-cliente/nova-transacao/deposito/confirmacao-deposito/confirmacao-deposito.component';
 import { ConfirmacaoSaqueComponent } from './pages/area-do-cliente/nova-transacao/saque/confirmacao-saque/confirmacao-saque.component';
 import { ConfirmacaoTransferenciaComponent } from './pages/area-do-cliente/nova-transacao/transferencia/confirmacao-transferencia/confirmacao-transferencia.component';
+import { DestinatarioComponent } from './pages/area-do-cliente/nova-transacao/transferencia/destinatario/destinatario.component';
+import { ValidacaoComponent } from './pages/area-do-cliente/nova-transacao/transferencia/validacao/validacao.component';
 
 export const routes: Routes = [
     {path:'',redirectTo:'/home',pathMatch:'full',},
@@ -78,6 +80,14 @@ export const routes: Routes = [
           {
             path: 'transferencia',
             component: TransferenciaComponent,
+          },
+          {
+            path: 'transferencia/dados',
+            component: DestinatarioComponent,
+          },
+          {
+            path: 'transferencia/validacao',
+            component: ValidacaoComponent,
           },
           {
             path: 'transferencia/ok',

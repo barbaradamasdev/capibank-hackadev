@@ -21,10 +21,10 @@ export class FormAdminLoginComponent {
   });
   user: Cliente = {
     email: 'sharp@gmail.com',
-    senha:'admin123',
-    token:'123123',
-    nome: 'Capitonio Nascimento'
-  }
+    senha: 'admin123',
+    token: '123123',
+    nome: 'Capitonio Nascimento',
+  };
 
   exibirModalErro(mensagem: string): void {
     const modalElement = document.createElement('div');
@@ -68,10 +68,10 @@ export class FormAdminLoginComponent {
 
   autenticar():void{
     if(this.adminFormLogin.value.email == this.user.email && this.adminFormLogin.value.senha == this.user.senha){
-      localStorage.setItem('email', this.adminFormLogin.value.email)
-      localStorage.setItem('senha', this.adminFormLogin.value.senha)
-      localStorage.setItem('token', '123123')
-      localStorage.setItem('nome', this.user.nome)
+      localStorage.setItem('email', JSON.stringify(this.adminFormLogin.value.email));
+      localStorage.setItem('senha', JSON.stringify(this.adminFormLogin.value.senha));
+      localStorage.setItem('token', '123123');
+      localStorage.setItem('nome', JSON.stringify(this.user.nome));
       this.rota.navigateByUrl('/admin')
     }else{
       this.exibirModalErro("Senha ou usuário inválidos! Por favor, tente novamente.");

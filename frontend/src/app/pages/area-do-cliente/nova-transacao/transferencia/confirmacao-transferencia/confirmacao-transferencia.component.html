@@ -1,14 +1,18 @@
 <div class="container-form p-4">
   <h6 class="section-title">Confirmação de Transferência</h6>
 
-  <div class="resumo">
+  <div class="resumo" #componentToPrint>
     <p><strong>Id:</strong> {{idTransacao}}</p>
     <p><strong>Valor:</strong> R$ {{valor}}</p>
     <p><strong>Data da transação:</strong> {{dataTransacao}}</p>
+    <p><strong>CPF:</strong> {{cpfDestino}}</p>
+    <p><strong>Titular:</strong> {{nome}}</p>
+    <p><strong>Numero da Conta:</strong> {{numeroConta}}</p>
+    <p><strong>Tipo da conta:</strong> {{tipoConta}}</p>
   </div>
 
   <div class="buttons flex">
-    <button routerLink="ok" type="submit" class="botao-principal">
+    <button (click)="imprimir()" type="submit" class="botao-principal">
       Baixar comprovante
     </button>
   </div>

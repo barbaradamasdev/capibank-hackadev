@@ -3,6 +3,12 @@
   flex-direction: column;
   justify-content: space-between;
   height: 70vh;
+  margin: auto;
+  max-width: 548px ;
+}
+
+.section-title {
+  font-size: 18px;
 }
 
 form {
