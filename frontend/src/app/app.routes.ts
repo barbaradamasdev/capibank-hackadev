@@ -61,33 +61,27 @@ export const routes: Routes = [
         children: [
           {
             path: 'saque',
-            component: SaqueComponent,
-            children: [
-              {
-                path: 'ok',
-                component: ConfirmacaoSaqueComponent,
-              }
-            ]
+            component: SaqueComponent
+          },
+          {
+            path: 'saque/ok',
+            component: ConfirmacaoSaqueComponent,
           },
           {
             path: 'deposito',
-            component: DepositoComponent,
-            children: [
-              {
-                path: 'ok',
-                component: ConfirmacaoDepositoComponent,
-              }
-            ]
+            component: DepositoComponent
+          },
+          {
+            path: 'deposito/ok',
+            component: ConfirmacaoDepositoComponent,
           },
           {
             path: 'transferencia',
             component: TransferenciaComponent,
-            children: [
-              {
-                path: 'ok',
-                component: ConfirmacaoTransferenciaComponent,
-              }
-            ]
+          },
+          {
+            path: 'transferencia/ok',
+            component: ConfirmacaoTransferenciaComponent,
           }
         ]
       },

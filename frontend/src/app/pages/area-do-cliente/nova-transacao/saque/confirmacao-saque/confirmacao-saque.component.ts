@@ -8,5 +8,14 @@ import { Component } from '@angular/core';
   styleUrl: './confirmacao-saque.component.css'
 })
 export class ConfirmacaoSaqueComponent {
+  idTransacao: number = 6546514365;
+  valor: any;
+  dataTransacao: any;
 
+  constructor() { }
+
+  ngOnInit(): void {
+    this.valor = localStorage.getItem('valorSaque');
+    this.dataTransacao = localStorage.getItem('dataSaque');
+  }
 }

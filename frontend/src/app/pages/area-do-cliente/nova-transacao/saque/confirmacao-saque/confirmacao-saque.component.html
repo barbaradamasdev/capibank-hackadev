@@ -1,1 +1,15 @@
-<p>confirmacao-saque works!</p>
+<div class="container-form p-4">
+  <h6 class="section-title">Confirmação de Saque</h6>
+
+  <div class="resumo">
+    <p><strong>Id:</strong> {{idTransacao}}</p>
+    <p><strong>Valor:</strong> R$ {{valor}}</p>
+    <p><strong>Data da transação:</strong> {{dataTransacao}}</p>
+  </div>
+
+  <div class="buttons flex">
+    <button routerLink="ok" type="submit" class="botao-principal">
+      Baixar comprovante
+    </button>
+  </div>
+</div>

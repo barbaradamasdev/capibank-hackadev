@@ -11,15 +11,17 @@
       </div>
 
 
-      <!-- <div *ngIf="formRecuperarSenha.get('email')?.hasError('email') && formRecuperarSenha.get('email')?.touched" class="warn-text text-danger" >
-        Por favor informe um email válido
-      </div> -->
+      <div *ngIf="valor && valor.errors">
+        <div *ngIf="valor.hasError('min')" class="warn-text text-danger">
+          O valor de saque não pode ser menor que zero.
+        </div>
+      </div>
 
     <div class="buttons flex">
       <button routerLink="/cliente" type="submit" class="botao-secundario">
         Voltar
       </button>
-      <button routerLink="/deposito/confirmacao" type="submit" class="botao-principal">
+      <button (click)="salvarValor()" routerLink="ok" type="submit" class="botao-principal">
         Confirmar valor
       </button>
     </div>

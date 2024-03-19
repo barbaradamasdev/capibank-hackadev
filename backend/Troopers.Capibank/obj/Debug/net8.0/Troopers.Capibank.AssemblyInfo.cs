@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Troopers.Capibank")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bb5aec37ba1c8ba4922d565b7d9817fe7b91a3c7")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8017b247303ecc1274b316b4839a1ca0da9ee12a")]
 [assembly: System.Reflection.AssemblyProductAttribute("Troopers.Capibank")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Troopers.Capibank")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
