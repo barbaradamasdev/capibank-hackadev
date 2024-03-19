@@ -1,5 +1,67 @@
-<p>clientes works!</p>
-<div class="grid container">
-  <app-menu-lateral-admin [ngClass]="{'menu-open': isMenuOpen}" (linkClicado)="onLinkClicked()" style="z-index: 9;"></app-menu-lateral-admin>
-  <app-dashboard></app-dashboard>
+<div class="main-content">
+  <div class="header">
+    <h1>Dashboard Bancário</h1>
+  </div>
+
+  <div class="clientes">
+    <div class="clientes-container">
+      <h2>Gerenciamento de Clientes</h2>
+
+      <!-- Pesquisa de Clientes -->
+      <div class="pesquisa-clientes">
+        <h3>Pesquisa de Clientes</h3>
+        <input type="text" placeholder="Nome, CPF, número da conta, etc..." [(ngModel)]="filtro">
+        <select [(ngModel)]="filtroTipo">
+          <option value="nome">Nome</option>
+          <option value="cpf">CPF</option>
+          <option value="conta">Número da Conta</option>
+          <!-- Adicione mais opções de filtro conforme necessário -->
+        </select>
+        <button class="btn-pesquisar" (click)="pesquisar()">Pesquisar</button>
+      </div>
+
+      <!-- Detalhes do Cliente -->
+      <div class="detalhes-cliente" *ngIf="clienteSelecionado">
+        <h3>Detalhes do Cliente</h3>
+        <div class="info-cliente">
+          <p><strong>Nome:</strong> {{ clienteSelecionado.nome }}</p>
+          <p><strong>CPF:</strong> {{ clienteSelecionado.cpf }}</p>
+          <!-- Adicione mais detalhes conforme necessário -->
+        </div>
+        <div class="cliente-actions">
+          <button class="btn-editar">Editar Informações</button>
+          <button class="btn-bloquear" (click)="bloquearDesbloquearConta()">Bloquear/Desbloquear Conta</button>
+          <button class="btn-enviar-mensagem">Enviar Mensagem</button>
+          <button class="btn-gerar-relatorio">Gerar Relatórios</button>
+        </div>
+      </div>
+
+      <!-- Gerenciamento de Contas -->
+      <div class="gerenciamento-contas">
+        <h3>Gerenciamento de Contas</h3>
+        <button class="btn-nova-conta">Abrir Nova Conta</button>
+        <button class="btn-encerrar-conta">Encerrar Conta</button>
+        <button class="btn-alterar-tipo">Alterar Tipo da Conta</button>
+        <button class="btn-definir-limites">Definir Limites</button>
+        <button class="btn-extrato">Visualizar Extrato</button>
+      </div>
+
+      <!-- Relatórios de Clientes -->
+      <div class="relatorios-clientes">
+        <h3>Relatórios de Clientes</h3>
+        <button class="btn-relatorio-pdf">Gerar Relatório em PDF</button>
+        <button class="btn-relatorio-csv">Gerar Relatório em CSV</button>
+      </div>
+
+      <!-- Lista de Clientes -->
+      <div class="lista-clientes">
+        <h3>Lista de Clientes</h3>
+        <ul>
+          <li *ngFor="let cliente of clientes" (click)="selecionarCliente(cliente)">
+            {{ cliente.nome }} - {{ cliente.cpf }} - {{ cliente.numeroConta }}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </div>

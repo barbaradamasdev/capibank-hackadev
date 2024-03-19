@@ -32,11 +32,11 @@ import { ConfirmacaoSaqueComponent } from './pages/area-do-cliente/nova-transaca
 import { ConfirmacaoTransferenciaComponent } from './pages/area-do-cliente/nova-transacao/transferencia/confirmacao-transferencia/confirmacao-transferencia.component';
 import { DestinatarioComponent } from './pages/area-do-cliente/nova-transacao/transferencia/destinatario/destinatario.component';
 import { ValidacaoComponent } from './pages/area-do-cliente/nova-transacao/transferencia/validacao/validacao.component';
-import { VisaoGeralComponent } from './pages/admin-dashboard/visao-geral/visao-geral.component';
 import { ClientesComponent } from './pages/admin-dashboard/clientes/clientes.component';
 import { TransacoesComponent } from './pages/admin-dashboard/transacoes/transacoes.component';
 import { RelatoriosComponent } from './pages/admin-dashboard/relatorios/relatorios.component';
 import { ConfigAdminComponent } from './pages/admin-dashboard/config-admin/config-admin.component';
+import { DashboardComponent } from './pages/admin-dashboard/dashboard/dashboard.component';
 
 export const routes: Routes = [
     {path:'',redirectTo:'/home',pathMatch:'full',},
@@ -48,7 +48,7 @@ export const routes: Routes = [
     children:[
       {
       path:'',
-      component: VisaoGeralComponent
+      component: DashboardComponent
       },
       {
       path:'clientes',

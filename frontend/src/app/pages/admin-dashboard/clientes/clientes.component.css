@@ -1,36 +1,100 @@
-.grid {
-  grid-template-areas:
-  "dashboard dashboard dashboard";
+.main-content {
+  flex: 1;
+  padding: 20px;
+  max-height: 92vh;
+  overflow: auto;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.clientes-container {
+  background-color: #f2f2f2;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.pesquisa-clientes {
+  margin-bottom: 20px;
+}
+
+.pesquisa-clientes input[type="text"],
+.pesquisa-clientes select {
+  padding: 8px;
+  margin-right: 10px;
+}
+
+.btn-pesquisar {
+  padding: 8px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.detalhes-cliente {
+  margin-bottom: 20px;
+}
+
+.info-cliente p {
+  margin-bottom: 5px;
+}
+
+.cliente-actions button {
+  margin-right: 10px;
+}
+
+.lista-clientes ul {
+  list-style-type: none;
   padding: 0;
 }
 
-app-menu-lateral-admin {
-  grid-area: menu-lateral;
+.lista-clientes li {
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  cursor: pointer;
 }
 
-app-dashboard {
-  grid-area: dashboard;
-  height: 90vh;
-  overflow-y: auto;
+.lista-clientes li:hover {
+  background-color: #f9f9f9;
 }
 
-@media (max-width: 744px) {
-  app-menu-lateral-admin {
-    position: absolute;
-    top: 55px;
-    transform: translateX(-2000px);
-    transition: transform 0.3s ease;
-  }
-
-  .menu-open {
-    transform: translateX(0);
-  }
+.btn-editar,
+.btn-bloquear,
+.btn-enviar-mensagem,
+.btn-gerar-relatorio,
+.btn-nova-conta,
+.btn-encerrar-conta,
+.btn-alterar-tipo,
+.btn-definir-limites,
+.btn-extrato,
+.btn-relatorio-pdf,
+.btn-relatorio-csv {
+  padding: 8px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 5px;
 }
 
-@media (min-width: 745px)  {
-  .grid {
-    grid-template-areas:
-    "menu-lateral dashboard";
-    grid-template-columns: 1fr 4fr;
-  }
+.btn-editar:hover,
+.btn-bloquear:hover,
+.btn-enviar-mensagem:hover,
+.btn-gerar-relatorio:hover,
+.btn-nova-conta:hover,
+.btn-encerrar-conta:hover,
+.btn-alterar-tipo:hover,
+.btn-definir-limites:hover,
+.btn-extrato:hover,
+.btn-relatorio-pdf:hover,
+.btn-relatorio-csv:hover {
+  background-color: #0056b3;
 }
