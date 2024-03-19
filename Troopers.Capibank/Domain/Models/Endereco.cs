@@ -1,4 +1,5 @@
-public class Endereco
+namespace Troopers.Capibank.Domain.Models;
+public class Endereco 
 {
     public int Id { get;set; }
     public int CEP { get; set; }

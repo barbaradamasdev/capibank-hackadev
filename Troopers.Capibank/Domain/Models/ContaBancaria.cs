@@ -1,6 +1,7 @@
 using Troopers.Capibank.Interfaces;
 using System.Collections.Generic;
 using Troopers.Capibank.Domain.Entities;
+using Troopers.Capibank.Domain.Models;
 
 namespace Troopers.Capibank.Models;
 
