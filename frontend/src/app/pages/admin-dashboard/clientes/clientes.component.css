@@ -5,6 +5,20 @@
   overflow: auto;
 }
 
+h1 {
+  font-size: 20px;
+}
+
+h2 {
+  font-size: 18px;
+}
+
+.buttons-admin {
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
 .header {
   text-align: center;
   margin-bottom: 30px;
@@ -26,14 +40,6 @@
   margin-right: 10px;
 }
 
-.btn-pesquisar {
-  padding: 8px 20px;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
 
 .detalhes-cliente {
   margin-bottom: 20px;
@@ -63,38 +69,4 @@
 
 .lista-clientes li:hover {
   background-color: #f9f9f9;
-}
-
-.btn-editar,
-.btn-bloquear,
-.btn-enviar-mensagem,
-.btn-gerar-relatorio,
-.btn-nova-conta,
-.btn-encerrar-conta,
-.btn-alterar-tipo,
-.btn-definir-limites,
-.btn-extrato,
-.btn-relatorio-pdf,
-.btn-relatorio-csv {
-  padding: 8px 20px;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-bottom: 5px;
-}
-
-.btn-editar:hover,
-.btn-bloquear:hover,
-.btn-enviar-mensagem:hover,
-.btn-gerar-relatorio:hover,
-.btn-nova-conta:hover,
-.btn-encerrar-conta:hover,
-.btn-alterar-tipo:hover,
-.btn-definir-limites:hover,
-.btn-extrato:hover,
-.btn-relatorio-pdf:hover,
-.btn-relatorio-csv:hover {
-  background-color: #0056b3;
 }
