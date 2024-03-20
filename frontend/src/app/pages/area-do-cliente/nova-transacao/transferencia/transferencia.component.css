@@ -21,6 +21,7 @@ form {
 .buttons {
   display: flex;
   justify-content: space-between;
+  flex-direction: row-reverse;
   margin-top: auto;
   z-index: 8;
 }

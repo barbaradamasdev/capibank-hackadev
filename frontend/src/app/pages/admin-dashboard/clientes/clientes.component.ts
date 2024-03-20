@@ -23,17 +23,76 @@ export class ClientesComponent {
   clientes: Cliente[] = CLIENTES;
 
   pesquisar() {
-    console.log('Filtrar por:', this.filtroTipo, 'com filtro:', this.filtro);
+    switch (this.filtroTipo) {
+      case 'cpf':
+        this.pesquisarPorCPF();
+        break;
+      case 'nome':
+        this.pesquisarPorNome();
+        break;
+      case 'conta':
+        this.pesquisarPorNumeroConta();
+        break;
+      default:
+        alert('Tipo de filtro inválido.');
+        break;
+    }
+  }
+
+  pesquisarPorCPF() {
+    const clienteEncontrado = this.clientes.find(cliente => cliente.cpf === this.filtro);
+    if (clienteEncontrado) {
+      this.selecionarCliente(clienteEncontrado);
+    } else {
+      alert('CPF não encontrado.');
+      this.clienteSelecionado = null;
+    }
+  }
+
+  removerAcentos(texto: string): string {
+    return texto.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+  }
+
+  pesquisarPorNome() {
+    const filtroSemAcentos = this.removerAcentos(this.filtro.toLowerCase());
+    const clienteEncontrado = this.clientes.find(cliente => {
+    if (cliente.nome) {
+      const nomeSemAcentos = this.removerAcentos(cliente.nome.toLowerCase());
+      return nomeSemAcentos === filtroSemAcentos;
+    }
+    return false;
+  });
+    if (clienteEncontrado) {
+      this.selecionarCliente(clienteEncontrado);
+    } else {
+      alert('Nome não encontrado.');
+      this.clienteSelecionado = null;
+    }
+  }
+
+  pesquisarPorNumeroConta() {
+    const clienteEncontrado = this.clientes.find(cliente => cliente.numeroConta === this.filtro);
+    if (clienteEncontrado) {
+      this.selecionarCliente(clienteEncontrado);
+    } else {
+      alert('Número da conta não encontrado.');
+      this.clienteSelecionado = null;
+    }
   }
 
   selecionarCliente(cliente: Cliente) {
     this.clienteSelecionado = cliente;
-    console.log(this.clienteSelecionado)
   }
 
   bloquearDesbloquearConta() {
     if (this.clienteSelecionado) {
       console.log('Bloquear/desbloquear conta do cliente:', this.clienteSelecionado.nome);
+    }
+  }
+
+  editarConta() {
+    if (this.clienteSelecionado) {
+      console.log('Logica para editar contas:', this.clienteSelecionado.nome);
     }
   }
 }

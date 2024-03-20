@@ -6,7 +6,7 @@
       <div class="pesquisa-clientes">
         <h2>Pesquisa de Clientes</h2>
         <div class="flex">
-          <input type="text" placeholder="Nome, CPF, número da conta, etc..." [(ngModel)]="filtro">
+          <input type="text" placeholder="Nome completo, CPF ou número da conta" [(ngModel)]="filtro" (keyup.enter)="pesquisar()">
           <select [(ngModel)]="filtroTipo">
             <option value="nome">Nome</option>
             <option value="cpf">CPF</option>
@@ -32,9 +32,9 @@
               <p><strong>Renda Mensal:</strong> R$ {{ clienteSelecionado.rendaMensal }}</p>
             </div>
             <div class="cliente-actions">
-              <button class="botao-banner">Editar Informações</button>
+              <button class="botao-banner" (click)="editarConta()">Editar Informações</button>
               <button class="botao-banner" (click)="bloquearDesbloquearConta()">Bloquear/Desbloquear Conta</button>
-              <button class="botao-banner">Enviar Mensagem</button>
+              <!-- <button class="botao-banner">Enviar Mensagem</button> -->
               <button class="botao-banner">Gerar Relatórios</button>
             </div>
           </div>
@@ -45,8 +45,6 @@
         <div class="buttons-admin flex">
           <button class="botao-banner">Abrir Nova Conta</button>
           <button class="botao-banner">Encerrar Conta</button>
-          <!-- <button class="botao-banner">Alterar Tipo da Conta</button> -->
-          <!-- <button class="botao-banner">Definir Limites</button> -->
           <button class="botao-banner">Visualizar Extrato</button>
         </div>
       </div>
@@ -55,7 +53,6 @@
         <h2>Relatórios de Clientes</h2>
         <div class="buttons-admin flex">
           <button class="botao-banner">Gerar Relatório em PDF</button>
-          <!-- <button class="botao-banner">Gerar Relatório em CSV</button> -->
         </div>
       </div>
 
@@ -67,6 +64,7 @@
           </li>
         </ul>
       </div>
+
     </div>
   </div>
 </div>

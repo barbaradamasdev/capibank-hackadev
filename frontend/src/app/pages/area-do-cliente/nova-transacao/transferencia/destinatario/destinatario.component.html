@@ -9,6 +9,7 @@
         class="form-control"
         formControlName="cpf"
         placeholder="CPF"
+        (keyup.enter)="salvarValor()"
       />
     </div>
 
@@ -17,11 +18,11 @@
     </div>
 
     <div class="buttons flex">
-      <button routerLink="/cliente/nova/transferencia" type="submit" class="botao-secundario">
-        Voltar
-      </button>
       <button (click)="salvarValor()" [disabled]="!cpf?.valid" class="botao-principal">
         Confirmar
+      </button>
+      <button routerLink="/cliente/nova/transferencia" type="submit" class="botao-secundario">
+        Voltar
       </button>
     </div>
 
