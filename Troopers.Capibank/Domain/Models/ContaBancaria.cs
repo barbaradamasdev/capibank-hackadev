@@ -7,7 +7,7 @@ public abstract class ContaBancaria
     public int Id { get; set; }
     public int NumeroConta { get; set; }
     public Titular? Titular { get; set; }
-    public decimal Saldo { get; private set; }
+    public decimal Saldo { get; protected set; }
     public bool EstaAtiva { get; set; } = true;
     public DateTime CriadaEm { get; set; } = DateTime.Now;
     public DateTime AlteradaEm { get; set; } = DateTime.Now;
@@ -24,11 +24,7 @@ public abstract class ContaBancaria
     {
         return EstaAtiva = true;
     }
-    public bool ExcluirConta(int id)
-    {
-        if (Saldo != 0)
-            return false;
-        return true;
-    }
+    public abstract bool ExcluirConta(int id);
+    public abstract decimal Depositar(decimal valor);
     
 }

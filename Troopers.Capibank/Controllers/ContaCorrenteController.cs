@@ -1,7 +1,9 @@
 ﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using Troopers.Capibank.DTOs.Request;
 using Troopers.Capibank.DTOs.Response;
+using Troopers.Capibank.Models;
 using Troopers.Capibank.Services;
 
 namespace Troopers.Capibank.Controllers;
@@ -30,7 +32,7 @@ public class ContaCorrenteController : DefaultController
     /// </summary>
     /// <param name="id"></param>
     /// <returns></returns>
-    [HttpGet("listacontaporid/{id}")]
+    [HttpGet("listacontaporid/{id}", Name = "ListarPorId")]
     public async Task<ActionResult> ListarPorId(int id)
     {
         var conta = await _cs.ListarPorId(id);
@@ -49,7 +51,7 @@ public class ContaCorrenteController : DefaultController
         if (contaDTO is null)
             return BadRequest();
         await _cs.CriarConta(contaDTO);
-        return Ok("Conta cadastrada com sucesso");
+        return new CreatedAtRouteResult("ListarPorId", new { id = contaDTO.Id }, contaDTO);
     }
     /// <summary>
     /// Método para bloquear a conta cadastrada no sistema.
@@ -90,6 +92,7 @@ public class ContaCorrenteController : DefaultController
         var conta = await _cs.ListarPorId(id);
         if (conta is null)
             return NotFound("Conta não encontrada");
+        
         _cs.DeletarConta(id);
         return Ok("Conta excluida com sucesso");
 

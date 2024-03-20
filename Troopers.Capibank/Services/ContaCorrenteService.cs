@@ -10,18 +10,15 @@ public class ContaCorrenteService : IContaCorrenteService
 {
     private readonly IContaCorrenteRepository _repo;
     private readonly IMapper _mapper;
-
     public ContaCorrenteService(IContaCorrenteRepository repo, IMapper mapper)
     {
         _repo = repo;
         _mapper = mapper;
     }
-
     public async Task<IEnumerable<ContaCorrenteResponseDTO>> ListarTodas()
     {
         var contaEntity = await _repo.ListarTodos();
         return _mapper.Map<IEnumerable<ContaCorrenteResponseDTO>>(contaEntity);
-
     }
     public async Task<ContaCorrenteResponseDTO> ListarPorId(int id)
     {
@@ -43,12 +40,12 @@ public class ContaCorrenteService : IContaCorrenteService
     {
         var conta = _repo.ListarPorId(id).Result;
         await _repo.DesbloquearConta(conta.Id);
-        
     }
     public async Task DeletarConta(int id)
     {
         var conta = _repo.ListarPorId(id).Result;
+        if (!conta.ExcluirConta(conta.Id))
+            throw new Exception("Há valores nao conta impossível excluir");
         await _repo.ExcluirConta(conta.Id);
-        
     }
 }

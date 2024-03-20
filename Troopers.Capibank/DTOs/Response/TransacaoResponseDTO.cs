@@ -1,8 +1,9 @@
-using Troopers.Capibank.Domain.Enums;
+﻿using Troopers.Capibank.Domain.Enums;
+using Troopers.Capibank.Models;
 
-namespace Troopers.Capibank.Domain.Models;
+namespace Troopers.Capibank.DTOs.Response;
 
-public class Transacao
+public class TransacaoResponseDTO
 {
     public int Id { get; set; }
     public Operacao TipoTransacao { get; set; }
@@ -11,4 +12,6 @@ public class Transacao
     public SituacaoTransacao Situacao { get; set; }
     public int ContaDestinoOrigemId { get; set; }
     public int ContaId { get; set; }
+   
+
 }
