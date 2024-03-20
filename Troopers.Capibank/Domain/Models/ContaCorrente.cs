@@ -9,6 +9,11 @@ public class ContaCorrente : ContaBancaria
         Saldo += valor;
         return Saldo;
     }
+    public override decimal Sacar(decimal valor)
+    {
+        Saldo -= valor;
+        return Saldo;
+    }
 
     public override bool ExcluirConta(int id)
     {
@@ -16,4 +21,14 @@ public class ContaCorrente : ContaBancaria
             return false;
         return true;
     }
+    public override bool BloquearConta(int id)
+    {
+        return EstaAtiva = false;
+    }
+    public override bool DesbloquearConta(int id)
+    {
+        return EstaAtiva = true;
+    }
+
+   
 }

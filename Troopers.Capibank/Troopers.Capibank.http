@@ -8,9 +8,9 @@ Content-Type: application/json
 {
   "numeroConta": 12345,
   "titular": {
-    "nome": "jacksonsdadas tadeu",
+    "nome": "jackson tadeu",
     "email": "jackson@uol.com.br",
-    "cpf": "11111111111",
+    "cpf": "22222222222",
     "endereco": {
       
       "cep": "12248516",
@@ -24,9 +24,9 @@ Content-Type: application/json
   }
 }
 ###
-POST {{Troopers.Capibank_HostAddress}}/transacao/depositar/7
+POST {{Troopers.Capibank_HostAddress}}/transacao/depositar/1
 Content-Type: application/json
 {
-  "valor":-25000,
+  "valor":25000,
   "dataTransacao": "2024-03-20T10:37:22.469Z"
 }

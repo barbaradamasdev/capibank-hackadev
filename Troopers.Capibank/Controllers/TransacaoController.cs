@@ -50,6 +50,29 @@ public class TransacaoController : DefaultController
         };
         await _context.Transacoes.AddAsync(deposito);
         await _context.SaveChangesAsync();
-        return Created();
+        return Ok("Deposito efetuado com sucesso");
+    }
+    [HttpPost("sacar/{id}")]
+    public async Task<IActionResult> Sacar(TransacaoSaqueDTO saqueDTO, int id)
+    {
+        var conta = await _context.ContasCorrente.Where(c => c.Id == id).FirstOrDefaultAsync();
+        decimal valor = saqueDTO.Valor;
+        if (conta is null)
+            return NotFound("Conta não encontrada");
+        if (valor <= 0)
+            return BadRequest("Valor inválido");
+        conta.Sacar(valor);
+        conta.AlteradaEm = saqueDTO.DataTransacao;
+        Transacao saque = new()
+        {
+            ContaId = conta.Id,
+            Valor = valor,
+            TipoTransacao = Operacao.SAQUE,
+            DataTransacao = DateTime.Now,
+            Situacao = SituacaoTransacao.SUCEDIDA
+        };
+        await _context.Transacoes.AddAsync(saque);
+        await _context.SaveChangesAsync();
+        return Ok("Saque efetuado com sucesso");
     }
 }
