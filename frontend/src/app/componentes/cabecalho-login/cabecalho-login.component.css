@@ -79,3 +79,9 @@ button {
     min-height: 170px;
   }
 }
+
+@media (max-height: 700px) {
+  header .container {
+    margin-top: -120px !important;
+  }
+}
