@@ -9,12 +9,5 @@ namespace Troopers.Capibank.Models;
         public ContaEmpresarial(int numeroConta, Titular titular, int cnpj) : base(numeroConta, titular)
         {
             CNPJ = cnpj;
-        
-        }
-
-        public string GerarLinkdePagamento()
-        {
-            // Lógica para gerar o link de pagamento
-            return "Link de pagamento gerado";
         }
     }

@@ -1,6 +1,8 @@
+<<<<<<< HEAD
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD
     "C:\\dev\\capibank-windows-sprint4-back\\capibank-hackadev\\backend\\Troopers.Capibank\\Troopers.Capibank.csproj": {}
   },
   "projects": {
@@ -12,9 +14,26 @@
         "projectPath": "C:\\dev\\capibank-windows-sprint4-back\\capibank-hackadev\\backend\\Troopers.Capibank\\Troopers.Capibank.csproj",
         "packagesPath": "C:\\Users\\barba\\.nuget\\packages\\",
         "outputPath": "C:\\dev\\capibank-windows-sprint4-back\\capibank-hackadev\\backend\\Troopers.Capibank\\obj\\",
+=======
+    "D:\\Dev\\Sharp Projeto\\capibank-hackadev\\backend\\troopers.capibank\\Troopers.Capibank.csproj": {}
+  },
+  "projects": {
+    "D:\\Dev\\Sharp Projeto\\capibank-hackadev\\backend\\troopers.capibank\\Troopers.Capibank.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Dev\\Sharp Projeto\\capibank-hackadev\\backend\\troopers.capibank\\Troopers.Capibank.csproj",
+        "projectName": "Troopers.Capibank",
+        "projectPath": "D:\\Dev\\Sharp Projeto\\capibank-hackadev\\backend\\troopers.capibank\\Troopers.Capibank.csproj",
+        "packagesPath": "C:\\Users\\PC1\\.nuget\\packages\\",
+        "outputPath": "D:\\Dev\\Sharp Projeto\\capibank-hackadev\\backend\\troopers.capibank\\obj\\",
+>>>>>>> de5bfa0a38d339cd4b503d66db3e6415ec160916
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\barba\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\PC1\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,6 +41,99 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            },
+            "Microsoft.AspNetCore.OpenApi": {
+              "target": "Package",
+              "version": "[8.0.2, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.3, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[8.0.3, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.3, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.4.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+=======
+{
+  "format": 1,
+  "restore": {
+    "/home/ana/CapiBank backend/capibank-hackadev/backend/Troopers.Capibank/Troopers.Capibank.csproj": {}
+  },
+  "projects": {
+    "/home/ana/CapiBank backend/capibank-hackadev/backend/Troopers.Capibank/Troopers.Capibank.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/ana/CapiBank backend/capibank-hackadev/backend/Troopers.Capibank/Troopers.Capibank.csproj",
+        "projectName": "Troopers.Capibank",
+        "projectPath": "/home/ana/CapiBank backend/capibank-hackadev/backend/Troopers.Capibank/Troopers.Capibank.csproj",
+        "packagesPath": "/home/ana/.nuget/packages/",
+        "outputPath": "/home/ana/CapiBank backend/capibank-hackadev/backend/Troopers.Capibank/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/ana/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -91,9 +203,10 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/snap/dotnet-sdk/239/sdk/8.0.202/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
   }
+>>>>>>> 4423e309bcbbd10041f41452583cc5269d5d8f75
 }

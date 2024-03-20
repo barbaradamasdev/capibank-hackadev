@@ -14,9 +14,7 @@ namespace Troopers.Capibank.Domain.Entities
     public DateTime DataTransacao { get; set; } = DateTime.Now;
     public SituacaoConta Situacao { get; set; }
 
-
-
-    public void Transferir ( contaOrigem, contaDestino, decimal valor )
+    public void Transferir ( contaOrigem co, contaDestino cd, decimal valor )
     {
         if (contaOrigem.Saldo < valor)
         {
@@ -34,7 +32,7 @@ namespace Troopers.Capibank.Domain.Entities
         {
             throw new ArgumentException("O valor deve ser maior que zero.", nameof(valor)); 
         }
-        Saldo = Saldo + valor;
+        Saldo += valor;
     }
 
     public void Sacar(decimal valor)
@@ -49,13 +47,10 @@ namespace Troopers.Capibank.Domain.Entities
             throw new InvalidOperationException("Saldo insuficiente para sacar.");
         }
 
-        Saldo = Saldo + valor; 
+        Saldo -= valor; 
     }
 
 
-
-
     }
-
 
 }
