@@ -27,6 +27,6 @@ Content-Type: application/json
 POST {{Troopers.Capibank_HostAddress}}/transacao/depositar/1
 Content-Type: application/json
 {
-  "valor":25000,
+  "valor":1000,
   "dataTransacao": "2024-03-20T10:37:22.469Z"
 }

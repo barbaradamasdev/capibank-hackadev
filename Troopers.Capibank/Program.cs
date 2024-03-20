@@ -15,7 +15,7 @@ context.UseSqlite(conexao));
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 builder.Services.AddScoped<IContaCorrenteRepository, ContaCorrenteRepository>();
 builder.Services.AddScoped<IContaCorrenteService, ContaCorrenteService>();
-builder.Services.AddScoped<ITransacaoRepository,TransacaoRepository>();
+
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

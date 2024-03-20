@@ -9,8 +9,8 @@ public abstract class ContaBancaria
     public Titular? Titular { get; set; }
     public decimal Saldo { get; protected set; }
     public bool EstaAtiva { get; protected set; } = true;
-    public DateTime CriadaEm { get; set; } = DateTime.Now;
-    public DateTime AlteradaEm { get; set; } = DateTime.Now;
+    public DateTime CriadaEm { get; set; } = DateTime.UtcNow;
+    public DateTime AlteradaEm { get; set; } = DateTime.UtcNow;
     public DateTime BloqueadaEm { get; set; }
 
     public IEnumerable<Transacao> ListaTransacoes = [];
