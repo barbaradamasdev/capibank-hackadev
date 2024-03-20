@@ -45,6 +45,26 @@
             <param name="id"></param>
             <returns></returns>
         </member>
+        <member name="M:Troopers.Capibank.Controllers.TitularController.ListarTodos">
+            <summary>
+            Método para listar todos os titulares das contas com os seus enderecos.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Troopers.Capibank.Controllers.TitularController.ListarPorId(System.Int32)">
+            <summary>
+            Método para listar um titular pelo ID juntamento com o respectivo endereco.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Troopers.Capibank.Controllers.TitularController.Alterar(Troopers.Capibank.DTOs.Request.TitularAlterarRequestDTO)">
+            <summary>
+            Método para alteração dos dadps do Titular e também alterar o seu endereço se necessário.
+            </summary>
+            <param name="titularDTO"></param>
+            <returns></returns>
+        </member>
         <member name="M:Troopers.Capibank.Controllers.TransacaoController.ListarPorTitular(System.Int32)">
             <summary>
             Método para retornar todas as transações do titular da conta, localizado pelo ID da conta.

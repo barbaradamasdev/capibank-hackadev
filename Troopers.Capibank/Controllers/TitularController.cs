@@ -13,6 +13,10 @@ public class TitularController : DefaultController
     {
         _ts = ts;
     }
+    /// <summary>
+    /// Método para listar todos os titulares das contas com os seus enderecos.
+    /// </summary>
+    /// <returns></returns>
     [HttpGet("listartodos")]
     public async Task<ActionResult<IEnumerable<TitularResponseDTO>>> ListarTodos()
     {
@@ -20,6 +24,11 @@ public class TitularController : DefaultController
         if (titular is null) return NotFound("Titular nao encontado");
         return Ok(titular);
     }
+    /// <summary>
+    /// Método para listar um titular pelo ID juntamento com o respectivo endereco.
+    /// </summary>
+    /// <param name="id"></param>
+    /// <returns></returns>
     [HttpGet("listarporid/{id}")]
     public async Task<ActionResult<TitularResponseDTO>> ListarPorId(int id)
     {
@@ -27,6 +36,11 @@ public class TitularController : DefaultController
         if (titular is null) return NotFound("titular não encontrado");
         return Ok(titular);
     }
+    /// <summary>
+    /// Método para alteração dos dadps do Titular e também alterar o seu endereço se necessário.
+    /// </summary>
+    /// <param name="titularDTO"></param>
+    /// <returns></returns>
     [HttpPut("alterarTitular")]
     public async Task<IActionResult> Alterar(TitularAlterarRequestDTO titularDTO)
     {
