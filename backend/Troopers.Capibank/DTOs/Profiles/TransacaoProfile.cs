@@ -1,18 +1,15 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using AutoMapper;
-using Troopers.Capibank.Domain.Entities;
-using Troopers.Capibank.DTOs;
+﻿using AutoMapper;
+using Troopers.Capibank.Domain.Models;
+using Troopers.Capibank.DTOs.Request;
+using Troopers.Capibank.DTOs.Response;
 
-namespace Troopers.Capibank.DTOs.Profiles
+namespace Troopers.Capibank.DTOs.Profiles;
+
+public class TransacaoProfile : Profile
 {
-    public class TransacaoProfile : Profile
+    public TransacaoProfile() : base()
     {
-        public TransacaoProfile()
-        {
-            CreateMap<TransacaoDTO, Transacao>();
-        }
+        CreateMap<TransacaoDepositoDTO, Transacao>().ReverseMap();
+        CreateMap<TransacaoResponseDTO, Transacao>().ReverseMap();
     }
 }

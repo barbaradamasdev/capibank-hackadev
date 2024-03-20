@@ -1,13 +1,14 @@
-using System;
-using System.Collections.Generic;
+﻿using Troopers.Capibank.DTOs.Request;
+using Troopers.Capibank.DTOs.Response;
 
 namespace Troopers.Capibank.Services;
 
-    public interface IContaCorrenteService
-    {
-        void Depositar(int numeroConta, decimal valor);
-        bool Sacar(int numeroConta, decimal valor);
-        bool Transferir(int numeroContaOrigem, int numeroContaDestino, decimal valor);
-        decimal ConsultarSaldo(int numeroConta);
-        IEnumerable<string> ConsultarExtrato(int numeroConta);
-    }
+public interface IContaCorrenteService
+{
+    Task<IEnumerable<ContaCorrenteResponseDTO>> ListarTodas();
+    Task<ContaCorrenteResponseDTO> ListarPorId(int id);
+    Task CriarConta(ContaCorrenteCreateRequestDTO contaDTO);
+    Task BloquearConta(int id);
+    Task DesbloquearConta(int id);
+    Task DeletarConta(int id);
+}

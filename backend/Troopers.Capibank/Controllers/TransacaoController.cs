@@ -1,81 +1,156 @@
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using Troopers.Capibank.Domain.Entities;
+using Microsoft.EntityFrameworkCore;
+using Troopers.Capibank.Domain.Enums;
+using Troopers.Capibank.Domain.Models;
+using Troopers.Capibank.DTOs.Request;
+using Troopers.Capibank.DTOs.Response;
+using Troopers.Capibank.Repositories;
+using Troppers.Capibank.Data.Context;
+using static System.Net.Mime.MediaTypeNames;
 
-namespace Troopers.Capibank.Controllers
+namespace Troopers.Capibank.Controllers;
+
+public class TransacaoController : DefaultController
 {
-    public class TransacaoController : Controller
+    private readonly CapibankContext _context;
+    private readonly IMapper _mapper;
+
+    public TransacaoController(CapibankContext context, IMapper mapper)
     {
-        private static List<Transacao> _transacoes = new List<Transacao>();
-
-        // GET: Transacao
-        public IActionResult Index()
+        _context = context;
+        _mapper = mapper;
+    }
+    /// <summary>
+    /// Método para retornar todas as transações do titular da conta, localizado pelo ID da conta.
+    /// </summary>
+    /// <param name="id"></param>
+    /// <returns></returns>
+    [HttpGet("listartransacoes/{id}")]
+    public async Task<IEnumerable<Transacao>> ListarPorTitular(int id)
+    {
+        return  await _context.Transacoes.Where(c => c.ContaId == id).AsNoTracking().ToListAsync();
+        
+    }
+    /// <summary>
+    /// Método para realizar o depósito na conta localizada pelo ID da conta.
+    /// </summary>
+    /// <param name="depositoDTO"></param>
+    /// <param name="id"></param>
+    /// <returns></returns>
+    [HttpPost("depositar/{id}")]
+    public async Task<IActionResult> Depositar(TransacaoDepositoDTO depositoDTO, int id)
+    {
+        var conta = await _context.ContasCorrente.Where(c => c.Id == id).FirstOrDefaultAsync();
+        decimal valor = depositoDTO.Valor;
+        if (conta == null)
+            return NotFound("Conta não encontrada");
+        if (valor <= 0)
+            return BadRequest("Valor inválido");
+        conta.Depositar(valor);
+        conta.AlteradaEm = DateTime.Now;
+        Transacao deposito = new()
         {
-            return View(_transacoes);
-        }
-
-        // GET: Transacao/Details/5
-        public IActionResult Details(int? id)
+            ContaId = conta.Id,
+            Valor = valor,
+            TipoTransacao = Operacao.DEPOSITO,
+            DataTransacao = depositoDTO.DataTransacao,
+            Situacao = SituacaoTransacao.SUCEDIDA
+        };
+        await _context.Transacoes.AddAsync(deposito);
+        await _context.SaveChangesAsync();
+        return Ok("Deposito efetuado com sucesso");
+    }
+    /// <summary>
+    /// Método para realizar o saque na conta localizada pelo ID da conta.
+    /// </summary>
+    /// <param name="saqueDTO"></param>
+    /// <param name="id"></param>
+    /// <returns></returns>
+    [HttpPost("sacar/{id}")]
+    public async Task<IActionResult> Sacar(TransacaoSaqueDTO saqueDTO, int id)
+    {
+        var conta = await _context.ContasCorrente.Where(c => c.Id == id).FirstOrDefaultAsync();
+        decimal valor = saqueDTO.Valor;
+        if (conta is null)
+            return NotFound("Conta não encontrada");
+        if (valor <= 0)
+            return BadRequest("Valor inválido");
+        conta.Sacar(valor);
+        conta.AlteradaEm = saqueDTO.DataTransacao;
+        Transacao saque = new()
         {
-            if (id == null)
+            ContaId = conta.Id,
+            Valor = valor,
+            TipoTransacao = Operacao.SAQUE,
+            DataTransacao = saqueDTO.DataTransacao,
+            Situacao = SituacaoTransacao.SUCEDIDA
+        };
+        await _context.Transacoes.AddAsync(saque);
+        await _context.SaveChangesAsync();
+        return Ok("Saque efetuado com sucesso");
+    }
+    /// <summary>
+    /// Método para realizar a transferência de valores, da conta origem localizada pelo ID par conta
+    /// destino localizada pelo CPF do titular.
+    /// </summary>
+    /// <param name="id"></param>
+    /// <param name="transferencia"></param>
+    /// <returns></returns>
+    [HttpPost("transferir/{id}")]
+    public async Task<IActionResult> Transferir(int id, TransacaoTransferenciaDTO transferencia)
+    {
+        var contaOrigem = await _context.ContasCorrente.Where(c=> c.Id == id).FirstOrDefaultAsync();
+        decimal valor = transferencia.Valor;
+        var contaDestino = await _context.ContasCorrente.Where(c=> c.Titular.CPF == transferencia.CPF).FirstOrDefaultAsync();
+        if (contaOrigem is null) return NotFound("Conta não encontrada");
+        if (valor <= 0) return BadRequest("Valor inválido");
+        if (valor > contaOrigem.Saldo) return BadRequest("Saldo insuficiente");
+        contaOrigem.Sacar(valor);
+        contaOrigem.AlteradaEm = transferencia.DataTransacao;
+
+        if (contaDestino is null || !contaDestino.EstaAtiva)
+        {
+            contaOrigem.Depositar(valor);
+            Transacao t = new()
             {
-                return NotFound();
-            }
+                ContaId = contaOrigem.Id,
+                Valor = valor,
+                TipoTransacao = Operacao.TRANSFERENCIA_ENVIADA,
+                DataTransacao = transferencia.DataTransacao,
+                Situacao = SituacaoTransacao.CANCELADA
 
-            var transacao = _transacoes.Find(t => t.IdTransacao == id);
-            if (transacao == null)
-            {
-                return NotFound();
-            }
-
-            return View(transacao);
+            };
+            await _context.Transacoes.AddAsync(t);
+            await _context.SaveChangesAsync();
+            return NotFound("Conta destino não encontrada");
         }
-
-        // GET: Transacao/Create
-        public IActionResult Create()
+        contaDestino.Depositar(valor);
+        contaDestino.AlteradaEm = transferencia.DataTransacao;
+        Transacao env = new()
         {
-            return View();
-        }
-
-        // POST: Transacao/Create
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public IActionResult Create([Bind("IdTransacao,TipoTransacao,ValorTransacao,DataTransacao,Situacao")] Transacao transacao)
+            ContaId = contaOrigem.Id,
+            Valor = valor,
+            TipoTransacao = Operacao.TRANSFERENCIA_ENVIADA,
+            DataTransacao = transferencia.DataTransacao,
+            Situacao = SituacaoTransacao.SUCEDIDA,
+            ContaDestinoOrigemId = contaDestino.Id
+        };
+        Transacao rec = new()
         {
-            if (ModelState.IsValid)
-            {
-                _transacoes.Add(transacao);
-                return RedirectToAction(nameof(Index));
-            }
-            return View(transacao);
-        }
+            ContaId = contaDestino.Id,
+            Valor = valor,
+            TipoTransacao = Operacao.TRANSFERENCIA_RECEBIDA,
+            DataTransacao = transferencia.DataTransacao,
+            Situacao = SituacaoTransacao.SUCEDIDA,
+            ContaDestinoOrigemId = contaOrigem.Id
+        };
+        await _context.Transacoes.AddAsync(rec);
+        await _context.Transacoes.AddAsync(env);
+        await _context.SaveChangesAsync();
+        return Ok("Transferência efetuado com sucesso");
 
-        // GET: Transacao/Delete/5
-        public IActionResult Delete(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var transacao = _transacoes.Find(t => t.IdTransacao == id);
-            if (transacao == null)
-            {
-                return NotFound();
-            }
-
-            return View(transacao);
-        }
-
-        // POST: Transacao/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public IActionResult DeleteConfirmed(int id)
-        {
-            var transacao = _transacoes.Find(t => t.IdTransacao == id);
-            _transacoes.Remove(transacao);
-            return RedirectToAction(nameof(Index));
-        }
     }
 }

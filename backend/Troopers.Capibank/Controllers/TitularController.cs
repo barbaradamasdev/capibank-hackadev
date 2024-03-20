@@ -1,68 +1,51 @@
+﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Troopers.Capibank.DTOs.Request;
+using Troopers.Capibank.DTOs.Response;
+using Troopers.Capibank.Services;
 
-namespace Troopers.Capibank.Controllers
+namespace Troopers.Capibank.Controllers;
+
+public class TitularController : DefaultController
 {
-    [Route("api/[controller]")]
-    [ApiController]
-    public class TitularController : ControllerBase
+    private readonly ITitularService _ts;
+    public TitularController(ITitularService ts)
     {
-        private List<Titular> titulares;
-
-        public TitularController()
-        {
-            titulares = new List<Titular>();
-        }
-
-        [HttpGet]
-        public IActionResult GetAllTitulares()
-        {
-            return Ok(titulares);
-        }
-
-        [HttpGet("{cpf}")]
-        public IActionResult GetTitularByCPF(string cpf)
-        {
-            var titular = titulares.Find(t => t.CPF == cpf);
-            if (titular == null)
-            {
-                return NotFound();
-            }
-            return Ok(titular);
-        }
-
-        [HttpPost]
-        public IActionResult CreateTitular([FromBody] Titular novoTitular)
-        {
-            titulares.Add(novoTitular);
-            return CreatedAtAction(nameof(GetTitularByCPF), new { CPF = novoTitular.CPF }, novoTitular);
-        }
-
-        [HttpPut("{cpf}")]
-        public IActionResult UpdateTitular(string cpf, [FromBody] Titular titularAtualizado)
-        {
-            var titular = titulares.Find(t => t.CPF == cpf);
-            if (titular == null)
-            {
-                return NotFound();
-            }
-            titular.Nome = titularAtualizado.Nome;
-            titular.DataNascimento = titularAtualizado.DataNascimento;
-            titular.NumeroConta = titularAtualizado.NumeroConta;
-            titular.Email = titularAtualizado.Email;
-            titular.Senha = titularAtualizado.Senha;
-            return Ok(titular);
-        }
-
-        [HttpDelete("{cpf}")]
-        public IActionResult DeleteTitular(string cpf)
-        {
-            var titular = titulares.Find(t => t.CPF == cpf);
-            if (titular == null)
-            {
-                return NotFound();
-            }
-            titulares.Remove(titular);
-            return NoContent();
-        }
+        _ts = ts;
+    }
+    /// <summary>
+    /// Método para listar todos os titulares das contas com os seus enderecos.
+    /// </summary>
+    /// <returns></returns>
+    [HttpGet("listartodos")]
+    public async Task<ActionResult<IEnumerable<TitularResponseDTO>>> ListarTodos()
+    {
+        var titular = await _ts.ListarTodos();
+        if (titular is null) return NotFound("Titular nao encontado");
+        return Ok(titular);
+    }
+    /// <summary>
+    /// Método para listar um titular pelo ID juntamento com o respectivo endereco.
+    /// </summary>
+    /// <param name="id"></param>
+    /// <returns></returns>
+    [HttpGet("listarporid/{id}")]
+    public async Task<ActionResult<TitularResponseDTO>> ListarPorId(int id)
+    {
+        var titular = await _ts.ListarTitularPorId(id);
+        if (titular is null) return NotFound("titular não encontrado");
+        return Ok(titular);
+    }
+    /// <summary>
+    /// Método para alteração dos dadps do Titular e também alterar o seu endereço se necessário.
+    /// </summary>
+    /// <param name="titularDTO"></param>
+    /// <returns></returns>
+    [HttpPut("alterarTitular")]
+    public async Task<IActionResult> Alterar(TitularAlterarRequestDTO titularDTO)
+    {
+        if (titularDTO is null) return NotFound("Titular não encontrado");
+        await _ts.AlTerarTitular(titularDTO);
+        return Ok("Titular alterado com sucesso");
     }
 }

@@ -2,9 +2,9 @@ namespace Troopers.Capibank.Domain.Enums
 {
     public enum Operacao
     {
-        DEPOSITO,
-        SAQUE,
-        TRANSFERENCIA,
-        PAGAMENTO
+        DEPOSITO =1,
+        SAQUE =2,
+        TRANSFERENCIA_ENVIADA =3,
+        TRANSFERENCIA_RECEBIDA =4
     }
 }

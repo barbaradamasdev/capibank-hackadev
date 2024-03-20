@@ -34,10 +34,15 @@ h2 {
 }
 
 .pesquisa-clientes .flex input {
-  padding: 8px;
   max-width: 400px;
   width: 100%;
 }
+
+input {
+  padding: 8px;
+
+}
+
 .pesquisa-clientes .flex select {
   padding: 8px;
   max-width: 180px;
