@@ -1,0 +1,30 @@
+<div class="container-form p-4">
+  <form [formGroup]="destinatario">
+
+    <h6 class="section-title">Para quem você quer transferir?</h6>
+
+    <div class="form-group">
+      <input
+        type="number"
+        class="form-control"
+        formControlName="cpf"
+        placeholder="CPF"
+        (keyup.enter)="salvarValor()"
+      />
+    </div>
+
+    <div *ngIf="!isCpfValido" class="warn-text text-danger">
+      Conta não encontrada, confira os dados!
+    </div>
+
+    <div class="buttons flex">
+      <button (click)="salvarValor()" [disabled]="!cpf?.valid" class="botao-principal">
+        Confirmar
+      </button>
+      <button routerLink="/cliente/nova/transferencia" type="submit" class="botao-secundario">
+        Voltar
+      </button>
+    </div>
+
+  </form>
+</div>

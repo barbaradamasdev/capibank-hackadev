@@ -1,0 +1,10 @@
+.container-form {
+  max-width: 500px;
+  margin: auto;
+}
+
+
+button:disabled {
+  background: var(--cor-azul-medio);
+  color: white;
+}

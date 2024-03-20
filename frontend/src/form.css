@@ -1,0 +1,229 @@
+form {
+  max-width: 100vw;
+}
+
+.container-form {
+  border-radius: 25px 25px 0px 0px;
+  margin-top: -55px;
+  background: white;
+  padding: 0 !important;
+}
+
+.side-by-side {
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  gap: 15px;
+  max-width: 80%;
+  width: 378px;
+}
+
+.side-by-side > * {
+  margin: 0 0 16px 0;
+  width: 50%;
+}
+
+.form-title {
+  text-align: center;
+  color: var(--cor-azul-escuro);
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: -0.41px;
+}
+
+.p-4 {
+  padding-top: 8px !important;
+}
+
+.section-title {
+  display: flex;
+  color: var(--cor-azul-escuro);
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: -0.41px;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  position: relative;
+}
+
+.section-title::after {
+  content: "";
+  border-bottom: 4px solid var(--cor-dourado);
+  position: absolute;
+  bottom: -5px;
+  height: 64px;
+  left: 0;
+  right: 0;
+  background: rgba(128, 128, 128, 0.064);
+  border-radius: 25px 25px 0px 0px;
+}
+
+.buttons {
+  justify-content: space-between;
+  gap: 20px;
+  margin: auto;
+  max-width: 80%;
+  width: 378px;
+}
+
+button {
+  font-size: 12px !important;
+}
+
+.buttons > * {
+  width: 100%;
+}
+
+input {
+  font-size: 13px;
+  padding: 22px 12px;
+  background: rgba(128, 128, 128, 0.017);
+  max-width: 80%;
+  width: 378px;
+  margin: auto;
+  background: white;
+}
+
+.form-group {
+  margin-bottom: .7rem;
+}
+
+.form-control{
+  margin-bottom: 16px;
+}
+
+.forgot-password {
+  color: var(--cor-azul-escuro);
+  text-decoration: none;
+  font-size: 12px !important;
+}
+
+.register {
+  color: black;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 19.5px;
+  justify-content: center;
+  text-align: center;
+  margin: auto;
+}
+
+.account {
+  color: var(--cor-cinza);
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 19.5px;
+}
+
+.email, .password {
+  margin-right: 40px;
+  margin-left: 20px;
+}
+
+.forgot-password {
+  font-size: 14px;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0px 30px 0px;
+}
+
+.btn.disabled, .btn:disabled, fieldset:disabled {
+  color: white;
+  pointer-events: none;
+  background-color: var(--cor-azul-medio);
+  border-color: var(--bs-btn-disabled-border-color);
+  opacity: .8;
+}
+
+form {
+  padding-top: 50px;
+}
+
+.warn-text {
+  padding-top: 2px;
+  font-size: 12px;
+  font-weight: 600 !important;
+  max-width: 80%;
+  width: 378px;
+  margin: auto;
+}
+
+.validacoes{
+  font-size: 11px;
+  list-style: none;
+  max-width: 80%;
+  width: 378px;
+  padding-bottom: 20px;
+  margin: auto;
+  padding-left: 0;
+}
+
+.container-form small{
+  color: red;
+  padding: 0 20px;
+  margin: auto;
+}
+
+.alert-danger {
+  width: 378px;
+  max-width: 80%;
+  margin: -13px auto 5px auto;
+  font-size: 13px;
+  padding: 5px 10px;
+}
+
+@media (max-width: 330px) {
+  .register {
+    flex-direction: column;
+    padding: 0 30px;
+  }
+
+  .register > * {
+    font-size: 12px;
+    margin-top: -15px;
+  }
+}
+
+@media screen and (min-width: 744px) {
+  .show-on-mobile {
+    display: none;
+  }
+}
+
+@media screen and (max-height: 744px) {
+  form {
+    padding-top: 20px;
+  }
+
+  .botao-principal, .botao-secundario {
+    height: 35px;
+  }
+
+  input {
+    padding: 12px;
+  }
+
+  .form-control {
+    margin-bottom: 10px;
+  }
+
+
+}
+
+@media screen and (max-height: 560px) {
+  form {
+    padding-top: 15px;
+  }
+
+  .side-by-side  > * {
+    max-width: 47%;
+  }
+}
+
+

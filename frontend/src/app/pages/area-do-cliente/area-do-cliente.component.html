@@ -1,0 +1,6 @@
+<div class="conteudo">
+  <app-cabecalho-area-interna style="z-index: 90;" [logoSrc]="logoTipo === 'azul' ? 'assets\\icones\\logo-azul.png' : 'assets\\icones\\logo-branca.png'"></app-cabecalho-area-interna>
+  <app-secao-saldo *ngIf="!isNovaTransacaoRoute || isSmallScreen"></app-secao-saldo>
+  <router-outlet></router-outlet>
+  <app-menu-inferior-area-interna></app-menu-inferior-area-interna>
+</div>

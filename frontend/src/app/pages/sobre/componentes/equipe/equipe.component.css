@@ -1,0 +1,37 @@
+.team-members {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+  justify-items: center;
+}
+
+.team-member {
+  text-align: center;
+}
+
+.team-member p {
+  font-size: 14px;
+  margin: 0;
+}
+
+.team-member p + p {
+  font-size: 12px;
+  margin: 5px;
+}
+
+a {
+  margin: 0 3px;
+}
+
+
+h2 {
+  margin: auto;
+  padding-bottom: 30px;
+  padding-top: 30px;
+  color: var(--cor-azul-medio);
+}
+
+h3 {
+  color: var(--cor-azul-medio);
+  font-size: 18px;
+}

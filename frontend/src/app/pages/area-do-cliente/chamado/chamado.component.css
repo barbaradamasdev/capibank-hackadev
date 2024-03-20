@@ -1,0 +1,36 @@
+.grid {
+  grid-template-areas:
+  "form-chamado form-chamado form-chamado";
+  padding: 0;
+}
+
+app-menu-lateral {
+  grid-area: menu-lateral;
+}
+
+app-form-chamado {
+  grid-area: form-chamado;
+  height: 72vh;
+  overflow-y: auto;
+}
+
+@media (max-width: 744px) {
+  app-menu-lateral {
+    position: absolute;
+    top: 55px;
+    transform: translateX(-2000px);
+    transition: transform 0.3s ease;
+  }
+
+  .menu-open {
+    transform: translateX(0);
+  }
+}
+
+@media (min-width: 745px)  {
+  .grid {
+    grid-template-areas:
+    "menu-lateral form-chamado";
+    grid-template-columns: 1fr 4fr;
+  }
+}

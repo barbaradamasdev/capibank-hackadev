@@ -1,0 +1,81 @@
+.gestor {
+  margin-left: 8px;
+  color: var(--cor-dourado);
+  font-size: 24px;
+  font-family: "Poppins", "sans-serif";
+  position: absolute;
+  top: 10px;
+  left: 164px;
+}
+
+
+
+app-cabecalho-area-interna ::ng-deep  svg path {
+  stroke: white;
+}
+
+app-cabecalho-area-interna ::ng-deep  header {
+  background: var(--cor-azul-escuro);
+}
+
+app-cabecalho-area-interna ::ng-deep  .logout {
+  color: rgba(255, 255, 255, 0.589) !important;
+}
+
+app-cabecalho-area-interna ::ng-deep  .notification-icon {
+  opacity: 0;
+  cursor: inherit;
+}
+
+.conteudo {
+  max-height: 100vh;
+  grid-area: conteudo;
+  overflow: hidden;
+}
+
+.grid {
+  grid-template-areas:
+    "conteudo conteudo conteudo";
+  grid-template-columns: 1fr 2fr 2fr;
+  padding: 0;
+}
+
+app-menu-lateral-admin {
+  grid-area: menu-lateral;
+}
+
+@media (max-width: 744px) {
+  app-menu-lateral-admin {
+    position: absolute;
+    top: 55px;
+    transform: translateX(-2000px);
+    transition: transform 0.3s ease;
+  }
+
+  .menu-open {
+    transform: translateX(0);
+  }
+
+  .grid {
+    grid-template-areas:
+      "conteudo conteudo conteudo";
+  }
+}
+
+@media (min-width: 745px) {
+  .grid {
+    grid-template-areas:
+    "menu-lateral conteudo conteudo";
+  }
+}
+
+@media (max-width: 744px)  {
+  .gestor {
+    display: none;
+  }
+}
+@media (min-width: 1400px) {
+  .gestor {
+    display: none;
+  }
+}

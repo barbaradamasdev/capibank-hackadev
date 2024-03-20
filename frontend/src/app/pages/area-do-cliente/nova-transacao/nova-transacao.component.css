@@ -1,0 +1,34 @@
+.grid {
+  grid-template-areas:
+  "conteudo conteudo conteudo";
+  padding: 0;
+}
+
+app-menu-lateral {
+  grid-area: menu-lateral;
+}
+
+.conteudo {
+  grid-area: conteudo;
+}
+
+@media (max-width: 744px) {
+  app-menu-lateral {
+    position: absolute;
+    top: 55px;
+    transform: translateX(-2000px);
+    transition: transform 0.3s ease;
+  }
+
+  .menu-open {
+    transform: translateX(0);
+  }
+}
+
+@media (min-width: 745px)  {
+  .grid {
+    grid-template-areas:
+    "menu-lateral conteudo conteudo";
+    grid-template-columns: 1fr 4fr;
+  }
+}

@@ -1,0 +1,44 @@
+.section-top h2 {
+  font-weight: bold;
+  margin: 0;
+  font-size: 18px;
+}
+
+.section-top p {
+  font-size: 14px;
+}
+
+form {
+  margin-bottom: 30px;
+}
+
+form .buttons {
+  justify-content: end;
+}
+
+.contato .buttons {
+  gap: 30px;
+  margin-top: 15px;
+}
+
+.contato .buttons > button {
+  width: 50%;
+}
+
+textarea {
+  height: 100px;
+}
+
+
+@media (max-width: 550px) {
+  .contato .buttons{
+    flex-direction: column;
+    margin-bottom: 50px;
+  }
+
+  .contato .buttons > button {
+    width: 100%;
+  }
+
+
+}

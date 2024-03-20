@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Protest+Strike&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Protest+Strike&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.logo {
+    font-family: "Poppins", "sans-serif";
+}
+
+a, li, p, span {
+    font-family: "Inter", "sans-serif";
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+a:hover {
+  color: inherit;
+  text-decoration: none;
+}
+
+.flex {
+    display: flex;
+}
+
+.grid {
+    display: grid;
+}
+
+.container {
+  max-width: 1440px;
+  padding: 15px;
+}
+
+:root {
+    --cor-azul-escuro: #00003C;
+    --cor-azul-medio: #12115D;
+    --cor-azul-claro: #23217E;
+    --cor-dourado: #F5BE0C;
+    --cor-branco: #FFFFFF;
+    --cor-cinza: #7F7F7F;
+    --cor-verde: #0BCC35;
+    --cor-vermelho: #EC2F2F;
+}
+
+button  {
+    font-size: 14px !important;
+    height: 56px;
+    border-radius: 3px !important;
+}
+
+.botao-banner {
+  background-color: var(--cor-azul-claro);
+  color: var(--cor-branco);
+  font-family: "Poppins", "sans-serif";
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0em;
+  width: 232px;
+  height: 60px;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.221);
+}
+
+.botao-banner:hover {
+  background: var(--cor-dourado);
+  color: var(--cor-azul-medio);
+}
+
+.botao-principal {
+    padding: 10px 30px;
+    border: none;
+    background: var(--cor-azul-medio);
+    color: white;
+}
+
+.botao-principal:hover {
+    background: var(--cor-azul-claro);
+    color: white;
+}
+
+.botao-secundario {
+  padding: 9.5px 30px;
+  border: 1px solid rgba(0, 0, 0, 0.068);
+  background: transparent;
+  color: var(--cor-azul-escuro);
+}
+
+.botao-secundario:hover {
+  border: 1px solid rgba(0, 0, 0, 0.541);
+}
+
+.gap-15 {
+  gap: 15px;
+  max-width: 100vw;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(46, 94, 252, 0.321);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+  border-radius: 4px;
+}
+
+.menu-open {
+  z-index: 999;
+}

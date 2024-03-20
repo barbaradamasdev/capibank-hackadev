@@ -1,0 +1,11 @@
+.buttons {
+  flex-direction: column;
+}
+
+.buttons button[disabled] {
+  cursor: not-allowed;
+}
+
+.buttons button[disabled]:hover {
+  background-color: var(--cor-azul-medio);
+}

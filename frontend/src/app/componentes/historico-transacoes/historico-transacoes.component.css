@@ -1,0 +1,97 @@
+.section-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.section-top h2 {
+  font-weight: bold;
+  margin: 20px 0;
+  font-size: 18px;
+}
+
+.container {
+  padding: 0 20px;
+}
+
+.see-all {
+  color: var(--cor-azul-medio);
+  font-weight: 500;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.descricao{
+  font-weight: 600;
+  font-size: 0.7rem;
+  color:rgb(163, 146, 146);
+}
+
+table {
+  width: 100%;
+}
+
+.rowTransacao {
+  display: flex;
+  justify-content: space-between;
+}
+
+.col1Saida {
+  width: 40px;
+  background: url(../../../assets/icones/icone-enviado.png) no-repeat;
+  background-size: contain;
+}
+
+.col1Entrada {
+  width: 40px;
+  background: url(../../../assets/icones/icone-recebido.png) no-repeat;
+  background-size: contain;
+}
+
+.col2 {
+  justify-self: left;
+  width: 75%;
+  padding-left: 10px;
+}
+
+.col3 {
+  width: 20%;
+  text-align: right;
+}
+
+.itemValorSaida {
+  color: var(--cor-vermelho);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.itemValorEntrada {
+  color: var(--cor-verde);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.divider {
+  background: #F4F4F4;
+  height: 1px;
+}
+
+
+@media (max-width: 390px) {
+  .tipo-de-transacao  {
+    font-size: 14px !important;
+  }
+}
+
+@media (max-width: 320px) {
+  .divider {
+    margin: 6px 0;
+  }
+}
+
+@media (max-height: 700px) {
+  hr {
+    margin: 5px 0;
+  }
+}

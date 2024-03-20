@@ -1,0 +1,33 @@
+<div class="container-form p-4">
+  <form [formGroup]="transferencia">
+
+    <h6 class="section-title">Qual o valor da transferência?</h6>
+
+    <div class="form-group">
+      <input
+        type="number"
+        class="form-control"
+        formControlName="valor"
+        placeholder="R$ 0,00"
+        (keyup.enter)="salvarValor()"
+      />
+    </div>
+
+    <div *ngIf="valor && valor.errors">
+      <div *ngIf="valor.hasError('min')" class="warn-text text-danger">
+        O valor de saque não pode ser menor que zero.
+      </div>
+    </div>
+
+
+    <div class="buttons flex">
+      <button (click)="salvarValor()" routerLink="dados" type="submit" class="botao-principal">
+        Confirmar valor
+      </button>
+      <button routerLink="/cliente" type="submit" class="botao-secundario">
+        Voltar
+      </button>
+    </div>
+
+  </form>
+</div>

@@ -1,0 +1,7 @@
+.buttons {
+  flex-direction: row-reverse;
+}
+
+.form-title + .form-title {
+  font-size: 14px;
+}

@@ -1,0 +1,17 @@
+footer {
+  background: url('../../../assets/banner/capivara-bg.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 350px;
+}
+
+.container {
+  color: white;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  text-align: center;
+  height: 100%;
+}

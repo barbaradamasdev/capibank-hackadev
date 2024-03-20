@@ -1,0 +1,27 @@
+form {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+input {
+  padding: 2px;
+  text-align: center;
+  font-size: 16px;
+}
+
+.token-inputs {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.token-inputs input {
+  width: 40px;
+  max-width: 12vw;
+  height: 50px;
+  margin: 0;
+}
+
+.token-inputs input:last-child {
+  margin-right: 0;
+}
