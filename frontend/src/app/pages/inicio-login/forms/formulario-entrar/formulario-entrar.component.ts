@@ -69,9 +69,9 @@ export class FormularioEntrarComponent {
 
   autenticar():void{
     if(this.formLogin.value.email == this.user.email && this.formLogin.value.senha == this.user.senha){
-      localStorage.setItem('email', this.formLogin.value.email)
-      localStorage.setItem('senha', this.formLogin.value.senha)
-      localStorage.setItem('nome', this.user.nome)
+      localStorage.setItem('email', JSON.stringify(this.formLogin.value.email));
+      localStorage.setItem('senha', JSON.stringify(this.formLogin.value.senha));
+      localStorage.setItem('nome', JSON.stringify(this.user.nome));
       this.rota.navigateByUrl('/login/token')
     }else{
       this.exibirModalErro("Senha ou usuário inválidos! Por favor, tente novamente.");

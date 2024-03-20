@@ -4,20 +4,19 @@ import { SecaoSaldoComponent } from "../../componentes/secao-saldo/secao-saldo.c
 import { CabecalhoAreaInternaComponent } from "../../componentes/cabecalho-area-interna/cabecalho-area-interna.component";
 import { MenuLateralAdminComponent } from "../../pages/admin-dashboard/menu-lateral-admin/menu-lateral-admin.component";
 import { BarraDeBuscaComponent } from "../../componentes/barra-de-busca/barra-de-busca.component";
-import { DashboardComponent } from "../../pages/admin-dashboard/dashboard/dashboard.component";
+import { DashboardComponent } from "./dashboard/dashboard.component";
 import { MenuService } from '../../servicos/menu.service';
 import { CommonModule } from '@angular/common';
 import { Subscription, filter } from 'rxjs';
-import { NavigationEnd, Router } from '@angular/router';
+import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
 import { HeaderComponent } from "../admin-login/header/header.component";
-
 
 @Component({
     selector: 'app-admin-dashboard',
     standalone: true,
     templateUrl: './admin-dashboard.component.html',
     styleUrl: './admin-dashboard.component.css',
-    imports: [DashboardComponent, AcessoRapidoAreaInternaComponent, SecaoSaldoComponent, CabecalhoAreaInternaComponent, MenuLateralAdminComponent, CommonModule, BarraDeBuscaComponent, HeaderComponent]
+    imports: [RouterOutlet, DashboardComponent, AcessoRapidoAreaInternaComponent, SecaoSaldoComponent, CabecalhoAreaInternaComponent, MenuLateralAdminComponent, CommonModule, BarraDeBuscaComponent, HeaderComponent]
 })
 export class AdminDashboardComponent {
   logoTipo: string = 'branco';

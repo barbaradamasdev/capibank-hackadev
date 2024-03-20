@@ -1,0 +1,36 @@
+.grid {
+  grid-template-areas:
+    "secao-seguranca secao-seguranca secao-seguranca";
+  padding: 0;
+}
+
+app-menu-lateral {
+  grid-area: menu-lateral;
+}
+
+app-secao-seguranca {
+  grid-area: secao-seguranca;
+  height: 68vh;
+  overflow-y: scroll;
+}
+
+@media (max-width: 744px) {
+  app-menu-lateral {
+    position: absolute;
+    top: 55px;
+    transform: translateX(-2000px);
+    transition: transform 0.3s ease;
+  }
+
+  .menu-open {
+    transform: translateX(0);
+  }
+}
+
+
+@media (min-width: 745px)  {
+  .grid {
+    grid-template-areas:
+    "menu-lateral secao-seguranca ";
+  }
+}

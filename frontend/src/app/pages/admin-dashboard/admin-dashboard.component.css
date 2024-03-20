@@ -8,11 +8,7 @@
   left: 164px;
 }
 
-@media (max-width: 744px) {
-  .gestor {
-    display: none;
-  }
-}
+
 
 app-cabecalho-area-interna ::ng-deep  svg path {
   stroke: white;
@@ -31,28 +27,25 @@ app-cabecalho-area-interna ::ng-deep  .notification-icon {
   cursor: inherit;
 }
 
-.admin-dashboard {
+.conteudo {
   max-height: 100vh;
+  grid-area: conteudo;
   overflow: hidden;
 }
 
 .grid {
   grid-template-areas:
-    "dashboard dashboard dashboard";
+    "conteudo conteudo conteudo";
   grid-template-columns: 1fr 2fr 2fr;
   padding: 0;
 }
 
-app-menu-lateral {
+app-menu-lateral-admin {
   grid-area: menu-lateral;
 }
 
-app-dashboard {
-  grid-area: dashboard;
-}
-
 @media (max-width: 744px) {
-  app-menu-lateral {
+  app-menu-lateral-admin {
     position: absolute;
     top: 55px;
     transform: translateX(-2000px);
@@ -65,13 +58,24 @@ app-dashboard {
 
   .grid {
     grid-template-areas:
-      "dashboard dashboard dashboard";
+      "conteudo conteudo conteudo";
   }
 }
 
 @media (min-width: 745px) {
   .grid {
     grid-template-areas:
-    "menu-lateral dashboard dashboard";
+    "menu-lateral conteudo conteudo";
+  }
+}
+
+@media (max-width: 744px)  {
+  .gestor {
+    display: none;
+  }
+}
+@media (min-width: 1400px) {
+  .gestor {
+    display: none;
   }
 }

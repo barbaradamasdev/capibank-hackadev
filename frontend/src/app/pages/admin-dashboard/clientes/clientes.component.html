@@ -1,0 +1,60 @@
+<div class="main-content">
+  <div class="clientes">
+    <h1>Gerenciamento de Clientes</h1>
+    <div class="clientes-container">
+
+      <div class="pesquisa-clientes">
+        <h2>Pesquisa de Clientes</h2>
+        <input type="text" placeholder="Nome, CPF, número da conta, etc..." [(ngModel)]="filtro">
+        <select [(ngModel)]="filtroTipo">
+          <option value="nome">Nome</option>
+          <option value="cpf">CPF</option>
+          <option value="conta">Número da Conta</option>
+        </select>
+        <button class="botao-banner" (click)="pesquisar()">Pesquisar</button>
+      </div>
+
+      <div class="detalhes-cliente" *ngIf="clienteSelecionado">
+        <h2>Detalhes do Cliente</h2>
+        <div class="info-cliente">
+          <p><strong>Nome:</strong> {{ clienteSelecionado.nome }}</p>
+          <p><strong>CPF:</strong> {{ clienteSelecionado.cpf }}</p>
+        </div>
+        <div class="cliente-actions">
+          <button class="botao-banner">Editar Informações</button>
+          <button class="botao-banner" (click)="bloquearDesbloquearConta()">Bloquear/Desbloquear Conta</button>
+          <button class="botao-banner">Enviar Mensagem</button>
+          <button class="botao-banner">Gerar Relatórios</button>
+        </div>
+      </div>
+
+      <div class="gerenciamento-contas">
+        <h2>Gerenciamento de Contas</h2>
+        <div class="buttons-admin flex">
+          <button class="botao-banner">Abrir Nova Conta</button>
+          <button class="botao-banner">Encerrar Conta</button>
+          <button class="botao-banner">Alterar Tipo da Conta</button>
+          <button class="botao-banner">Definir Limites</button>
+          <button class="botao-banner">Visualizar Extrato</button>
+        </div>
+      </div>
+
+      <div class="relatorios-clientes">
+        <h2>Relatórios de Clientes</h2>
+        <div class="buttons-admin flex">
+          <button class="botao-banner">Gerar Relatório em PDF</button>
+          <button class="botao-banner">Gerar Relatório em CSV</button>
+        </div>
+      </div>
+
+      <div class="lista-clientes">
+        <h2>Lista de Clientes</h2>
+        <ul>
+          <li *ngFor="let cliente of clientes" (click)="selecionarCliente(cliente)">
+            {{ cliente.nome }} - {{ cliente.cpf }} - {{ cliente.numeroConta }}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

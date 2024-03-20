@@ -1,0 +1,72 @@
+.main-content {
+  flex: 1;
+  padding: 20px;
+  max-height: 92vh;
+  overflow: auto;
+}
+
+h1 {
+  font-size: 20px;
+}
+
+h2 {
+  font-size: 18px;
+}
+
+.buttons-admin {
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.clientes-container {
+  background-color: #f2f2f2;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.pesquisa-clientes {
+  margin-bottom: 20px;
+}
+
+.pesquisa-clientes input[type="text"],
+.pesquisa-clientes select {
+  padding: 8px;
+  margin-right: 10px;
+}
+
+
+.detalhes-cliente {
+  margin-bottom: 20px;
+}
+
+.info-cliente p {
+  margin-bottom: 5px;
+}
+
+.cliente-actions button {
+  margin-right: 10px;
+}
+
+.lista-clientes ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.lista-clientes li {
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+
+.lista-clientes li:hover {
+  background-color: #f9f9f9;
+}
