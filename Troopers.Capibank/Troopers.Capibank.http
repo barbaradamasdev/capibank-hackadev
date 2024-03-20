@@ -1,0 +1,53 @@
+@Troopers.Capibank_HostAddress = http://localhost:5143
+
+GET {{Troopers.Capibank_HostAddress}}/contacorrente/Listartodasascontas/
+
+###
+POST {{Troopers.Capibank_HostAddress}}/contacorrente/criarconta/
+Content-Type: application/json
+{
+  "numeroConta": 12345,
+  "titular": {
+    "nome": "luciana",
+    "email": "luciana@uol.com.br",
+    "cpf": "33333333333",
+    "endereco": {
+      
+      "cep": "12248516",
+      "logradouro": "Rua Cap.Paulo José de Menezes Filho",
+      "numero": "243",
+      "complemento": "Bloco A apto 17",
+      "bairro": "Jd.Santa Ines II",
+      "cidade": "Sao José dos Campos",
+      "uf": "SP"
+    }
+  }
+}
+###
+POST {{Troopers.Capibank_HostAddress}}/transacao/depositar/1
+Content-Type: application/json
+{
+  "valor":1000,
+  "dataTransacao": "2024-03-20T10:37:22.469Z"
+}
+###
+PUT {{Troopers.Capibank_HostAddress}}/titular/alterartitular
+Content-Type: application/json
+{
+  "id": 1,
+  "nome": "Jackson Tadeu de Moraes",
+  "email": "jackson@uol.com.br",
+  "cpf": "11111111111",
+  "criadoEm": "2024-03-20T09:00:51.0001353",
+  "alteradoEm": "2024-03-20T09:00:51.0001469",
+  "endereco": {
+    "id": 1,
+    "cep": "12248516",
+    "logradouro": "Rua Cap.Paulo José de Menezes Filho",
+    "numero": "243",
+    "complemento": "Bloco A apto 17",
+    "bairro": "Jd.Santa Ines II",
+    "cidade": "Sao José dos Campos",
+    "uf": "SP"
+  }
+}
