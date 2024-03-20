@@ -35,29 +35,26 @@ export class FormularioCriarContaPgDoisComponent {
     this.servicoEndereco.buscaCep(cep).subscribe(
       (dados: Endereco) => {
         if (dados && !dados.erro) {
-          // Se o ViaCEP encontrar o endereço, preenche automaticamente e desabilita o campo.
           this.entradaCep.patchValue({
-            rua: dados.logradouro || '',  // Usa o valor retornado ou string vazia se não houver
+            rua: dados.logradouro || '',
             cidade: dados.localidade,
           });
 
-          // Desabilita o campo rua se o logradouro for retornado pela API
           if (dados.logradouro) {
             this.entradaCep.get('rua')?.disable();
           } else {
-            // Habilita o campo rua para edição do usuário se o logradouro não for retornado.
+
             this.entradaCep.get('rua')?.enable();
           }
         } else {
-          // Se o CEP não for encontrado ou houver erro, habilita todos os campos para digitação.
+
           this.entradaCep.enable();
-          this.entradaCep.patchValue({ cidade: '', rua: '' });  // Limpa os campos cidade e rua
+          this.entradaCep.patchValue({ cidade: '', rua: '' });
         }
       },
       (error: any) => {
         alert("Erro ao buscar o CEP.");
         console.error(error);
-        // Habilita os campos em caso de erro na busca.
         this.entradaCep.enable();
       }
     );

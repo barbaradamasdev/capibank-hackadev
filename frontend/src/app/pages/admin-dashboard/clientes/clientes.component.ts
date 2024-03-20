@@ -28,10 +28,10 @@ export class ClientesComponent {
 
   selecionarCliente(cliente: Cliente) {
     this.clienteSelecionado = cliente;
+    console.log(this.clienteSelecionado)
   }
 
   bloquearDesbloquearConta() {
-    // Lógica para bloquear ou desbloquear conta do cliente selecionado
     if (this.clienteSelecionado) {
       console.log('Bloquear/desbloquear conta do cliente:', this.clienteSelecionado.nome);
     }
