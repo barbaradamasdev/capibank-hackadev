@@ -67,3 +67,13 @@ section {
     margin: 0;
   }
 }
+
+@media (max-height: 700px) {
+  .saldo {
+    padding: 0 10px;
+  }
+
+  .dados {
+    transform: scale(.8);
+  }
+}

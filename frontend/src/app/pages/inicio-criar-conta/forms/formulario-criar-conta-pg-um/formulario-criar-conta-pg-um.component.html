@@ -15,32 +15,28 @@
         />
 
         <input
-            type="text"
+            type="number"
             class="form-control"
-            id="dataNascimento"
-            placeholder="dd/mm/aaaa"
-            (input)="formatarDataNascimento($event)"
-            (keypress)="apenasNumeros($event)"
-            maxlength="10"
+            id="cpf"
+            placeholder="CPF"
+            minlength="11"
+            maxlength="12"
         />
 
         <input
-            type="text"
-            class="form-control"
-            id="telefone"
-            placeholder="Telefone"
-            (input)="formatarTelefone($event)"
-            (keypress)="apenasNumeros($event)"
-            maxlength="17"
-        />
+          formControlName="email"
+          type="text"
+          class="form-control"
+          id="email"
+          placeholder="E-mail" />
       </div>
 
       <div class="buttons flex">
-        <button routerLink="/login" type="submit" class="botao-secundario">
-          Voltar
-        </button>
         <button routerLink="/cadastrar/passo-2"  type="submit" class="botao-principal">
           Próximo
+        </button>
+        <button routerLink="/login" type="submit" class="botao-secundario">
+          Voltar
         </button>
       </div>
 

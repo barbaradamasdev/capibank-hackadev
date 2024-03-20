@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-deposito',
@@ -18,8 +18,6 @@ export class DepositoComponent {
   get valor() {
     return this.deposito.get('valor');
   }
-
-  constructor() {}
 
   salvarValor() {
     const valorDeposito = this.valor?.value;

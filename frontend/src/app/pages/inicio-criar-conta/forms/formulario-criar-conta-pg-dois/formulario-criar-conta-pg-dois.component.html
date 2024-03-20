@@ -7,7 +7,11 @@
 
           <p class="form-title">Onde Você Mora?</p>
 
-          <input formControlName="cep" type="text" class="form-control" placeholder="CEP" (blur)="buscarEndereco()"/>
+          <div class="side-by-side">
+            <input formControlName="cep" type="text" class="form-control" placeholder="CEP" (blur)="buscarEndereco()"/>
+            <button class="botao-principal procurar-cep" (click)="buscarEndereco()">Procurar</button>
+          </div>
+
           <input type="text" class="form-control" formControlName="rua" placeholder="Rua"/>
 
           <div class="side-by-side">
@@ -19,11 +23,11 @@
       </div>
 
       <div class="buttons flex">
-        <button routerLink="/cadastrar/passo-1"  class="botao-secundario">
-          Voltar
-        </button>
         <button routerLink="/cadastrar/passo-3"  class="botao-principal">
           Próximo
+        </button>
+        <button routerLink="/cadastrar/passo-1"  class="botao-secundario">
+          Voltar
         </button>
       </div>
     </form>

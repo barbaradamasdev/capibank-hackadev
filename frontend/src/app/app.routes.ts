@@ -37,6 +37,7 @@ import { TransacoesComponent } from './pages/admin-dashboard/transacoes/transaco
 import { RelatoriosComponent } from './pages/admin-dashboard/relatorios/relatorios.component';
 import { ConfigAdminComponent } from './pages/admin-dashboard/config-admin/config-admin.component';
 import { DashboardComponent } from './pages/admin-dashboard/dashboard/dashboard.component';
+import { FormularioCriarContaPgCincoComponent } from './pages/inicio-criar-conta/forms/formulario-criar-conta-pg-cinco/formulario-criar-conta-pg-cinco.component';
 
 export const routes: Routes = [
     {path:'',redirectTo:'/home',pathMatch:'full',},
@@ -177,6 +178,10 @@ export const routes: Routes = [
         {
           path:'passo-4',
           component: FormularioCriarContaPgQuatroComponent
+        },
+        {
+          path:'passo-5',
+          component: FormularioCriarContaPgCincoComponent
         }
       ]
     }

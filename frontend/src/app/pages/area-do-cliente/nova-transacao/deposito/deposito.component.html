@@ -1,12 +1,13 @@
 <div class="container-form p-4">
   <h6 class="section-title">Qual o valor do depósito?</h6>
-    <form [formGroup]="deposito">
+    <form [formGroup]="deposito" (keyup.enter)="salvarValor()">
       <div class="form-group">
         <input
           type="number"
           class="form-control"
           formControlName="valor"
           placeholder="R$ 0,00"
+          (keyup.enter)="salvarValor()"
         />
       </div>
 
@@ -18,11 +19,11 @@
       </div>
 
     <div class="buttons flex">
-      <button routerLink="/cliente" type="submit" class="botao-secundario">
-        Voltar
-      </button>
-      <button (click)="salvarValor()" routerLink="ok" type="submit" class="botao-principal">
+      <button (click)="salvarValor()" routerLink="ok" class="botao-principal">
         Confirmar valor
+      </button>
+      <button routerLink="/cliente" class="botao-secundario">
+        Voltar
       </button>
     </div>
   </form>

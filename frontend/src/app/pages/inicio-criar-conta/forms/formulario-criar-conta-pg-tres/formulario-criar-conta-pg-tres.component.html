@@ -1,41 +1,28 @@
 <div class="container-form p-4">
 
-    <h6 class="section-title">Abra sua conta</h6>
+  <h6 class="section-title">Abra sua conta</h6>
 
-    <form (input)="checkPasswordRequirements()">
-      <div class="form-group">
-        <p class="form-title">E qual o seu e-mail e Senha</p>
+  <form  >
+    <div class="form-group">
 
-        <input formControlName="email" type="text" class="form-control" id="email" placeholder="E-mail" />
+        <p class="form-title">Qual o tipo de conta voce quer abrir?</p>
 
-        <input type="password" class="form-control"
-                 [ngClass]="{'input-valid': passwordIsValid(), 'input-invalid': !passwordIsValid() && newPassword.length > 0, 'input-touched': hasStartedTyping}"
-                 [(ngModel)]="newPassword" [ngModelOptions]="{standalone: true}"
-                 (input)="onPasswordInput()" placeholder="Nova senha" required>
-                 <input type="password" class="form-control"
-                 [ngClass]="{'input-valid': passwordsMatch() && passwordIsValid(), 'input-invalid': confirmPassword.length > 0 && !passwordsMatch(), 'input-touched': hasStartedTyping}"
-                 [(ngModel)]="confirmPassword" [ngModelOptions]="{standalone: true}"
-                 (input)="onPasswordInput()" placeholder="Repita a nova senha" required>
-      </div>
-      <div *ngIf="confirmPassword && newPassword !== confirmPassword" class="alert alert-danger">
-        As senhas não coincidem.
-      </div>
+        <div class="buttons flex">
+          <button routerLink="/cadastrar/passo-4"  class="botao-principal">
+            Conta Corrente
+          </button>
+          <button disabled routerLink="/cadastrar/passo-4"  class="botao-principal">
+            Conta Empresarial
+          </button>
+          <button disabled routerLink="/cadastrar/passo-4"  class="botao-principal">
+            Conta Poupança
+          </button>
+        </div>
 
-      <ul class="text-muted validation-list validacoes">
-        <li [class]="(passwordRequirements.length ? 'validation-item valid' : 'validation-item') + (hasStartedTyping ? ' input-touched' : '')">A senha deve ter no mínimo 8 caracteres</li>
-        <li [class]="(passwordRequirements.number ? 'validation-item valid' : 'validation-item') + (hasStartedTyping ? ' input-touched' : '')">A senha deve conter ao menos 1 número</li>
-        <li [class]="(passwordRequirements.lowercase ? 'validation-item valid' : 'validation-item') + (hasStartedTyping ? ' input-touched' : '')">A senha deve conter ao menos 1 letra minúscula</li>
-        <li [class]="(passwordRequirements.uppercase ? 'validation-item valid' : 'validation-item') + (hasStartedTyping ? ' input-touched' : '')">A senha deve conter ao menos 1 letra maiúscula</li>
-      </ul>
+    </div>
 
-      <div class="buttons flex">
-        <button  routerLink="/cadastrar/passo-2" class="botao-secundario">
-          Voltar
-        </button>
-        <button  routerLink="/cadastrar/passo-4" class="botao-principal">
-          Próximo
-        </button>
+  </form>
 
-      </div>
-    </form>
-  </div>
+</div>
+
+

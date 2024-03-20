@@ -25,6 +25,10 @@ form .buttons {
   width: 50%;
 }
 
+textarea {
+  height: 100px;
+}
+
 
 @media (max-width: 550px) {
   .contato .buttons{
