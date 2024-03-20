@@ -15,6 +15,8 @@ context.UseSqlite(conexao));
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 builder.Services.AddScoped<IContaCorrenteRepository, ContaCorrenteRepository>();
 builder.Services.AddScoped<IContaCorrenteService, ContaCorrenteService>();
+builder.Services.AddScoped<ITitularRepository, TitularRepository>();
+builder.Services.AddScoped<ITitularService, TitularService>();
 
 
 builder.Services.AddControllers();

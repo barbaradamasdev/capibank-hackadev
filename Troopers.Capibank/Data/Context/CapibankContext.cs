@@ -14,4 +14,5 @@ public class CapibankContext : DbContext
     public DbSet<Endereco> Enderecos { get; set; }
     public DbSet<Transacao> Transacoes { get; set; }
 
+   
 }
