@@ -45,6 +45,38 @@
             <param name="id"></param>
             <returns></returns>
         </member>
+        <member name="M:Troopers.Capibank.Controllers.TransacaoController.ListarPorTitular(System.Int32)">
+            <summary>
+            Método para retornar todas as transações do titular da conta, localizado pelo ID da conta.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Troopers.Capibank.Controllers.TransacaoController.Depositar(Troopers.Capibank.DTOs.Request.TransacaoDepositoDTO,System.Int32)">
+            <summary>
+            Método para realizar o depósito na conta localizada pelo ID da conta.
+            </summary>
+            <param name="depositoDTO"></param>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Troopers.Capibank.Controllers.TransacaoController.Sacar(Troopers.Capibank.DTOs.Request.TransacaoSaqueDTO,System.Int32)">
+            <summary>
+            Método para realizar o saque na conta localizada pelo ID da conta.
+            </summary>
+            <param name="saqueDTO"></param>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Troopers.Capibank.Controllers.TransacaoController.Transferir(System.Int32,Troopers.Capibank.DTOs.Request.TransacaoTransferenciaDTO)">
+            <summary>
+            Método para realizar a transferência de valores, da conta origem localizada pelo ID par conta
+            destino localizada pelo CPF do titular.
+            </summary>
+            <param name="id"></param>
+            <param name="transferencia"></param>
+            <returns></returns>
+        </member>
         <member name="T:Troopers.Capibank.Migrations.inicial">
             <inheritdoc />
         </member>

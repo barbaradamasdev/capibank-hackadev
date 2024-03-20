@@ -23,13 +23,23 @@ public class TransacaoController : DefaultController
         _context = context;
         _mapper = mapper;
     }
+    /// <summary>
+    /// Método para retornar todas as transações do titular da conta, localizado pelo ID da conta.
+    /// </summary>
+    /// <param name="id"></param>
+    /// <returns></returns>
     [HttpGet("listartransacoes/{id}")]
     public async Task<IEnumerable<Transacao>> ListarPorTitular(int id)
     {
         return  await _context.Transacoes.Where(c => c.ContaId == id).AsNoTracking().ToListAsync();
         
     }
-
+    /// <summary>
+    /// Método para realizar o depósito na conta localizada pelo ID da conta.
+    /// </summary>
+    /// <param name="depositoDTO"></param>
+    /// <param name="id"></param>
+    /// <returns></returns>
     [HttpPost("depositar/{id}")]
     public async Task<IActionResult> Depositar(TransacaoDepositoDTO depositoDTO, int id)
     {
@@ -53,6 +63,12 @@ public class TransacaoController : DefaultController
         await _context.SaveChangesAsync();
         return Ok("Deposito efetuado com sucesso");
     }
+    /// <summary>
+    /// Método para realizar o saque na conta localizada pelo ID da conta.
+    /// </summary>
+    /// <param name="saqueDTO"></param>
+    /// <param name="id"></param>
+    /// <returns></returns>
     [HttpPost("sacar/{id}")]
     public async Task<IActionResult> Sacar(TransacaoSaqueDTO saqueDTO, int id)
     {
@@ -76,6 +92,13 @@ public class TransacaoController : DefaultController
         await _context.SaveChangesAsync();
         return Ok("Saque efetuado com sucesso");
     }
+    /// <summary>
+    /// Método para realizar a transferência de valores, da conta origem localizada pelo ID par conta
+    /// destino localizada pelo CPF do titular.
+    /// </summary>
+    /// <param name="id"></param>
+    /// <param name="transferencia"></param>
+    /// <returns></returns>
     [HttpPost("transferir/{id}")]
     public async Task<IActionResult> Transferir(int id, TransacaoTransferenciaDTO transferencia)
     {
