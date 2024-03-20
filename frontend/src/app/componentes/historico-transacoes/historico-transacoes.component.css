@@ -89,3 +89,9 @@ table {
     margin: 6px 0;
   }
 }
+
+@media (max-height: 700px) {
+  hr {
+    margin: 5px 0;
+  }
+}

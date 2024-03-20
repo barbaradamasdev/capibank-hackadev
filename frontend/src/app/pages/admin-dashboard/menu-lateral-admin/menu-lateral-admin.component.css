@@ -50,3 +50,9 @@
     position: inherit;
   }
 }
+
+@media (max-height: 700px) {
+  .sidebar {
+    gap: 5px;
+  }
+}

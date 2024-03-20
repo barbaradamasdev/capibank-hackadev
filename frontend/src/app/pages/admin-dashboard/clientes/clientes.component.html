@@ -40,6 +40,19 @@
           </div>
       </div>
 
+      <div *ngIf="mostrarFormularioEdicao" class="form-edicao-cliente">
+        <h2>Editar Informações do Cliente</h2>
+        <form (submit)="atualizarCliente()">
+          <!-- Campos de edição do cliente -->
+          <!-- Por exemplo, campos de input para nome, CPF, telefone, etc. -->
+          <input type="text" [ngModel]="clienteSelecionado?.nome" (ngModelChange)="atualizarNome($event)" name="nome" placeholder="Nome">
+          <input type="text" [ngModel]="clienteSelecionado?.cpf" (ngModelChange)="atualizarCPF($event)" name="cpf" placeholder="CPF">
+
+          <button type="submit" class="botao-banner">Salvar Alterações</button>
+          <button type="button" class="botao-banner" (click)="cancelarEdicao()">Cancelar</button>
+        </form>
+      </div>
+
       <div class="gerenciamento-contas">
         <h2>Gerenciamento de Contas</h2>
         <div class="buttons-admin flex">

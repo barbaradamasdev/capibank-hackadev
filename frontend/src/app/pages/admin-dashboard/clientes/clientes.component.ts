@@ -19,6 +19,7 @@ export class ClientesComponent {
   filtro: string = '';
   filtroTipo: string = 'nome';
   clienteSelecionado: Cliente | null = null;
+  mostrarFormularioEdicao: boolean = false;
 
   clientes: Cliente[] = CLIENTES;
 
@@ -92,7 +93,38 @@ export class ClientesComponent {
 
   editarConta() {
     if (this.clienteSelecionado) {
-      console.log('Logica para editar contas:', this.clienteSelecionado.nome);
+      // Exibir o formulário de edição apenas se clienteSelecionado for válido
+      this.mostrarFormularioEdicao = true;
     }
   }
+
+
+  cancelarEdicao() {
+    // Ocultar o formulário de edição ao clicar no botão "Cancelar"
+    this.mostrarFormularioEdicao = false;
+  }
+
+  atualizarCliente() {
+    if (this.clienteSelecionado) {
+      // Implemente a lógica para atualizar as informações do cliente no banco de dados
+      // Aqui você pode chamar um serviço que envia os dados atualizados para o backend
+      console.log('Informações do cliente atualizadas:', this.clienteSelecionado);
+
+      // Após atualizar, esconda o formulário de edição
+      this.mostrarFormularioEdicao = false;
+    }
+  }
+
+  atualizarNome(novoNome: string) {
+    if (this.clienteSelecionado) {
+      this.clienteSelecionado.nome = novoNome;
+    }
+  }
+
+  atualizarCPF(novoCPF: string) {
+    if (this.clienteSelecionado) {
+      this.clienteSelecionado.cpf = novoCPF;
+    }
+  }
+
 }
