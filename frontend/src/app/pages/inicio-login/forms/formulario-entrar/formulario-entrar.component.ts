@@ -20,12 +20,13 @@ export class FormularioEntrarComponent {
     email: new FormControl('',[Validators.required, Validators.email]),
     senha: new FormControl('',[Validators.required])
   });
-  // user: Titular = {
-  //   email: 'sharp@gmail.com',
-  //   senha:'admin123',
-  //   token:'123123',
-  //   nome: 'Capitonio Nascimento'
-  // }
+
+  user: Titular = {
+    email: 'sharp@gmail.com',
+    senha:'admin123',
+    token:'123123',
+    nome: 'Capitonio Nascimento'
+  }
 
   exibirModalErro(mensagem: string): void {
     const modalElement = document.createElement('div');
@@ -68,14 +69,14 @@ export class FormularioEntrarComponent {
   }
 
   autenticar():void{
-    // if(this.formLogin.value.email == this.user.email && this.formLogin.value.senha == this.user.senha){
-    //   localStorage.setItem('email', JSON.stringify(this.formLogin.value.email));
-    //   localStorage.setItem('senha', JSON.stringify(this.formLogin.value.senha));
-    //   localStorage.setItem('nome', JSON.stringify(this.user.nome));
-    //   this.rota.navigateByUrl('/login/token')
-    // }else{
-    //   this.exibirModalErro("Senha ou usuário inválidos! Por favor, tente novamente.");
-    // }
+    if(this.formLogin.value.email == this.user.email && this.formLogin.value.senha == this.user.senha){
+      localStorage.setItem('email', JSON.stringify(this.formLogin.value.email));
+      localStorage.setItem('senha', JSON.stringify(this.formLogin.value.senha));
+      localStorage.setItem('nome', JSON.stringify(this.user.nome));
+      this.rota.navigateByUrl('/login/token')
+    }else{
+      this.exibirModalErro("Senha ou usuário inválidos! Por favor, tente novamente.");
+    }
     this.formLogin.reset();
   }
 }

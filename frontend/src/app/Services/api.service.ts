@@ -19,31 +19,18 @@ export class ApiService {
   }
 
   GetTitulares() : Observable<Titular[]> {
-    return this.http.get<Titular[]>(`${this.apiUrl}Titular/listarporid/`)
+    return this.http.get<Titular[]>(`${this.apiUrl}Titular/listartodos/`)
   }
 
-  GetTitularPorId(id:number) : Observable<Titular> {
-    return this.http.get<Titular>(`${this.apiUrl}Titular/listarporid/${id}`)
+  GetTitularPorId(idConta:number) : Observable<Titular> {
+    return this.http.get<Titular>(`${this.apiUrl}Titular/listarporid/${idConta}`)
   }
 
-  // private handleError(error: HttpErrorResponse): Observable<never> {
-  //   if (error.error instanceof ErrorEvent) {
-  //     // Erro do lado do cliente
-  //     console.error('Ocorreu um erro:', error.error.message);
-  //   } else {
-  //     // O backend retornou um código de status de erro
-  //     console.error(
-  //       `Código de status ${error.status}, ` +
-  //       `Erro: ${error.error}`);
-  //   }
-  //   // Retorna um Observable com uma mensagem de erro para o componente
-  //   return throwError('Ocorreu um erro ao processar sua solicitação. Por favor, tente novamente mais tarde.');
-  // }
+  PostSaque(idConta:number, valorSaque:number) : Observable<any> {
+    return this.http.post<any>(`${this.apiUrl}Transacao/sacar/${idConta}`,
+    {
+      valor: valorSaque
+    });
+  }
 
-  // listarTransacoes(id: number): Observable<any[]> {
-  //   return this.http.get<any[]>(`${this.apiUrl}/Transacao/listartransacoes/${id}`)
-  //     .pipe(
-  //       catchError(this.handleError)
-  //     );
-  // }
 }

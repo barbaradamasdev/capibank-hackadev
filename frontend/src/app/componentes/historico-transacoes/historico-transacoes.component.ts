@@ -45,6 +45,7 @@ export class HistoricoTransacoesComponent implements OnInit {
         if (transacao.tipoTransacao === 3 && transacao.situacao === 1) {
           this.buscarNomeTitular(transacao.contaDestinoOrigemId).subscribe(titular => {
             transacao.titularContaDestino = titular;
+            // console.log( transacao.titularContaDestino)
           });
         }
       });
@@ -54,6 +55,5 @@ export class HistoricoTransacoesComponent implements OnInit {
   buscarNomeTitular(idTitular: number): Observable<Titular> {
     return this.apiService.GetTitularPorId(idTitular);
   }
-
 
 }
