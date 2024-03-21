@@ -7,9 +7,9 @@
         class="form-control"
         formControlName="valor"
         placeholder="R$ 0,00"
-        (keyup.enter)="sacarValor()"
       />
     </div>
+
 
     <div *ngIf="errorMessage" class="warn-text text-danger">{{ errorMessage }}</div>
 

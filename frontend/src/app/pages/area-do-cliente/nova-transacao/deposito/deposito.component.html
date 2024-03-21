@@ -1,25 +1,21 @@
 <div class="container-form p-4">
   <h6 class="section-title">Qual o valor do depósito?</h6>
-    <form [formGroup]="deposito" (keyup.enter)="salvarValor()">
+    <form [formGroup]="deposito" (ngSubmit)="depositarValor()">
       <div class="form-group">
         <input
           type="number"
           class="form-control"
           formControlName="valor"
           placeholder="R$ 0,00"
-          (keyup.enter)="salvarValor()"
         />
       </div>
 
 
-      <div *ngIf="valor && valor.errors">
-        <div *ngIf="valor.hasError('min')" class="warn-text text-danger">
-          O valor de saque não pode ser menor que zero.
-        </div>
-      </div>
+    <div *ngIf="errorMessage" class="warn-text text-danger">{{ errorMessage }}</div>
+
 
     <div class="buttons flex">
-      <button (click)="salvarValor()" routerLink="ok" class="botao-principal">
+      <button [disabled]="!deposito.valid" type="submit" class="botao-principal">
         Confirmar valor
       </button>
       <button routerLink="/cliente" class="botao-secundario">
