@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-transferencia',
@@ -11,22 +11,33 @@ import { RouterLink } from '@angular/router';
   styleUrl: './transferencia.component.css'
 })
 export class TransferenciaComponent {
+  idConta : number = 1;// id de teste
+  errorMessage!: string;
+  valor?: number;
+
   transferencia = new FormGroup({
     valor: new FormControl('', [Validators.required, Validators.min(0)]),
   });
 
-  get valor() {
-    return this.transferencia.get('valor');
-  }
+   constructor(
+    private router: Router
+  ) {}
 
-  constructor() {}
+  armazenarValor() {
+    const valorInput = this.transferencia.get('valor')?.value;
+    const valorTransferencia = parseFloat(valorInput!);
 
-  salvarValor() {
-    const valorTransferencia = this.valor?.value;
-    if (valorTransferencia !== null && valorTransferencia !== undefined) {
-      localStorage.setItem('valorTransferencia', valorTransferencia.toString());
-      const data = new Date();
-      localStorage.setItem('dataTransferencia', data.toString());
+    if (valorTransferencia === null || valorTransferencia <= 0) {
+      this.errorMessage = 'O valor não pode ser menor ou igual a zero';
+      return;
     }
+    //TODO validacao caso saldo negativo
+
+    localStorage.setItem('valorTransferencia', valorTransferencia.toString());
+    this.router.navigateByUrl(`/cliente/nova/transferencia/destinatario`);
+
   }
 }
+
+//cpf
+//33333333333

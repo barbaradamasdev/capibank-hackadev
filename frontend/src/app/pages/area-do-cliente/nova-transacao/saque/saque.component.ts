@@ -1,11 +1,8 @@
-import { CommonModule, CurrencyPipe } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators, ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
 import { ApiService } from '../../../../Services/api.service';
-import { HttpErrorResponse, HttpResponse } from '@angular/common/http';
-import { Transacao } from '../../../../Models/Transacao';
-
 
 @Component({
   selector: 'app-saque',
@@ -31,26 +28,21 @@ export class SaqueComponent{
     const valorInput = this.saque.get('valor')?.value;
     const valorSaque = parseFloat(valorInput!);
 
-    if (valorSaque === null || valorSaque <= 0) {
-      this.errorMessage = 'O valor não pode ser menor ou igual a zero';
-    }
-
     this.apiService.PostSaque(this.idConta, valorSaque).subscribe(
-      data => {
-        if (data === "Saque efetuado com sucesso") {
-          console.log("Saque efetuado com sucesso")
-          // this.navegarParaConfirmacaoSaque(data);
-
-          this.router.navigateByUrl('/cliente/nova/saque/ok');
+      (response: any) => {
+        if (typeof response === 'object') {
+          console.log("Transação bem-sucedida. ID da transação:", response);
+          this.router.navigateByUrl(`/cliente/nova/saque/ok/${response.id}`);
         } else {
-          // this.errorMessage = "Erro";
+          console.error("Erro ao efetuar o saque:", response);
+          this.errorMessage = "Erro ao efetuar o saque";
+
+          //TODO validacao caso saldo negativo
         }
-      }, error => {
-        // this.errorMessage = "Erro 2";
-        // console.log(error);
-        // FIXME so muda a rota considerando o erro da transacao
-        this.router.navigateByUrl('/cliente/nova/saque/ok');
-      }
-    )
+       },
+       error => {
+        console.error("Erro ao efetuar o saque:", error);
+       }
+     );
   }
 }
