@@ -4,6 +4,9 @@ header {
   align-items: center;
   background-color: var(--cor-branco);
   height: 55px;
+  position: fixed;
+  top: 0;
+  z-index: 9000;
 }
 
 .menu-icon {
@@ -31,6 +34,10 @@ header {
 }
 
 @media (min-width: 744px) {
+  header {
+    position: inherit;
+  }
+
   .logo {
     width: 150px;
   }

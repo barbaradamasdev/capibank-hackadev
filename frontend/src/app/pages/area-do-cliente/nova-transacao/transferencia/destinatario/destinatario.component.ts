@@ -2,8 +2,8 @@ import { CommonModule } from '@angular/common';
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { RouterLink } from '@angular/router';
-import { Cliente } from '../../../../../Models/Cliente';
-import { CLIENTES } from '../../../../../Data/Dados-clientes';
+import { Titular } from '../../../../../Models/Titular';
+// import { CLIENTES } from '../../../../../Data/Dados-clientes';
 import { Router } from '@angular/router';
 
 
@@ -16,7 +16,7 @@ import { Router } from '@angular/router';
 })
 export class DestinatarioComponent {
   isCpfValido: boolean  = true;
-  clientes: Cliente[] = CLIENTES;
+  clientes: Titular[] = [];
 
   constructor(private router: Router) {}
 

@@ -32,31 +32,31 @@ export class FormularioCriarContaPgDoisComponent {
       return;
     }
 
-    this.servicoEndereco.buscaCep(cep).subscribe(
-      (dados: Endereco) => {
-        if (dados && !dados.erro) {
-          this.entradaCep.patchValue({
-            rua: dados.logradouro || '',
-            cidade: dados.localidade,
-          });
+  //   this.servicoEndereco.buscaCep(cep).subscribe(
+  //     (dados: Endereco) => {
+  //       if (dados && !dados.erro) {
+  //         this.entradaCep.patchValue({
+  //           rua: dados.logradouro || '',
+  //           cidade: dados.localidade,
+  //         });
 
-          if (dados.logradouro) {
-            this.entradaCep.get('rua')?.disable();
-          } else {
+  //         if (dados.logradouro) {
+  //           this.entradaCep.get('rua')?.disable();
+  //         } else {
 
-            this.entradaCep.get('rua')?.enable();
-          }
-        } else {
+  //           this.entradaCep.get('rua')?.enable();
+  //         }
+  //       } else {
 
-          this.entradaCep.enable();
-          this.entradaCep.patchValue({ cidade: '', rua: '' });
-        }
-      },
-      (error: any) => {
-        alert("Erro ao buscar o CEP.");
-        console.error(error);
-        this.entradaCep.enable();
-      }
-    );
+  //         this.entradaCep.enable();
+  //         this.entradaCep.patchValue({ cidade: '', rua: '' });
+  //       }
+  //     },
+  //     (error: any) => {
+  //       alert("Erro ao buscar o CEP.");
+  //       console.error(error);
+  //       this.entradaCep.enable();
+  //     }
+  //   );
   }
 }
