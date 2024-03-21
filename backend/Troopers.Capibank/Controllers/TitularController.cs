@@ -37,6 +37,18 @@ public class TitularController : DefaultController
         return Ok(titular);
     }
     /// <summary>
+    /// Método para listar um usuário pelo CPF retornando o CPF e a senha para login.
+    /// </summary>
+    /// <param name="cpf"></param>
+    /// <returns></returns>
+    [HttpGet("login/{cpf}")]
+    public async Task<ActionResult<TitularLoginResponseDTO>> ListarPorCpf(string cpf)
+    {
+        var titular = await _ts.ListarPorCPF(cpf);
+        if (titular is null) return NotFound("Titular não encontrado");
+        return Ok(titular);
+    }
+    /// <summary>
     /// Método para alteração dos dadps do Titular e também alterar o seu endereço se necessário.
     /// </summary>
     /// <param name="titularDTO"></param>

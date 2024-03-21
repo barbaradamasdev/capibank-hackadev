@@ -58,6 +58,13 @@
             <param name="id"></param>
             <returns></returns>
         </member>
+        <member name="M:Troopers.Capibank.Controllers.TitularController.ListarPorCpf(System.String)">
+            <summary>
+            Método para listar um usuário pelo CPF retornando o CPF e a senha para login.
+            </summary>
+            <param name="cpf"></param>
+            <returns></returns>
+        </member>
         <member name="M:Troopers.Capibank.Controllers.TitularController.Alterar(Troopers.Capibank.DTOs.Request.TitularAlterarRequestDTO)">
             <summary>
             Método para alteração dos dadps do Titular e também alterar o seu endereço se necessário.
@@ -107,6 +114,18 @@
             <inheritdoc />
         </member>
         <member name="M:Troopers.Capibank.Migrations.inicial.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:Troopers.Capibank.Migrations.adicionandocamposenha">
+            <inheritdoc />
+        </member>
+        <member name="M:Troopers.Capibank.Migrations.adicionandocamposenha.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Troopers.Capibank.Migrations.adicionandocamposenha.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Troopers.Capibank.Migrations.adicionandocamposenha.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
             <inheritdoc />
         </member>
     </members>
