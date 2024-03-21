@@ -29,9 +29,9 @@ export class MenuInferiorAreaInternaComponent {
 
   icons = [
     { src: 'assets/icones/icone-inicio-cinza.png', alt: 'Inicio', color: '#666', link:'/cliente'},
-    { src: 'assets/icones/icone-transacoes-cinza.png', alt: 'Transações', color: '#666', link:'/historico'},
-    { src: 'assets/icones/icone-contato-cinza.png', alt: 'Ajuda', color: '#666', link:'/chamado'},
-    { src: 'assets/icones/icone-config-cinza.png', alt: 'Configurações', color: '#666', link:'/config' }
+    { src: 'assets/icones/icone-transacoes-cinza.png', alt: 'Transações', color: '#666', link:'/cliente/historico'},
+    { src: 'assets/icones/icone-contato-cinza.png', alt: 'Ajuda', color: '#666', link:'/cliente/chamado'},
+    { src: 'assets/icones/icone-config-cinza.png', alt: 'Configurações', color: '#666', link:'/cliente/config' }
   ];
 
   onMouseEnter(icon: any) {

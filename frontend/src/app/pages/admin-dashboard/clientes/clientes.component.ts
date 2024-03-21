@@ -3,8 +3,8 @@ import { FormChamadoComponent } from "../../../pages/area-do-cliente/chamado/for
 import { CommonModule } from '@angular/common';
 import { MenuLateralAdminComponent } from "../menu-lateral-admin/menu-lateral-admin.component";
 import { DashboardComponent } from "../dashboard/dashboard.component";
-import { CLIENTES } from '../../../Data/Dados-clientes';
-import { Cliente } from '../../../Models/Cliente';
+// import { CLIENTES } from '../../../Data/Dados-clientes';
+import { Titular } from '../../../Models/Titular';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -18,27 +18,27 @@ export class ClientesComponent {
 
   filtro: string = '';
   filtroTipo: string = 'nome';
-  clienteSelecionado: Cliente | null = null;
+  clienteSelecionado: Titular | null = null;
   mostrarFormularioEdicao: boolean = false;
 
-  clientes: Cliente[] = CLIENTES;
+  clientes: Titular[] = [];
 
-  pesquisar() {
-    switch (this.filtroTipo) {
-      case 'cpf':
-        this.pesquisarPorCPF();
-        break;
-      case 'nome':
-        this.pesquisarPorNome();
-        break;
-      case 'conta':
-        this.pesquisarPorNumeroConta();
-        break;
-      default:
-        alert('Tipo de filtro inválido.');
-        break;
-    }
-  }
+  // pesquisar() {
+  //   switch (this.filtroTipo) {
+  //     case 'cpf':
+  //       this.pesquisarPorCPF();
+  //       break;
+  //     case 'nome':
+  //       this.pesquisarPorNome();
+  //       break;
+  //     case 'conta':
+  //       this.pesquisarPorNumeroConta();
+  //       break;
+  //     default:
+  //       alert('Tipo de filtro inválido.');
+  //       break;
+  //   }
+  // }
 
   pesquisarPorCPF() {
     const clienteEncontrado = this.clientes.find(cliente => cliente.cpf === this.filtro);
@@ -71,17 +71,17 @@ export class ClientesComponent {
     }
   }
 
-  pesquisarPorNumeroConta() {
-    const clienteEncontrado = this.clientes.find(cliente => cliente.numeroConta === this.filtro);
-    if (clienteEncontrado) {
-      this.selecionarCliente(clienteEncontrado);
-    } else {
-      alert('Número da conta não encontrado.');
-      this.clienteSelecionado = null;
-    }
-  }
+  // pesquisarPorNumeroConta() {
+  //   const clienteEncontrado = this.clientes.find(cliente => cliente.numeroConta === this.filtro);
+  //   if (clienteEncontrado) {
+  //     this.selecionarCliente(clienteEncontrado);
+  //   } else {
+  //     alert('Número da conta não encontrado.');
+  //     this.clienteSelecionado = null;
+  //   }
+  // }
 
-  selecionarCliente(cliente: Cliente) {
+  selecionarCliente(cliente: Titular) {
     this.clienteSelecionado = cliente;
   }
 

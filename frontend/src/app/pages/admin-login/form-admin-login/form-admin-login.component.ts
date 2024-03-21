@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators, ReactiveFormsModule } from '@angular/forms';
-import { Cliente } from '../../../Models/Cliente';
+import { Titular } from '../../../Models/Titular';
 import { Router, RouterLink } from '@angular/router';
 
 @Component({
@@ -19,12 +19,12 @@ export class FormAdminLoginComponent {
     email: new FormControl('',[Validators.required, Validators.email]),
     senha: new FormControl('',[Validators.required])
   });
-  user: Cliente = {
-    email: 'sharp@gmail.com',
-    senha: 'admin123',
-    token: '123123',
-    nome: 'Capitonio Nascimento',
-  };
+  // user: Titular = {
+    // email: 'sharp@gmail.com',
+    // senha: 'admin123',
+    // token: '123123',
+    // nome: 'Capitonio Nascimento',
+  // };
 
   exibirModalErro(mensagem: string): void {
     const modalElement = document.createElement('div');
@@ -66,16 +66,16 @@ export class FormAdminLoginComponent {
     }, 2000);
   }
 
-  autenticar():void{
-    if(this.adminFormLogin.value.email == this.user.email && this.adminFormLogin.value.senha == this.user.senha){
-      localStorage.setItem('email', JSON.stringify(this.adminFormLogin.value.email));
-      localStorage.setItem('senha', JSON.stringify(this.adminFormLogin.value.senha));
-      localStorage.setItem('token', '123123');
-      localStorage.setItem('nome', JSON.stringify(this.user.nome));
-      this.rota.navigateByUrl('/admin')
-    }else{
-      this.exibirModalErro("Senha ou usuário inválidos! Por favor, tente novamente.");
-    }
-    this.adminFormLogin.reset();
-  }
+  // autenticar():void{
+  //   if(this.adminFormLogin.value.email == this.user.email && this.adminFormLogin.value.senha == this.user.senha){
+  //     localStorage.setItem('email', JSON.stringify(this.adminFormLogin.value.email));
+  //     localStorage.setItem('senha', JSON.stringify(this.adminFormLogin.value.senha));
+  //     localStorage.setItem('token', '123123');
+  //     localStorage.setItem('nome', JSON.stringify(this.user.nome));
+  //     this.rota.navigateByUrl('/admin')
+  //   }else{
+  //     this.exibirModalErro("Senha ou usuário inválidos! Por favor, tente novamente.");
+  //   }
+  //   this.adminFormLogin.reset();
+  // }
 }

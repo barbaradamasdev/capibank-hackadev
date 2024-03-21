@@ -1,6 +1,6 @@
-import { Cliente } from '../Models/Cliente';
+import { Titular } from '../Models/Titular';
 
-export const CLIENTES: Cliente[] = [
+export const CLIENTES: Titular[] = [
   {
     nome: 'João Silva',
     cpf: '12345678900',

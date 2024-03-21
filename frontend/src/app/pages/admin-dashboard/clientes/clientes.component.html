@@ -1,4 +1,4 @@
-<div class="main-content">
+<!-- <div class="main-content">
   <div class="clientes">
     <h1>Gerenciamento de Clientes</h1>
     <div class="clientes-container">
@@ -34,7 +34,6 @@
             <div class="cliente-actions">
               <button class="botao-banner" (click)="editarConta()">Editar Informações</button>
               <button class="botao-banner" (click)="bloquearDesbloquearConta()">Bloquear/Desbloquear Conta</button>
-              <!-- <button class="botao-banner">Enviar Mensagem</button> -->
               <button class="botao-banner">Gerar Relatórios</button>
             </div>
           </div>
@@ -43,8 +42,6 @@
       <div *ngIf="mostrarFormularioEdicao" class="form-edicao-cliente">
         <h2>Editar Informações do Cliente</h2>
         <form (submit)="atualizarCliente()">
-          <!-- Campos de edição do cliente -->
-          <!-- Por exemplo, campos de input para nome, CPF, telefone, etc. -->
           <input type="text" [ngModel]="clienteSelecionado?.nome" (ngModelChange)="atualizarNome($event)" name="nome" placeholder="Nome">
           <input type="text" [ngModel]="clienteSelecionado?.cpf" (ngModelChange)="atualizarCPF($event)" name="cpf" placeholder="CPF">
 
@@ -80,4 +77,4 @@
 
     </div>
   </div>
-</div>
+</div> -->

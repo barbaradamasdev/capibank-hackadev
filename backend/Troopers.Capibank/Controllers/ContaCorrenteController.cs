@@ -1,62 +1,100 @@
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
-using Troopers.Capibank.DTOs;
+using Troopers.Capibank.DTOs.Request;
+using Troopers.Capibank.DTOs.Response;
+using Troopers.Capibank.Models;
 using Troopers.Capibank.Services;
 
 namespace Troopers.Capibank.Controllers;
 
-    [ApiController]
-    [Route("api/[controller]")]
-    public class ContaCorrenteController : ControllerBase
+public class ContaCorrenteController : DefaultController
+{
+    private readonly IContaCorrenteService _cs;
+    public ContaCorrenteController(IContaCorrenteService cs)
     {
-        private readonly IContaCorrenteService _contaCorrenteService;
-
-        public ContaCorrenteController(IContaCorrenteService contaCorrenteService)
-        {
-            _contaCorrenteService = contaCorrenteService;
-        }
-
-        [HttpPost("transacoes")]
-        public IActionResult RealizarTransacoes([FromBody] ContaCorrenteTransacoesDto transacoesDto)
-        {
-            try
-            {
-                if (transacoesDto.ValorDeposito > 0)
-                    _contaCorrenteService.Depositar(transacoesDto.NumeroConta, transacoesDto.ValorDeposito);
-
-                if (transacoesDto.ValorSaque > 0)
-                    _contaCorrenteService.Sacar(transacoesDto.NumeroConta, transacoesDto.ValorSaque);
-
-                if (transacoesDto.ValorTransferencia > 0 && transacoesDto.NumeroContaDestinoTransferencia > 0)
-                    _contaCorrenteService.Transferir(transacoesDto.NumeroConta, transacoesDto.NumeroContaDestinoTransferencia, transacoesDto.ValorTransferencia);
-
-                if (transacoesDto.VerificarSaldo)
-                {
-                    var saldo = _contaCorrenteService.ConsultarSaldo(transacoesDto.NumeroConta);
-                    // Retornar saldo
-                }
-
-                if (transacoesDto.VerificarExtrato)
-                {
-                    var extrato = _contaCorrenteService.ConsultarExtrato(transacoesDto.NumeroConta);
-                    // Retornar extrato
-                }
-
-                return Ok("Transações realizadas com sucesso.");
-            }
-            catch (ArgumentException ex)
-            {
-                return BadRequest(ex.Message);
-            }
-            catch (Exception)
-            {
-                return StatusCode(500, "Ocorreu um erro ao processar as transações.");
-            }
-        }
+        _cs = cs;
     }
+    /// <summary>
+    /// Método que lista todas as contas cadastradas.
+    /// </summary>
+    /// <returns></returns>
+    [HttpGet("listarcontas")]
+    public async Task<ActionResult<IEnumerable<ContaCorrenteResponseDTO>>> ListarTodas()
+    {
+        var conta = await _cs.ListarTodas();
+        if (conta is null)
+            return NotFound("Conta não encontrada");
+        return Ok(conta);
+    }
+    /// <summary>
+    /// Método que lista uma conta pelo ID indicado.
+    /// </summary>
+    /// <param name="id"></param>
+    /// <returns></returns>
+    [HttpGet("listacontaporid/{id}", Name = "ListarPorId")]
+    public async Task<ActionResult> ListarPorId(int id)
+    {
+        var conta = await _cs.ListarPorId(id);
+        if (conta is null)
+            return NotFound("Conta não encontrada");
+        return Ok(conta);
+    }
+    /// <summary>
+    /// Método para criar conta, criando também o titular e o endereco.
+    /// </summary>
+    /// <param name="contaDTO"></param>
+    /// <returns></returns>
+    [HttpPost("criarconta")]
+    public async Task<ActionResult<ContaCorrenteCreateRequestDTO>> CriarConta(ContaCorrenteCreateRequestDTO contaDTO)
+    {
+        if (contaDTO is null)
+            return BadRequest();
+        await _cs.CriarConta(contaDTO);
+        return new CreatedAtRouteResult("ListarPorId", new { id = contaDTO.Id }, contaDTO);
+    }
+    /// <summary>
+    /// Método para bloquear a conta cadastrada no sistema.
+    /// </summary>
+    /// <param name="id"></param>
+    /// <returns></returns>
+    [HttpPut("bloquearconta/{id}")]
+    public async Task<IActionResult> BloquearConta(int id)
+    {
+        var conta = await ListarPorId(id);
+        if (conta is null)
+            return NotFound("Conta não encontrada");
+        await _cs.BloquearConta(id);
+        return Ok("Conta bloqueada com sucesso");
+    }
+    /// <summary>
+    /// Método usado para desbloquear uma conta que esteja bloqueada.
+    /// </summary>
+    /// <param name="id"></param>
+    /// <returns></returns>
+    [HttpPut("desbloquearconta/{id}")]
+    public async Task<IActionResult> DesbloquearConta(int id)
+    {
+        var conta = await ListarPorId(id);
+        if (conta is null)
+            return NotFound("Conta não encontrada");
+        await _cs.DesbloquearConta(id);
+        return Ok("Conta desbloqueada com sucesso");
+    }
+    /// <summary>
+    /// Método usado para deletar uma conta do sistema.
+    /// </summary>
+    /// <param name="id"></param>
+    /// <returns></returns>
+    [HttpDelete("excluirconta/{id}")]
+    public async Task<IActionResult> ExcluirConta(int id)
+    {
+        var conta = await _cs.ListarPorId(id);
+        if (conta is null)
+            return NotFound("Conta não encontrada");
+        
+        _cs.DeletarConta(id);
+        return Ok("Conta excluida com sucesso");
 
-
-
-
-
-
-
+    }
+}

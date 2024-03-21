@@ -70,23 +70,3 @@
     font-size: 12px;
   }
 }
-
-
-@media (max-height: 700px) {
- .icon {
-  min-width: 80px;
-  max-width: 100%;
- }
-
- .grid {
-  margin-top: 10px;
- }
-
- .icon img {
-  margin-top: 10px;
- }
-
- .icon p {
-  margin-bottom: auto;
- }
-}

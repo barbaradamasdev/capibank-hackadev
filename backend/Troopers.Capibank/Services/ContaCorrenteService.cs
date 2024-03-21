@@ -1,122 +1,51 @@
-using System;
-using System.Collections.Generic;
+﻿using AutoMapper;
+using Troopers.Capibank.DTOs.Request;
+using Troopers.Capibank.DTOs.Response;
 using Troopers.Capibank.Models;
+using Troopers.Capibank.Repositories;
 
-namespace Troopers.Capibank.Services
+namespace Troopers.Capibank.Services;
 
-    public class ContaCorrenteService : IContaCorrenteService
+public class ContaCorrenteService : IContaCorrenteService
+{
+    private readonly IContaCorrenteRepository _repo;
+    private readonly IMapper _mapper;
+    public ContaCorrenteService(IContaCorrenteRepository repo, IMapper mapper)
     {
-        private readonly List<ContaCorrente> _contasCorrentes;
-
-        public ContaCorrenteService()
-        {
-            // Inicializa a lista de contas correntes (simulando um banco de dados)
-            _contasCorrentes = new List<ContaCorrente>();
-        }
-
-        public void Depositar(int numeroConta, decimal valor)
-        {
-            var contaCorrente = ObterContaCorrentePorNumero(numeroConta);
-
-            if (contaCorrente == null)
-            {
-                throw new ArgumentException("Conta corrente não encontrada.");
-            }
-
-            if (valor <= 0)
-            {
-                throw new ArgumentException("O valor do depósito deve ser maior que zero.");
-            }
-
-            contaCorrente.Saldo += valor;
-
-            // transação no banco de dados
-            SimularTransacao(TipoTransacao.Deposito, valor, numeroConta);
-        }
-
-        public bool Sacar(int numeroConta, decimal valor)
-        {
-            var contaCorrente = ObterContaCorrentePorNumero(numeroConta);
-
-            if (contaCorrente == null)
-            {
-                throw new ArgumentException("Conta corrente não encontrada.");
-            }
-
-            if (valor <= 0)
-            {
-                throw new ArgumentException("O valor do saque deve ser maior que zero.");
-            }
-
-            if (contaCorrente.Saldo < valor)
-            {
-                return false; // Saldo insuficiente
-            }
-
-            contaCorrente.Saldo -= valor;
-
-            // transação no banco de dados
-            SimularTransacao(TipoTransacao.Saque, valor, numeroConta);
-
-            return true;
-        }
-
-        public bool Transferir(int numeroContaOrigem, int numeroContaDestino, decimal valor)
-        {
-            var contaOrigem = ObterContaCorrentePorNumero(numeroContaOrigem);
-            var contaDestino = ObterContaCorrentePorNumero(numeroContaDestino);
-
-            if (contaOrigem == null || contaDestino == null)
-            {
-                throw new ArgumentException("Conta corrente de origem ou destino não encontrada.");
-            }
-
-            if (valor <= 0)
-            {
-                throw new ArgumentException("O valor da transferência deve ser maior que zero.");
-            }
-
-            if (contaOrigem.Saldo < valor)
-            {
-                return false; // Saldo insuficiente na conta de origem
-            }
-
-            contaOrigem.Saldo -= valor;
-            contaDestino.Saldo += valor;
-
-            // transações no banco de dados
-            SimularTransacao(TipoTransacao.Transferencia, valor, numeroContaOrigem, numeroContaDestino);
-
-            return true;
-        }
-
-        public decimal ConsultarSaldo(int numeroConta)
-        {
-            var contaCorrente = ObterContaCorrentePorNumero(numeroConta);
-
-            if (contaCorrente == null)
-            {
-                throw new ArgumentException("Conta corrente não encontrada.");
-            }
-
-            return contaCorrente.Saldo;
-        }
-
-        public IEnumerable<string> ConsultarExtrato(int numeroConta)
-        {
-            var extrato = new List<string>();
-            // lógica para consultar o extrato da conta corrente
-            return extrato;
-        }
-
-        private ContaCorrente ObterContaCorrentePorNumero(int numeroConta)
-        {
-            return _contasCorrentes.Find(conta => conta.NumeroConta == numeroConta);
-        }
-
-        private void SimularTransacao(TipoTransacao tipo, decimal valor, params int[] numerosContas)
-        {
-            // transações no banco de dados
-        }
+        _repo = repo;
+        _mapper = mapper;
     }
-
+    public async Task<IEnumerable<ContaCorrenteResponseDTO>> ListarTodas()
+    {
+        var contaEntity = await _repo.ListarTodos();
+        return _mapper.Map<IEnumerable<ContaCorrenteResponseDTO>>(contaEntity);
+    }
+    public async Task<ContaCorrenteResponseDTO> ListarPorId(int id)
+    {
+        var contaEntity = await _repo.ListarPorId(id);
+        return _mapper.Map<ContaCorrenteResponseDTO>(contaEntity);
+    }
+    public async Task CriarConta(ContaCorrenteCreateRequestDTO contaDTO)
+    {
+        var contaEntity = _mapper.Map<ContaCorrente>(contaDTO);
+        await _repo.CriarConta(contaEntity);
+        contaDTO.Id = contaEntity.Id;
+    }
+    public async Task BloquearConta(int id)
+    {
+        var conta = _repo.ListarPorId(id).Result;
+        await _repo.BloquearConta(conta.Id);
+    }
+    public async Task DesbloquearConta(int id)
+    {
+        var conta = _repo.ListarPorId(id).Result;
+        await _repo.DesbloquearConta(conta.Id);
+    }
+    public async Task DeletarConta(int id)
+    {
+        var conta = _repo.ListarPorId(id).Result;
+        if (!conta.ExcluirConta(conta.Id))
+            throw new Exception("Há valores nao conta impossível excluir");
+        await _repo.ExcluirConta(conta.Id);
+    }
+}
