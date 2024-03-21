@@ -30,12 +30,12 @@ export class TokenComponent {
     email: new FormControl('',[Validators.required, Validators.email]),
     senha: new FormControl('',[Validators.required])
   });
-  // user: Titular = {
-  //   email: 'sharp@gmail.com',
-  //   senha:'admin123',
-  //   token:'123123',
-  //   nome: 'Capitonio Nascimento'
-  // }
+  user: Titular = {
+    email: 'sharp@gmail.com',
+    senha:'admin123',
+    token:'123123',
+    nome: 'Capitonio Nascimento'
+  }
 
   exibirModalErro(mensagem: string): void {
     const modalElement = document.createElement('div');
@@ -94,12 +94,12 @@ export class TokenComponent {
         this.tokenForm.value.digit5 +
         this.tokenForm.value.digit6;
 
-      // if (enteredToken === this.user.token) {
-      //   localStorage.setItem('token', this.user.token);
-      //   this.rota.navigateByUrl('/cliente');
-      // } else {
-      //   this.exibirModalErro("Token inválido! Por favor, tente novamente.");
-      // }
+      if (enteredToken === this.user.token) {
+        localStorage.setItem('token', this.user.token);
+        this.rota.navigateByUrl('/cliente');
+      } else {
+        this.exibirModalErro("Token inválido! Por favor, tente novamente.");
+      }
       this.tokenForm.reset();
     }
   }
