@@ -1,15 +1,10 @@
 ﻿using AutoMapper;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Troopers.Capibank.Domain.Enums;
 using Troopers.Capibank.Domain.Models;
 using Troopers.Capibank.DTOs.Request;
-using Troopers.Capibank.DTOs.Response;
-using Troopers.Capibank.Repositories;
 using Troppers.Capibank.Data.Context;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace Troopers.Capibank.Controllers;
 
@@ -61,7 +56,7 @@ public class TransacaoController : DefaultController
         };
         await _context.Transacoes.AddAsync(deposito);
         await _context.SaveChangesAsync();
-        return Ok("Deposito efetuado com sucesso");
+        return Ok(deposito);
     }
     /// <summary>
     /// Método para realizar o saque na conta localizada pelo ID da conta.
@@ -90,7 +85,7 @@ public class TransacaoController : DefaultController
         };
         await _context.Transacoes.AddAsync(saque);
         await _context.SaveChangesAsync();
-        return Ok("Saque efetuado com sucesso");
+        return Ok(saque);
     }
     /// <summary>
     /// Método para realizar a transferência de valores, da conta origem localizada pelo ID par conta
@@ -129,7 +124,7 @@ public class TransacaoController : DefaultController
         }
         contaDestino.Depositar(valor);
         contaDestino.AlteradaEm = transferencia.DataTransacao;
-        Transacao env = new()
+        Transacao enviada = new()
         {
             ContaId = contaOrigem.Id,
             Valor = valor,
@@ -138,7 +133,7 @@ public class TransacaoController : DefaultController
             Situacao = SituacaoTransacao.SUCEDIDA,
             ContaDestinoOrigemId = contaDestino.Id
         };
-        Transacao rec = new()
+        Transacao recebida = new()
         {
             ContaId = contaDestino.Id,
             Valor = valor,
@@ -147,10 +142,10 @@ public class TransacaoController : DefaultController
             Situacao = SituacaoTransacao.SUCEDIDA,
             ContaDestinoOrigemId = contaOrigem.Id
         };
-        await _context.Transacoes.AddAsync(rec);
-        await _context.Transacoes.AddAsync(env);
+        await _context.Transacoes.AddAsync(recebida);
+        await _context.Transacoes.AddAsync(enviada);
         await _context.SaveChangesAsync();
-        return Ok("Transferência efetuado com sucesso");
+        return Ok(enviada);
 
     }
 }

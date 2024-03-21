@@ -1,4 +1,7 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { ApiService } from '../../../../../Services/api.service';
+import { Transacao } from '../../../../../Models/Transacao';
 
 @Component({
   selector: 'app-confirmacao-deposito',
@@ -10,15 +13,35 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
 export class ConfirmacaoDepositoComponent {
   @ViewChild('componentToPrint', {static: false}) componentToPrint!: ElementRef;
 
-  idTransacao: number = 6546514365;
+  idTransacao: any;
   valor: any;
   dataTransacao: any;
 
-  constructor() { }
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private apiService: ApiService
+  ) {}
 
   ngOnInit(): void {
-    this.valor = localStorage.getItem('valorDeposito');
-    this.dataTransacao = localStorage.getItem('dataDeposito');
+    this.apiService.GetTransacoes().subscribe(
+      (transacoes: Transacao[]) => {
+        // FIXME enviar id da transacao no controller e enviar pela mudanca de rota na pagina da transacao
+        transacoes.sort((a, b) => new Date(b.dataTransacao).getTime() - new Date(a.dataTransacao).getTime());
+        const ultimaTransacao = transacoes[0];
+
+        if (ultimaTransacao) {
+          this.idTransacao = ultimaTransacao.id;
+          this.valor = ultimaTransacao.valor;
+          this.dataTransacao = ultimaTransacao.dataTransacao;
+        } else {
+          console.error('Nenhuma transação encontrada');
+        }
+      },
+      error => {
+        console.error('Erro ao buscar transações:', error);
+      }
+    );
   }
 
   imprimir() {

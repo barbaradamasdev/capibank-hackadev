@@ -22,37 +22,23 @@ export class ConfirmacaoSaqueComponent implements OnInit{
     private apiService: ApiService
   ) {}
 
-  // ngOnInit(): void {
-  //   this.route.params.subscribe((params: Params) => {
-  //     this.idTransacao = params['idTransacao'];
-  //     this.valor = params['valor'];
-  //     this.dataTransacao = params['dataTransacao'];
-  //   });
-  // }
-
-
   ngOnInit(): void {
     this.apiService.GetTransacoes().subscribe(
       (transacoes: Transacao[]) => {
-        // Ordena as transações com base na data da transação em ordem decrescente
+        // FIXME enviar id da transacao no controller e enviar pela mudanca de rota na pagina da transacao
         transacoes.sort((a, b) => new Date(b.dataTransacao).getTime() - new Date(a.dataTransacao).getTime());
-
-        // Pega a primeira transação (ou seja, a última transação cadastrada)
         const ultimaTransacao = transacoes[0];
 
         if (ultimaTransacao) {
-          // Define os valores da última transação nos campos correspondentes
           this.idTransacao = ultimaTransacao.id;
           this.valor = ultimaTransacao.valor;
           this.dataTransacao = ultimaTransacao.dataTransacao;
         } else {
           console.error('Nenhuma transação encontrada');
-          // Lidere com o caso em que nenhuma transação é encontrada, talvez redirecionando para uma página de erro
         }
       },
       error => {
         console.error('Erro ao buscar transações:', error);
-        // Lidere com o erro, talvez redirecionando para uma página de erro
       }
     );
   }

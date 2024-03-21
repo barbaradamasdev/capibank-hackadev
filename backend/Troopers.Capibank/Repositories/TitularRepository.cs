@@ -21,6 +21,10 @@ public class TitularRepository : ITitularRepository
     {
         return await _context.Titulares.Include(t => t.Endereco).Where(t=>t.Id == id).AsNoTracking().FirstOrDefaultAsync();
     }
+    public async Task<Titular> ListaPorCpf(string cpf)
+    {
+        return await _context.Titulares.Where(t => t.CPF.Equals(cpf)).FirstOrDefaultAsync();
+    }
     public async Task<Titular> Alterar(Titular titular)
     {
         if (titular is null)

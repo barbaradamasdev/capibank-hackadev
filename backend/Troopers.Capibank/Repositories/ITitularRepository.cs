@@ -6,6 +6,7 @@ public interface ITitularRepository
 {
     Task<IEnumerable<Titular>> ListarTodos();
     Task<Titular> ListarPorId(int id);
+    Task<Titular> ListaPorCpf(string cpf);
     Task<Titular> Alterar(Titular titular);
 
 

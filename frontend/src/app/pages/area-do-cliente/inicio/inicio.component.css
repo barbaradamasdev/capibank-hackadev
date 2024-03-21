@@ -63,7 +63,7 @@ app-historico-transacoes {
     grid-template-areas:
     "menu-lateral acesso-rapido busca"
     "menu-lateral acesso-rapido historico-transacoes";
-    grid-template-rows: 11% calc(95vh - 11% - 55px - 163px);
+    grid-template-rows: 3% calc(95vh - 11% - 55px - 163px);
     grid-template-columns: 300px minmax(380px, 500px) minmax(320px, 700px);
   }
 }

@@ -8,9 +8,10 @@ Content-Type: application/json
 {
   "numeroConta": 12345,
   "titular": {
-    "nome": "luciana",
+    "nome": "Jackson Moraes",
     "email": "luciana@uol.com.br",
-    "cpf": "33333333333",
+    "senha":"12345678",
+    "cpf": "26139506840",
     "endereco": {
       
       "cep": "12248516",
