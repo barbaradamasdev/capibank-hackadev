@@ -58,31 +58,8 @@ export class ConfirmacaoDepositoComponent {
     const minutos = dateObj.getMinutes().toString().padStart(2, '0');
 
     const dataFormatada = `${dia}/${mes}/${ano} ${hora}:${minutos}`;
-    console.log(dataFormatada)
-
     return dataFormatada;
   }
-
-  // ngOnInit(): void {
-  //   this.apiService.GetTransacoes().subscribe(
-  //     (transacoes: Transacao[]) => {
-  //       // FIXME enviar id da transacao no controller e enviar pela mudanca de rota na pagina da transacao
-  //       transacoes.sort((a, b) => new Date(b.dataTransacao).getTime() - new Date(a.dataTransacao).getTime());
-  //       const ultimaTransacao = transacoes[0];
-
-  //       if (ultimaTransacao) {
-  //         this.idTransacao = ultimaTransacao.id;
-  //         this.valor = ultimaTransacao.valor;
-  //         this.dataTransacao = ultimaTransacao.dataTransacao;
-  //       } else {
-  //         console.error('Nenhuma transação encontrada');
-  //       }
-  //     },
-  //     error => {
-  //       console.error('Erro ao buscar transações:', error);
-  //     }
-  //   );
-  // }
 
   imprimir() {
     const conteudo = this.componentToPrint.nativeElement.innerHTML;

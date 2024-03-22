@@ -4,6 +4,7 @@ import { RodapeHomeComponent } from "../../componentes/rodape-home/rodape-home.c
 import { CapividaBannerInicialComponent } from "../../componentes/capivida-banner-inicial/capivida-banner-inicial.component";
 import { CapividaPilaresComponent } from  '../../componentes/capivida-pilares/capivida-pilares.component';
 import { CapividaCtaComponent } from  '../../componentes/capivida-cta/capivida-cta.component';
+import { Title } from '@angular/platform-browser';
 
 
 @Component({
@@ -14,6 +15,12 @@ import { CapividaCtaComponent } from  '../../componentes/capivida-cta/capivida-c
     imports: [CabecalhoHomeComponent, RodapeHomeComponent, CapividaBannerInicialComponent, CapividaPilaresComponent, CapividaCtaComponent]
 })
 export class CapividaComponent {
+
+  constructor(private titleService: Title) { }
+
+  ngOnInit(): void {
+    this.titleService.setTitle('Capibank - Projeto Capivida');
+  }
 
 }
 

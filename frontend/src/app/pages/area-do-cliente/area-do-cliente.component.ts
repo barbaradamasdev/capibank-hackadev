@@ -10,6 +10,7 @@ import { MenuService } from '../../servicos/menu.service';
 import { CommonModule } from '@angular/common';
 import { Subscription, filter } from 'rxjs';
 import { ActivatedRoute, NavigationEnd, Router, RouterOutlet, UrlSegment } from '@angular/router';
+import { Title } from '@angular/platform-browser';
 
 @Component({
     selector: 'app-area-do-cliente',
@@ -19,13 +20,16 @@ import { ActivatedRoute, NavigationEnd, Router, RouterOutlet, UrlSegment } from 
     imports: [RouterOutlet, HistoricoTransacoesComponent, AcessoRapidoAreaInternaComponent, SecaoSaldoComponent, CabecalhoAreaInternaComponent, MenuInferiorAreaInternaComponent, MenuLateralComponent, CommonModule, BarraDeBuscaComponent]
 })
 export class AreaDoClienteComponent {
+
+
+
   logoTipo: string = 'azul';
   isMenuOpen: boolean = false;
   isNovaTransacaoRoute: boolean = false;
   isSmallScreen: boolean = false;
   private routerSubscription: Subscription;
 
-  constructor(private menuService: MenuService, private router: Router, private route: ActivatedRoute) {
+  constructor(private titleService: Title, private menuService: MenuService, private router: Router, private route: ActivatedRoute) {
     this.menuService.isMenuOpen$.subscribe((isOpen) => {
       this.isMenuOpen = isOpen;
     });
@@ -44,6 +48,10 @@ export class AreaDoClienteComponent {
     ).subscribe(() => {
       this.isMenuOpen = false;
     });
+  }
+
+  ngOnInit(): void {
+    this.titleService.setTitle('Capibank - Área do cliente');
   }
 
   @HostListener('window:resize')

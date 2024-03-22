@@ -13,7 +13,7 @@
     <div *ngIf="errorMessage" class="warn-text text-danger">{{ errorMessage }}</div>
 
     <div class="buttons flex">
-      <button [disabled]="destinatario.invalid" class="botao-principal">
+      <button class="botao-principal">
         Confirmar
       </button>
       <button routerLink="/cliente/nova/transferencia" type="submit" class="botao-secundario">

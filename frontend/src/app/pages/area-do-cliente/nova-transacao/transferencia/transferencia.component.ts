@@ -1,7 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { Title } from '@angular/platform-browser';
 import { Router, RouterLink } from '@angular/router';
+import { ApiService } from '../../../../Services/api.service';
 
 @Component({
   selector: 'app-transferencia',
@@ -11,7 +13,7 @@ import { Router, RouterLink } from '@angular/router';
   styleUrl: './transferencia.component.css'
 })
 export class TransferenciaComponent {
-  idConta : number = 1;// id de teste
+  idConta : number = this.apiService.idTeste; //FIXME remover ao criar login
   errorMessage!: string;
   valor?: number;
 
@@ -20,8 +22,14 @@ export class TransferenciaComponent {
   });
 
    constructor(
-    private router: Router
+    private apiService: ApiService,
+    private router: Router,
+    private titleService: Title
   ) {}
+
+  ngOnInit(): void {
+    this.titleService.setTitle('Capibank - Nova Transferência');
+  }
 
   armazenarValor() {
     const valorInput = this.transferencia.get('valor')?.value;
