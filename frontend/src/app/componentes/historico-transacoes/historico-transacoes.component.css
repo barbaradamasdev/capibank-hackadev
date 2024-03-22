@@ -23,6 +23,7 @@
 }
 
 .descricao{
+  text-transform: capitalize;
   font-weight: 500;
   font-size: 0.6rem;
   color:rgb(163, 146, 146);

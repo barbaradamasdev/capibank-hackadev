@@ -27,11 +27,17 @@ export class ApiService {
   }
 
   PostSaque(idConta: number, valorSaque: number): Observable<string> {
-    return this.http.post<string>(`${this.apiUrl}Transacao/sacar/${idConta}`, { valor: valorSaque });
+    const saque = { valor: valorSaque };
+    return this.http.post<string>(`${this.apiUrl}Transacao/sacar/${idConta}`, saque);
   }
 
   PostDeposito(idConta: number, valorDeposito: number): Observable<string> {
-    return this.http.post<string>(`${this.apiUrl}Transacao/depositar/${idConta}`, { valor: valorDeposito });
+    const deposito = { valor: valorDeposito };
+    return this.http.post<string>(`${this.apiUrl}Transacao/depositar/${idConta}`, deposito);
   }
 
+  PostTransferencia(idContaDestino: number, cpfDestino: string, valorTransferencia: number): Observable<string> {
+    const transferencia = { valor: valorTransferencia, id: idContaDestino, cpf: cpfDestino };
+    return this.http.post<string>(`${this.apiUrl}Transacao/transferir/${idContaDestino}`, transferencia);
+  }
 }

@@ -12,6 +12,7 @@ public class TitularProfile : Profile
         CreateMap<TitularCreateRequestDTO, Titular>().ReverseMap();
         CreateMap<TitularResponseDTO, Titular>().ReverseMap();
         CreateMap<TitularAlterarRequestDTO, Titular>().ReverseMap();
-        CreateMap<TitularLoginResponseDTO, Titular>().ReverseMap();
+        CreateMap<TitularLoginEmailResponseDTO, Titular>().ReverseMap();
+        CreateMap<TitularLoginCPFResponseDTO, Titular>().ReverseMap();
     }
 }
