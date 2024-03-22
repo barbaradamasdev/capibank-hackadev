@@ -50,4 +50,8 @@ export class ApiService {
     const transferencia = { valor: valorTransferencia, cpf: cpfDestino, id: idContaDestino};
     return this.http.post<string>(`${this.apiUrl}Transacao/transferir/${idContaDestino}`, transferencia);
   }
+
+  GetLoginPorEmail(email: string, senha: string ): Observable<Titular> {
+    return this.http.get<Titular>(`${this.apiUrl}Titular/loginporemail/${email}`);
+  }
 }
