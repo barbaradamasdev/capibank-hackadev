@@ -14,9 +14,7 @@ import { CommonModule } from '@angular/common';
 })
 export class FormularioCriarContaPgDoisComponent {
   entradaCep: FormGroup;
-  ruaDaApiCep? : string;
-  bairroDaApiCep? : string;
-  cidadeDaApiCep? : string;
+  uf? : string;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -43,16 +41,13 @@ export class FormularioCriarContaPgDoisComponent {
     this.servicoEndereco.buscaCep(cep).subscribe(
       (dados: Endereco) => {
         if (dados) {
-          console.log(dados)
           this.entradaCep.patchValue({
             rua: dados.logradouro,
             bairro: dados.bairro,
             cidade: dados.localidade,
           });
 
-          this.ruaDaApiCep = dados.logradouro;
-          this.bairroDaApiCep = dados.bairro;
-          this.cidadeDaApiCep = dados.cidade;
+          this.uf = dados.uf;
 
           if (dados.logradouro) {
             this.entradaCep.get('rua')?.disable();
@@ -79,13 +74,9 @@ export class FormularioCriarContaPgDoisComponent {
       const numero = this.entradaCep.get('numero')?.value;
       const complemento = this.entradaCep.get('complemento')?.value;
 
-      // const rua = this.entradaCep.get('rua')?.value;
-      // const bairro = this.entradaCep.get('bairro')?.value;
-      // const cidade = this.entradaCep.get('cidade')?.value;
-
-      const rua = this.ruaDaApiCep;
-      const bairro = this.bairroDaApiCep;
-      const cidade = this.cidadeDaApiCep;
+      const rua = this.entradaCep.get('rua')?.value;
+      const bairro = this.entradaCep.get('bairro')?.value;
+      const cidade = this.entradaCep.get('cidade')?.value;
 
       const dadosPassoDois = {
         cep: cep,
@@ -93,7 +84,8 @@ export class FormularioCriarContaPgDoisComponent {
         bairro: bairro,
         cidade: cidade,
         numero: numero,
-        complemento: complemento
+        complemento: complemento,
+        uf: this.uf,
       };
 
       localStorage.setItem('dadosPassoDois', JSON.stringify(dadosPassoDois));

@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
 import { ApiService } from '../../../../Services/api.service';
@@ -12,7 +12,7 @@ import { ApiService } from '../../../../Services/api.service';
   styleUrls: ['../../../../../form.css', './formulario-criar-conta-pg-quatro.component.css']
 
 })
-export class FormularioCriarContaPgQuatroComponent {
+export class FormularioCriarContaPgQuatroComponent implements OnInit {
 
   senhaForm: FormGroup;
   senha?: string;
@@ -28,36 +28,35 @@ export class FormularioCriarContaPgQuatroComponent {
     });
   }
 
-ngOnInit(){
-  const dadosPassoUm = sessionStorage.getItem('dadosPassoUm');
-    const dadosPassoDois = sessionStorage.getItem('dadosPassoDois');
+  ngOnInit(){
+    const dadosPassoUm = localStorage.getItem('dadosPassoUm');
+    const dadosPassoDois = localStorage.getItem('dadosPassoDois');
 
     if (dadosPassoUm && dadosPassoDois) {
-      const dadosPassoUmJSON = JSON.parse(dadosPassoUm);
-      const dadosPassoDoisJSON = JSON.parse(dadosPassoDois);
-      console.log(dadosPassoDois)
-      console.log(dadosPassoDoisJSON)
+      // const dadosPassoUmJSON = JSON.parse(dadosPassoUm);
+      // const dadosPassoDoisJSON = JSON.parse(dadosPassoDois);
+      // console.log(dadosPassoDoisJSON)
 
-      const dados = {
-        numeroConta: 5666, //FIXME atualiar numero conta
-        titular: {
-          nome: dadosPassoUmJSON.nome,
-          email: dadosPassoUmJSON.email,
-          cpf: dadosPassoUmJSON.cpf,
-          senha: this.senha,
-          endereco: {
-            cep: dadosPassoDoisJSON.cep,
-            logradouro: dadosPassoDoisJSON.logradouro,
-            numero: dadosPassoDoisJSON.numero,
-            complemento: dadosPassoDoisJSON.complemento,
-            bairro: dadosPassoDoisJSON.bairro,
-            cidade: dadosPassoDoisJSON.cidade,
-            uf: dadosPassoDoisJSON.uf
-          }
-        }
-      };
+      // var cpfString = JSON.stringify(dadosPassoUmJSON.cpf);
 
-      console.log(dados);
+      // const dados = {
+      //   numeroConta: 5666, //FIXME atualiar numero conta
+      //   titular: {
+      //     nome: dadosPassoUmJSON.nome,
+      //     email: dadosPassoUmJSON.email,
+      //     cpf: dadosPassoUmJSON.cpfString,
+      //     senha: this.senha,
+      //     endereco: {
+      //       cep: dadosPassoDoisJSON.cep,
+      //       logradouro: dadosPassoDoisJSON.rua,
+      //       numero: dadosPassoDoisJSON.numero,
+      //       complemento: dadosPassoDoisJSON.complemento,
+      //       bairro: dadosPassoDoisJSON.bairro,
+      //       cidade: dadosPassoDoisJSON.cidade,
+      //       uf: dadosPassoDoisJSON.uf
+      //     }
+      //   }
+      // };
   }
 }
 
@@ -70,38 +69,29 @@ ngOnInit(){
         this.senha = newPassword;
         this.enviarDados();
       }
-
-      // Enviar os dados para a API
-      // this.apiService.enviarSenhaParaAPI(newPassword, confirmPassword).subscribe(
-      //   response => {
-      //     // Lidar com a resposta da API, redirecionar ou exibir mensagens de sucesso
-      //   },
-      //   error => {
-      //     // Lidar com erros da API, exibir mensagens de erro
-      //   }
-      // );
     }
   }
 
   enviarDados(): void {
-    const dadosPassoUm = sessionStorage.getItem('dadosPassoUm');
-    const dadosPassoDois = sessionStorage.getItem('dadosPassoDois');
+    const dadosPassoUm = localStorage.getItem('dadosPassoUm');
+    const dadosPassoDois = localStorage.getItem('dadosPassoDois');
 
     if (dadosPassoUm && dadosPassoDois) {
       const dadosPassoUmJSON = JSON.parse(dadosPassoUm);
       const dadosPassoDoisJSON = JSON.parse(dadosPassoDois);
-      console.log(dadosPassoDoisJSON)
+
+      var cpfString = JSON.stringify(dadosPassoUmJSON.cpf);
 
       const dados = {
         numeroConta: 5666, //FIXME atualiar numero conta
         titular: {
           nome: dadosPassoUmJSON.nome,
           email: dadosPassoUmJSON.email,
-          cpf: dadosPassoUmJSON.cpf,
+          cpf: cpfString,
           senha: this.senha,
           endereco: {
             cep: dadosPassoDoisJSON.cep,
-            logradouro: dadosPassoDoisJSON.logradouro,
+            logradouro: dadosPassoDoisJSON.rua,
             numero: dadosPassoDoisJSON.numero,
             complemento: dadosPassoDoisJSON.complemento,
             bairro: dadosPassoDoisJSON.bairro,
