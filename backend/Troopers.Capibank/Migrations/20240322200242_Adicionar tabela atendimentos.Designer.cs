@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Troppers.Capibank.Data.Context;
 
@@ -10,9 +11,11 @@ using Troppers.Capibank.Data.Context;
 namespace Troopers.Capibank.Migrations
 {
     [DbContext(typeof(CapibankContext))]
-    partial class CapibankContextModelSnapshot : ModelSnapshot
+    [Migration("20240322200242_Adicionar tabela atendimentos")]
+    partial class Adicionartabelaatendimentos
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "8.0.3");

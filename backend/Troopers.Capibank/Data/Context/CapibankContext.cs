@@ -13,6 +13,5 @@ public class CapibankContext : DbContext
     public DbSet<Titular> Titulares { get; set; }
     public DbSet<Endereco> Enderecos { get; set; }
     public DbSet<Transacao> Transacoes { get; set; }
-
-   
+    public DbSet<Atendimento> Atendimentos {  get; set; }
 }
