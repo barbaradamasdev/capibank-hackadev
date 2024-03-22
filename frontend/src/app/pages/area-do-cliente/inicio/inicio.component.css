@@ -2,7 +2,6 @@
 .grid {
   grid-template-areas:
     "acesso-rapido"
-    "busca"
     "historico-transacoes";
   grid-template-rows: 163px 75px minmax(400px, 550px);
   padding: 0;
@@ -16,11 +15,6 @@ app-acesso-rapido-area-interna {
 
 app-menu-lateral {
   grid-area: menu-lateral;
-}
-
-app-barra-de-busca {
-  grid-area: busca;
-  padding: 0 5px;
 }
 
 app-historico-transacoes {
@@ -44,26 +38,16 @@ app-historico-transacoes {
   .grid {
     grid-template-areas:
     "menu-lateral acesso-rapido"
-    "menu-lateral busca"
     "menu-lateral historico-transacoes";
-    grid-template-rows: 191px 76px calc(100vh - 191px - 76px);
+    grid-template-rows: 191px calc(100vh - 191px - 76px);
     grid-template-columns: 300px calc(100vw - 300px);
   }
 }
 
-/* @media (min-width: 745px) and (max-height: 350px) {
-  .grid {
-    grid-template-rows: 141px 76px calc(100vh - 191px - 76px);
-  }
-} */
-
-
 @media (min-width: 1001px){
   .grid {
     grid-template-areas:
-    "menu-lateral acesso-rapido busca"
     "menu-lateral acesso-rapido historico-transacoes";
-    grid-template-rows: 3% calc(95vh - 11% - 55px - 163px);
     grid-template-columns: 300px minmax(380px, 500px) minmax(320px, 700px);
   }
 }
