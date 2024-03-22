@@ -3,7 +3,6 @@
   grid-template-areas:
     "acesso-rapido"
     "historico-transacoes";
-  grid-template-rows: 163px 75px minmax(400px, 550px);
   padding: 0;
 }
 
