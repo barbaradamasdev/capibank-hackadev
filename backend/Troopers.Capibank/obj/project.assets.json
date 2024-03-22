@@ -3031,19 +3031,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\barba\\.nuget\\packages\\": {}
+    "C:\\Users\\Jessica\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\dev\\capibank-windows-sprint4-back\\capibank-hackadev\\backend\\Troopers.Capibank\\Troopers.Capibank.csproj",
+      "projectUniqueName": "C:\\Users\\Jessica\\Desktop\\capibank-hackadev\\backend\\troopers.capibank\\Troopers.Capibank.csproj",
       "projectName": "Troopers.Capibank",
-      "projectPath": "C:\\dev\\capibank-windows-sprint4-back\\capibank-hackadev\\backend\\Troopers.Capibank\\Troopers.Capibank.csproj",
-      "packagesPath": "C:\\Users\\barba\\.nuget\\packages\\",
-      "outputPath": "C:\\dev\\capibank-windows-sprint4-back\\capibank-hackadev\\backend\\Troopers.Capibank\\obj\\",
+      "projectPath": "C:\\Users\\Jessica\\Desktop\\capibank-hackadev\\backend\\troopers.capibank\\Troopers.Capibank.csproj",
+      "packagesPath": "C:\\Users\\Jessica\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Jessica\\Desktop\\capibank-hackadev\\backend\\troopers.capibank\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\barba\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Jessica\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

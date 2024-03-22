@@ -34,4 +34,7 @@ export class ApiService {
     return this.http.post<string>(`${this.apiUrl}Transacao/depositar/${idConta}`, { valor: valorDeposito });
   }
 
+  GetLogin(cpf: string, senha: string ): Observable<Titular> {
+    return this.http.get<Titular>(`${this.apiUrl}Titular/login/${cpf}/${senha}`);
+  }
 }
