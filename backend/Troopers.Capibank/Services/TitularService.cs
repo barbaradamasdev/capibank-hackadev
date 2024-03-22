@@ -26,16 +26,20 @@ public class TitularService : ITitularService
         var titular = await _repo.ListarPorId(id);
         return _mapper.Map<TitularResponseDTO>(titular);
     }
-    public async Task<TitularLoginResponseDTO> ListarPorCPF(string cpf)
+    public async Task<TitularLoginCPFResponseDTO> ListarPorCPF(string cpf)
     {
         var titular = await _repo.ListaPorCpf(cpf);
-        return _mapper.Map<TitularLoginResponseDTO>(titular);
+        return _mapper.Map<TitularLoginCPFResponseDTO>(titular);
+    }
+    public async Task<TitularLoginEmailResponseDTO> ListarPorEmail(string email)
+    {
+        var titular = await _repo.ListaPorEmail(email);
+        return _mapper.Map<TitularLoginEmailResponseDTO>(titular);
     }
     public async Task AlTerarTitular(TitularAlterarRequestDTO titular)
     {
         var titularEntity = _mapper.Map<Titular>(titular);
         await _repo.Alterar(titularEntity);
     }
-
-    
+   
 }

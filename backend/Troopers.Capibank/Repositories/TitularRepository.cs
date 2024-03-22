@@ -25,6 +25,10 @@ public class TitularRepository : ITitularRepository
     {
         return await _context.Titulares.Where(t => t.CPF.Equals(cpf)).FirstOrDefaultAsync();
     }
+    public async Task<Titular> ListaPorEmail(string email)
+    {
+        return await _context.Titulares.Where(t => t.Email.Equals(email)).FirstOrDefaultAsync();
+    }
     public async Task<Titular> Alterar(Titular titular)
     {
         if (titular is null)

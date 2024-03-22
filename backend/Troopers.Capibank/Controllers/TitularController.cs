@@ -41,10 +41,22 @@ public class TitularController : DefaultController
     /// </summary>
     /// <param name="cpf"></param>
     /// <returns></returns>
-    [HttpGet("login/{cpf}")]
-    public async Task<ActionResult<TitularLoginResponseDTO>> ListarPorCpf(string cpf)
+    [HttpGet("loginporcpf/{cpf}")]
+    public async Task<ActionResult<TitularLoginCPFResponseDTO>> ListarPorCpf(string cpf)
     {
         var titular = await _ts.ListarPorCPF(cpf);
+        if (titular is null) return NotFound("Titular não encontrado");
+        return Ok(titular);
+    }
+    /// <summary>
+    /// Método para listar um usuário pelo email retornando o email e a senha para login.
+    /// </summary>
+    /// <param name="email"></param>
+    /// <returns></returns>
+    [HttpGet("loginporemail/{email}")]
+    public async Task<ActionResult<TitularLoginEmailResponseDTO>> ListarPorEmail(string email)
+    {
+        var titular = await _ts.ListarPorEmail(email);
         if (titular is null) return NotFound("Titular não encontrado");
         return Ok(titular);
     }
