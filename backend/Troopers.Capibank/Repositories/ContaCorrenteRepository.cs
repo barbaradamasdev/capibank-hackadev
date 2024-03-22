@@ -25,6 +25,10 @@ public class ContaCorrenteRepository : IContaCorrenteRepository
             FirstOrDefaultAsync(c => c.Id == id);
         return conta;
     }
+    public async Task<ContaCorrente> ListarPorCPF(string cpf)
+    {
+        return await _context.ContasCorrente.Include(c => c.Titular).Where(c => c.Titular.CPF.Equals(cpf)).FirstOrDefaultAsync();
+    }
     public async Task<ContaCorrente> CriarConta(ContaCorrente contaCorrente)
     {
         _context.ContasCorrente.Add(contaCorrente);
@@ -53,4 +57,6 @@ public class ContaCorrenteRepository : IContaCorrenteRepository
         await _context.SaveChangesAsync();
         return conta;
     }
+
+   
 }

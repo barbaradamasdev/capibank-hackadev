@@ -12,5 +12,6 @@ public class ContaCorrenteProfile : Profile
         CreateMap<ContaCorrenteCreateRequestDTO, ContaCorrente>().ReverseMap();
         CreateMap<ContaCorrenteResponseDTO, ContaCorrente>().ReverseMap();
         CreateMap<ContaCorrenteDeleteDTO, ContaCorrente>().ReverseMap();
+        CreateMap<ContaCorrenteSaldoResponseDTO, ContaCorrente>().ReverseMap();
     }
 }

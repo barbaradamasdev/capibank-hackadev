@@ -25,6 +25,11 @@ public class ContaCorrenteService : IContaCorrenteService
         var contaEntity = await _repo.ListarPorId(id);
         return _mapper.Map<ContaCorrenteResponseDTO>(contaEntity);
     }
+    public async Task<ContaCorrenteSaldoResponseDTO> ListarPorCPF(string cpf)
+    {
+        var conta = await _repo.ListarPorCPF(cpf);
+        return _mapper.Map<ContaCorrenteSaldoResponseDTO>(conta);
+    }
     public async Task CriarConta(ContaCorrenteCreateRequestDTO contaDTO)
     {
         var contaEntity = _mapper.Map<ContaCorrente>(contaDTO);
