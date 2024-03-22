@@ -12,7 +12,7 @@ import { ContaCorrente } from '../Models/ContaCorrente';
 export class ApiService {
 
   private apiUrl = `${environment.ApiUrl}`;
-  idTeste: number = 2; //FIXME remover ao criar login
+  idTeste: number = 1; //FIXME remover ao criar login
 
   constructor(private http: HttpClient) { }
 
@@ -53,6 +53,10 @@ export class ApiService {
 
   GetLoginPorEmail(email: string, senha: string ): Observable<Titular> {
     return this.http.get<Titular>(`${this.apiUrl}Titular/loginporemail/${email}`);
+  }
+
+  GetNomeESaldo(cpf: string): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}ContaCorrente/listarporcpf/${cpf}`);
   }
 
   PostContaCorrente(data: any): Observable<any> {
