@@ -41,6 +41,18 @@ public class ContaCorrenteController : DefaultController
         return Ok(conta);
     }
     /// <summary>
+    /// Método que lista uma conta pelo CPF do titular retornando os dados da conta, do titular e o saldo.
+    /// </summary>
+    /// <param name="cpf"></param>
+    /// <returns></returns>
+    [HttpGet("listarporcpf/{cpf}")]
+    public async Task<ActionResult> ListarPorCPF(String cpf)
+    {
+        var conta = await _cs.ListarPorCPF(cpf);
+        if (conta is null) return NotFound("Conta não encontrada");
+        return Ok(conta);
+    }
+    /// <summary>
     /// Método para criar conta, criando também o titular e o endereco.
     /// </summary>
     /// <param name="contaDTO"></param>

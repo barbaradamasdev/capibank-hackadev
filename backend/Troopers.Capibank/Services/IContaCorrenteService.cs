@@ -7,6 +7,7 @@ public interface IContaCorrenteService
 {
     Task<IEnumerable<ContaCorrenteResponseDTO>> ListarTodas();
     Task<ContaCorrenteResponseDTO> ListarPorId(int id);
+    Task<ContaCorrenteSaldoResponseDTO> ListarPorCPF(string cpf);
     Task CriarConta(ContaCorrenteCreateRequestDTO contaDTO);
     Task BloquearConta(int id);
     Task DesbloquearConta(int id);
