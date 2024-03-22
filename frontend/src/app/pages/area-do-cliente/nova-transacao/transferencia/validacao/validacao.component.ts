@@ -60,10 +60,10 @@ export class ValidacaoComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    const cpfLocalStorage = localStorage.getItem('cpfDestino');
-    this.cpfDestino = cpfLocalStorage?.toString();
-    const valorLocalStorage = localStorage.getItem('valorTransferencia');
-    this.valorTransacao = parseInt(valorLocalStorage!);
+    const cpfStorage = sessionStorage.getItem('cpfDestino');
+    this.cpfDestino = cpfStorage?.toString();
+    const valorStorage = sessionStorage.getItem('valorTransferencia');
+    this.valorTransacao = parseInt(valorStorage!);
 
     if (this.cpfDestino && this.valorTransacao) {
       this.validacao.patchValue({

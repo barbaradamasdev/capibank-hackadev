@@ -54,4 +54,8 @@ export class ApiService {
   GetLoginPorEmail(email: string, senha: string ): Observable<Titular> {
     return this.http.get<Titular>(`${this.apiUrl}Titular/loginporemail/${email}`);
   }
+
+  PostContaCorrente(data: any): Observable<any> {
+    return this.http.post<any>(`${this.apiUrl}ContaCorrente/criarconta`, data);
+  }
 }

@@ -1,6 +1,4 @@
-<div class="container-form p-4">
-
-  <h6 class="section-title">Abra sua conta</h6>
+<!-- <div class="container-form p-4">
 
   <form (input)="checkPasswordRequirements()">
     <div class="form-group">
@@ -36,4 +34,27 @@
 
     </div>
   </form>
+</div> -->
+
+
+<div class="container-form p-4">
+  <h6 class="section-title">Crie sua senha</h6>
+  <form [formGroup]="senhaForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <input type="password" class="form-control" formControlName="newPassword" placeholder="Nova senha">
+      <input type="password" class="form-control" formControlName="confirmPassword" placeholder="Confirmar senha">
+    </div>
+
+    <div class="buttons flex">
+      <button type="submit" class="botao-principal">
+      <!-- <button [disabled]="!senhaForm.valid" class="botao-principal"> -->
+        Finalizar
+      </button>
+      <button  routerLink="/cadastrar/passo-3" class="botao-secundario">
+        Voltar
+      </button>
+    </div>
+  </form>
 </div>
+
+<!-- Ab!12341234 -->
