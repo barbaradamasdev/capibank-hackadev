@@ -1,4 +1,6 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { ApiService } from '../../../../../Services/api.service';
 
 @Component({
   selector: 'app-confirmacao-transferencia',
@@ -9,25 +11,105 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
 })
 export class ConfirmacaoTransferenciaComponent {
   @ViewChild('componentToPrint', {static: false}) componentToPrint!: ElementRef;
-
-  idTransacao: number = 6546514365;
+  idTransacao?: number;
+  titularDestino? : any;
   valor: any;
   dataTransacao: any;
   cpfDestino: any;
   nome: any;
   numeroConta: any;
-  tipoConta: any;
+  tipoConta: string = 'Conta Corrente';
+  situacao?: string;
+  direcaoTransacao?: string;
 
-  constructor() { }
+  private readonly activatedRoute: ActivatedRoute;
 
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private apiService: ApiService,
+    activatedRoute: ActivatedRoute,
+  ) {
+    this.activatedRoute = activatedRoute;
+  }
+
+  // TODO get transacao por id
   ngOnInit(): void {
-    this.dataTransacao = localStorage.getItem('dataTransferencia');
-    this.cpfDestino = localStorage.getItem("transferencia-feita-cpf");
-    this.nome = localStorage.getItem("transferencia-feita-nome");
-    this.numeroConta = localStorage.getItem("transferencia-feita-numeroConta");
-    this.tipoConta = localStorage.getItem("transferencia-feita-tipoConta");
-    this.valor = localStorage.getItem('valorTransferencia');
+    this.activatedRoute.url.subscribe((urlSegments) => {
+      const ultimoSegmento = urlSegments[urlSegments.length - 1];
+      this.idTransacao = parseInt(ultimoSegmento.path);
 
+      this.apiService.GetTransacoes().subscribe(transacoes => {
+        const transacaoEncontrada = transacoes.find(
+          transacao => transacao.id === this.idTransacao
+          );
+          if (transacaoEncontrada) {
+          console.log(transacaoEncontrada)
+
+          this.idTransacao = transacaoEncontrada.id;
+          this.valor = transacaoEncontrada.valor;
+          this.situacao = transacaoEncontrada.situacao === 1 ? "Concluída" : "Cancelada";
+          this.direcaoTransacao = transacaoEncontrada.tipoTransacao === 3 ? "Enviada" : "Recebida";
+          this.dataTransacao = this.formatarData(transacaoEncontrada.dataTransacao);
+
+          const idContaDestino = transacaoEncontrada.contaDestinoOrigemId;
+
+          this.apiService.GetTitulares().subscribe(
+            titulares => {
+              this.titularDestino = titulares.find(
+                t => t.id === idContaDestino
+              );
+
+              if (this.titularDestino) {
+                const idTitular = this.titularDestino.id;
+
+                this.apiService.GetContasCorrentes().subscribe(
+                  contas => {
+                    const contaEncontrada = contas.find(
+                      conta => conta.titular.id === idTitular
+                    );
+
+                    if (contaEncontrada) {
+                      this.cpfDestino = contaEncontrada.titular.cpf
+                      this.numeroConta = contaEncontrada.numeroConta
+                      // this.tipoConta = "Conta Corrente"
+                      this.nome = contaEncontrada.titular.nome
+                      console.log(this.cpfDestino)
+                      console.log('entrou')
+                    } else {
+                      console.log('entrou')
+                      console.log('Conta não encontrada para o titular com id:', idTitular);
+                    }
+                  },
+                  error => {
+                    console.error('Erro ao buscar contas correntes:', error);
+                  }
+                );
+              }
+            },
+            error => {
+              console.error('Erro ao obter titulares:', error);
+            }
+          );
+
+
+        } else {
+          console.log("Transacao não encontrada com o ID", this.idTransacao);
+        }
+      });
+    });
+  }
+
+  formatarData(data: string): string {
+    const dateObj = new Date(data);
+    const dia = dateObj.getDate();
+    const mes = dateObj.getMonth() + 1;
+    const ano = dateObj.getFullYear();
+    const hora = dateObj.getHours();
+    const minutos = dateObj.getMinutes().toString().padStart(2, '0');
+
+    const dataFormatada = `${dia}/${mes}/${ano} ${hora}:${minutos}`;
+    return dataFormatada;
   }
 
   imprimir() {

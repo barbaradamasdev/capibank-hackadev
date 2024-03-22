@@ -9,6 +9,7 @@ import { BannerComponent } from "../../componentes/banner/banner.component";
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { FormGroup, FormBuilder } from '@angular/forms';
+import { Title } from '@angular/platform-browser';
 
 @Component({
     selector: 'app-inicio-criar-conta',
@@ -19,9 +20,11 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 })
 export class InicioCriarContaComponent implements OnInit{
   form!: FormGroup;
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(private formBuilder: FormBuilder, private titleService: Title) {}
 
   ngOnInit() {
+    this.titleService.setTitle('Capibank - Crie sua conta');
+
     this.form = this.formBuilder.group({
       passo1: this.formBuilder.group({
         nomeCompleto: '',

@@ -6,6 +6,7 @@ import { Titular } from '../../Models/Titular';
 import { BannerComponent } from "../../componentes/banner/banner.component";
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
+import { Title } from '@angular/platform-browser';
 
 @Component({
     selector: 'app-inicio-login',
@@ -15,5 +16,9 @@ import { RouterOutlet } from '@angular/router';
     imports: [CabecalhoLoginComponent, RodapeLoginComponent, FormularioEntrarComponent, BannerComponent, CommonModule, RouterOutlet]
 })
 export class InicioLoginComponent {
+  constructor(private titleService: Title) { }
 
+  ngOnInit(): void {
+    this.titleService.setTitle('Capibank - Login');
+  }
 }

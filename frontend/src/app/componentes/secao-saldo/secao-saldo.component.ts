@@ -11,6 +11,7 @@ import { ApiService } from '../../Services/api.service';
 })
 export class SecaoSaldoComponent implements OnInit {
   nome?: string ;
+  idConta : number = this.apiService.idTeste; //FIXME remover ao criar login
 
   saldoVisivel: boolean = true;
 
@@ -31,9 +32,10 @@ export class SecaoSaldoComponent implements OnInit {
   }
 
   pegarDadosTitular() {
-    this.apiService.GetTitularPorId(1).subscribe(titular => {
+    this.apiService.GetTitularPorId(this.idConta).subscribe(titular => {
       if (titular && titular.nome) {
         this.nome = titular.nome;
+        // console.log(titular)
       }
     });
   }

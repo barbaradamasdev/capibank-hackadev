@@ -59,8 +59,6 @@ export class ConfirmacaoSaqueComponent implements OnInit{
     const minutos = dateObj.getMinutes().toString().padStart(2, '0');
 
     const dataFormatada = `${dia}/${mes}/${ano} ${hora}:${minutos}`;
-    console.log(dataFormatada)
-
     return dataFormatada;
   }
 

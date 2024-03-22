@@ -19,10 +19,10 @@
           <div class="descricao">{{ item.titularContaDestino?.nome }}</div>
         </td>
         <td class="col3">
-          <div class="itemValorEntrada" *ngIf="item.tipoTransacao === 1">+ {{item.valor}}</div>
-          <div class="itemValorSaida" *ngIf="item.tipoTransacao === 2">- {{item.valor}}</div>
-          <div class="itemValorSaida" *ngIf="item.tipoTransacao === 3">- {{item.valor}}</div>
-          <div class="itemValorEntrada" *ngIf="item.tipoTransacao === 4">+ {{item.valor}}</div>
+          <div class="itemValorEntrada" *ngIf="item.tipoTransacao === 1">+ R$ {{item.valor  | number: '1.2-2'}}</div>
+          <div class="itemValorSaida" *ngIf="item.tipoTransacao === 2">- R$ {{item.valor  | number: '1.2-2'}}</div>
+          <div class="itemValorSaida" *ngIf="item.tipoTransacao === 3">- R$ {{item.valor  | number: '1.2-2'}}</div>
+          <div class="itemValorEntrada" *ngIf="item.tipoTransacao === 4">+ R$ {{item.valor  | number: '1.2-2'}}</div>
 
           <div class="descricao">{{ item.dataTransacao | date: 'dd/MM/yy - HH:mm' }}</div>
         </td>

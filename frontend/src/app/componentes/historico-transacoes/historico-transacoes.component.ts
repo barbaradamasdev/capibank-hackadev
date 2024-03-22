@@ -41,17 +41,20 @@ export class HistoricoTransacoesComponent implements OnInit {
   listarTransacoes() {
     this.apiService.GetTransacoes().subscribe(transacoes => {
       this.transacoes = transacoes;
-      this.transacoes.forEach(transacao => {
-        if (transacao.tipoTransacao === 3 && transacao.situacao === 1) {
-          this.buscarNomeTitular(transacao.contaDestinoOrigemId).subscribe(titular => {
-            transacao.titularContaDestino = titular;
-            // console.log( transacao.titularContaDestino)
-          });
-        }
-      });
+
+      this.transacoes.forEach(
+        transacao => {
+          if ((transacao.tipoTransacao === 3 || transacao.tipoTransacao === 4) && transacao.situacao === 1) {
+            this.buscarNomeTitular(transacao.contaDestinoOrigemId).subscribe(
+              titular => {
+                transacao.titularContaDestino = titular;
+              }
+            );
+          }
+        });
     });
   }
-
+  
   buscarNomeTitular(idTitular: number): Observable<Titular> {
     return this.apiService.GetTitularPorId(idTitular);
   }

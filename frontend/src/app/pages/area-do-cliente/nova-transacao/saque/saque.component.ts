@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators, ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
 import { ApiService } from '../../../../Services/api.service';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-saque',
@@ -12,7 +13,7 @@ import { ApiService } from '../../../../Services/api.service';
   styleUrl: './saque.component.css'
 })
 export class SaqueComponent{
-  idConta : number = 1;// id de teste
+  idConta : number = this.apiService.idTeste; //FIXME remover ao criar login
   errorMessage!: string;
 
   saque = new FormGroup({
@@ -21,8 +22,13 @@ export class SaqueComponent{
 
   constructor(
     private apiService: ApiService,
-    private router: Router
+    private router: Router,
+    private titleService: Title
   ) {}
+
+  ngOnInit(): void {
+    this.titleService.setTitle('Capibank - Novo Saque');
+  }
 
   sacarValor() {
     const valorInput = this.saque.get('valor')?.value;

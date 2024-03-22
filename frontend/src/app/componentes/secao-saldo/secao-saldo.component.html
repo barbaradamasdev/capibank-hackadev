@@ -2,7 +2,7 @@
 
   <div class="container saldo">
     <div class="dados flex">
-      <p class="nome-usuario">Olá, {{nome}}!</p>
+      <p class="nome-usuario" style="text-transform: capitalize;">Olá, {{nome}}!</p>
       <div class="flex">
         <h4 *ngIf="saldoVisivel">R$ 1000,00</h4>
         <img *ngIf="saldoVisivel" src="../../../assets/icones/icone-ocultar.png" alt="Ocultar saldo" (click)="toggleVisibilidadeSaldo()">

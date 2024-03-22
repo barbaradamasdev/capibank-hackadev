@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Transacao } from '../Models/Transacao';
 import { Observable, map } from 'rxjs';
 import { Titular } from '../Models/Titular';
+import { ContaCorrente } from '../Models/ContaCorrente';
 
 @Injectable({
   providedIn: 'root'
@@ -11,11 +12,20 @@ import { Titular } from '../Models/Titular';
 export class ApiService {
 
   private apiUrl = `${environment.ApiUrl}`;
+  idTeste: number = 2; //FIXME remover ao criar login
 
   constructor(private http: HttpClient) { }
 
+  GetContasCorrentes() : Observable<ContaCorrente[]> {
+    return this.http.get<ContaCorrente[]>(`${this.apiUrl}ContaCorrente/listarcontas/`)
+  }
+
+  GetContasCorrentesPorId(idConta: number) : Observable<ContaCorrente[]> {
+    return this.http.get<ContaCorrente[]>(`${this.apiUrl}ContaCorrente/listarcontas/${idConta}`)
+  }
+
   GetTransacoes() : Observable<Transacao[]> {
-    return this.http.get<Transacao[]>(`${this.apiUrl}Transacao/listartransacoes/1`)
+    return this.http.get<Transacao[]>(`${this.apiUrl}Transacao/listartransacoes/${this.idTeste}`)
   }
 
   GetTitulares() : Observable<Titular[]> {
@@ -36,8 +46,8 @@ export class ApiService {
     return this.http.post<string>(`${this.apiUrl}Transacao/depositar/${idConta}`, deposito);
   }
 
-  PostTransferencia(idContaDestino: number, cpfDestino: string, valorTransferencia: number): Observable<string> {
-    const transferencia = { valor: valorTransferencia, id: idContaDestino, cpf: cpfDestino };
+  PostTransferencia(valorTransferencia: number, cpfDestino: string, idContaDestino: number): Observable<string> {
+    const transferencia = { valor: valorTransferencia, cpf: cpfDestino, id: idContaDestino};
     return this.http.post<string>(`${this.apiUrl}Transacao/transferir/${idContaDestino}`, transferencia);
   }
 }

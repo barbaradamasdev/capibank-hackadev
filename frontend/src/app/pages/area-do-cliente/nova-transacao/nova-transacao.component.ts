@@ -3,7 +3,7 @@ import { Subscription, filter } from 'rxjs';
 import { MenuService } from '../../../servicos/menu.service';
 import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { SaqueComponent } from "./saque/saque.component";
+import { SaqueComponent } from './saque/saque.component';
 import { MenuLateralComponent } from "../../../componentes/menu-lateral/menu-lateral.component";
 
 

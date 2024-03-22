@@ -142,10 +142,6 @@ export const routes: Routes = [
       }
       ],
     },
-    {path:'historico',component:HistoricoDeTransacaoComponent,canActivate:[autenticarGuard]},
-    {path:'chamado',component:ChamadoComponent,canActivate:[autenticarGuard]},
-    {path:'seguranca',component:SegurancaComponent,canActivate:[autenticarGuard]},
-    {path:'config',component:ConfiguracaoComponent,canActivate:[autenticarGuard]},
     {path:'recuperar',component:InicioRecuperarSenhaComponent,
       children:[
         {

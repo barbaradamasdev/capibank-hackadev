@@ -4,6 +4,7 @@ import { ProjetoComponent } from "../../pages/sobre/componentes/projeto/projeto.
 import { EquipeComponent } from "../../pages/sobre/componentes/equipe/equipe.component";
 import { AgradecimentoComponent } from "../../pages/sobre/componentes/agradecimento/agradecimento.component";
 import { RodapeHomeComponent } from "../../componentes/rodape-home/rodape-home.component";
+import { Title } from '@angular/platform-browser';
 
 @Component({
     selector: 'app-sobre',
@@ -13,5 +14,10 @@ import { RodapeHomeComponent } from "../../componentes/rodape-home/rodape-home.c
     imports: [CabecalhoHomeComponent, RodapeHomeComponent, ProjetoComponent, EquipeComponent, AgradecimentoComponent]
 })
 export class SobreComponent {
+  constructor(private titleService: Title) { }
+
+  ngOnInit(): void {
+    this.titleService.setTitle('Capibank - Sobre');
+  }
 
 }
