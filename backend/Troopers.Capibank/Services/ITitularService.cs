@@ -7,6 +7,8 @@ public interface ITitularService
 {
     Task<IEnumerable<TitularResponseDTO>> ListarTodos();
     Task<TitularResponseDTO> ListarTitularPorId(int id);
-    Task<TitularLoginResponseDTO> ListarPorCPF(string cpf);
+    Task<TitularLoginCPFResponseDTO> ListarPorCPF(string cpf);
+    Task<TitularLoginEmailResponseDTO> ListarPorEmail(string email);
+
     Task AlTerarTitular(TitularAlterarRequestDTO titular);
 }

@@ -28,26 +28,20 @@ export class DepositoComponent {
     const valorInput = this.deposito.get('valor')?.value;
     const valorDeposito = parseFloat(valorInput!);
 
-    if (valorDeposito === null || valorDeposito <= 0) {
-      this.errorMessage = 'O valor não pode ser menor ou igual a zero';
-    }
-
     this.apiService.PostDeposito(this.idConta, valorDeposito).subscribe(
-      data => {
-        if (data === "Deposito efetuado com sucesso") {
-          console.log("Deposito efetuado com sucesso")
-          // this.navegarParaConfirmacaoSaque(data);
+      (response: any) => {
+        if (typeof response === 'object') {
+          console.log("Transação bem-sucedida. ID da transação:", response);
+          this.router.navigateByUrl(`/cliente/nova/deposito/ok/${response.id}`);
 
-          this.router.navigateByUrl('/cliente/nova/deposito/ok');
         } else {
-          // this.errorMessage = "Erro";
+          console.error("Erro ao efetuar o depósito:", response);
+          this.errorMessage = "Erro ao efetuar o depósito";
         }
-      }, error => {
-        // this.errorMessage = "Erro 2";
-        // console.log(error);
-        // FIXME so muda a rota considerando o erro da transacao
-        this.router.navigateByUrl('/cliente/nova/deposito/ok');
-      }
-    )
+       },
+       error => {
+        console.error("Erro ao efetuar o depósito:", error);
+       }
+     );
   }
 }

@@ -5,6 +5,8 @@ import { RouterLink } from '@angular/router';
 import { Titular } from '../../../../../Models/Titular';
 // import { CLIENTES } from '../../../../../Data/Dados-clientes';
 import { Router } from '@angular/router';
+import { ApiService } from '../../../../../Services/api.service';
+import { cpfLengthValidator } from '../../../../../Validators/cpf-length.validator';
 
 
 @Component({
@@ -15,33 +17,68 @@ import { Router } from '@angular/router';
   styleUrl: './destinatario.component.css'
 })
 export class DestinatarioComponent {
-  isCpfValido: boolean  = true;
-  clientes: Titular[] = [];
-
-  constructor(private router: Router) {}
+  idConta : number = 1;// id de teste
+  errorMessage!: string;
+  valor?: number;
+  titularEncontrado: Titular | undefined;
 
   destinatario = new FormGroup({
-    cpf: new FormControl('', [Validators.required]),
+    cpf: new FormControl('', [Validators.required, cpfLengthValidator()]),
   });
 
-  get cpf() {
-    return this.destinatario.get('cpf');
-  }
+  constructor(
+    private apiService: ApiService,
+    private router: Router
+  ) {}
 
-  validarCPF(cpf: string): boolean {
-    const clienteEncontrado = this.clientes.find(cliente => cliente.cpf === cpf);
-    return clienteEncontrado !== undefined;
-  }
+  procurarCPF() {
+    const cpfInput = this.destinatario.get('cpf')?.value;
+    const cpfNumero = parseInt(cpfInput!);
 
-  salvarValor() {
-    const cpfDestino: string = (this.cpf?.value ?? '').toString();
-    const cpfValido = this.validarCPF(cpfDestino);
-    if (cpfValido) {
-      localStorage.setItem('cpfDestino', cpfDestino.toString());
-      this.router.navigateByUrl('/cliente/nova/transferencia/validacao');
-    } else {
-      this.isCpfValido = false;
+    if (cpfNumero === null || cpfNumero <= 10) {
+      //TODO conferir mensagem
+      this.errorMessage = 'CPF inválido, confira novamente';
+      return
     }
 
+    this.apiService.GetTitulares().subscribe(
+      titulares => {
+        this.titularEncontrado = titulares.find(
+          titular => titular.cpf === cpfInput
+        );
+
+        if (!this.titularEncontrado) {
+          this.errorMessage = 'CPF não encontrado';
+        }
+      },
+      error => {
+        console.error('Erro ao buscar titulares:', error);
+      }
+    );
+
+    localStorage.setItem('cpfDestino', cpfNumero.toString());
+    this.router.navigateByUrl(`/cliente/nova/transferencia/validacao`);
+
   }
+
+  // get cpf() {
+  //   return this.destinatario.get('cpf');
+  // }
+
+  // validarCPF(cpf: string): boolean {
+  //   const clienteEncontrado = this.clientes.find(cliente => cliente.cpf === cpf);
+  //   return clienteEncontrado !== undefined;
+  // }
+
+  // salvarValor() {
+  //   const cpfDestino: string = (this.cpf?.value ?? '').toString();
+  //   const cpfValido = this.validarCPF(cpfDestino);
+  //   if (cpfValido) {
+  //     localStorage.setItem('cpfDestino', cpfDestino.toString());
+  //     this.router.navigateByUrl('/cliente/nova/transferencia/validacao');
+  //   } else {
+  //     this.isCpfValido = false;
+  //   }
+
+  // }
 }

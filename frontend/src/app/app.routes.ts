@@ -95,7 +95,7 @@ export const routes: Routes = [
             component: SaqueComponent
           },
           {
-            path: 'saque/ok',
+            path: 'saque/ok/:idTransacao',
             component: ConfirmacaoSaqueComponent,
           },
           {
@@ -103,7 +103,7 @@ export const routes: Routes = [
             component: DepositoComponent
           },
           {
-            path: 'deposito/ok',
+            path: 'deposito/ok/:idTransacao',
             component: ConfirmacaoDepositoComponent,
           },
           {
@@ -111,7 +111,7 @@ export const routes: Routes = [
             component: TransferenciaComponent,
           },
           {
-            path: 'transferencia/dados',
+            path: 'transferencia/destinatario',
             component: DestinatarioComponent,
           },
           {
@@ -119,7 +119,7 @@ export const routes: Routes = [
             component: ValidacaoComponent,
           },
           {
-            path: 'transferencia/ok',
+            path: 'transferencia/ok/:idTransacao',
             component: ConfirmacaoTransferenciaComponent,
           }
         ]
