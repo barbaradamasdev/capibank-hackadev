@@ -36,6 +36,11 @@ public class AtendimentoController : DefaultController
         if (atendimento is null) return NotFound("Atendimento não encontrado");
         return Ok(atendimento);
     }
+    /// <summary>
+    /// Método para listar os atendimentos conforme a situação Aberto ou Concluido.
+    /// </summary>
+    /// <param name="situacao"></param>
+    /// <returns></returns>
     [HttpGet("listarabertos")]
     public async Task<ActionResult<IEnumerable<AtendimentoResponseDTO>>> ListarAbertos(bool situacao)
     {
