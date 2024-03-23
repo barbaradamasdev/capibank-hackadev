@@ -51,34 +51,27 @@ Content-Type: application/json
     "cidade": "Sao José dos Campos",
     "uf": "SP"
   }
+}
   
-  ###
- {{Troopers.Capibank_HostAddress}}/atendimento/criaratendimento
+ ###
+POST {{Troopers.Capibank_HostAddress}}/atendimento/criaratendimento
 Content-Type: application/json
 {
   
-  "titular": {
-     "id": 1,
-      "nome": "Jackson Tadeu de Moraes",
-      "email": "jackson@uol.com.br",
-  },
-  "descricao": "Erro de deposito",
-  "dataChamado": "2024-03-23T02:05:39.517Z",
+  "titularId": 1,
+  "descricao": "Senha errada",
+  "dataChamado": "2024-03-23T07:47:40.172Z",
   "resposta": "string",
-  "dataResposta": "2024-03-23T02:05:39.517Z"
+  "dataResposta": "2024-03-23T07:47:40.172Z"
 }
 ###
-POST{{Troopers.Capibank_HostAddress}}/atendimento/criaratendimento
+PUT {{Troopers.Capibank_HostAddress}}/atendimento/alteraratendimento
 Content-Type: application/json
 {
-  
-  "titular": {
-     "id": 1,
-      "nome": "Jackson Tadeu de Moraes",
-      "email": "jackson@uol.com.br",
-  },
-  "descricao": "Erro de deposito",
-  "dataChamado": "2024-03-23T02:05:39.517Z",
-  "resposta": "string",
-  "dataResposta": "2024-03-23T02:05:39.517Z"
+  "id": 3,
+  "titularId": 1,
+  "descricao": "Senha errada",
+  "dataChamado": "2024-03-23T07:47:40.172Z",
+  "resposta": "Realizada a troca da senha",
+  "dataResposta": "2024-03-23T07:47:40.172Z"
 }

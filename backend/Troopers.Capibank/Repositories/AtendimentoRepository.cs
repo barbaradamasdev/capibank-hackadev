@@ -13,15 +13,15 @@ public class AtendimentoRepository : IAtendimentoRepository
     }
     public async Task<IEnumerable<Atendimento>> ListarTodos()
     {
-        return await _context.Atendimentos.AsNoTracking().ToListAsync();
+        return await _context.Atendimentos.Include(a=> a.Titular).AsNoTracking().ToListAsync();
     }
     public async Task<Atendimento> ListarPorId(int id)
     {
-        return await _context.Atendimentos.Where(a => a.Id == id).FirstOrDefaultAsync();
+        return await _context.Atendimentos.Include(a => a.Titular).Where(a => a.Id == id).FirstOrDefaultAsync();
     }
     public async Task<Atendimento> CriarAtendimento(Atendimento atendimento)
     {
-        _context.Atendimentos.Add(atendimento);
+        await _context.Atendimentos.AddAsync(atendimento);
         await _context.SaveChangesAsync();
         return atendimento;
     }
