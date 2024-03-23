@@ -6,12 +6,12 @@ GET {{Troopers.Capibank_HostAddress}}/contacorrente/Listartodasascontas/
 POST {{Troopers.Capibank_HostAddress}}/contacorrente/criarconta/
 Content-Type: application/json
 {
-  "numeroConta": 12345,
+  "numeroConta": 369258,
   "titular": {
-    "nome": "Jackson Moraes",
-    "email": "luciana@uol.com.br",
+    "nome": "Lais Moraes",
+    "email": "lais@uol.com.br",
     "senha":"12345678",
-    "cpf": "26139506840",
+    "cpf": "12345678911",
     "endereco": {
       
       "cep": "12248516",

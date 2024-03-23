@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Troopers.Capibank")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bfad8f9c879b2789b86593404aa05e217426f54e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7b29d328a6979cfd1b9330c3899aef9b5e17a2fd")]
 [assembly: System.Reflection.AssemblyProductAttribute("Troopers.Capibank")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Troopers.Capibank")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
