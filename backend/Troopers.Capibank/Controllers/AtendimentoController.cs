@@ -13,6 +13,10 @@ public class AtendimentoController : DefaultController
     {
         _atendimento = atendimento;
     }
+    /// <summary>
+    /// Método para listar todos os atendimentos.
+    /// </summary>
+    /// <returns></returns>
     [HttpGet("listartodos")]
     public async Task<ActionResult<IEnumerable<AtendimentoResponseDTO>>> ListarTodos()
     {
@@ -20,6 +24,11 @@ public class AtendimentoController : DefaultController
         if (atendimento is null) return NotFound("Atendimento não encontrado");
         return Ok(atendimento);
     }
+    /// <summary>
+    /// Método para listar o atendimento pelo ID.
+    /// </summary>
+    /// <param name="id"></param>
+    /// <returns></returns>
     [HttpGet("listarporid/{id}", Name ="listaporid")]
     public async Task<ActionResult<AtendimentoResponseDTO>> ListarPorId(int id)
     {
@@ -27,6 +36,11 @@ public class AtendimentoController : DefaultController
         if (atendimento is null) return NotFound("Atendimento não encontrado");
         return Ok(atendimento);
     }
+    /// <summary>
+    /// Método para criar atendimento.
+    /// </summary>
+    /// <param name="atendimentoDTO"></param>
+    /// <returns></returns>
     [HttpPost("criaratendimento")]
     public async Task<IActionResult> CriarAtendimento(AtendimentoCreateRequestDTO atendimentoDTO)
     {
@@ -34,6 +48,11 @@ public class AtendimentoController : DefaultController
         await _atendimento.CriarAtendimento(atendimentoDTO);
         return new CreatedAtRouteResult("listarporid", new { id = atendimentoDTO.Id }, atendimentoDTO);
     }
+    /// <summary>
+    /// Método para alterar o atendimento. 
+    /// </summary>
+    /// <param name="atendimentoDTO"></param>
+    /// <returns></returns>
     [HttpPut("alteraratendimento")]
     public async Task<IActionResult> ResponderAtendimento(AtendimentoAlteracaoRequestDTO atendimentoDTO)
     {
@@ -41,6 +60,11 @@ public class AtendimentoController : DefaultController
         await _atendimento.ResponderAtendimento(atendimentoDTO);
         return Ok(atendimentoDTO);
     }
+    /// <summary>
+    /// Método para excluir um atendimento pelo ID.
+    /// </summary>
+    /// <param name="id"></param>
+    /// <returns></returns>
     [HttpDelete("excluiratendimento/{id}")]
     public async Task<IActionResult> Excluir(int id)
     {
