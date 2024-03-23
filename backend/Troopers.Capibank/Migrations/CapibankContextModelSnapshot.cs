@@ -32,6 +32,9 @@ namespace Troopers.Capibank.Migrations
                     b.Property<string>("Descricao")
                         .HasColumnType("TEXT");
 
+                    b.Property<bool>("EmAberto")
+                        .HasColumnType("INTEGER");
+
                     b.Property<string>("Resposta")
                         .IsRequired()
                         .HasColumnType("TEXT");
@@ -182,7 +185,7 @@ namespace Troopers.Capibank.Migrations
             modelBuilder.Entity("Troopers.Capibank.Domain.Models.Atendimento", b =>
                 {
                     b.HasOne("Troopers.Capibank.Domain.Models.Titular", "Titular")
-                        .WithMany("ListaAtendimentos")
+                        .WithMany()
                         .HasForeignKey("TitularId");
 
                     b.Navigation("Titular");
@@ -204,11 +207,6 @@ namespace Troopers.Capibank.Migrations
                         .HasForeignKey("TitularId");
 
                     b.Navigation("Titular");
-                });
-
-            modelBuilder.Entity("Troopers.Capibank.Domain.Models.Titular", b =>
-                {
-                    b.Navigation("ListaAtendimentos");
                 });
 #pragma warning restore 612, 618
         }

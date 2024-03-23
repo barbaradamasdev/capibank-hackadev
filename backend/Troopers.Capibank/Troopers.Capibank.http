@@ -53,25 +53,31 @@ Content-Type: application/json
   }
 }
   
- ###
-POST {{Troopers.Capibank_HostAddress}}/atendimento/criaratendimento
+###
+
+POST {{Troopers.Capibank_HostAddress}}/atendimento/criaratendimento/
 Content-Type: application/json
 {
+ 
   
   "titularId": 1,
-  "descricao": "Senha errada",
-  "dataChamado": "2024-03-23T07:47:40.172Z",
+  "descricao": "duvidas sobre contas",
+  "dataChamado": "2024-03-23T09:02:40.765Z",
   "resposta": "string",
-  "dataResposta": "2024-03-23T07:47:40.172Z"
+  "dataResposta": "2024-03-23T09:06:47.831Z",
+  "emAberto": true
 }
+  
+
 ###
 PUT {{Troopers.Capibank_HostAddress}}/atendimento/alteraratendimento
 Content-Type: application/json
 {
-  "id": 3,
-  "titularId": 1,
-  "descricao": "Senha errada",
-  "dataChamado": "2024-03-23T07:47:40.172Z",
-  "resposta": "Realizada a troca da senha",
-  "dataResposta": "2024-03-23T07:47:40.172Z"
+  "id": 8,
+  "titularId": 2,
+  "descricao": "saldo errado",
+  "dataChamado": "2024-03-23T09:06:47.831Z",
+  "resposta": "Verficado lancamentos e ok",
+  "dataResposta": "2024-03-23T09:06:47.831Z",
+  "emAberto": false
 }

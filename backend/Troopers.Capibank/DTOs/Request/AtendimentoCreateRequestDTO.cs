@@ -9,5 +9,6 @@ public class AtendimentoCreateRequestDTO
     public string? Descricao { get; set; }
     public DateTime DataChamado { get; set; } = DateTime.Now;
     public string Resposta { get; set; } = string.Empty;
-    public DateTime DataResposta { get; set; }
+    public DateTime DataResposta { get; set; } 
+    public bool EmAberto { get; set; } = true;
 }

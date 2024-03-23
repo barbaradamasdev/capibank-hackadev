@@ -36,6 +36,13 @@ public class AtendimentoController : DefaultController
         if (atendimento is null) return NotFound("Atendimento não encontrado");
         return Ok(atendimento);
     }
+    [HttpGet("listarabertos")]
+    public async Task<ActionResult<IEnumerable<AtendimentoResponseDTO>>> ListarAbertos(bool situacao)
+    {
+        var atendimento = await _atendimento.ListarAbertos(situacao);
+        if (atendimento is null) return NotFound("Atendimento não encontrado");
+        return Ok(atendimento);
+    }
     /// <summary>
     /// Método para criar atendimento.
     /// </summary>

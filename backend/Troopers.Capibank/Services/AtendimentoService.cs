@@ -26,6 +26,11 @@ public class AtendimentoService : IAtendimentoService
         var atendimento = await _repo.ListarPorId(id);
         return _mapper.Map<AtendimentoResponseDTO>(atendimento);
     }
+    public async Task<IEnumerable<AtendimentoResponseDTO>> ListarAbertos(bool situacao)
+    {
+        var atendimento = await _repo.ListarAbertos(situacao);
+        return _mapper.Map<IEnumerable<AtendimentoResponseDTO>>(atendimento);
+    }
     public async Task CriarAtendimento(AtendimentoCreateRequestDTO atendimento)
     {
         var atendimentoEntity = _mapper.Map<Atendimento>(atendimento);

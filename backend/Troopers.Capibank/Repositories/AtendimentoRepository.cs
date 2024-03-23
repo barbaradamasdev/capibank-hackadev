@@ -19,6 +19,10 @@ public class AtendimentoRepository : IAtendimentoRepository
     {
         return await _context.Atendimentos.Include(a => a.Titular).Where(a => a.Id == id).FirstOrDefaultAsync();
     }
+    public async Task<IEnumerable<Atendimento>> ListarAbertos(bool situacao)
+    {
+        return await _context.Atendimentos.Include(a => a.Titular).Where(a => a.EmAberto.Equals(situacao)).ToListAsync();
+    }
     public async Task<Atendimento> CriarAtendimento(Atendimento atendimento)
     {
         await _context.Atendimentos.AddAsync(atendimento);
@@ -27,7 +31,10 @@ public class AtendimentoRepository : IAtendimentoRepository
     }
     public async Task<Atendimento> ResponderAtendimento(Atendimento atendimento)
     {
-        _context.Atendimentos.Update(atendimento);
+        if (atendimento is null) throw new ArgumentNullException(nameof(atendimento));
+        _context.Atendimentos.Entry(atendimento).State = EntityState.Modified;
+        atendimento.EmAberto = false;
+        atendimento.DataResposta = DateTime.Now;
         await _context.SaveChangesAsync();
         return atendimento;
     }
@@ -38,4 +45,6 @@ public class AtendimentoRepository : IAtendimentoRepository
         await _context.SaveChangesAsync();
         return atendimento;
     }
+
+   
 }
