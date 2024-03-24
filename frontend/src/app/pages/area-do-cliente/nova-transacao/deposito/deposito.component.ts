@@ -13,7 +13,7 @@ import { Title } from '@angular/platform-browser';
   styleUrl: './deposito.component.css'
 })
 export class DepositoComponent {
-  idConta : number = this.apiService.idTeste; //FIXME remover ao criar login
+  idConta : number = this.apiService.idTitularLogado; //FIXME remover ao criar login
   errorMessage!: string;
 
   deposito = new FormGroup({

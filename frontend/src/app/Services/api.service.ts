@@ -12,7 +12,8 @@ import { ContaCorrente } from '../Models/ContaCorrente';
 export class ApiService {
 
   private apiUrl = `${environment.ApiUrl}`;
-  idTeste: number = 1; //FIXME remover ao criar login
+  // static idTitularLogado: undefined;
+  idTitularLogado: number = 1; //FIXME remover ao criar login
 
   constructor(private http: HttpClient) { }
 
@@ -25,7 +26,7 @@ export class ApiService {
   }
 
   GetTransacoes() : Observable<Transacao[]> {
-    return this.http.get<Transacao[]>(`${this.apiUrl}Transacao/listartransacoes/${this.idTeste}`)
+    return this.http.get<Transacao[]>(`${this.apiUrl}Transacao/listartransacoes/${this.idTitularLogado}`)
   }
 
   GetTitulares() : Observable<Titular[]> {
@@ -51,7 +52,7 @@ export class ApiService {
     return this.http.post<string>(`${this.apiUrl}Transacao/transferir/${idContaDestino}`, transferencia);
   }
 
-  GetLoginPorEmail(email: string, senha: string ): Observable<Titular> {
+  GetLoginPorEmail(email: string,): Observable<Titular> {
     return this.http.get<Titular>(`${this.apiUrl}Titular/loginporemail/${email}`);
   }
 

@@ -11,7 +11,7 @@ import { ApiService } from '../../Services/api.service';
 })
 export class SecaoSaldoComponent implements OnInit {
   nome?: string ;
-  idConta : number = this.apiService.idTeste; //FIXME remover ao criar login
+  idConta : number = this.apiService.idTitularLogado; //FIXME remover ao criar login
   cpfConta? : string;
   saldoConta? : number;
   saldoVisivel: boolean = true;

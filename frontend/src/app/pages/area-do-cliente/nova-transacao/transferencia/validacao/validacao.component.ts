@@ -14,7 +14,7 @@ import { ContaCorrente } from '../../../../../Models/ContaCorrente';
   styleUrl: './validacao.component.css'
 })
 export class ValidacaoComponent implements OnInit {
-  idConta : number = this.apiService.idTeste; //FIXME remover ao criar login
+  idConta : number = this.apiService.idTitularLogado; //FIXME remover ao criar login
   titularEncontrado: Titular | undefined;
   contaEncontrada: ContaCorrente | undefined;
   idContaEncontrada?: number;

@@ -13,7 +13,7 @@ import { ApiService } from '../../../../Services/api.service';
   styleUrl: './transferencia.component.css'
 })
 export class TransferenciaComponent {
-  idConta : number = this.apiService.idTeste; //FIXME remover ao criar login
+  idConta : number = this.apiService.idTitularLogado; //FIXME remover ao criar login
   errorMessage!: string;
   valor?: number;
 
