@@ -8,7 +8,7 @@ input[formControlName="cep"] {
 
 .procurar-cep {
   width: 30% !important;
-  height: 46px;
+  max-height: 46px;
   background-color: var(--cor-azul-claro);
 }
 

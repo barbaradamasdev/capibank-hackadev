@@ -18,7 +18,6 @@ export class HistoricoTransacoesComponent implements OnInit {
 
   aplicarEstiloOverflow: boolean = false;
   transacoes: Transacao[] = [];
-  transacoesGerais: Transacao[] = []; //para busca
 
   constructor(private router: Router, private apiService: ApiService) {
     this.router.events.subscribe(event => {
@@ -54,7 +53,7 @@ export class HistoricoTransacoesComponent implements OnInit {
         });
     });
   }
-  
+
   buscarNomeTitular(idTitular: number): Observable<Titular> {
     return this.apiService.GetTitularPorId(idTitular);
   }

@@ -15,9 +15,8 @@ import { ApiService } from '../../../../../Services/api.service';
   styleUrl: './destinatario.component.css'
 })
 export class DestinatarioComponent {
-  idTitular : number = 1;// id de teste
+  idTitular : number = this.apiService.idTitularLogado; //FIXME remover ao criar login
   errorMessage!: string;
-  valor?: number;
   titularEncontrado: Titular | undefined;
 
   destinatario = new FormGroup({
@@ -41,10 +40,6 @@ export class DestinatarioComponent {
       this.errorMessage = 'Precisamos de um CPF para finalizar a transação';
       return;
     }
-
-    // if (cpfNumero === null) {
-    //   this.errorMessage = 'CPF inválido, confira novamente';
-    // }
 
     this.apiService.GetTitulares().subscribe(
       titulares => {

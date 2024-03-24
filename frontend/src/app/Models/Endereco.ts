@@ -1,4 +1,5 @@
 export interface Endereco {
+  localidade: string;
   id: number;
   cep?: string;
   logradouro?: string;
@@ -7,8 +8,4 @@ export interface Endereco {
   bairro?: string;
   cidade?: string;
   uf?: string;
-  // ibge?: string;
-  // gia?: string;
-  // ddd?: string;
-  // siafi?: string;
 }

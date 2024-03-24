@@ -27,7 +27,6 @@ export class ConfirmacaoDepositoComponent {
     this.activatedRoute = activatedRoute;
   }
 
-  // TODO get transacao por id
   ngOnInit(): void {
     this.activatedRoute.url.subscribe((urlSegments) => {
       const ultimoSegmento = urlSegments[urlSegments.length - 1];

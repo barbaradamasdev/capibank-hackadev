@@ -14,7 +14,7 @@ import { ContaCorrente } from '../../../../../Models/ContaCorrente';
   styleUrl: './validacao.component.css'
 })
 export class ValidacaoComponent implements OnInit {
-  idConta : number = this.apiService.idTeste; //FIXME remover ao criar login
+  idConta : number = this.apiService.idTitularLogado; //FIXME remover ao criar login
   titularEncontrado: Titular | undefined;
   contaEncontrada: ContaCorrente | undefined;
   idContaEncontrada?: number;
@@ -24,6 +24,8 @@ export class ValidacaoComponent implements OnInit {
   tipoConta: any;
   cpfDestino?: string;
   valorTransacao?: number;
+  errorMessage!: string;
+
 
   validacao = new FormGroup({
     cpf: new FormControl(''),
@@ -44,26 +46,34 @@ export class ValidacaoComponent implements OnInit {
     if (this.valorTransacao !== undefined && this.idContaEncontrada !== undefined && this.cpfDestino !== undefined) {
       this.apiService.PostTransferencia(this.valorTransacao, this.cpfDestino, this.idConta).subscribe(
         (response: any) => {
+          console.log('a')
           if (typeof response === 'object') {
+            console.log('a')
             console.log("Transação bem-sucedida. ID da transação:", response);
             this.router.navigateByUrl(`/cliente/nova/transferencia/ok/${response.id}`);
           } else {
             console.error("Erro ao efetuar o saque:", response);
-            //TODO validacao caso saldo negativo, conta bloqueada etc
+            if (response === "Conta destino não encontrada") {
+              this.errorMessage = "A conta está bloqueada ou inativa";
+            }
           }
-         },
-         error => {
+        },
+        (error: any) => {
           console.error("Erro ao efetuar o saque:", error);
-         }
-       );
+          if (error.status === 404) {
+            this.errorMessage = "A conta está bloqueada ou inativa";
+          }
+        }
+      );
     }
   }
 
+
   ngOnInit(): void {
-    const cpfLocalStorage = localStorage.getItem('cpfDestino');
-    this.cpfDestino = cpfLocalStorage?.toString();
-    const valorLocalStorage = localStorage.getItem('valorTransferencia');
-    this.valorTransacao = parseInt(valorLocalStorage!);
+    const cpfStorage = localStorage.getItem('cpfDestino');
+    this.cpfDestino = cpfStorage?.toString();
+    const valorStorage = localStorage.getItem('valorTransferencia');
+    this.valorTransacao = parseInt(valorStorage!);
 
     if (this.cpfDestino && this.valorTransacao) {
       this.validacao.patchValue({
@@ -92,7 +102,6 @@ export class ValidacaoComponent implements OnInit {
                 this.numeroConta = this.contaEncontrada.numeroConta
                 this.tipoConta = "Conta Corrente"
                 this.idContaEncontrada = this.contaEncontrada.id;
-                this.transferirValor()
               } else {
                 console.log('Conta não encontrada para o titular com id:', this.idTitularDestino);
               }
@@ -108,4 +117,9 @@ export class ValidacaoComponent implements OnInit {
       }
     );
   }
+
+  confirmar(){
+    this.transferirValor()
+  }
+
 }

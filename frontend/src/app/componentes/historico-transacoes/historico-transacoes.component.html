@@ -9,13 +9,23 @@
     <tbody>
       <tr *ngFor="let item of transacoes.reverse(); let i = index" class="rowTransacao">
 
-        <td class="icone-transacao" *ngIf="item.tipoTransacao === 1 || item.tipoTransacao === 4" class="col1Entrada"></td>
-        <td class="icone-transacao" *ngIf="item.tipoTransacao === 2 || item.tipoTransacao === 3" class="col1Saida"></td>
+        <td class="icone-transacao" *ngIf="item.tipoTransacao === 1 || item.tipoTransacao === 4 || item.tipoTransacao === 6" class="col1Entrada"></td>
+        <td class="icone-transacao" *ngIf="(item.tipoTransacao === 2 || item.tipoTransacao === 3 || item.tipoTransacao === 5)  && item.situacao === 1" class="col1Saida"></td>
+        <td class="icone-transacao" *ngIf="item.tipoTransacao === 3 && item.situacao === 2" class="col1Erro"></td>
         <td class="col2">
           <div class="tipo-de-transacao" *ngIf="item.tipoTransacao === 1">Depósito</div>
+
           <div class="tipo-de-transacao" *ngIf="item.tipoTransacao === 2">Saque</div>
-          <div class="tipo-de-transacao" *ngIf="item.tipoTransacao === 3">Transferência enviada</div>
+
+          <div class="tipo-de-transacao" *ngIf="item.tipoTransacao === 3 && item.situacao === 1">Transferência enviada</div>
+          <div class="tipo-de-transacao" *ngIf="item.tipoTransacao === 3 && item.situacao === 2">Transferência não enviada</div>
           <div class="tipo-de-transacao" *ngIf="item.tipoTransacao === 4">Transferência recebida</div>
+
+          <div class="tipo-de-transacao" *ngIf="item.tipoTransacao === 5 && item.situacao === 1">Pix enviado</div>
+          <div class="tipo-de-transacao" *ngIf="item.tipoTransacao === 5 && item.situacao === 2">Pix não enviado</div>
+          <div class="tipo-de-transacao" *ngIf="item.tipoTransacao === 6">Pix recebido</div>
+
+          <div class="descricao" *ngIf="(item.tipoTransacao === 3 || item.tipoTransacao === 5) && item.situacao === 2">Erro na transação</div>
           <div class="descricao">{{ item.titularContaDestino?.nome }}</div>
         </td>
         <td class="col3">
@@ -23,6 +33,8 @@
           <div class="itemValorSaida" *ngIf="item.tipoTransacao === 2">- R$ {{item.valor  | number: '1.2-2'}}</div>
           <div class="itemValorSaida" *ngIf="item.tipoTransacao === 3">- R$ {{item.valor  | number: '1.2-2'}}</div>
           <div class="itemValorEntrada" *ngIf="item.tipoTransacao === 4">+ R$ {{item.valor  | number: '1.2-2'}}</div>
+          <div class="itemValorSaida" *ngIf="item.tipoTransacao === 5">- R$ {{item.valor  | number: '1.2-2'}}</div>
+          <div class="itemValorEntrada" *ngIf="item.tipoTransacao === 6">+ R$ {{item.valor  | number: '1.2-2'}}</div>
 
           <div class="descricao">{{ item.dataTransacao | date: 'dd/MM/yy - HH:mm' }}</div>
         </td>

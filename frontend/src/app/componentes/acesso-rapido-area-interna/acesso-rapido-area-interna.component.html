@@ -1,7 +1,7 @@
 <div class="container">
     <div class="section-top">
         <h2>Acesso rápido</h2>
-        <div routerLink="/cliente/historico" class="see-all">Veja tudo</div>
+        <div routerLink="/cliente/atalho" class="see-all">Veja tudo</div>
     </div>
 
     <div class="grid">
@@ -23,17 +23,35 @@
               <p>Saque</p>
           </a>
       </div>
+      <div class="icon">
+        <a routerLink="/cliente/nova/pix">
+            <img src="../../../assets/icones/icone-pix-2.png" alt="Pix">
+            <p>Pix</p>
+        </a>
+    </div>
+      <div class="icon">
+          <a routerLink="/cliente/historico">
+              <img src="../../../assets/icones/icone-transacoes-azul.png" title="Saque">
+              <p>Histórico</p>
+          </a>
+      </div>
+      <div class="icon">
+          <a routerLink="/cliente/chamado">
+              <img src="../../../assets/icones/icone-contato-azul.png" title="Ajuda">
+              <p>Ajuda</p>
+          </a>
+      </div>
+      <div class="icon">
+          <a routerLink="/cliente/chamado">
+              <img src="../../../assets/icones/icone-logout.svg" title="Ajuda">
+              <p>Sair da conta</p>
+          </a>
+      </div>
       <!-- <div class="icon">
           <a routerLink="/cliente/nova">
               <img src="../../../assets/icones/icone-boleto.png" title="Pagar Boleto">
               <p>Pagar Boleto</p>
           </a>
-      </div>
-      <div class="icon">
-        <a routerLink="/cliente/nova">
-            <img src="../../../assets/icones/icone-pix-2.png" alt="Pix">
-            <p>Pix</p>
-        </a>
-    </div> -->
+      </div> -->
     </div>
 </div>

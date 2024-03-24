@@ -13,7 +13,7 @@ import { Title } from '@angular/platform-browser';
   styleUrl: './saque.component.css'
 })
 export class SaqueComponent{
-  idConta : number = this.apiService.idTeste; //FIXME remover ao criar login
+  idConta : number = this.apiService.idTitularLogado; //FIXME remover ao criar login
   errorMessage!: string;
 
   saque = new FormGroup({
@@ -43,12 +43,14 @@ export class SaqueComponent{
           console.error("Erro ao efetuar o saque:", response);
           this.errorMessage = "Erro ao efetuar o saque";
 
-          //TODO validacao caso saldo negativo
         }
        },
        error => {
         console.error("Erro ao efetuar o saque:", error);
-       }
-     );
+        if (error.status === 400) {
+          this.errorMessage = "Saldo insuficiente";
+        }
+      }
+    );
   }
 }

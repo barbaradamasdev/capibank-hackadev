@@ -4,7 +4,7 @@
     <div class="dados flex">
       <p class="nome-usuario" style="text-transform: capitalize;">Olá, {{nome}}!</p>
       <div class="flex">
-        <h4 *ngIf="saldoVisivel">R$ 1000,00</h4>
+        <h4 *ngIf="saldoVisivel">R$ {{saldoConta}}</h4>
         <img *ngIf="saldoVisivel" src="../../../assets/icones/icone-ocultar.png" alt="Ocultar saldo" (click)="toggleVisibilidadeSaldo()">
         <h4 *ngIf="!saldoVisivel">R$ ----,--</h4>
         <img *ngIf="!saldoVisivel" src="../../../assets/icones/icone-mostrar.png" alt="Mostrar saldo" (click)="toggleVisibilidadeSaldo()">
