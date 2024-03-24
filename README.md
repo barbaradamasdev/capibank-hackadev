@@ -23,6 +23,31 @@ Bem-vindo ao Capibank, um projeto fintech desenvolvido pela equipe Sharp Trooper
   <img src="https://github.com/barbaradamasdev/capibank-hackadev/blob/main/Documenta%C3%A7%C3%A3o/Digital-mockup-02.png?raw=true" alt="Tela Final">
 </a>
 
+### 👑 Rodando o projeto
+
+- Pré-requisitos
+    - Backend: .NET Core SDK
+    - Frontend: Node.js e npm
+
+
+| Executando o Backend (Swagger)                                                         | Executando o Frontend (Angular)                                                        |
+|---------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------|
+| 1. Acesse o diretório do projeto backend:                                              | 1. Acesse o diretório do projeto frontend:                                              |
+ | ```cd backend/Troopers.Capibank/```                                                     | ```cd frontend```                                                                       |
+|                                                                                       |                                                                                         |
+| 2. Restaure as dependências e compile o projeto:                                                | 2. Instale as dependências do Angular:                                                  |
+ | ```dotnet restore```                                                                   | ```npm install```                                                                       |
+|     ```dotnet build```                                                                                   |                                                                                         |
+ |         4. Inicie o backend com o comando:                                                          | 3. Inicie o servidor de desenvolvimento do Angular:                                     |
+  |             ```dotnet watch run```                                                        | ```ng serve```                                                                          |
+ |                                                                                       |                                                                                         |                                                                            |
+ | 5. Acesse a documentação do Swagger no link:                                            | 4. Acesse o frontend da aplicação no link:                                              |
+ | [https://localhost:{PORTA}/swagger](https://localhost:{PORTA}/swagger)                | [http://localhost:4200/](http://localhost:4200/)                                        |
+ |                                                                                       | O Angular geralmente é executado na porta 4200.                                         |
+
+
+
+
 ## 📋 Detalhes do Projeto
 
 - **Nome:** Capibank
