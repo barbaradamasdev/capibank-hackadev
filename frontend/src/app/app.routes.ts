@@ -38,6 +38,7 @@ import { RelatoriosComponent } from './pages/admin-dashboard/relatorios/relatori
 import { ConfigAdminComponent } from './pages/admin-dashboard/config-admin/config-admin.component';
 import { DashboardComponent } from './pages/admin-dashboard/dashboard/dashboard.component';
 import { FormularioCriarContaPgCincoComponent } from './pages/inicio-criar-conta/forms/formulario-criar-conta-pg-cinco/formulario-criar-conta-pg-cinco.component';
+import { AtalhosComponent } from './pages/area-do-cliente/atalhos/atalhos.component';
 
 export const routes: Routes = [
     {path:'',redirectTo:'/home',pathMatch:'full',},
@@ -127,6 +128,10 @@ export const routes: Routes = [
       {
       path:'historico',
       component: HistoricoDeTransacaoComponent
+      },
+      {
+      path:'atalho',
+      component: AtalhosComponent
       },
       {
       path:'config',

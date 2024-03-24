@@ -10,6 +10,8 @@
         <textarea formControlName="descricao" class="form-control" name="" id="" cols="30" rows="10"></textarea>
     </div>
 
+    <div *ngIf="sucessMessage" class="warn-text text-success">{{ sucessMessage }}</div>
+
     <div class="buttons flex">
       <button type="submit" class="botao-principal">
         Enviar chamado

@@ -2,16 +2,18 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ApiService } from '../../../../Services/api.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-form-chamado',
   standalone: true,
-  imports: [FormsModule, ReactiveFormsModule],
+  imports: [FormsModule, ReactiveFormsModule, CommonModule],
   templateUrl: './form-chamado.component.html',
   styleUrl: './form-chamado.component.css'
 })
 export class FormChamadoComponent {
   chamado: FormGroup;
+  sucessMessage!: string;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -34,19 +36,14 @@ export class FormChamadoComponent {
         resposta: 'nao sei'
       };
 
-      this.apiService.PostContaCorrente(dados).subscribe(response => {
-        console.log('Resposta do servidor:', response);
-        this.router.navigateByUrl('/cadastrar/passo-5');
+      // this.apiService.PostAtendimento(dados).subscribe(response => {
+      //   console.log('Resposta do servidor:', response);
 
-      }, error => {
-        console.error('Erro ao enviar dados:', error);
-      });
+      // }, error => {
+      //   console.error('Erro ao enviar dados:', error);
+      // });
 
-
-
-
-
-      this.apiService.PostAtendimento
+      this.sucessMessage = "Chamado enviado com sucesso! Aguarde o retorno em até 1 dia útil.";
       this.exibirModal("Chamado enviado com sucesso! Aguarde o retorno em até 1 dia útil.");
     } else {
       alert('Preencha todos os campos')
