@@ -1,12 +1,12 @@
 @Troopers.Capibank_HostAddress = http://localhost:5143
 
-GET {{Troopers.Capibank_HostAddress}}/contacorrente/Listartodasascontas/
+GET {{Troopers.Capibank_HostAddress}}/contacorrente/Listarcontas/
 
 ###
 POST {{Troopers.Capibank_HostAddress}}/contacorrente/criarconta/
 Content-Type: application/json
 {
-  "numeroConta": 369258,
+  
   "titular": {
     "nome": "Lais Moraes",
     "email": "lais@uol.com.br",
