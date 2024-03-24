@@ -44,12 +44,10 @@ export class TransferenciaComponent {
     this.apiService.GetTitularPorId(this.idConta).subscribe(
       titular => {
         this.cpfTitular = titular.cpf;
-        console.log(this.cpfTitular);
 
         if (this.cpfTitular !== null) {
           this.apiService.GetNomeESaldo(this.cpfTitular).subscribe(
             titular => {
-              console.log(titular);
               if (valorTransferencia > titular.saldo) {
                 this.errorMessage = "Saldo insuficiente";
               } else {
