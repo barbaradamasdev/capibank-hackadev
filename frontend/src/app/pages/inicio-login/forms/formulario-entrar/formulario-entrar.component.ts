@@ -38,19 +38,47 @@ export class FormularioEntrarComponent {
     const email = this.formLogin.get('email')?.value  ?? '';
     const senha = this.formLogin.get('senha')?.value  ?? '';
 
-    this.apiService.GetLoginPorEmail(email).subscribe(
-        (titular) => {
-          console.log(titular)
-          if (titular.senha === senha){
+    const dados = {
+      email: email,
+      cpf: '',
+      senha: senha,
+    }
 
-            // TODO simplificaria me enviado email senha, id cpf
-            this.apiService.idTitularLogado = titular.id;
-            console.log(titular.id)
-            console.log(this.apiService.idTitularLogado)
-            this.router.navigateByUrl('/cliente');
+    this.apiService.PostLogin(dados).subscribe(
+        response => {
+
+          console.log('Resposta do servidor:', response);
+          this.router.navigateByUrl('/cadastrar/passo-5');
+
+          if (response.status === 200){
+            console.log('logado')
+
+            this.apiService.GetTitulares().subscribe(
+              titulares => {
+                const titularEncontrado = titulares.find(titular => titular.email === email);
+
+                if (titularEncontrado) {
+                  // Se o titular for encontrado, podemos obter o seu ID
+                  const idTitular = titularEncontrado.id;
+                  // console.log('ID do titular encontrado:', idTitular);
+
+                  // Agora, podemos fazer o que precisamos com o ID do titular, como armazená-lo no serviço apiService
+                  this.apiService.idTitularLogado = titularEncontrado.id;
+                  this.router.navigateByUrl('/cliente');
+
+                  // Navega para a rota '/cliente'
+                } else {
+                    // console.log('Titular não encontrado para o email:', email);
+                    this.formLogin.reset();
+                }
+              }
+            )
+            // this.apiService.idTitularLogado = titular.id;
+            // console.log(this.apiService.idTitularLogado)
+            // this.router.navigateByUrl('/cliente');
             // this.router.navigateByUrl('/login/token');
           } else {
-             this.formLogin.reset();
+            this.formLogin.reset();
           }
         },
         (error: any) => {

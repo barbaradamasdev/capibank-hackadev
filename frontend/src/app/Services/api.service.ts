@@ -13,24 +13,16 @@ import { ContaCorrente } from '../Models/ContaCorrente';
 export class ApiService {
 
   private apiUrl = `${environment.ApiUrl}`;
-  idTitularLogado: any = 1; //FIXME remover ao criar login
-  // idTitularLogado: any | null = null;
+  // idTitularLogado: any = 1; //FIXME remover ao criar login
+  idTitularLogado: any | null = null;
 
   constructor(private http: HttpClient) { }
-
-  fazerLogin(idTitular: number) {
-    this.idTitularLogado = idTitular;
-  }
-
-  fazerLogout() {
-    this.idTitularLogado = null;
-  }
 
   /////////////////
   /// LOGIN ///////
   /////////////////
-  GetLoginPorEmail(email: string,): Observable<Titular> {
-    return this.http.get<Titular>(`${this.apiUrl}Titular/loginporemail/${email}`);
+  PostLogin(data: any): Observable<any> {
+    return this.http.post<any>(`${this.apiUrl}Titular/login`, data);
   }
 
   GetNomeESaldo(cpf: string): Observable<any> {

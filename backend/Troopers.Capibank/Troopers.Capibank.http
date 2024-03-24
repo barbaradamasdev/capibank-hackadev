@@ -81,3 +81,11 @@ Content-Type: application/json
   "dataResposta": "2024-03-23T09:06:47.831Z",
   "emAberto": false
 }
+###
+POST {{Troopers.Capibank_HostAddress}}/Titular/login
+Content-Type: application/json
+{
+  "cpf": "",
+  "email": "luciana@uol.com.br",
+  "senha": "123455678"
+}
