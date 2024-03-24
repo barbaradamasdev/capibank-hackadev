@@ -31,23 +31,24 @@
     </div>
   </div>
 
-
-  <div class="section-top" style="margin-top: 40px">
-    <h2>Chamados em aberto:</h2>
+  <div class="section-top" style="margin-top: 40px" *ngIf="atendimentos && atendimentos.length > 0">
+    <h2>Histórico de chamados:</h2>
   </div>
 
-  <table>
-    <tbody>
-      <tr *ngFor="let chamado of atendimentos" class="rowTransacao">
+  <table *ngIf="atendimentos && atendimentos.length > 0">
+    <tbody class="flex">
+      <tr *ngFor="let chamado of atendimentos" class="atendimentos">
         <td>
-          <p *ngIf="chamado.emAberto; else responded">Não respondido, aguarde o retorno</p>
+          <p><strong>ID do chamado:</strong> {{ chamado.id }}</p>
+          <hr>
+          <p *ngIf="chamado.emAberto; else responded"><strong>Status:</strong> Não respondido, aguarde o retorno</p>
           <ng-template #responded>
-            Respondido e finalizado
-            <p>chamado.resposta</p>
+            <p><strong>Status:</strong> Respondido e finalizado</p>
+            <p><strong>Resposta:</strong> {{chamado.resposta}}</p>
           </ng-template>
           <hr>
-          <p>Data do chamado: {{ chamado.dataChamado | date: 'dd/MM/yy - HH:mm' }}</p>
-          <p>Descrição da solicitação: {{ chamado.descricao }}</p>
+          <p><strong>Data do chamado:</strong> {{ chamado.dataChamado | date: 'dd/MM/yy - HH:mm' }}</p>
+          <p><strong>Descrição da solicitação:</strong> {{ chamado.descricao }}</p>
         </td>
       </tr>
     </tbody>

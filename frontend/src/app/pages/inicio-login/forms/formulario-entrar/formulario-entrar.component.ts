@@ -55,8 +55,8 @@ export class FormularioEntrarComponent {
         (error: any) => {
             console.error('Erro ao fazer login: ', error);
             // FIXME permite o login mesmo errando apenas para poder editar area interna
-            // this.apiService.idTitularLogado = 1;
-            // this.router.navigateByUrl('/cliente');
+            this.apiService.idTitularLogado = 1;
+            this.router.navigateByUrl('/cliente');
 
             if (error.status === 404) {
                 this.errorMessage = 'Usuário não encontrado. Por favor, verifique suas credenciais.';

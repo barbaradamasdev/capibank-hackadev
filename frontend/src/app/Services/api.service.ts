@@ -13,8 +13,8 @@ import { ContaCorrente } from '../Models/ContaCorrente';
 export class ApiService {
 
   private apiUrl = `${environment.ApiUrl}`;
-  // idTitularLogado: any = 1; //FIXME remover ao criar login
-  idTitularLogado: any | null = null;
+  idTitularLogado: any = 1; //FIXME remover ao criar login
+  // idTitularLogado: any | null = null;
 
   constructor(private http: HttpClient) { }
 
@@ -100,8 +100,8 @@ export class ApiService {
     return this.http.post<any>(`${this.apiUrl}Atendimento/criaratendimento`, data);
   }
 
-  GetAtendimentoPorId(idConta:number) : Observable<Atendimento> {
-    return this.http.get<Atendimento>(`${this.apiUrl}Atendimento/listarporid/${idConta}`)
+  GetAtendimentoPorTitular() : Observable<Atendimento> {
+    return this.http.get<Atendimento>(`${this.apiUrl}Atendimento/listarportitular/${this.idTitularLogado}`)
   }
 
 }
