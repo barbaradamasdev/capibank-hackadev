@@ -109,6 +109,7 @@ input {
   justify-content: center;
   text-align: center;
   margin: auto;
+  margin-top: 10px;
 }
 
 .account {
