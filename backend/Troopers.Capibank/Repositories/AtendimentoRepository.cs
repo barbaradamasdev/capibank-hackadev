@@ -17,11 +17,18 @@ public class AtendimentoRepository : IAtendimentoRepository
     }
     public async Task<Atendimento> ListarPorId(int id)
     {
-        return await _context.Atendimentos.Include(a => a.Titular).Where(a => a.Id == id).FirstOrDefaultAsync();
+        return await _context.Atendimentos.Include(a => a.Titular).AsNoTracking().
+            Where(a => a.Id == id).FirstOrDefaultAsync();
+    }
+    public async Task<IEnumerable<Atendimento>> ListarPorTitular(int id)
+    {
+        return await _context.Atendimentos.Include(a => a.Titular).AsNoTracking().
+            Where(a => a.Titular.Id == id).ToListAsync();
     }
     public async Task<IEnumerable<Atendimento>> ListarAbertos(bool situacao)
     {
-        return await _context.Atendimentos.Include(a => a.Titular).Where(a => a.EmAberto.Equals(situacao)).ToListAsync();
+        return await _context.Atendimentos.Include(a => a.Titular).AsNoTracking().
+            Where(a => a.EmAberto.Equals(situacao)).ToListAsync();
     }
     public async Task<Atendimento> CriarAtendimento(Atendimento atendimento)
     {
@@ -46,5 +53,5 @@ public class AtendimentoRepository : IAtendimentoRepository
         return atendimento;
     }
 
-   
+
 }
