@@ -41,30 +41,30 @@ public class TitularController : DefaultController
         if (titular is null) return NotFound("titular não encontrado");
         return Ok(titular);
     }
-    /// <summary>
-    /// Método para listar um usuário pelo CPF retornando o CPF e a senha para login.
-    /// </summary>
-    /// <param name="cpf"></param>
-    /// <returns></returns>
-    [HttpGet("loginporcpf/{cpf}")]
-    public async Task<ActionResult<TitularLoginCPFResponseDTO>> ListarPorCpf(string cpf)
-    {
-        var titular = await _ts.ListarPorCPF(cpf);
-        if (titular is null) return NotFound("Titular não encontrado");
-        return Ok(titular);
-    }
-    /// <summary>
-    /// Método para listar um usuário pelo email retornando o email e a senha para login.
-    /// </summary>
-    /// <param name="email"></param>
-    /// <returns></returns>
-    [HttpGet("loginporemail/{email}")]
-    public async Task<ActionResult<TitularLoginEmailResponseDTO>> ListarPorEmail(string email)
-    {
-        var titular = await _ts.ListarPorEmail(email);
-        if (titular is null) return NotFound("Titular não encontrado");
-        return Ok(titular);
-    }
+    ///// <summary>
+    ///// Método para listar um usuário pelo CPF retornando o CPF e a senha para login.
+    ///// </summary>
+    ///// <param name="cpf"></param>
+    ///// <returns></returns>
+    //[HttpGet("loginporcpf/{cpf}")]
+    //public async Task<ActionResult<TitularLoginCPFResponseDTO>> ListarPorCpf(string cpf)
+    //{
+    //    var titular = await _ts.ListarPorCPF(cpf);
+    //    if (titular is null) return NotFound("Titular não encontrado");
+    //    return Ok(titular);
+    //}
+    ///// <summary>
+    ///// Método para listar um usuário pelo email retornando o email e a senha para login.
+    ///// </summary>
+    ///// <param name="email"></param>
+    ///// <returns></returns>
+    //[HttpGet("loginporemail/{email}")]
+    //public async Task<ActionResult<TitularLoginEmailResponseDTO>> ListarPorEmail(string email)
+    //{
+    //    var titular = await _ts.ListarPorEmail(email);
+    //    if (titular is null) return NotFound("Titular não encontrado");
+    //    return Ok(titular);
+    //}
     /// <summary>
     /// Método para alteração dos dadps do Titular e também alterar o seu endereço se necessário.
     /// </summary>
@@ -77,6 +77,11 @@ public class TitularController : DefaultController
         await _ts.AlTerarTitular(titularDTO);
         return Ok("Titular alterado com sucesso");
     }
+    /// <summary>
+    /// Método para realizar login no sistema por email por cpf.
+    /// </summary>
+    /// <param name="loginDTO"></param>
+    /// <returns></returns>
     [HttpPost("login")]
     public  async Task<IActionResult> Login(TitularLoginRequestDTO loginDTO)
     {
@@ -85,8 +90,8 @@ public class TitularController : DefaultController
         var senhaDto = loginDTO.Senha;
         var titular = await _context.Titulares.Where(t => t.CPF.Equals(cpfDto) || t.Email.Equals(emailDto)).FirstOrDefaultAsync();
         if (titular is null) return NotFound("Usuário não encontrado");
-        if (titular.Senha.Equals(senhaDto)) ;
-        return Ok("Login Realizado com sucesso");
+        if (!titular.Senha.Equals(senhaDto)) return BadRequest("Senha inválida") ;
+        return Ok(titular.Id);
     }
 
 }
