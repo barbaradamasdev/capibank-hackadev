@@ -16,6 +16,8 @@
           <div class="tipo-de-transacao" *ngIf="item.tipoTransacao === 2">Saque</div>
           <div class="tipo-de-transacao" *ngIf="item.tipoTransacao === 3">Transferência enviada</div>
           <div class="tipo-de-transacao" *ngIf="item.tipoTransacao === 4">Transferência recebida</div>
+          <div class="tipo-de-transacao" *ngIf="item.tipoTransacao === 5">Pix enviado</div>
+          <div class="tipo-de-transacao" *ngIf="item.tipoTransacao === 6">Pix recebido</div>
           <div class="descricao">{{ item.titularContaDestino?.nome }}</div>
         </td>
         <td class="col3">
@@ -23,6 +25,8 @@
           <div class="itemValorSaida" *ngIf="item.tipoTransacao === 2">- R$ {{item.valor  | number: '1.2-2'}}</div>
           <div class="itemValorSaida" *ngIf="item.tipoTransacao === 3">- R$ {{item.valor  | number: '1.2-2'}}</div>
           <div class="itemValorEntrada" *ngIf="item.tipoTransacao === 4">+ R$ {{item.valor  | number: '1.2-2'}}</div>
+          <div class="itemValorSaida" *ngIf="item.tipoTransacao === 5">- R$ {{item.valor  | number: '1.2-2'}}</div>
+          <div class="itemValorEntrada" *ngIf="item.tipoTransacao === 6">+ R$ {{item.valor  | number: '1.2-2'}}</div>
 
           <div class="descricao">{{ item.dataTransacao | date: 'dd/MM/yy - HH:mm' }}</div>
         </td>

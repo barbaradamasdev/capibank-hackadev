@@ -79,6 +79,10 @@ export class ApiService {
     const transferencia = { valor: valorTransferencia, cpf: cpfDestino, id: idContaDestino};
     return this.http.post<string>(`${this.apiUrl}Transacao/transferir/${idContaDestino}`, transferencia);
   }
+  PostPix(valorPix: number, cpfDestino: string, idContaDestino: number): Observable<string> {
+    const pix = { valor: valorPix, cpf: cpfDestino, id: idContaDestino};
+    return this.http.post<string>(`${this.apiUrl}Transacao/transferir/${idContaDestino}`, pix);
+  }
 
   ///////////////////
   /// ATENDIMENTO ///

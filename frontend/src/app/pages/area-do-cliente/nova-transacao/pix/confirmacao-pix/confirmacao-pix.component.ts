@@ -3,19 +3,20 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from '../../../../../Services/api.service';
 
 @Component({
-  selector: 'app-confirmacao-transferencia',
+  selector: 'app-confirmacao-pix',
   standalone: true,
   imports: [],
-  templateUrl: './confirmacao-transferencia.component.html',
-  styleUrl: './confirmacao-transferencia.component.css'
+  templateUrl: './confirmacao-pix.component.html',
+  styleUrl: './confirmacao-pix.component.css'
 })
-export class ConfirmacaoTransferenciaComponent {
+export class ConfirmacaoPixComponent {
   @ViewChild('componentToPrint', {static: false}) componentToPrint!: ElementRef;
   idTransacao?: number;
   titularDestino? : any;
   valor: any;
   dataTransacao: any;
   cpfDestino: any;
+  chavePix: any;
   nome: any;
   numeroConta: any;
   tipoConta: string = 'Conta Corrente';
@@ -71,6 +72,7 @@ export class ConfirmacaoTransferenciaComponent {
 
                     if (contaEncontrada) {
                       this.cpfDestino = contaEncontrada.titular.cpf
+                      this.chavePix = localStorage.getItem("chavePix")
                       this.numeroConta = contaEncontrada.numeroConta
                       // this.tipoConta = "Conta Corrente"
                       this.nome = contaEncontrada.titular.nome
@@ -96,7 +98,8 @@ export class ConfirmacaoTransferenciaComponent {
       });
     });
 
-    localStorage.removeItem('valorTransferencia')
+    localStorage.removeItem('valorPix')
+    localStorage.removeItem('chavePix')
     localStorage.removeItem('cpfDestino')
   }
 

@@ -6,18 +6,18 @@ import { Router, RouterLink } from '@angular/router';
 import { ApiService } from '../../../../Services/api.service';
 
 @Component({
-  selector: 'app-transferencia',
+  selector: 'app-pix',
   standalone: true,
   imports: [CommonModule, ReactiveFormsModule, FormsModule, RouterLink],
-  templateUrl: './transferencia.component.html',
-  styleUrl: './transferencia.component.css'
+  templateUrl: './pix.component.html',
+  styleUrl: './pix.component.css'
 })
-export class TransferenciaComponent {
+export class PixComponent {
   idConta : number = this.apiService.idTitularLogado; //FIXME remover ao criar login
   errorMessage!: string;
   valor?: number;
 
-  transferencia = new FormGroup({
+  pix = new FormGroup({
     valor: new FormControl('', [Validators.required, Validators.min(0)]),
   });
 
@@ -32,17 +32,17 @@ export class TransferenciaComponent {
   }
 
   armazenarValor() {
-    const valorInput = this.transferencia.get('valor')?.value;
-    const valorTransferencia = parseFloat(valorInput!);
+    const valorInput = this.pix.get('valor')?.value;
+    const valorPix = parseFloat(valorInput!);
 
-    if (valorTransferencia === null || valorTransferencia <= 0) {
+    if (valorPix === null || valorPix <= 0) {
       this.errorMessage = 'O valor não pode ser menor ou igual a zero';
       return;
     }
     //TODO validacao caso saldo negativo
 
-    localStorage.setItem('valorTransferencia', valorTransferencia.toString());
-    this.router.navigateByUrl(`/cliente/nova/transferencia/destinatario`);
+    localStorage.setItem('valorPix', valorPix.toString());
+    this.router.navigateByUrl(`/cliente/nova/pix/destinatario`);
 
   }
 }

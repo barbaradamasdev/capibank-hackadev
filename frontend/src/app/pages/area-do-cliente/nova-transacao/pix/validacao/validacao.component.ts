@@ -6,6 +6,7 @@ import { Titular } from '../../../../../Models/Titular';
 import { ApiService } from '../../../../../Services/api.service';
 import { ContaCorrente } from '../../../../../Models/ContaCorrente';
 
+
 @Component({
   selector: 'app-validacao',
   standalone: true,
@@ -13,7 +14,7 @@ import { ContaCorrente } from '../../../../../Models/ContaCorrente';
   templateUrl: './validacao.component.html',
   styleUrl: './validacao.component.css'
 })
-export class ValidacaoComponent implements OnInit {
+export class ValidacaoComponentPix {
   idConta : number = this.apiService.idTitularLogado; //FIXME remover ao criar login
   titularEncontrado: Titular | undefined;
   contaEncontrada: ContaCorrente | undefined;
@@ -23,9 +24,11 @@ export class ValidacaoComponent implements OnInit {
   numeroConta: any;
   tipoConta: any;
   cpfDestino?: string;
+  chave?: any;
   valorTransacao?: number;
 
   validacao = new FormGroup({
+    chavePix: new FormControl(''),
     cpf: new FormControl(''),
     nome: new FormControl(''),
     numeroConta: new FormControl(''),
@@ -40,17 +43,14 @@ export class ValidacaoComponent implements OnInit {
       this.validacao.disable();
     }
 
-  transferirValor () {
+  pixValor () {
     if (this.valorTransacao !== undefined && this.idContaEncontrada !== undefined && this.cpfDestino !== undefined) {
-      this.apiService.PostTransferencia(this.valorTransacao, this.cpfDestino, this.idConta).subscribe(
+      this.apiService.PostPix(this.valorTransacao, this.cpfDestino, this.idConta).subscribe(
         (response: any) => {
-          console.log('a')
           if (typeof response === 'object') {
-            console.log('a')
             console.log("Transação bem-sucedida. ID da transação:", response);
-            this.router.navigateByUrl(`/cliente/nova/transferencia/ok/${response.id}`);
+            this.router.navigateByUrl(`/cliente/nova/pix/ok/${response.id}`);
           } else {
-            console.log('c')
             console.error("Erro ao efetuar o saque:", response);
             //TODO validacao caso saldo negativo, conta bloqueada etc
           }
@@ -63,14 +63,24 @@ export class ValidacaoComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    const cpfStorage = localStorage.getItem('cpfDestino');
-    this.cpfDestino = cpfStorage?.toString();
-    const valorStorage = localStorage.getItem('valorTransferencia');
+    this.cpfDestino = localStorage.getItem('cpfDestino') ?? '';
+
+
+    if (localStorage.getItem('chavePix')?.includes('@')) {
+      const chaveString = localStorage.getItem('chavePix') ?? '';
+      this.chave = chaveString;
+    } else {
+      const chaveNumero = parseInt(localStorage.getItem('chavePix') ?? '');
+      this.chave = chaveNumero;
+    }
+
+    const valorStorage = localStorage.getItem('valorPix');
     this.valorTransacao = parseInt(valorStorage!);
 
     if (this.cpfDestino && this.valorTransacao) {
       this.validacao.patchValue({
         cpf: this.cpfDestino,
+        chavePix: this.chave,
         valorTransacao: `R$ ${this.valorTransacao}`
       });
     }
@@ -112,7 +122,6 @@ export class ValidacaoComponent implements OnInit {
   }
 
   confirmar(){
-    this.transferirValor()
+    this.pixValor()
   }
-
 }

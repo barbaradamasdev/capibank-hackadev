@@ -15,9 +15,8 @@ import { ApiService } from '../../../../../Services/api.service';
   styleUrl: './destinatario.component.css'
 })
 export class DestinatarioComponent {
-  idTitular : number = 1;// id de teste
+  idTitular : number = this.apiService.idTitularLogado; //FIXME remover ao criar login
   errorMessage!: string;
-  valor?: number;
   titularEncontrado: Titular | undefined;
 
   destinatario = new FormGroup({
@@ -37,6 +36,11 @@ export class DestinatarioComponent {
     const cpfInput = this.destinatario.get('cpf')?.value;
     const cpfNumero = parseInt(cpfInput!);
 
+
+    console.log(cpfInput)
+    console.log(cpfNumero)
+
+
     if (cpfInput === null) {
       this.errorMessage = 'Precisamos de um CPF para finalizar a transação';
       return;
@@ -54,7 +58,7 @@ export class DestinatarioComponent {
 
         if (this.titularEncontrado) {
           this.errorMessage = 'CPF encontrado';
-          sessionStorage.setItem('cpfDestino', cpfNumero.toString());
+          localStorage.setItem('cpfDestino', cpfNumero.toString());
           this.router.navigateByUrl(`/cliente/nova/transferencia/validacao`);
         } else {
           this.errorMessage = 'CPF não encontrado';

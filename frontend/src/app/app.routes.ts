@@ -31,7 +31,9 @@ import { ConfirmacaoDepositoComponent } from './pages/area-do-cliente/nova-trans
 import { ConfirmacaoSaqueComponent } from './pages/area-do-cliente/nova-transacao/saque/confirmacao-saque/confirmacao-saque.component';
 import { ConfirmacaoTransferenciaComponent } from './pages/area-do-cliente/nova-transacao/transferencia/confirmacao-transferencia/confirmacao-transferencia.component';
 import { DestinatarioComponent } from './pages/area-do-cliente/nova-transacao/transferencia/destinatario/destinatario.component';
+import { DestinatarioComponentPix } from './pages/area-do-cliente/nova-transacao/pix/destinatario/destinatario.component';
 import { ValidacaoComponent } from './pages/area-do-cliente/nova-transacao/transferencia/validacao/validacao.component';
+import { ValidacaoComponentPix } from './pages/area-do-cliente/nova-transacao/pix/validacao/validacao.component';
 import { ClientesComponent } from './pages/admin-dashboard/clientes/clientes.component';
 import { TransacoesComponent } from './pages/admin-dashboard/transacoes/transacoes.component';
 import { RelatoriosComponent } from './pages/admin-dashboard/relatorios/relatorios.component';
@@ -39,6 +41,8 @@ import { ConfigAdminComponent } from './pages/admin-dashboard/config-admin/confi
 import { DashboardComponent } from './pages/admin-dashboard/dashboard/dashboard.component';
 import { FormularioCriarContaPgCincoComponent } from './pages/inicio-criar-conta/forms/formulario-criar-conta-pg-cinco/formulario-criar-conta-pg-cinco.component';
 import { AtalhosComponent } from './pages/area-do-cliente/atalhos/atalhos.component';
+import { PixComponent } from './pages/area-do-cliente/nova-transacao/pix/pix.component';
+import { ConfirmacaoPixComponent } from './pages/area-do-cliente/nova-transacao/pix/confirmacao-pix/confirmacao-pix.component';
 
 export const routes: Routes = [
     {path:'',redirectTo:'/home',pathMatch:'full',},
@@ -122,6 +126,22 @@ export const routes: Routes = [
           {
             path: 'transferencia/ok/:idTransacao',
             component: ConfirmacaoTransferenciaComponent,
+          },
+          {
+            path: 'pix',
+            component: PixComponent,
+          },
+          {
+            path: 'pix/destinatario',
+            component: DestinatarioComponentPix,
+          },
+          {
+            path: 'pix/validacao',
+            component: ValidacaoComponentPix,
+          },
+          {
+            path: 'pix/ok/:idTransacao',
+            component: ConfirmacaoPixComponent,
           }
         ]
       },
