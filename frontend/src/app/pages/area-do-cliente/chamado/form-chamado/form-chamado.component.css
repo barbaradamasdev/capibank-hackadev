@@ -41,9 +41,8 @@ textarea {
   }
 }
 
-.descricao{
-  text-transform: capitalize;
-  font-weight: 500;
+.atendimentos > *{
+  font-size: 14px;
 }
 
 table {
@@ -51,9 +50,14 @@ table {
   margin-top: 20px;
 }
 
+tbody {
+  flex-direction: column;
+  gap: 20px;
+}
+
 tr {
-  border: 1px solid rgba(104, 104, 104, 0.12);
-  border-radius: 15px;
+  border: 1px solid rgba(104, 104, 104, 0.39);
+  border-radius: 8px;
 }
 
 td {

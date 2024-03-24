@@ -6,7 +6,6 @@ import { Titular } from '../../../../../Models/Titular';
 import { Router } from '@angular/router';
 import { ApiService } from '../../../../../Services/api.service';
 
-
 @Component({
   selector: 'app-destinatario',
   standalone: true,
@@ -15,7 +14,6 @@ import { ApiService } from '../../../../../Services/api.service';
   styleUrl: './destinatario.component.css'
 })
 export class DestinatarioComponentPix {
-  idTitular : number = this.apiService.idTitularLogado; //FIXME remover ao criar login
   errorMessage!: string;
   titularEncontrado: Titular | undefined;
   cpfDestino! : string;
@@ -26,7 +24,7 @@ export class DestinatarioComponentPix {
 
   constructor(
     private apiService: ApiService,
-    private router: Router
+    private router: Router,
   ) {}
 
   procurarTitular() {

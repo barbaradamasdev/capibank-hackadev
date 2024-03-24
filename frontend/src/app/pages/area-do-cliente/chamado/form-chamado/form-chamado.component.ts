@@ -16,7 +16,6 @@ export class FormChamadoComponent implements OnInit {
   chamado: FormGroup;
   sucessMessage!: string;
   atendimentos: Atendimento[] = [];
-  atendimento? : Atendimento;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -55,22 +54,13 @@ ngOnInit(): void {
   this.listarChamados();
 }
 
-// TODO finalizar chamados
-// TODO receber id do titular e nao do atendimento
-
 listarChamados() {
-  this.apiService.GetAtendimentoPorId(1).subscribe(chamados => {
-  // this.apiService.GetAtendimentoPorId(this.apiService.idTitularLogado).subscribe(chamados => {
-    this.atendimento = chamados;
-
-    if (this.atendimentos === undefined || this.atendimentos === null) {
-      this.atendimentos = [];
+  this.apiService.GetAtendimentoPorTitular().subscribe(chamados => {
+    if (Array.isArray(chamados)) {
+      this.atendimentos = chamados;
+    } else {
+      this.atendimentos = [chamados];
     }
-
-    this.atendimentos.push(this.atendimento);
-
-    console.log("Atendimento:", this.atendimento);
-    console.log("Atendimentos:", this.atendimentos);
   });
 }
 

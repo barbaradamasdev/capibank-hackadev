@@ -11,23 +11,35 @@ import { ContaCorrente } from '../Models/ContaCorrente';
   providedIn: 'root'
 })
 export class ApiService {
+  private readonly idTitularLogadoKey = '';
 
   private apiUrl = `${environment.ApiUrl}`;
-  idTitularLogado: number = 1; //FIXME remover ao criar login
 
   constructor(private http: HttpClient) { }
+
+  get idTitularLogado(): number {
+    const item = localStorage.getItem(this.idTitularLogadoKey);
+    return item ? parseInt(item, 10) : 0;
+}
+
+  set idTitularLogado(id: number) {
+    localStorage.setItem(this.idTitularLogadoKey, id.toString());
+}
+
+  logout() {
+    localStorage.removeItem(this.idTitularLogadoKey);
+  }
 
   /////////////////
   /// LOGIN ///////
   /////////////////
-  GetLoginPorEmail(email: string,): Observable<Titular> {
-    return this.http.get<Titular>(`${this.apiUrl}Titular/loginporemail/${email}`);
+  PostLogin(data: any): Observable<any> {
+    return this.http.post<any>(`${this.apiUrl}Titular/login`, data);
   }
 
   GetNomeESaldo(cpf: string): Observable<any> {
     return this.http.get<any>(`${this.apiUrl}ContaCorrente/listarporcpf/${cpf}`);
   }
-
 
   //////////////
   /// CONTA ////
@@ -92,8 +104,8 @@ export class ApiService {
     return this.http.post<any>(`${this.apiUrl}Atendimento/criaratendimento`, data);
   }
 
-  GetAtendimentoPorId(idConta:number) : Observable<Atendimento> {
-    return this.http.get<Atendimento>(`${this.apiUrl}Atendimento/listarporid/${idConta}`)
+  GetAtendimentoPorTitular() : Observable<Atendimento> {
+    return this.http.get<Atendimento>(`${this.apiUrl}Atendimento/listarportitular/${this.idTitularLogado}`)
   }
 
 }
