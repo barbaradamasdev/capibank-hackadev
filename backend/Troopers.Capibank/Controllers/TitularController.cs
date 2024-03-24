@@ -3,15 +3,18 @@ using Microsoft.AspNetCore.Mvc;
 using Troopers.Capibank.DTOs.Request;
 using Troopers.Capibank.DTOs.Response;
 using Troopers.Capibank.Services;
+using Troppers.Capibank.Data.Context;
 
 namespace Troopers.Capibank.Controllers;
 
 public class TitularController : DefaultController
 {
     private readonly ITitularService _ts;
-    public TitularController(ITitularService ts)
+    private readonly CapibankContext _context;
+    public TitularController(ITitularService ts, CapibankContext context)
     {
         _ts = ts;
+        _context = context;
     }
     /// <summary>
     /// Método para listar todos os titulares das contas com os seus enderecos.

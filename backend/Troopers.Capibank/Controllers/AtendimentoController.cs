@@ -38,6 +38,11 @@ public class AtendimentoController : DefaultController
         if (atendimento is null) return NotFound("Atendimento não encontrado");
         return Ok(atendimento);
     }
+    /// <summary>
+    /// Método para listar todos os atendimentos solicitados por um Titular.
+    /// </summary>
+    /// <param name="id"></param>
+    /// <returns></returns>
     [HttpGet("listarportitular/{id}")]
     public async Task<ActionResult<IEnumerable<AtendimentoResponseDTO>>> ListarPorTitular(int id)
     {
