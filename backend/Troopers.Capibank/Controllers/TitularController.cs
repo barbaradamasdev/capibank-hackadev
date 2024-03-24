@@ -1,17 +1,22 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using Troopers.Capibank.Domain.Models;
 using Troopers.Capibank.DTOs.Request;
 using Troopers.Capibank.DTOs.Response;
 using Troopers.Capibank.Services;
+using Troppers.Capibank.Data.Context;
 
 namespace Troopers.Capibank.Controllers;
 
 public class TitularController : DefaultController
 {
     private readonly ITitularService _ts;
-    public TitularController(ITitularService ts)
+    private readonly CapibankContext _context;
+    public TitularController(ITitularService ts, CapibankContext context)
     {
         _ts = ts;
+        _context = context;
     }
     /// <summary>
     /// Método para listar todos os titulares das contas com os seus enderecos.
@@ -72,4 +77,16 @@ public class TitularController : DefaultController
         await _ts.AlTerarTitular(titularDTO);
         return Ok("Titular alterado com sucesso");
     }
+    [HttpPost("login")]
+    public  async Task<IActionResult> Login(TitularLoginRequestDTO loginDTO)
+    {
+        var cpfDto = loginDTO.CPF;
+        var emailDto = loginDTO.Email;
+        var senhaDto = loginDTO.Senha;
+        var titular = await _context.Titulares.Where(t => t.CPF.Equals(cpfDto) || t.Email.Equals(emailDto)).FirstOrDefaultAsync();
+        if (titular is null) return NotFound("Usuário não encontrado");
+        if (titular.Senha.Equals(senhaDto)) ;
+        return Ok("Login Realizado com sucesso");
+    }
+
 }

@@ -11,8 +11,9 @@ import { ApiService } from '../../Services/api.service';
 })
 export class SecaoSaldoComponent implements OnInit {
   nome?: string ;
-  idConta : number = this.apiService.idTeste; //FIXME remover ao criar login
-
+  idConta : number = this.apiService.idTitularLogado; //FIXME remover ao criar login
+  cpfConta? : string;
+  saldoConta? : number;
   saldoVisivel: boolean = true;
 
   constructor(private apiService: ApiService) {}
@@ -35,10 +36,22 @@ export class SecaoSaldoComponent implements OnInit {
     this.apiService.GetTitularPorId(this.idConta).subscribe(titular => {
       if (titular && titular.nome) {
         this.nome = titular.nome;
-        // console.log(titular)
+        this.cpfConta = titular.cpf!;
+
+        this.apiService.GetNomeESaldo(this.cpfConta).subscribe(titular => {
+          this.saldoConta = titular.saldo;
+        });
       }
     });
+
+    if (this.cpfConta) {
+      this.apiService.GetNomeESaldo(this.cpfConta).subscribe(titular => {
+        if (titular && titular.nome) {
+          this.saldoConta = titular.saldo;
+        }
+      });
+    }
+
   }
 
-  // TODO add saldo da api
 }
