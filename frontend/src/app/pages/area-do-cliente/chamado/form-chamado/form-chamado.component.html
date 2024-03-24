@@ -1,0 +1,57 @@
+<div class="container-form p-4">
+
+  <div class="section-top">
+    <h2>Detalhe no campo abaixo o seu problema.</h2>
+    <p>Retornaremos o chamado em até 1 dia útil por email</p>
+  </div>
+
+  <form [formGroup]="chamado" (ngSubmit)="onSubmit($event)">
+    <div class="form-group">
+        <textarea formControlName="descricao" class="form-control" name="" id="" cols="30" rows="10"></textarea>
+    </div>
+
+    <div *ngIf="sucessMessage" class="warn-text text-success">{{ sucessMessage }}</div>
+
+    <div class="buttons flex">
+      <button type="submit" class="botao-principal">
+        Enviar chamado
+      </button>
+    </div>
+  </form>
+
+  <div class="section-top contato">
+    <h2>Contato:</h2>
+    <div class="buttons flex">
+      <button class="botao-secundario">
+        0800 0111 2134
+      </button>
+      <button class="botao-secundario">
+        atendimento&#64;capibank.com
+      </button>
+    </div>
+  </div>
+
+  <div class="section-top" style="margin-top: 40px" *ngIf="atendimentos && atendimentos.length > 0">
+    <h2>Histórico de chamados:</h2>
+  </div>
+
+  <table *ngIf="atendimentos && atendimentos.length > 0">
+    <tbody class="flex">
+      <tr *ngFor="let chamado of atendimentos" class="atendimentos">
+        <td>
+          <p><strong>ID do chamado:</strong> {{ chamado.id }}</p>
+          <hr>
+          <p *ngIf="chamado.emAberto; else responded"><strong>Status:</strong> Não respondido, aguarde o retorno</p>
+          <ng-template #responded>
+            <p><strong>Status:</strong> Respondido e finalizado</p>
+            <p><strong>Resposta:</strong> {{chamado.resposta}}</p>
+          </ng-template>
+          <hr>
+          <p><strong>Data do chamado:</strong> {{ chamado.dataChamado | date: 'dd/MM/yy - HH:mm' }}</p>
+          <p><strong>Descrição da solicitação:</strong> {{ chamado.descricao }}</p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>

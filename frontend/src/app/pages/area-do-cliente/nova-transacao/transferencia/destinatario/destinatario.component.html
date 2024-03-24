@@ -1,0 +1,25 @@
+<div class="container-form p-4">
+  <h6 class="section-title">Para quem você quer transferir?</h6>
+  <form [formGroup]="destinatario" (ngSubmit)="procurarCPF()">
+    <div class="form-group">
+      <input
+        type="number"
+        class="form-control"
+        formControlName="cpf"
+        placeholder="CPF"
+      />
+    </div>
+
+    <div *ngIf="errorMessage" class="warn-text text-danger">{{ errorMessage }}</div>
+
+    <div class="buttons flex">
+      <button class="botao-principal">
+        Confirmar
+      </button>
+      <button routerLink="/cliente/nova/transferencia" type="submit" class="botao-secundario">
+        Voltar
+      </button>
+    </div>
+
+  </form>
+</div>

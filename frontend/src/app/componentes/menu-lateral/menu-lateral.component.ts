@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { ApiService } from '../../Services/api.service';
 
 @Component({
   selector: 'app-menu-lateral',
@@ -15,7 +16,11 @@ export class MenuLateralComponent {
     this.linkClicado.emit();
   }
 
+  constructor(
+    private apiService: ApiService,
+  ) {}
+
   logout():void{
-    localStorage.clear();
+    this.apiService.logout();
   }
 }

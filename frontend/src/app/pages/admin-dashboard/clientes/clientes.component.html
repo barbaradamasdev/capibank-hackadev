@@ -1,0 +1,80 @@
+<!-- <div class="main-content">
+  <div class="clientes">
+    <h1>Gerenciamento de Clientes</h1>
+    <div class="clientes-container">
+
+      <div class="pesquisa-clientes">
+        <h2>Pesquisa de Clientes</h2>
+        <div class="flex">
+          <input type="text" placeholder="Nome completo, CPF ou número da conta" [(ngModel)]="filtro" (keyup.enter)="pesquisar()">
+          <select [(ngModel)]="filtroTipo">
+            <option value="nome">Nome</option>
+            <option value="cpf">CPF</option>
+            <option value="conta">Número da Conta</option>
+          </select>
+          <button class="botao-banner" (click)="pesquisar()">Pesquisar</button>
+        </div>
+      </div>
+
+      <div class="detalhes-cliente" *ngIf="clienteSelecionado">
+          <h2>Detalhes do Cliente</h2>
+          <div class="flex">
+            <div class="info-cliente">
+              <p><strong>Nome:</strong> {{ clienteSelecionado.nome }}</p>
+              <p><strong>CPF:</strong> {{ clienteSelecionado.cpf }}</p>
+              <p><strong>Telefone:</strong> {{ clienteSelecionado.telefone }}</p>
+              <p><strong>Email:</strong> {{ clienteSelecionado.email }}</p>
+              <p><strong>Endereço:</strong> {{ clienteSelecionado.endereco }}</p>
+              <p><strong>Número da Conta:</strong> {{ clienteSelecionado.numeroConta }}</p>
+              <p><strong>Tipo de Conta:</strong> {{ clienteSelecionado.tipoConta }}</p>
+              <p><strong>Data de Nascimento:</strong> {{ clienteSelecionado.dataNascimento }}</p>
+              <p><strong>Profissão:</strong> {{ clienteSelecionado.profissao }}</p>
+              <p><strong>Renda Mensal:</strong> R$ {{ clienteSelecionado.rendaMensal }}</p>
+            </div>
+            <div class="cliente-actions">
+              <button class="botao-banner" (click)="editarConta()">Editar Informações</button>
+              <button class="botao-banner" (click)="bloquearDesbloquearConta()">Bloquear/Desbloquear Conta</button>
+              <button class="botao-banner">Gerar Relatórios</button>
+            </div>
+          </div>
+      </div>
+
+      <div *ngIf="mostrarFormularioEdicao" class="form-edicao-cliente">
+        <h2>Editar Informações do Cliente</h2>
+        <form (submit)="atualizarCliente()">
+          <input type="text" [ngModel]="clienteSelecionado?.nome" (ngModelChange)="atualizarNome($event)" name="nome" placeholder="Nome">
+          <input type="text" [ngModel]="clienteSelecionado?.cpf" (ngModelChange)="atualizarCPF($event)" name="cpf" placeholder="CPF">
+
+          <button type="submit" class="botao-banner">Salvar Alterações</button>
+          <button type="button" class="botao-banner" (click)="cancelarEdicao()">Cancelar</button>
+        </form>
+      </div>
+
+      <div class="gerenciamento-contas">
+        <h2>Gerenciamento de Contas</h2>
+        <div class="buttons-admin flex">
+          <button class="botao-banner">Abrir Nova Conta</button>
+          <button class="botao-banner">Encerrar Conta</button>
+          <button class="botao-banner">Visualizar Extrato</button>
+        </div>
+      </div>
+
+      <div class="relatorios-clientes">
+        <h2>Relatórios de Clientes</h2>
+        <div class="buttons-admin flex">
+          <button class="botao-banner">Gerar Relatório em PDF</button>
+        </div>
+      </div>
+
+      <div class="lista-clientes">
+        <h2>Lista de Clientes</h2>
+        <ul>
+          <li *ngFor="let cliente of clientes" (click)="selecionarCliente(cliente)">
+            {{ cliente.nome }} - {{ cliente.cpf }} - {{ cliente.numeroConta }}
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</div> -->

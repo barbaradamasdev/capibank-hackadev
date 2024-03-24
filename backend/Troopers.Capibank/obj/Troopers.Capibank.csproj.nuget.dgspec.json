@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\dev\\CapiBankv3\\backend\\Troopers.Capibank\\Troopers.Capibank.csproj": {}
+    "C:\\dev\\capibank-windows-sprint4-back\\capibank-hackadev\\backend\\Troopers.Capibank\\Troopers.Capibank.csproj": {}
   },
   "projects": {
-    "C:\\dev\\CapiBankv3\\backend\\Troopers.Capibank\\Troopers.Capibank.csproj": {
+    "C:\\dev\\capibank-windows-sprint4-back\\capibank-hackadev\\backend\\Troopers.Capibank\\Troopers.Capibank.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\dev\\CapiBankv3\\backend\\Troopers.Capibank\\Troopers.Capibank.csproj",
+        "projectUniqueName": "C:\\dev\\capibank-windows-sprint4-back\\capibank-hackadev\\backend\\Troopers.Capibank\\Troopers.Capibank.csproj",
         "projectName": "Troopers.Capibank",
-        "projectPath": "C:\\dev\\CapiBankv3\\backend\\Troopers.Capibank\\Troopers.Capibank.csproj",
+        "projectPath": "C:\\dev\\capibank-windows-sprint4-back\\capibank-hackadev\\backend\\Troopers.Capibank\\Troopers.Capibank.csproj",
         "packagesPath": "C:\\Users\\barba\\.nuget\\packages\\",
-        "outputPath": "C:\\dev\\CapiBankv3\\backend\\Troopers.Capibank\\obj\\",
+        "outputPath": "C:\\dev\\capibank-windows-sprint4-back\\capibank-hackadev\\backend\\Troopers.Capibank\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\barba\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -49,10 +49,6 @@
               "target": "Package",
               "version": "[13.0.1, )"
             },
-            "Microsoft.AspNetCore.OpenApi": {
-              "target": "Package",
-              "version": "[8.0.2, )"
-            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[8.0.3, )"
@@ -69,7 +65,7 @@
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
-              "version": "[6.4.0, )"
+              "version": "[6.5.0, )"
             }
           },
           "imports": [

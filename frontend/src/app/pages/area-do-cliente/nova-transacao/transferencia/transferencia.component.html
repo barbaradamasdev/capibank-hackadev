@@ -1,0 +1,25 @@
+<div class="container-form p-4">
+  <h6 class="section-title">Qual o valor da transferência?</h6>
+  <form [formGroup]="transferencia" (ngSubmit)="armazenarValor()">
+    <div class="form-group">
+      <input
+        type="number"
+        class="form-control"
+        formControlName="valor"
+        placeholder="R$ 0,00"
+      />
+    </div>
+
+    <div *ngIf="errorMessage" class="warn-text text-danger">{{ errorMessage }}</div>
+
+    <div class="buttons flex">
+      <button [disabled]="!transferencia.valid" type="submit"  class="botao-principal">
+        Confirmar valor
+      </button>
+      <button routerLink="/cliente" type="submit" class="botao-secundario">
+        Voltar
+      </button>
+    </div>
+
+  </form>
+</div>

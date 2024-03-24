@@ -1,0 +1,40 @@
+<!-- <div class="container-form p-4">
+
+  <h6 class="section-title">Entre com sua conta</h6>
+
+    <form [formGroup]="adminFormLogin" (submit)="autenticar()">
+
+      <div class="form-group">
+
+        <input
+        formControlName="email"
+        type="email"
+        class="form-control"
+        id="exampleInputEmail1"
+        aria-describedby="emailHelp"
+        placeholder="Email">
+
+        <div *ngIf="adminFormLogin.get('email')?.hasError('email') && adminFormLogin.get('email')?.touched" class="warn-text text-danger" >
+          Por favor informe um email válido
+        </div>
+
+        <div class="text-danger warn-text" *ngIf="adminFormLogin.get('email')?.hasError('required') && adminFormLogin.get('email')?.touched">
+          Informe um email para prosseguir
+        </div>
+
+      </div>
+      <div class="form-group">
+        <input
+        formControlName="senha"
+        type="password"
+        class="form-control"
+        id="exampleInputPassword1"
+        placeholder="Senha">
+        <div class="text-danger warn-text"  *ngIf="adminFormLogin.get('senha')?.invalid && adminFormLogin.get('senha')?.touched">Senha obrigatória</div>
+      </div>
+
+      <div class="buttons justify-content-center text-center">
+        <button [disabled]="!adminFormLogin.valid" type="submit" class="btn botao-principal btn-lg btn-block">Entrar</button>
+      </div>
+    </form>
+  </div> -->

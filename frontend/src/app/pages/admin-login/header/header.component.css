@@ -1,0 +1,27 @@
+header {
+  background-color: var(--cor-azul-medio);
+  color: white;
+  height: 15vh;
+  min-height: 230px;
+}
+
+.container {
+  max-width: 500px;
+}
+
+.bank {
+  justify-content: start;
+  margin-top: 40px;
+}
+
+.logo {
+  width: 124px;
+  object-fit: contain;
+}
+
+.gestor {
+  margin-left: 8px;
+  color: var(--cor-dourado);
+  font-size: 24px;
+  font-family: "Poppins", "sans-serif";
+}

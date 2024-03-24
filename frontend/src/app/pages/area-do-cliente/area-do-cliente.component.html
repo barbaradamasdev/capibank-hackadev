@@ -1,11 +1,7 @@
-<div class="area-do-cliente">
-  <app-cabecalho-area-interna style="z-index: 90;"></app-cabecalho-area-interna>
-  <app-secao-saldo></app-secao-saldo>
-  <div class="grid container">
-    <app-acesso-rapido-area-interna></app-acesso-rapido-area-interna>
-    <app-barra-de-busca></app-barra-de-busca>
-    <app-menu-lateral [ngClass]="{'menu-open': isMenuOpen}" (linkClicado)="onLinkClicked()" style="z-index: 9;"></app-menu-lateral>
-    <app-historico-transacoes></app-historico-transacoes>
-  </div>
+<app-cabecalho-area-interna [logoSrc]="logoTipo === 'azul' ? 'assets\\icones\\logo-azul.png' : 'assets\\icones\\logo-branca.png'"></app-cabecalho-area-interna>
+<div class="espaco-header"></div>
+<div class="conteudo">
+  <app-secao-saldo *ngIf="!isNovaTransacaoRoute || isSmallScreen"></app-secao-saldo>
+  <router-outlet></router-outlet>
   <app-menu-inferior-area-interna></app-menu-inferior-area-interna>
 </div>

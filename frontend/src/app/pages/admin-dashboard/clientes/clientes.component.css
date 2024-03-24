@@ -1,0 +1,107 @@
+.main-content {
+  padding: 20px;
+  max-height: calc(100vh - 55px);
+  overflow: auto;
+}
+
+h1 {
+  font-size: 20px;
+}
+
+h2 {
+  font-size: 18px;
+}
+
+.buttons-admin {
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.clientes-container {
+  background-color: #f2f2f2;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.clientes-container > * {
+  margin-bottom: 20px;
+}
+
+.pesquisa-clientes .flex {
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.pesquisa-clientes .flex input {
+  max-width: 400px;
+  width: 100%;
+}
+
+input {
+  padding: 8px;
+
+}
+
+.pesquisa-clientes .flex select {
+  padding: 8px;
+  max-width: 180px;
+  width: 100%;
+}
+
+.detalhes-cliente {
+  margin-bottom: 20px;
+  background: white;
+  padding: 20px;
+  border-radius: 5px;
+  max-width: 830px;
+}
+
+.detalhes-cliente .flex {
+  justify-content: space-between;
+}
+
+.info-cliente p {
+  margin-bottom: 5px;
+}
+
+.cliente-actions {
+  max-width: 240px;
+}
+
+.cliente-actions > *{
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.lista-clientes ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.lista-clientes li {
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  cursor: pointer;
+  max-width: 830px;
+}
+
+.lista-clientes li:hover {
+  background-color: #f9f9f9;
+}
+
+input,
+select,
+button {
+  height: 50px;
+}
+
+
+@media (max-width: 980px) {
+  .detalhes-cliente .flex {
+    flex-direction: column;
+  }
+}

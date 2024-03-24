@@ -21,7 +21,6 @@ form {
 .side-by-side > * {
   margin: 0 0 16px 0;
   width: 50%;
-  max-width: fit-content;
 }
 
 .form-title {
@@ -110,6 +109,7 @@ input {
   justify-content: center;
   text-align: center;
   margin: auto;
+  margin-top: 10px;
 }
 
 .account {

@@ -1,13 +1,11 @@
 export interface Endereco {
-  erro?: boolean;
+  localidade: string;
+  id: number;
   cep?: string;
   logradouro?: string;
+  numero?: string;
   complemento?: string;
   bairro?: string;
-  localidade?: string;
+  cidade?: string;
   uf?: string;
-  ibge?: string;
-  gia?: string;
-  ddd?: string;
-  siafi?: string;
 }

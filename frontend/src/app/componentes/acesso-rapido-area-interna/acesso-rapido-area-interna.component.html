@@ -1,33 +1,51 @@
 <div class="container">
     <div class="section-top">
         <h2>Acesso rápido</h2>
-        <div routerLink="/historico" class="see-all">Veja tudo</div>
+        <div routerLink="/cliente/atalho" class="see-all">Veja tudo</div>
     </div>
 
     <div class="grid">
       <div class="icon">
-        <a routerLink="/historico">
-            <img src="../../../assets/icones/icone-transferencia.png" alt="">
+        <a routerLink="/cliente/nova/transferencia">
+            <img src="../../../assets/icones/icone-transferencia.png" alt="Transferência">
             <p>Transferência</p>
         </a>
       </div>
       <div class="icon">
-          <a routerLink="/historico">
-              <img src="../../../assets/icones/icone-pix-2.png" alt="">
-              <p>Pix</p>
+          <a routerLink="/cliente/nova/deposito">
+              <img src="../../../assets/icones/icone-sacar.png" alt="Depósito">
+              <p>Depósito</p>
           </a>
       </div>
       <div class="icon">
-          <a routerLink="/historico">
-              <img src="../../../assets/icones/icone-investir.png" title="Investir">
-              <p>Investir</p>
+          <a routerLink="/cliente/nova/saque">
+              <img src="../../../assets/icones/icone-investir.png" title="Saque">
+              <p>Saque</p>
           </a>
       </div>
       <div class="icon">
-          <a routerLink="/historico">
+        <a routerLink="/cliente/nova/pix">
+            <img src="../../../assets/icones/icone-pix-2.png" alt="Pix">
+            <p>Pix</p>
+        </a>
+    </div>
+      <div class="icon">
+          <a routerLink="/cliente/historico">
+              <img src="../../../assets/icones/icone-transacoes-azul.png" title="Saque">
+              <p>Histórico</p>
+          </a>
+      </div>
+      <div class="icon">
+          <a routerLink="/cliente/chamado">
+              <img src="../../../assets/icones/icone-contato-azul.png" title="Ajuda">
+              <p>Ajuda</p>
+          </a>
+      </div>
+      <!-- <div class="icon">
+          <a routerLink="/cliente/nova">
               <img src="../../../assets/icones/icone-boleto.png" title="Pagar Boleto">
               <p>Pagar Boleto</p>
           </a>
-      </div>
+      </div> -->
     </div>
 </div>

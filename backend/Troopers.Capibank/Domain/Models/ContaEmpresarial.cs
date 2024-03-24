@@ -6,15 +6,28 @@ namespace Troopers.Capibank.Models;
     {
         public int CNPJ { get; set; }
 
-        public ContaEmpresarial(int numeroConta, Titular titular, int cnpj) : base(numeroConta, titular)
-        {
-            CNPJ = cnpj;
-        
-        }
-
-        public string GerarLinkdePagamento()
-        {
-            // Lógica para gerar o link de pagamento
-            return "Link de pagamento gerado";
-        }
+    public override bool BloquearConta(int id)
+    {
+        throw new NotImplementedException();
     }
+
+    public override decimal Depositar(decimal valor)
+    {
+        throw new NotImplementedException();
+    }
+
+    public override bool DesbloquearConta(int id)
+    {
+        throw new NotImplementedException();
+    }
+
+    public override bool ExcluirConta(int id)
+    {
+        throw new NotImplementedException();
+    }
+
+    public override decimal Sacar(decimal valor)
+    {
+        throw new NotImplementedException();
+    }
+}

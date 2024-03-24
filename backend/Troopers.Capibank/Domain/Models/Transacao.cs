@@ -1,61 +1,14 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Troopers.Capibank.Domain.Enums;
 
-namespace Troopers.Capibank.Domain.Entities
+namespace Troopers.Capibank.Domain.Models;
+
+public class Transacao
 {
-    public class Transacao
-    {
-    public int IdTransacao { get; set; }
+    public int Id { get; set; }
     public Operacao TipoTransacao { get; set; }
-    public decimal ValorTransacao { get; set; }
+    public decimal Valor { get; set; }
     public DateTime DataTransacao { get; set; } = DateTime.Now;
-    public SituacaoConta Situacao { get; set; }
-
-
-
-    public void Transferir ( contaOrigem, contaDestino, decimal valor )
-    {
-        if (contaOrigem.Saldo < valor)
-        {
-            throw new InvalidOperationException("Saldo insuficiente");
-        }
-
-        contaOrigem.Sacar(valor);
-        contaDestino.Depositar(valor);
-    }
-
-
-    public void Depositar(decimal valor)
-    {
-        if ( valor <= 0 )
-        {
-            throw new ArgumentException("O valor deve ser maior que zero.", nameof(valor)); 
-        }
-        Saldo = Saldo + valor;
-    }
-
-    public void Sacar(decimal valor)
-    {
-        if (valor <= 0)
-        {
-            throw new ArgumentException("Valor de saque deve ser maior que zero.", nameof(valor));
-        }
-
-        if ( valor > Saldo ) 
-        {
-            throw new InvalidOperationException("Saldo insuficiente para sacar.");
-        }
-
-        Saldo = Saldo + valor; 
-    }
-
-
-
-
-    }
-
-
+    public SituacaoTransacao Situacao { get; set; }
+    public int ContaDestinoOrigemId { get; set; }
+    public int ContaId { get; set; }
 }

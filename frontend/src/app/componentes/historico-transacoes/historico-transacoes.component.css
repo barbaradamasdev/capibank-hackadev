@@ -8,7 +8,7 @@
 .section-top h2 {
   font-weight: bold;
   margin: 20px 0;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .container {
@@ -23,8 +23,9 @@
 }
 
 .descricao{
-  font-weight: 600;
-  font-size: 0.7rem;
+  text-transform: capitalize;
+  font-weight: 500;
+  font-size: 0.6rem;
   color:rgb(163, 146, 146);
 }
 
@@ -35,6 +36,12 @@ table {
 .rowTransacao {
   display: flex;
   justify-content: space-between;
+}
+
+.col1Erro {
+  width: 40px;
+  background: url(../../../assets/icones/icone-erro-transacao.svg) no-repeat;
+  background-size: contain;
 }
 
 .col1Saida {
@@ -51,12 +58,12 @@ table {
 
 .col2 {
   justify-self: left;
-  width: 75%;
+  width: 70%;
   padding-left: 10px;
 }
 
 .col3 {
-  width: 20%;
+  width: 30%;
   text-align: right;
 }
 
@@ -72,20 +79,15 @@ table {
   font-weight: 600;
 }
 
-.divider {
-  background: #F4F4F4;
-  height: 1px;
+tr {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #dadada;
 }
 
 
 @media (max-width: 390px) {
   .tipo-de-transacao  {
     font-size: 14px !important;
-  }
-}
-
-@media (max-width: 320px) {
-  .divider {
-    margin: 6px 0;
   }
 }

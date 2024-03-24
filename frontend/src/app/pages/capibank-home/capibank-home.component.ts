@@ -9,6 +9,7 @@ import { HomeBeneficiosComponent } from "../../componentes/home-beneficios/home-
 import { HomeMaquininhaComponent } from "../../componentes/home-maquininha/home-maquininha.component";
 import { HomeCtaComponent } from "../../componentes/home-cta/home-cta.component";
 import { HomeDepoimentosComponent } from "../../componentes/home-depoimentos/home-depoimentos.component";
+import { Title } from '@angular/platform-browser';
 
 @Component({
     selector: 'app-capibank-home',
@@ -18,5 +19,11 @@ import { HomeDepoimentosComponent } from "../../componentes/home-depoimentos/hom
     imports: [RouterOutlet, RouterLink, CabecalhoHomeComponent, RodapeHomeComponent, HomeBannerCheioComponent, CapividaBannerInicialComponent, HomeSecaoInicioComponent, HomeBeneficiosComponent, HomeMaquininhaComponent, HomeCtaComponent, HomeDepoimentosComponent]
 })
 export class CapibankHomeComponent {
+
+  constructor(private titleService: Title) { }
+
+  ngOnInit(): void {
+    this.titleService.setTitle('Capibank - O seu banco');
+  }
 
 }

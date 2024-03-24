@@ -1,0 +1,60 @@
+
+.grid {
+  grid-template-areas:
+    "acesso-rapido"
+    "historico-transacoes";
+  padding: 0;
+}
+
+app-acesso-rapido-area-interna {
+  grid-area: acesso-rapido;
+  max-height: 159px;
+  overflow: hidden;
+}
+
+app-menu-lateral {
+  grid-area: menu-lateral;
+}
+
+app-historico-transacoes {
+  grid-area: historico-transacoes;
+}
+
+@media (max-width: 744px) {
+  app-menu-lateral {
+    position: absolute;
+    top: 55px;
+    transform: translateX(-2000px);
+    transition: transform 0.3s ease;
+  }
+
+  .menu-open {
+    transform: translateX(0);
+  }
+}
+
+@media (min-width: 745px) and (max-width: 1000px) {
+  app-acesso-rapido-area-interna {
+    max-height: inherit;
+  }
+
+  .grid {
+    grid-template-areas:
+    "menu-lateral acesso-rapido"
+    "menu-lateral historico-transacoes";
+    grid-template-rows: 191px calc(100vh - 191px - 76px);
+    grid-template-columns: 300px calc(100vw - 300px);
+  }
+}
+
+@media (min-width: 1001px){
+
+  app-acesso-rapido-area-interna {
+    max-height: inherit;
+  }
+  .grid {
+    grid-template-areas:
+    "menu-lateral acesso-rapido historico-transacoes";
+    grid-template-columns: 300px minmax(380px, 500px) minmax(320px, 700px);
+  }
+}

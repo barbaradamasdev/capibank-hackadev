@@ -1,12 +1,8 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Data",
-    "\\Data\\Context",
-    "\\DTOs",
-    "\\DTOs\\Profiles",
-    "\\Properties"
+    "\\Controllers"
   ],
-  "SelectedNode": "\\Troopers.Capibank.http",
+  "SelectedNode": "\\Controllers\\AtendimentoController.cs",
   "PreviewInSolutionExplorer": false
 }

@@ -1,0 +1,37 @@
+.section-title {
+  font-size: 18px;
+}
+
+button {
+  margin-top: 50px;
+  width: 100%;
+}
+
+.container-form {
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 5px;
+  max-width: 600px;
+  margin: 20px;
+}
+
+.container-form p {
+  margin-bottom: 10px;
+}
+
+.container-form p strong {
+  font-weight: bold;
+}
+
+.resumo {
+  margin-bottom: auto;
+  margin-top: 30px;
+}
+
+@media (min-width: 745px) {
+  .container-form {
+    margin: 20px auto;
+  }
+
+}

@@ -33,13 +33,16 @@
         <div class="text-danger warn-text"  *ngIf="formLogin.get('senha')?.invalid && formLogin.get('senha')?.touched">Senha obrigatória</div>
       </div>
 
+      <div *ngIf="errorMessage" class="warn-text text-danger">{{ errorMessage }}</div>
+
+
       <div class="buttons justify-content-center text-center">
         <button [disabled]="!formLogin.valid" type="submit" class="btn botao-principal btn-lg btn-block">Entrar</button>
         <button routerLink="/" type="button" class="botao-secundario btn-lg btn-block show-on-mobile">Voltar</button>
       </div>
     </form>
 
-    <a class="forgot-password" routerLink="/recuperar/passo-1">Esqueci minha senha</a>
+    <!-- <a class="forgot-password" routerLink="/recuperar/passo-1">Esqueci minha senha</a> -->
     <div class="register d-flex gap-15">
       <span class="account">Ainda não tem conta?</span>
       <a routerLink="/cadastrar/passo-1">Faça seu cadastro</a>

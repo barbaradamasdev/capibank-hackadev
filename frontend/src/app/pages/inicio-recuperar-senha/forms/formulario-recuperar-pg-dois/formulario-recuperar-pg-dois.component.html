@@ -2,7 +2,7 @@
 
   <h6 class="section-title">Recupere sua senha</h6>
 
-  <form (input)="checkPasswordRequirements()">
+  <form (input)="checkPasswordRequirements()" (keyup.enter)="checkPasswordRequirements()">
     <div class="form-group">
       <p class="form-title">Digite a nova senha</p>
       <input type="password" class="form-control"
@@ -27,11 +27,11 @@
     </ul>
 
     <div class="buttons flex">
-      <button routerLink="/recuperar/passo-1" type="submit" class="botao-secundario">
-        Voltar
-      </button>
       <button routerLink="/recuperar/passo-3" type="submit" class="botao-principal">
         Atualizar senha
+      </button>
+      <button routerLink="/recuperar/passo-1" type="submit" class="botao-secundario">
+        Voltar
       </button>
 
     </div>

@@ -1,52 +1,55 @@
-import { CanActivateFn, Router } from '@angular/router';
+import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree, Router } from '@angular/router';
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { ApiService } from '../Services/api.service';
 
-export const autenticarGuard: CanActivateFn = (route, state) => {
-  const rota = new Router;
+@Injectable({
+  providedIn: 'root'
+})
+export class AutenticarGuard implements CanActivate {
 
-  if (localStorage.getItem('email') == undefined){
-    // Criar um modal Bootstrap
-    const modalElement = document.createElement('div');
-    modalElement.classList.add('modal', 'fade');
-    modalElement.innerHTML = `
-      <div class="modal-dialog">
-        <div class="modal-content ">
-          <div class="modal-header">
-            <h5 class="modal-title">Aviso</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
-              <span aria-hidden="true">&times;</span>
-            </button>
+  constructor(private apiService: ApiService, private router: Router) {}
+
+  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean | UrlTree | Observable<boolean | UrlTree> | Promise<boolean | UrlTree> {
+    if (!this.apiService.idTitularLogado) {
+      const modalElement = document.createElement('div');
+      modalElement.classList.add('modal', 'fade');
+      modalElement.innerHTML = `
+        <div class="modal-dialog">
+          <div class="modal-content ">
+            <div class="modal-header">
+              <h5 class="modal-title">Aviso</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p>Favor realizar o login novamente!!!</p>
+            </div>
           </div>
-          <div class="modal-body">
-            <p>Favor realizar o login novamente!!!</p>
-          </div>
-        </div>
-      </div>
-    `;
+        </div>`;
+      document.body.appendChild(modalElement);
 
-    document.body.appendChild(modalElement);
+      const closeModalButton = modalElement.querySelector('.close, .btn-secondary');
 
-    // Adicionar evento de clique para fechar o modal
-    const closeModalButton = modalElement.querySelector('.close, .btn-secondary');
+      if (closeModalButton) {
+        closeModalButton.addEventListener('click', () => {
+          this.router.navigateByUrl("/login");
+          modalElement.remove();
+        });
+      }
 
-    // Verificar se o botão de fechar foi encontrado antes de adicionar o evento
-    if (closeModalButton) {
-      closeModalButton.addEventListener('click', () => {
-        rota.navigateByUrl("/login");
-        modalElement.remove(); // Remover o elemento do modal do DOM após fechar
-      });
+      modalElement.classList.add('show');
+      modalElement.style.display = 'block';
+
+      setTimeout(() => {
+        this.router.navigateByUrl("/login");
+        modalElement.remove();
+      }, 2000);
+
+      return false;
     }
 
-    // Adicionar classe 'show' para exibir o modal
-    modalElement.classList.add('show');
-    modalElement.style.display = 'block';
-
-    setTimeout(() => {
-      rota.navigateByUrl("/login");
-      modalElement.remove();
-    }, 2000);
-
-    return false; // Retorna false para evitar a navegação quando o usuário não está autenticado
+    return true;
   }
-
-  return true;
-};
+}

@@ -1,30 +1,25 @@
 <div class="container-form p-4">
+  <h6 class="section-title">Crie sua senha</h6>
+  <form [formGroup]="senhaForm" (ngSubmit)="onSubmit($event)">
+    <div class="form-group">
+      <input type="password" class="form-control" formControlName="newPassword" placeholder="Nova senha">
+      <input type="password" class="form-control" formControlName="confirmPassword" placeholder="Confirmar senha">
+    </div>
 
-    <h6 class="section-title">Abra sua conta</h6>
+    <div *ngIf="!passwordsMatch() && senhaForm.get('confirmPassword')?.dirty" class="warn-text text-danger">
+      As senhas não coincidem.
+    </div>
 
-    <form>
+    <ul class="text-muted validation-list validacoes">
+      <li [ngClass]="{'valido': hasLength()}">A senha deve ter no mínimo 8 caracteres</li>
+      <li [ngClass]="{'valido': hasNumber()}">A senha deve conter ao menos 1 número</li>
+      <li [ngClass]="{'valido': hasLowercase()}">A senha deve conter ao menos 1 letra minúscula</li>
+      <li [ngClass]="{'valido': hasUpperCase()}">A senha deve conter ao menos 1 letra maiúscula</li>
+    </ul>
 
-      <p class="form-title">
-        Conta criada com sucesso!
-      </p>
-      <p class="form-title">
-        Um email de confirmação foi enviado!
-      </p>
-
-      <!-- TODO input para receber codigo enviado por email -->
-
-
-      <div class="buttons flex">
-
-        <button  routerLink="/login" type="submit" class="botao-principal">
-          Entrar na conta
-        </button>
-
-      </div>
-
-    </form>
+    <div class="buttons flex">
+      <button type="submit" class="botao-principal">Finalizar</button>
+      <button  routerLink="/cadastrar/passo-3" class="botao-secundario">Voltar</button>
+    </div>
+  </form>
 </div>
-
-
-
-

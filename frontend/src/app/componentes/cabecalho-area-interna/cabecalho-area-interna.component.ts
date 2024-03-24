@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { MenuService } from '../../servicos/menu.service'
 import { RouterLink } from '@angular/router';
+import { ApiService } from '../../Services/api.service';
 
 @Component({
   selector: 'app-cabecalho-area-interna',
@@ -10,11 +11,12 @@ import { RouterLink } from '@angular/router';
   styleUrl: './cabecalho-area-interna.component.css'
 })
 export class CabecalhoAreaInternaComponent {
+  @Input() logoSrc: string | undefined;
   elementRef: any;
-  constructor(private menuService: MenuService) {}
+  constructor(private menuService: MenuService, private apiService: ApiService) {}
 
   logout():void{
-    localStorage.clear();
+    this.apiService.logout();
   }
 
   toggleMenu() {

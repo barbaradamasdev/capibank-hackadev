@@ -1,0 +1,31 @@
+.bar {
+  fill: var(--cor-azul-claro);
+}
+.bar-text {
+  fill: white;
+  font-size: 12px;
+}
+
+.grid {
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 10px;
+}
+
+.card {
+  padding: 20px;
+}
+
+.summary-item {
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+h3 {
+  font-size: 20px;
+}
+
+p {
+  font-size: 14px;
+}
