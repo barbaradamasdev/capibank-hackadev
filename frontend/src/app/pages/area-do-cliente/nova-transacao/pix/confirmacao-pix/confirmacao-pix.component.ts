@@ -74,7 +74,6 @@ export class ConfirmacaoPixComponent {
                       this.cpfDestino = contaEncontrada.titular.cpf
                       this.chavePix = localStorage.getItem("chavePix")
                       this.numeroConta = contaEncontrada.numeroConta
-                      // this.tipoConta = "Conta Corrente"
                       this.nome = contaEncontrada.titular.nome
                     } else {
                       console.log('Conta não encontrada para o titular com id:', idTitular);

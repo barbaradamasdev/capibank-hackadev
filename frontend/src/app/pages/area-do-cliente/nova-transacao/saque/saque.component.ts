@@ -43,7 +43,6 @@ export class SaqueComponent{
           console.error("Erro ao efetuar o saque:", response);
           this.errorMessage = "Erro ao efetuar o saque";
 
-          //TODO validacao caso saldo negativo
         }
        },
        error => {

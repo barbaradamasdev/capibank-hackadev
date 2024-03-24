@@ -13,7 +13,6 @@ import { ContaCorrente } from '../Models/ContaCorrente';
 export class ApiService {
 
   private apiUrl = `${environment.ApiUrl}`;
-  // static idTitularLogado: undefined;
   idTitularLogado: number = 1; //FIXME remover ao criar login
 
   constructor(private http: HttpClient) { }

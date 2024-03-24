@@ -33,7 +33,6 @@ export class ConfirmacaoTransferenciaComponent {
     this.activatedRoute = activatedRoute;
   }
 
-  // TODO get transacao por id
   ngOnInit(): void {
     this.activatedRoute.url.subscribe((urlSegments) => {
       const ultimoSegmento = urlSegments[urlSegments.length - 1];
@@ -72,7 +71,6 @@ export class ConfirmacaoTransferenciaComponent {
                     if (contaEncontrada) {
                       this.cpfDestino = contaEncontrada.titular.cpf
                       this.numeroConta = contaEncontrada.numeroConta
-                      // this.tipoConta = "Conta Corrente"
                       this.nome = contaEncontrada.titular.nome
                     } else {
                       console.log('Conta não encontrada para o titular com id:', idTitular);

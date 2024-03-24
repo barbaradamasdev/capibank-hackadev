@@ -86,7 +86,6 @@ export class FormularioCriarContaPgQuatroComponent {
           nome: dadosPassoUmJSON.nome,
           email: dadosPassoUmJSON.email,
           cpf: dadosPassoUmJSON.cpf,
-          // cpf: cpfString,
           senha: this.senha,
           endereco: {
             cep: dadosPassoDoisJSON.cep,
@@ -100,7 +99,6 @@ export class FormularioCriarContaPgQuatroComponent {
         }
       };
 
-      console.log(dados);
       this.apiService.PostContaCorrente(dados).subscribe(response => {
         console.log('Resposta do servidor:', response);
         this.router.navigateByUrl('/cadastrar/passo-5');
