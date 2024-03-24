@@ -21,6 +21,11 @@ public class AtendimentoService : IAtendimentoService
         var atendimento = await _repo.ListarTodos();
         return _mapper.Map<IEnumerable<AtendimentoResponseDTO>>(atendimento);
     }
+    public async Task<IEnumerable<AtendimentoResponseDTO>> ListarPorTitular(int id)
+    {
+        var atendimento = await _repo.ListarPorTitular(id);
+        return _mapper.Map<IEnumerable<AtendimentoResponseDTO>>(atendimento);
+    }
     public async Task<AtendimentoResponseDTO> ListarPorId(int id)
     {
         var atendimento = await _repo.ListarPorId(id);
