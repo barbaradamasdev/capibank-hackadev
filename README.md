@@ -85,6 +85,15 @@ Esses elementos combinados refletem a originalidade e unicidade da marca no seto
 - Desafios ao lidar com incompatibilidades nos tamanhos de tela.
 - **Solução:** Adotamos a ferramenta Responsively App, permitindo visualização em tempo real do layout em diversos dispositivos.
 
+### C#
+- Dificuldade pela falta de prática e conhecimento.
+- **Solução:** As funcionalidades foram divididas por entidades, permitindo que a equipe trabalhasse de forma mais independente, reduzindo a dependência do prazo de outros integrantes.
+
+### Segurança
+- Dificuldade na gestão de tempo para aplicar JWT, autenticação de dois fatores, etc.
+- **Solução:** Foi implementado um cronograma específico para a implementação de medidas de segurança, priorizando as mais críticas e buscando otimizar o tempo de desenvolvimento.
+
+
 ## 👥 Equipe - Sharp Troopers
 
 A equipe Sharp Troopers é um grupo de desenvolvedores habilidosos participando do projeto Capibank. Cada membro contribui para o sucesso do projeto, trazendo um conjunto diversificado de habilidades e experiências.
@@ -105,14 +114,13 @@ A equipe Sharp Troopers é um grupo de desenvolvedores habilidosos participando 
           <a href="https://www.linkedin.com/in/barbaradamas/"><img src="https://github.com/tandpfun/skill-icons/raw/main/icons/LinkedIn.svg" width="20"/></a>
         </sub>
     </td>
-   <td align="center">
-      <a href="https://github.com/tatianetinoco"> <img src="https://avatars.githubusercontent.com/u/120054718?v=4" width="150"/> </a>
+    <td align="center">
+      <a href="https://github.com/jacksontadeu"> <img src="https://avatars.githubusercontent.com/u/112899379?v=4" width="150"/> </a>
         <br>
         <sub>
-          <p>Tatiane Tinoco</p>
-          <p>(Vice-Monitora)</p>
-          <a href="https://github.com/tatianetinoco"><img src="https://github.com/tandpfun/skill-icons/raw/main/icons/Github-Dark.svg" width="20"/></a>
-          <a href="https://www.linkedin.com/in/tatianetinoco/"><img src="https://github.com/tandpfun/skill-icons/raw/main/icons/LinkedIn.svg" width="20"/></a>
+          <p>Jackson Moraes</p>
+          <a href="https://github.com/jacksontadeu"><img src="https://github.com/tandpfun/skill-icons/raw/main/icons/Github-Dark.svg" width="20"/></a>
+          <a href="https://www.linkedin.com/in/jacksontadeu/"><img src="https://github.com/tandpfun/skill-icons/raw/main/icons/LinkedIn.svg" width="20"/></a>
         </sub>
     </td>
    <td align="center">
@@ -125,12 +133,12 @@ A equipe Sharp Troopers é um grupo de desenvolvedores habilidosos participando 
         </sub>
     </td>
    <td align="center">
-      <a href="https://github.com/jacksontadeu"> <img src="https://avatars.githubusercontent.com/u/112899379?v=4" width="150"/> </a>
+      <a href="https://github.com/tatianetinoco"> <img src="https://avatars.githubusercontent.com/u/120054718?v=4" width="150"/> </a>
         <br>
         <sub>
-          <p>Jackson Moraes</p>
-          <a href="https://github.com/jacksontadeu"><img src="https://github.com/tandpfun/skill-icons/raw/main/icons/Github-Dark.svg" width="20"/></a>
-          <a href="https://www.linkedin.com/in/jacksontadeu/"><img src="https://github.com/tandpfun/skill-icons/raw/main/icons/LinkedIn.svg" width="20"/></a>
+          <p>Tatiane Tinoco</p>
+          <a href="https://github.com/tatianetinoco"><img src="https://github.com/tandpfun/skill-icons/raw/main/icons/Github-Dark.svg" width="20"/></a>
+          <a href="https://www.linkedin.com/in/tatianetinoco/"><img src="https://github.com/tandpfun/skill-icons/raw/main/icons/LinkedIn.svg" width="20"/></a>
         </sub>
     </td>
    <td align="center">
@@ -175,15 +183,6 @@ A equipe Sharp Troopers é um grupo de desenvolvedores habilidosos participando 
         <a href="https://www.linkedin.com/in/Pollus"><img src="https://github.com/tandpfun/skill-icons/raw/main/icons/LinkedIn.svg" width="20"/></a>
       </sub>
     </td>
- <td align="center">
-      <a href="https://github.com/GiovaneRSOliveira"> <img src="" width="150"/> </a>
-      <br>
-      <sub>
-        <p>Giovane Reis</p>
-        <a href="https://github.com/GiovaneRSOliveira"><img src="https://github.com/tandpfun/skill-icons/raw/main/icons/Github-Dark.svg" width="20"/></a>
-      </sub>
-    </td>
-    
   </tr>
 </table>
 
