@@ -1,0 +1,61 @@
+<div class="container-form p-4">
+  <form [formGroup]="validacao">
+
+    <h6 class="section-title">Confirme os dados antes de confirmar</h6>
+
+    <div class="form-group flex">
+      <label for="chavePix">Chave Pix:</label>
+      <input type="text" class="form-control chavePix"
+        formControlName="chavePix"
+        placeholder="Chave Pix" [value]="chave"
+      />
+    </div>
+    <div class="form-group flex">
+      <label for="cpf">CPF:</label>
+      <input type="number" class="form-control cpf"
+        formControlName="cpf"
+        placeholder="CPF" [value]="cpfDestino"
+      />
+    </div>
+    <div class="form-group flex">
+      <label for="nome">Nome do titular:</label>
+      <input type="text" class="form-control nome"
+        formControlName="nome"
+        placeholder="Nome" [value]="nome"
+      />
+    </div>
+    <div class="form-group flex">
+      <label for="numeroConta">Número da Conta:</label>
+      <input type="number" class="form-control numeroConta"
+        formControlName="numeroConta"
+        placeholder="Numero da conta" [value]="numeroConta"
+      />
+    </div>
+    <div class="form-group flex">
+      <label for="tipoConta">Tipo de Conta: </label>
+      <input type="text" class="form-control tipoConta"
+        formControlName="tipoConta"
+        placeholder="Tipo de conta" [value]="tipoConta"
+      />
+    </div>
+    <div class="form-group flex">
+      <label for="valorTransacao">Valor da Transferência:</label>
+      <input type="text" class="form-control valorTransacao"
+        formControlName="valorTransacao"
+        placeholder="Valor do Pix" [value]="'R$ ' + valorTransacao"
+      />
+    </div>
+
+    <div *ngIf="errorMessage" class="warn-text text-danger">{{ errorMessage }}</div>
+
+    <div class="buttons flex">
+      <button (click)="confirmar()" type="submit" class="botao-principal">
+        Confirmar
+      </button>
+      <button routerLink="/cliente/nova/pix/destinatario" type="submit" class="botao-secundario">
+        Voltar
+      </button>
+    </div>
+
+  </form>
+</div>

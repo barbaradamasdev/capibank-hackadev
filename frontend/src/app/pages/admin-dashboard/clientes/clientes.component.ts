@@ -3,7 +3,6 @@ import { FormChamadoComponent } from "../../../pages/area-do-cliente/chamado/for
 import { CommonModule } from '@angular/common';
 import { MenuLateralAdminComponent } from "../menu-lateral-admin/menu-lateral-admin.component";
 import { DashboardComponent } from "../dashboard/dashboard.component";
-// import { CLIENTES } from '../../../Data/Dados-clientes';
 import { Titular } from '../../../Models/Titular';
 import { FormsModule } from '@angular/forms';
 
@@ -93,24 +92,19 @@ export class ClientesComponent {
 
   editarConta() {
     if (this.clienteSelecionado) {
-      // Exibir o formulário de edição apenas se clienteSelecionado for válido
       this.mostrarFormularioEdicao = true;
     }
   }
 
 
   cancelarEdicao() {
-    // Ocultar o formulário de edição ao clicar no botão "Cancelar"
     this.mostrarFormularioEdicao = false;
   }
 
   atualizarCliente() {
     if (this.clienteSelecionado) {
-      // Implemente a lógica para atualizar as informações do cliente no banco de dados
-      // Aqui você pode chamar um serviço que envia os dados atualizados para o backend
       console.log('Informações do cliente atualizadas:', this.clienteSelecionado);
 
-      // Após atualizar, esconda o formulário de edição
       this.mostrarFormularioEdicao = false;
     }
   }

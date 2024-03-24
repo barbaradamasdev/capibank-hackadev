@@ -1,0 +1,38 @@
+
+.grid {
+  grid-template-areas:
+  "acesso-rapido";
+  gap: 16px;
+  padding: 0;
+}
+
+app-menu-lateral {
+  grid-area: menu-lateral;
+}
+
+app-acesso-rapido-area-interna {
+  grid-area: acesso-rapido;
+  height: 72vh;
+  overflow-y: scroll;
+}
+
+@media (max-width: 745px) {
+  app-menu-lateral {
+    position: absolute;
+    top: 55px;
+    transform: translateX(-2000px);
+    transition: transform 0.3s ease;
+  }
+
+  .menu-open {
+    transform: translateX(0);
+  }
+}
+
+@media (min-width: 746px)  {
+  .grid {
+    grid-template-areas:
+    "menu-lateral acesso-rapido";
+    grid-template-columns: 300px minmax(320px, 100%);
+  }
+}

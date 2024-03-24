@@ -5,10 +5,12 @@
     <p>Retornaremos o chamado em até 1 dia útil por email</p>
   </div>
 
-  <form [formGroup]="chamado" (submit)="enviarChamado()">
+  <form [formGroup]="chamado" (ngSubmit)="onSubmit($event)">
     <div class="form-group">
         <textarea formControlName="descricao" class="form-control" name="" id="" cols="30" rows="10"></textarea>
     </div>
+
+    <div *ngIf="sucessMessage" class="warn-text text-success">{{ sucessMessage }}</div>
 
     <div class="buttons flex">
       <button type="submit" class="botao-principal">
@@ -29,6 +31,26 @@
     </div>
   </div>
 
+
+  <div class="section-top" style="margin-top: 40px">
+    <h2>Chamados em aberto:</h2>
+  </div>
+
+  <table>
+    <tbody>
+      <tr *ngFor="let chamado of atendimentos" class="rowTransacao">
+        <td>
+          <p *ngIf="chamado.emAberto; else responded">Não respondido, aguarde o retorno</p>
+          <ng-template #responded>
+            Respondido e finalizado
+            <p>chamado.resposta</p>
+          </ng-template>
+          <hr>
+          <p>Data do chamado: {{ chamado.dataChamado | date: 'dd/MM/yy - HH:mm' }}</p>
+          <p>Descrição da solicitação: {{ chamado.descricao }}</p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
 </div>
-
-

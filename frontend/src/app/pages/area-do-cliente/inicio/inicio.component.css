@@ -8,7 +8,7 @@
 
 app-acesso-rapido-area-interna {
   grid-area: acesso-rapido;
-  max-height: 190px;
+  max-height: 159px;
   overflow: hidden;
 }
 
@@ -34,6 +34,10 @@ app-historico-transacoes {
 }
 
 @media (min-width: 745px) and (max-width: 1000px) {
+  app-acesso-rapido-area-interna {
+    max-height: inherit;
+  }
+
   .grid {
     grid-template-areas:
     "menu-lateral acesso-rapido"
@@ -44,6 +48,10 @@ app-historico-transacoes {
 }
 
 @media (min-width: 1001px){
+
+  app-acesso-rapido-area-interna {
+    max-height: inherit;
+  }
   .grid {
     grid-template-areas:
     "menu-lateral acesso-rapido historico-transacoes";

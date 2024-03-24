@@ -1,0 +1,54 @@
+.container-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 70vh;
+  margin: auto;
+  max-width: 548px ;
+}
+
+.section-title {
+  font-size: 18px;
+}
+
+form {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+  margin-top: auto;
+  z-index: 8;
+}
+
+.form-group {
+  flex-direction: column;
+}
+
+.botao-secundario,
+.botao-principal {
+  width: 48%;
+}
+
+@media (min-width: 744px) {
+  .buttons {
+    margin-top: inherit;
+    max-width: 500px;
+  }
+
+  input {
+    width: 230px;
+  }
+
+  .form-group {
+    gap: 20px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}

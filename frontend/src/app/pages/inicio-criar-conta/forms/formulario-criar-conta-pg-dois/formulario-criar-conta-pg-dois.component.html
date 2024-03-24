@@ -1,37 +1,31 @@
-<div class="container-form p-4">
+ <div class="container-form p-4">
+  <h6 class="section-title">Abra sua conta</h6>
 
-    <h6 class="section-title">Abra sua conta</h6>
+  <form [formGroup]="entradaCep" (ngSubmit)="onSubmit($event)">
+    <div class="form-group">
+      <p class="form-title">Onde Você Mora?</p>
 
-    <form [formGroup]="entradaCep" >
-      <div class="form-group">
-
-          <p class="form-title">Onde Você Mora?</p>
-
-          <div class="side-by-side">
-            <input formControlName="cep" type="text" class="form-control" placeholder="CEP" (blur)="buscarEndereco()"/>
-            <button class="botao-principal procurar-cep" (click)="buscarEndereco()">Procurar</button>
-          </div>
-
-          <input type="text" class="form-control" formControlName="rua" placeholder="Rua"/>
-
-          <div class="side-by-side">
-            <input type="text" class="form-control" formControlName="numero" placeholder="Número" />
-            <input type="text" class="form-control" formControlName="cidade" placeholder="Cidade" readonly />
-          </div>
-
-          <input type="text" class="form-control" formControlName="complemento" placeholder="Complemento (opcional)"/>
+      <div class="side-by-side">
+        <input formControlName="cep" type="text" class="form-control" placeholder="CEP" (blur)="buscarEndereco()"/>
+        <button type="submit" class="botao-principal procurar-cep" (click)="buscarEndereco()">Procurar</button>
       </div>
 
-      <div class="buttons flex">
-        <button routerLink="/cadastrar/passo-3"  class="botao-principal">
-          Próximo
-        </button>
-        <button routerLink="/cadastrar/passo-1"  class="botao-secundario">
-          Voltar
-        </button>
+      <input type="text" class="form-control" formControlName="rua" placeholder="Rua"/>
+
+      <div class="side-by-side">
+        <input type="text" class="form-control" formControlName="numero" placeholder="Número" />
+        <input type="text" class="form-control" formControlName="cidade" placeholder="Cidade"  />
       </div>
-    </form>
 
-  </div>
+      <input type="text" class="form-control" formControlName="bairro" placeholder="Bairro" />
+      <input type="text" class="form-control" formControlName="complemento" placeholder="Complemento (opcional)"/>
+    </div>
 
+    <div *ngIf="errorMessage" class="warn-text text-danger">{{ errorMessage }}</div>
 
+    <div class="buttons flex">
+      <button type="submit" class="botao-principal">Próximo</button>
+      <button routerLink="/cadastrar/passo-1" class="botao-secundario">Voltar</button>
+    </div>
+  </form>
+</div>
