@@ -44,57 +44,26 @@ export class FormularioEntrarComponent {
       senha: senha,
     }
 
+
     this.apiService.PostLogin(dados).subscribe(
         response => {
-
-          console.log('Resposta do servidor:', response);
-          this.router.navigateByUrl('/cadastrar/passo-5');
-
-          if (response.status === 200){
-            console.log('logado')
-
-            this.apiService.GetTitulares().subscribe(
-              titulares => {
-                const titularEncontrado = titulares.find(titular => titular.email === email);
-
-                if (titularEncontrado) {
-                  // Se o titular for encontrado, podemos obter o seu ID
-                  const idTitular = titularEncontrado.id;
-                  // console.log('ID do titular encontrado:', idTitular);
-
-                  // Agora, podemos fazer o que precisamos com o ID do titular, como armazená-lo no serviço apiService
-                  this.apiService.idTitularLogado = titularEncontrado.id;
-                  this.router.navigateByUrl('/cliente');
-
-                  // Navega para a rota '/cliente'
-                } else {
-                    // console.log('Titular não encontrado para o email:', email);
-                    this.formLogin.reset();
-                }
-              }
-            )
-            // this.apiService.idTitularLogado = titular.id;
-            // console.log(this.apiService.idTitularLogado)
-            // this.router.navigateByUrl('/cliente');
+          if (typeof response === 'number'){
+            this.apiService.idTitularLogado = response;
+            this.router.navigateByUrl('/cliente');
             // this.router.navigateByUrl('/login/token');
           } else {
             this.formLogin.reset();
           }
         },
         (error: any) => {
-            console.error('Erro ao fazer login: ', error);
-            // FIXME permite o login mesmo errando apenas para poder editar area interna
-            this.apiService.idTitularLogado = 1;
-            this.router.navigateByUrl('/cliente');
-
-            if (error.status === 404) {
-                this.errorMessage = 'Usuário não encontrado. Por favor, verifique suas credenciais.';
-              } else if (error.status === 401) {
-                this.errorMessage = 'Credenciais inválidas. Por favor, verifique seu email e senha.';
-              } else {
-                this.errorMessage = 'Ocorreu um erro ao fazer login. Por favor, tente novamente mais tarde.';
-              }
-
+          console.error('Erro ao fazer login: ', error);
+          if (error.status === 404) {
+              this.errorMessage = 'Usuário não encontrado. Por favor, verifique suas credenciais.';
+          } else if (error.status === 400) {
+            this.errorMessage = 'Credenciais inválidas. Por favor, verifique seu email e senha.';
+          } else {
+            this.errorMessage = 'Ocorreu um erro ao fazer login. Por favor, tente novamente mais tarde.';
+          }
         }
     )
   }

@@ -13,7 +13,6 @@ import { Title } from '@angular/platform-browser';
   styleUrl: './deposito.component.css'
 })
 export class DepositoComponent {
-  idConta : number = this.apiService.idTitularLogado; //FIXME remover ao criar login
   errorMessage!: string;
 
   deposito = new FormGroup({
@@ -34,7 +33,7 @@ export class DepositoComponent {
     const valorInput = this.deposito.get('valor')?.value;
     const valorDeposito = parseFloat(valorInput!);
 
-    this.apiService.PostDeposito(this.idConta, valorDeposito).subscribe(
+    this.apiService.PostDeposito(this.apiService.idTitularLogado, valorDeposito).subscribe(
       (response: any) => {
         if (typeof response === 'object') {
           console.log("Transação bem-sucedida. ID da transação:", response);

@@ -11,7 +11,6 @@ import { ApiService } from '../../Services/api.service';
 })
 export class SecaoSaldoComponent implements OnInit {
   nome?: string ;
-  idConta : number = this.apiService.idTitularLogado; //FIXME remover ao criar login
   cpfConta? : string;
   saldoConta? : number;
   saldoVisivel: boolean = true;
@@ -32,8 +31,9 @@ export class SecaoSaldoComponent implements OnInit {
     localStorage.setItem('visibilidadeSaldo', JSON.stringify(this.saldoVisivel));
   }
 
+  // TODO ver se saldo atualiza
   pegarDadosTitular() {
-    this.apiService.GetTitularPorId(this.idConta).subscribe(titular => {
+    this.apiService.GetTitularPorId(this.apiService.idTitularLogado).subscribe(titular => {
       if (titular && titular.nome) {
         this.nome = titular.nome;
         this.cpfConta = titular.cpf!;

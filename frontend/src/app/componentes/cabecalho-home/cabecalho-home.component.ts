@@ -3,6 +3,7 @@ import { NavigationEnd, Router, RouterLink } from '@angular/router';
 import { MenuService } from '../../servicos/menu.service';
 import { Subscription, filter } from 'rxjs';
 import { CommonModule } from '@angular/common';
+import { ApiService } from '../../Services/api.service';
 
 @Component({
   selector: 'app-cabecalho-home',
@@ -14,9 +15,7 @@ import { CommonModule } from '@angular/common';
 export class CabecalhoHomeComponent {
   elementRef: any;
 
-  logout():void{
-    localStorage.clear();
-  }
+
 
   toggleMenu() {
     this.menuService.toggleMenu();
@@ -26,7 +25,7 @@ export class CabecalhoHomeComponent {
   private routerSubscription: Subscription;
 
 
-  constructor(private menuService: MenuService, private router: Router) {
+  constructor(private menuService: MenuService, private router: Router, private apiService: ApiService) {
     this.menuService.isMenuOpen$.subscribe((isOpen) => {
       this.isMenuOpen = isOpen;
     });
@@ -46,4 +45,10 @@ export class CabecalhoHomeComponent {
       this.routerSubscription.unsubscribe();
     }
   }
+
+  logout():void{
+    this.apiService.idTitularLogado = null;
+    localStorage.clear();
+  }
+
 }

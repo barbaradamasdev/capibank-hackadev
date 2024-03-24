@@ -14,7 +14,6 @@ import { ContaCorrente } from '../../../../../Models/ContaCorrente';
   styleUrl: './validacao.component.css'
 })
 export class ValidacaoComponent implements OnInit {
-  idConta : number = this.apiService.idTitularLogado; //FIXME remover ao criar login
   titularEncontrado: Titular | undefined;
   contaEncontrada: ContaCorrente | undefined;
   idContaEncontrada?: number;
@@ -25,7 +24,6 @@ export class ValidacaoComponent implements OnInit {
   cpfDestino?: string;
   valorTransacao?: number;
   errorMessage!: string;
-
 
   validacao = new FormGroup({
     cpf: new FormControl(''),
@@ -44,11 +42,9 @@ export class ValidacaoComponent implements OnInit {
 
   transferirValor () {
     if (this.valorTransacao !== undefined && this.idContaEncontrada !== undefined && this.cpfDestino !== undefined) {
-      this.apiService.PostTransferencia(this.valorTransacao, this.cpfDestino, this.idConta).subscribe(
+      this.apiService.PostTransferencia(this.valorTransacao, this.cpfDestino, this.apiService.idTitularLogado).subscribe(
         (response: any) => {
-          console.log('a')
           if (typeof response === 'object') {
-            console.log('a')
             console.log("Transação bem-sucedida. ID da transação:", response);
             this.router.navigateByUrl(`/cliente/nova/transferencia/ok/${response.id}`);
           } else {
@@ -67,7 +63,6 @@ export class ValidacaoComponent implements OnInit {
       );
     }
   }
-
 
   ngOnInit(): void {
     const cpfStorage = localStorage.getItem('cpfDestino');

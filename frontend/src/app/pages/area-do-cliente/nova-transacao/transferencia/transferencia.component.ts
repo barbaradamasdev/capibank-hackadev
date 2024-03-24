@@ -13,7 +13,6 @@ import { ApiService } from '../../../../Services/api.service';
   styleUrl: './transferencia.component.css'
 })
 export class TransferenciaComponent {
-  idConta : number = this.apiService.idTitularLogado; //FIXME remover ao criar login
   errorMessage!: string;
   valor?: number;
   cpfTitular? : any;
@@ -41,7 +40,7 @@ export class TransferenciaComponent {
       return;
     }
 
-    this.apiService.GetTitularPorId(this.idConta).subscribe(
+    this.apiService.GetTitularPorId(this.apiService.idTitularLogado).subscribe(
       titular => {
         this.cpfTitular = titular.cpf;
 

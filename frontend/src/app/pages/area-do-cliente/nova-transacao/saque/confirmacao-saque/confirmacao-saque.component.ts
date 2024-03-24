@@ -27,7 +27,6 @@ export class ConfirmacaoSaqueComponent implements OnInit{
     this.activatedRoute = activatedRoute;
   }
 
-
   ngOnInit(): void {
     this.activatedRoute.url.subscribe((urlSegments) => {
       const ultimoSegmento = urlSegments[urlSegments.length - 1];

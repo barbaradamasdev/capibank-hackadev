@@ -13,7 +13,6 @@ import { Title } from '@angular/platform-browser';
   styleUrl: './saque.component.css'
 })
 export class SaqueComponent{
-  idConta : number = this.apiService.idTitularLogado; //FIXME remover ao criar login
   errorMessage!: string;
 
   saque = new FormGroup({
@@ -34,7 +33,7 @@ export class SaqueComponent{
     const valorInput = this.saque.get('valor')?.value;
     const valorSaque = parseFloat(valorInput!);
 
-    this.apiService.PostSaque(this.idConta, valorSaque).subscribe(
+    this.apiService.PostSaque(this.apiService.idTitularLogado, valorSaque).subscribe(
       (response: any) => {
         if (typeof response === 'object') {
           console.log("Transação bem-sucedida. ID da transação:", response);
