@@ -80,9 +80,6 @@ export class FormularioCriarContaPgQuatroComponent {
       const dadosPassoUmJSON = JSON.parse(dadosPassoUm);
       const dadosPassoDoisJSON = JSON.parse(dadosPassoDois);
 
-      // var cpfString = JSON.stringify(dadosPassoUmJSON.cpf);
-
-      console.log(this.senha)
       const dados = {
         numeroConta: 5666, //FIXME atualizar numero conta
         titular: {

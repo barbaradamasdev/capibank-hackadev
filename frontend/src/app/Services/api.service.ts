@@ -17,6 +17,25 @@ export class ApiService {
 
   constructor(private http: HttpClient) { }
 
+  /////////////////
+  /// LOGIN ///////
+  /////////////////
+  GetLoginPorEmail(email: string,): Observable<Titular> {
+    return this.http.get<Titular>(`${this.apiUrl}Titular/loginporemail/${email}`);
+  }
+
+  GetNomeESaldo(cpf: string): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}ContaCorrente/listarporcpf/${cpf}`);
+  }
+
+
+  //////////////
+  /// CONTA ////
+  //////////////
+  PostContaCorrente(data: any): Observable<any> {
+    return this.http.post<any>(`${this.apiUrl}ContaCorrente/criarconta`, data);
+  }
+
   GetContasCorrentes() : Observable<ContaCorrente[]> {
     return this.http.get<ContaCorrente[]>(`${this.apiUrl}ContaCorrente/listarcontas/`)
   }
@@ -25,10 +44,9 @@ export class ApiService {
     return this.http.get<ContaCorrente[]>(`${this.apiUrl}ContaCorrente/listarcontas/${idConta}`)
   }
 
-  GetTransacoes() : Observable<Transacao[]> {
-    return this.http.get<Transacao[]>(`${this.apiUrl}Transacao/listartransacoes/${this.idTitularLogado}`)
-  }
-
+  /////////////////
+  /// TITULARES ///
+  /////////////////
   GetTitulares() : Observable<Titular[]> {
     return this.http.get<Titular[]>(`${this.apiUrl}Titular/listartodos/`)
   }
@@ -37,6 +55,16 @@ export class ApiService {
     return this.http.get<Titular>(`${this.apiUrl}Titular/listarporid/${idConta}`)
   }
 
+  /////////////////
+  /// TRANSACAO ///
+  /////////////////
+  GetTransacoes() : Observable<Transacao[]> {
+    return this.http.get<Transacao[]>(`${this.apiUrl}Transacao/listartransacoes/${this.idTitularLogado}`)
+  }
+
+  /////////////////
+  /// OPERACAO ///
+  /////////////////
   PostSaque(idConta: number, valorSaque: number): Observable<string> {
     const saque = { valor: valorSaque };
     return this.http.post<string>(`${this.apiUrl}Transacao/sacar/${idConta}`, saque);
@@ -52,15 +80,12 @@ export class ApiService {
     return this.http.post<string>(`${this.apiUrl}Transacao/transferir/${idContaDestino}`, transferencia);
   }
 
-  GetLoginPorEmail(email: string,): Observable<Titular> {
-    return this.http.get<Titular>(`${this.apiUrl}Titular/loginporemail/${email}`);
+  ///////////////////
+  /// ATENDIMENTO ///
+  ///////////////////
+
+  PostAtendimento(data: any): Observable<any> {
+    return this.http.post<any>(`${this.apiUrl}Atendimento/criaratendimento`, data);
   }
 
-  GetNomeESaldo(cpf: string): Observable<any> {
-    return this.http.get<any>(`${this.apiUrl}ContaCorrente/listarporcpf/${cpf}`);
-  }
-
-  PostContaCorrente(data: any): Observable<any> {
-    return this.http.post<any>(`${this.apiUrl}ContaCorrente/criarconta`, data);
-  }
 }

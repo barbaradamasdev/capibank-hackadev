@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { ApiService } from '../../../../Services/api.service';
 
 @Component({
   selector: 'app-form-chamado',
@@ -9,9 +11,47 @@ import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } 
   styleUrl: './form-chamado.component.css'
 })
 export class FormChamadoComponent {
-  chamado = new FormGroup({
-    descricao: new FormControl('', Validators.required),
-  });
+  chamado: FormGroup;
+
+  constructor(
+    private formBuilder: FormBuilder,
+    private apiService: ApiService,
+    private router: Router,
+  ) {
+    this.chamado = this.formBuilder.group({
+      descricao: ['', Validators.required]
+    });
+  }
+
+  onSubmit(event: Event): void {
+    event.preventDefault();
+
+    console.log(this.chamado.get('descricao')?.value);
+    if (this.chamado.valid) {
+      const dados = {
+        titularId: this.apiService.idTitularLogado,
+        descricao: this.chamado.get('descricao')?.value,
+        resposta: 'nao sei'
+      };
+
+      this.apiService.PostContaCorrente(dados).subscribe(response => {
+        console.log('Resposta do servidor:', response);
+        this.router.navigateByUrl('/cadastrar/passo-5');
+
+      }, error => {
+        console.error('Erro ao enviar dados:', error);
+      });
+
+
+
+
+
+      this.apiService.PostAtendimento
+      this.exibirModal("Chamado enviado com sucesso! Aguarde o retorno em até 1 dia útil.");
+    } else {
+      alert('Preencha todos os campos')
+    }
+  }
 
   exibirModal(mensagem: string): void {
     const modalElement = document.createElement('div');
@@ -48,9 +88,5 @@ export class FormChamadoComponent {
     setTimeout(() => {
       modalElement.remove();
     }, 3000);
-  }
-
-  enviarChamado():void{
-    this.exibirModal("Chamado enviado com sucesso! Aguarde o retorno em até 1 dia útil.");
   }
 }
