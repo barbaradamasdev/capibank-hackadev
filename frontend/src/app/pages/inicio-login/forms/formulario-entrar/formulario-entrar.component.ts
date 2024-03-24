@@ -14,7 +14,6 @@ import { ApiService } from '../../../../Services/api.service';
 })
 export class FormularioEntrarComponent {
   errorMessage!: string;
-  // token: string = '123123';
 
   formLogin = new FormGroup({
     email: new FormControl('',[Validators.required, Validators.email]),
@@ -23,12 +22,12 @@ export class FormularioEntrarComponent {
 
   constructor(private apiService: ApiService, private router: Router){ }
 
-  user = {
-    email: 'sharp@gmail.com',
-    senha:'admin123',
-    token:'123123',
-    nome: 'Capitonio Nascimento'
-  }
+  // user = {
+  //   email: 'sharp@gmail.com',
+  //   senha:'admin123',
+  //   token:'123123',
+  //   nome: 'Capitonio Nascimento'
+  // }
 
   autenticar():void{
     if(!this.formLogin.valid){
@@ -39,80 +38,35 @@ export class FormularioEntrarComponent {
     const email = this.formLogin.get('email')?.value  ?? '';
     const senha = this.formLogin.get('senha')?.value  ?? '';
 
-    localStorage.setItem('senha', this.user.senha);
-    localStorage.setItem('email', this.user.email);
-    this.router.navigateByUrl('/login/token');
+    this.apiService.GetLoginPorEmail(email).subscribe(
+        (titular) => {
+          if (titular.senha === senha){
 
+            // TODO simplificaria me enviado email senha, id cpf
+            this.apiService.idTitularLogado = titular.id;
+            console.log(titular.id)
+            console.log(this.apiService.idTitularLogado)
+            this.router.navigateByUrl('/cliente');
+            // this.router.navigateByUrl('/login/token');
+          } else {
+             this.formLogin.reset();
+          }
+        },
+        (error: any) => {
+            console.error('Erro ao fazer login: ', error);
+            // FIXME permite o login mesmo errando apenas para poder editar area interna
+            this.apiService.idTitularLogado = 1;
+            this.router.navigateByUrl('/cliente');
 
+            if (error.status === 404) {
+                this.errorMessage = 'Usuário não encontrado. Por favor, verifique suas credenciais.';
+              } else if (error.status === 401) {
+                this.errorMessage = 'Credenciais inválidas. Por favor, verifique seu email e senha.';
+              } else {
+                this.errorMessage = 'Ocorreu um erro ao fazer login. Por favor, tente novamente mais tarde.';
+              }
 
-
-
-
-    // this.apiService.GetLoginPorEmail(email).subscribe(
-    //     (titular) => {
-    //       if (titular.senha === senha){
-    //         // localStorage.setItem('token', this.user.token);
-    //         localStorage.setItem('senha', this.user.senha);
-    //         localStorage.setItem('email', this.user.email);
-    //         // this.apiService.idTitularLogado = titular.id;
-    //         this.router.navigateByUrl('/login/token');
-    //         // this.router.navigateByUrl('/cliente');
-    //       } else {
-    //         this.exibirModalErro("Senha ou usuário inválidos! Por favor, tente novamente.");
-    //         this.formLogin.reset();
-    //       }
-    //     },
-    //     (error: any) => {
-    //         console.error('Erro ao fazer login: ', error);
-    //         if (error.status === 404) {
-    //             this.errorMessage = 'Usuário não encontrado. Por favor, verifique suas credenciais.';
-    //           } else if (error.status === 401) {
-    //             this.errorMessage = 'Credenciais inválidas. Por favor, verifique seu email e senha.';
-    //           } else {
-    //             this.errorMessage = 'Ocorreu um erro ao fazer login. Por favor, tente novamente mais tarde.';
-    //           }
-
-    //     }
-    // )
-  }
-
-  exibirModalErro(mensagem: string): void {
-    const modalElement = document.createElement('div');
-    modalElement.classList.add('modal', 'fade');
-    modalElement.innerHTML = `
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">Erro no Login</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <p>${mensagem}</p>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-          </div>
-        </div>
-      </div>
-    `;
-
-    document.body.appendChild(modalElement);
-
-    modalElement.classList.add('show');
-    modalElement.style.display = 'block';
-
-    const closeModalButton = modalElement.querySelector('.close, .btn-secondary');
-
-    if (closeModalButton) {
-      closeModalButton.addEventListener('click', () => {
-        modalElement.remove();
-      });
-    }
-
-    setTimeout(() => {
-      modalElement.remove();
-    }, 2000);
+        }
+    )
   }
 }
