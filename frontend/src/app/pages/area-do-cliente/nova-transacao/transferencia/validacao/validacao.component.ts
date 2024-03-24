@@ -5,6 +5,7 @@ import { Router, RouterLink } from '@angular/router';
 import { Titular } from '../../../../../Models/Titular';
 import { ApiService } from '../../../../../Services/api.service';
 import { ContaCorrente } from '../../../../../Models/ContaCorrente';
+import { TransacaoService } from '../../../../../Services/transacao-service.service';
 
 @Component({
   selector: 'app-validacao',
@@ -36,6 +37,7 @@ export class ValidacaoComponent implements OnInit {
   constructor(
     private apiService: ApiService,
     private router: Router,
+    private transacaoService: TransacaoService
     ) {
       this.validacao.disable();
     }
@@ -46,6 +48,7 @@ export class ValidacaoComponent implements OnInit {
         (response: any) => {
           if (typeof response === 'object') {
             console.log("Transação bem-sucedida. ID da transação:", response);
+            this.transacaoService.notificarTransacaoConcluida();
             this.router.navigateByUrl(`/cliente/nova/transferencia/ok/${response.id}`);
           } else {
             console.error("Erro ao efetuar o saque:", response);

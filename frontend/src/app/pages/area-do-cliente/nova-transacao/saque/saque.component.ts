@@ -4,6 +4,7 @@ import { FormGroup, FormControl, Validators, ReactiveFormsModule, FormsModule } 
 import { Router, RouterLink } from '@angular/router';
 import { ApiService } from '../../../../Services/api.service';
 import { Title } from '@angular/platform-browser';
+import { TransacaoService } from '../../../../Services/transacao-service.service';
 
 @Component({
   selector: 'app-saque',
@@ -22,7 +23,8 @@ export class SaqueComponent{
   constructor(
     private apiService: ApiService,
     private router: Router,
-    private titleService: Title
+    private titleService: Title,
+    private transacaoService: TransacaoService
   ) {}
 
   ngOnInit(): void {
@@ -37,6 +39,7 @@ export class SaqueComponent{
       (response: any) => {
         if (typeof response === 'object') {
           console.log("Transação bem-sucedida. ID da transação:", response);
+          this.transacaoService.notificarTransacaoConcluida();
           this.router.navigateByUrl(`/cliente/nova/saque/ok/${response.id}`);
         } else {
           console.error("Erro ao efetuar o saque:", response);

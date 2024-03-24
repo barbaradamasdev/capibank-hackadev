@@ -47,8 +47,7 @@ export class CabecalhoHomeComponent {
   }
 
   logout():void{
-    this.apiService.idTitularLogado = null;
-    localStorage.clear();
+    this.apiService.logout();
   }
 
 }

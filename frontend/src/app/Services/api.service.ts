@@ -11,11 +11,24 @@ import { ContaCorrente } from '../Models/ContaCorrente';
   providedIn: 'root'
 })
 export class ApiService {
+  private readonly idTitularLogadoKey = '';
 
   private apiUrl = `${environment.ApiUrl}`;
-  idTitularLogado: any | null = null;
 
   constructor(private http: HttpClient) { }
+
+  get idTitularLogado(): number {
+    const item = localStorage.getItem(this.idTitularLogadoKey);
+    return item ? parseInt(item, 10) : 0;
+}
+
+  set idTitularLogado(id: number) {
+    localStorage.setItem(this.idTitularLogadoKey, id.toString());
+}
+
+  logout() {
+    localStorage.removeItem(this.idTitularLogadoKey);
+  }
 
   /////////////////
   /// LOGIN ///////

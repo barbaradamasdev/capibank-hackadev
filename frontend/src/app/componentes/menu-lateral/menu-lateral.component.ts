@@ -21,6 +21,6 @@ export class MenuLateralComponent {
   ) {}
 
   logout():void{
-    this.apiService.idTitularLogado = null;
+    this.apiService.logout();
   }
 }

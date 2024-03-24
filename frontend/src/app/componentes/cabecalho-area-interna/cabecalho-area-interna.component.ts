@@ -16,7 +16,7 @@ export class CabecalhoAreaInternaComponent {
   constructor(private menuService: MenuService, private apiService: ApiService) {}
 
   logout():void{
-    this.apiService.idTitularLogado = null;
+    this.apiService.logout();
   }
 
   toggleMenu() {

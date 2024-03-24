@@ -15,7 +15,6 @@ import { ApiService } from '../../../../../Services/api.service';
   styleUrl: './destinatario.component.css'
 })
 export class DestinatarioComponent {
-  idTitular : number = this.apiService.idTitularLogado; //FIXME remover ao criar login
   errorMessage!: string;
   titularEncontrado: Titular | undefined;
 
@@ -29,7 +28,7 @@ export class DestinatarioComponent {
 
   constructor(
     private apiService: ApiService,
-    private router: Router
+    private router: Router,
   ) {}
 
   procurarCPF() {
