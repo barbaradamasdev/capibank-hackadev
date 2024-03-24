@@ -26,6 +26,8 @@ export class ValidacaoComponentPix {
   cpfDestino?: string;
   chave?: any;
   valorTransacao?: number;
+  errorMessage!: string;
+
 
   validacao = new FormGroup({
     chavePix: new FormControl(''),
@@ -41,7 +43,7 @@ export class ValidacaoComponentPix {
     private router: Router,
     ) {
       this.validacao.disable();
-    }
+  }
 
   pixValor () {
     if (this.valorTransacao !== undefined && this.idContaEncontrada !== undefined && this.cpfDestino !== undefined) {
@@ -52,13 +54,18 @@ export class ValidacaoComponentPix {
             this.router.navigateByUrl(`/cliente/nova/pix/ok/${response.id}`);
           } else {
             console.error("Erro ao efetuar o saque:", response);
-            //TODO validacao caso saldo negativo, conta bloqueada etc
+            if (response === "Conta destino não encontrada") {
+              this.errorMessage = "A conta está bloqueada ou inativa";
+            }
           }
-         },
-         error => {
+        },
+        (error: any) => {
           console.error("Erro ao efetuar o saque:", error);
-         }
-       );
+          if (error.status === 404) {
+            this.errorMessage = "A conta está bloqueada ou inativa";
+          }
+        }
+      );
     }
   }
 

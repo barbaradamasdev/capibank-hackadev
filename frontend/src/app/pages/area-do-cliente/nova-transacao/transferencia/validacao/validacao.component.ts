@@ -24,6 +24,8 @@ export class ValidacaoComponent implements OnInit {
   tipoConta: any;
   cpfDestino?: string;
   valorTransacao?: number;
+  errorMessage!: string;
+
 
   validacao = new FormGroup({
     cpf: new FormControl(''),
@@ -50,11 +52,18 @@ export class ValidacaoComponent implements OnInit {
             console.log("Transação bem-sucedida. ID da transação:", response);
             this.router.navigateByUrl(`/cliente/nova/transferencia/ok/${response.id}`);
           } else {
-            console.log('c')
-            console.error("Erro ao efetuar:", response);
-            //TODO validacao caso saldo negativo, conta bloqueada etc
+            console.error("Erro ao efetuar o saque:", response);
+            if (response === "Conta destino não encontrada") {
+              this.errorMessage = "A conta está bloqueada ou inativa";
+            }
           }
-         },
+        },
+        (error: any) => {
+          console.error("Erro ao efetuar o saque:", error);
+          if (error.status === 404) {
+            this.errorMessage = "A conta está bloqueada ou inativa";
+          }
+        }
       );
     }
   }
