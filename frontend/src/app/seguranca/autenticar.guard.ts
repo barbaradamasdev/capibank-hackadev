@@ -1,7 +1,9 @@
 import { CanActivateFn, Router } from '@angular/router';
+import { ApiService } from '../Services/api.service';
 
 export const autenticarGuard: CanActivateFn = (route, state) => {
   const rota = new Router;
+  const apiService = ApiService;
 
   if (localStorage.getItem('email') == undefined){
     const modalElement = document.createElement('div');
@@ -21,6 +23,24 @@ export const autenticarGuard: CanActivateFn = (route, state) => {
         </div>
       </div>
     `;
+  // if (localStorage.getItem('email') == undefined){
+  //   const modalElement = document.createElement('div');
+  //   modalElement.classList.add('modal', 'fade');
+  //   modalElement.innerHTML = `
+  //     <div class="modal-dialog">
+  //       <div class="modal-content ">
+  //         <div class="modal-header">
+  //           <h5 class="modal-title">Aviso</h5>
+  //           <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+  //             <span aria-hidden="true">&times;</span>
+  //           </button>
+  //         </div>
+  //         <div class="modal-body">
+  //           <p>Favor realizar o login novamente!!!</p>
+  //         </div>
+  //       </div>
+  //     </div>
+  //   `;
 
     document.body.appendChild(modalElement);
 
@@ -41,7 +61,7 @@ export const autenticarGuard: CanActivateFn = (route, state) => {
       modalElement.remove();
     }, 2000);
 
-    return false; 
+    return false;
   }
 
   return true;

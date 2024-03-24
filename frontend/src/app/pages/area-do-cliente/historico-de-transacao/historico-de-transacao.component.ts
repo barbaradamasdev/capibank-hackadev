@@ -5,7 +5,6 @@ import { HistoricoTransacoesComponent } from "../../../componentes/historico-tra
 import { MenuInferiorAreaInternaComponent } from "../../../componentes/menu-inferior-area-interna/menu-inferior-area-interna.component";
 import { MenuLateralComponent } from "../../../componentes/menu-lateral/menu-lateral.component";
 import { BarraDeBuscaComponent } from "../../../componentes/barra-de-busca/barra-de-busca.component";
-import { Titular } from '../../../Models/Titular';
 import { MenuService } from '../../../servicos/menu.service';
 import { CommonModule } from '@angular/common';
 import { Subscription, filter } from 'rxjs';

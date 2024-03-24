@@ -38,6 +38,12 @@ table {
   justify-content: space-between;
 }
 
+.col1Erro {
+  width: 40px;
+  background: url(../../../assets/icones/icone-erro-transacao.svg) no-repeat;
+  background-size: contain;
+}
+
 .col1Saida {
   width: 40px;
   background: url(../../../assets/icones/icone-enviado.png) no-repeat;

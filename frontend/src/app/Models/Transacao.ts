@@ -6,7 +6,6 @@ export interface Transacao{
   tipoTransacao: number
   valor:number,
   dataTransacao: string,
-  // dataTransacao: Date,
   situacao:number,
   contaDestinoOrigemId: number;
   contaId: number

@@ -28,7 +28,6 @@ export class ConfirmacaoSaqueComponent implements OnInit{
   }
 
 
-// TODO get transacao por id
   ngOnInit(): void {
     this.activatedRoute.url.subscribe((urlSegments) => {
       const ultimoSegmento = urlSegments[urlSegments.length - 1];

@@ -80,16 +80,12 @@ export class FormularioCriarContaPgQuatroComponent {
       const dadosPassoUmJSON = JSON.parse(dadosPassoUm);
       const dadosPassoDoisJSON = JSON.parse(dadosPassoDois);
 
-      // var cpfString = JSON.stringify(dadosPassoUmJSON.cpf);
-
-      console.log(this.senha)
       const dados = {
         numeroConta: 5666, //FIXME atualizar numero conta
         titular: {
           nome: dadosPassoUmJSON.nome,
           email: dadosPassoUmJSON.email,
           cpf: dadosPassoUmJSON.cpf,
-          // cpf: cpfString,
           senha: this.senha,
           endereco: {
             cep: dadosPassoDoisJSON.cep,
@@ -103,7 +99,6 @@ export class FormularioCriarContaPgQuatroComponent {
         }
       };
 
-      console.log(dados);
       this.apiService.PostContaCorrente(dados).subscribe(response => {
         console.log('Resposta do servidor:', response);
         this.router.navigateByUrl('/cadastrar/passo-5');

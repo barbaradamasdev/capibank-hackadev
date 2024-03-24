@@ -1,0 +1,26 @@
+<div class="container-form p-4">
+  <h6 class="section-title">Para quem você quer transferir?</h6>
+  <p>Digite a chave abaixo (CPF ou email)</p>
+  <form [formGroup]="destinatario" (ngSubmit)="procurarTitular()">
+    <div class="form-group">
+      <input
+        type="text"
+        class="form-control"
+        formControlName="chave"
+        placeholder="CPF ou email"
+      />
+    </div>
+
+    <div *ngIf="errorMessage" class="warn-text text-danger">{{ errorMessage }}</div>
+
+    <div class="buttons flex">
+      <button class="botao-principal">
+        Confirmar
+      </button>
+      <button routerLink="/cliente/nova/pix" type="submit" class="botao-secundario">
+        Voltar
+      </button>
+    </div>
+
+  </form>
+</div>
