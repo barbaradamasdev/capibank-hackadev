@@ -40,6 +40,7 @@ export class FormularioEntrarComponent {
 
     this.apiService.GetLoginPorEmail(email).subscribe(
         (titular) => {
+          console.log(titular)
           if (titular.senha === senha){
 
             // TODO simplificaria me enviado email senha, id cpf

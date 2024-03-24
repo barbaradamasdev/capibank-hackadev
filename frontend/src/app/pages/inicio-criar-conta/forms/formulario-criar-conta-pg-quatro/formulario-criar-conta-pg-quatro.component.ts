@@ -15,6 +15,7 @@ import { ApiService } from '../../../../Services/api.service';
 export class FormularioCriarContaPgQuatroComponent {
   senhaForm: FormGroup;
   senha?: string;
+  ultimoNumeroConta? : any;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -25,6 +26,10 @@ export class FormularioCriarContaPgQuatroComponent {
       newPassword: ['', [Validators.required]],
       confirmPassword: ['', Validators.required]
     });
+  }
+
+  ngOnInit(): void {
+
   }
 
   onSubmit(event: Event): void {
@@ -80,8 +85,19 @@ export class FormularioCriarContaPgQuatroComponent {
       const dadosPassoUmJSON = JSON.parse(dadosPassoUm);
       const dadosPassoDoisJSON = JSON.parse(dadosPassoDois);
 
+
+      this.apiService.GetContasCorrentes().subscribe(
+        contas => {
+          if (contas && contas.length > 0) {
+              contas.sort((a, b) => b.numeroConta - a.numeroConta);
+
+              this.ultimoNumeroConta = contas[0].numeroConta;
+          }
+        }
+      )
+
       const dados = {
-        numeroConta: 5666, //FIXME atualizar numero conta
+        numeroConta: this.ultimoNumeroConta +1,
         titular: {
           nome: dadosPassoUmJSON.nome,
           email: dadosPassoUmJSON.email,
