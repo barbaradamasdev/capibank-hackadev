@@ -9,9 +9,11 @@ namespace Troopers.Capibank.Controllers;
 public class AtendimentoController : DefaultController
 {
     private readonly IAtendimentoService _atendimento;
-    public AtendimentoController(IAtendimentoService atendimento)
+    private readonly ITitularService _titular;
+    public AtendimentoController(IAtendimentoService atendimento, ITitularService titular )
     {
         _atendimento = atendimento;
+        _titular = titular;
     }
     /// <summary>
     /// Método para listar todos os atendimentos.
@@ -34,6 +36,16 @@ public class AtendimentoController : DefaultController
     {
         var atendimento = await _atendimento.ListarPorId(id);
         if (atendimento is null) return NotFound("Atendimento não encontrado");
+        return Ok(atendimento);
+    }
+    [HttpGet("listarportitular/{id}")]
+    public async Task<ActionResult<IEnumerable<AtendimentoResponseDTO>>> ListarPorTitular(int id)
+    {
+        var titular = await _titular.ListarTitularPorId(id);
+        if (titular is null) return NotFound("Titular não encontrado");
+        var atendimento = await _atendimento.ListarPorTitular(titular.Id);
+        if (!atendimento.Any()) return BadRequest($"Não há atendimentos para {titular.Nome}");
+         
         return Ok(atendimento);
     }
     /// <summary>
