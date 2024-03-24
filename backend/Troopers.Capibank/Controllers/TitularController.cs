@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using Troopers.Capibank.Domain.Models;
 using Troopers.Capibank.DTOs.Request;
 using Troopers.Capibank.DTOs.Response;
 using Troopers.Capibank.Services;
@@ -75,4 +77,16 @@ public class TitularController : DefaultController
         await _ts.AlTerarTitular(titularDTO);
         return Ok("Titular alterado com sucesso");
     }
+    [HttpPost("login")]
+    public  async Task<IActionResult> Login(TitularLoginRequestDTO loginDTO)
+    {
+        var cpfDto = loginDTO.CPF;
+        var emailDto = loginDTO.Email;
+        var senhaDto = loginDTO.Senha;
+        var titular = await _context.Titulares.Where(t => t.CPF.Equals(cpfDto) || t.Email.Equals(emailDto)).FirstOrDefaultAsync();
+        if (titular is null) return NotFound("Usuário não encontrado");
+        if (titular.Senha.Equals(senhaDto)) ;
+        return Ok("Login Realizado com sucesso");
+    }
+
 }
