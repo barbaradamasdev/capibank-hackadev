@@ -16,6 +16,7 @@ export class PixComponent {
   idConta : number = this.apiService.idTitularLogado; //FIXME remover ao criar login
   errorMessage!: string;
   valor?: number;
+  cpfTitular? : any;
 
   pix = new FormGroup({
     valor: new FormControl('', [Validators.required, Validators.min(0)]),
@@ -39,10 +40,31 @@ export class PixComponent {
       this.errorMessage = 'O valor não pode ser menor ou igual a zero';
       return;
     }
-    //TODO validacao caso saldo negativo
 
-    localStorage.setItem('valorPix', valorPix.toString());
-    this.router.navigateByUrl(`/cliente/nova/pix/destinatario`);
+    this.apiService.GetTitularPorId(this.idConta).subscribe(
+      titular => {
+        this.cpfTitular = titular.cpf;
+        console.log(this.cpfTitular);
 
+        if (this.cpfTitular !== null) {
+          this.apiService.GetNomeESaldo(this.cpfTitular).subscribe(
+            titular => {
+              console.log(titular);
+              if (valorPix > titular.saldo) {
+                this.errorMessage = "Saldo insuficiente";
+              } else {
+                this.errorMessage = "";
+                localStorage.setItem('valorPix', valorPix.toString());
+                this.router.navigateByUrl(`/cliente/nova/pix/destinatario`);
+              }
+            }
+          );
+        }
+      },
+      error => {
+        console.error("Erro ao obter titular:", error);
+        this.errorMessage = "Erro ao obter titular";
+      }
+    );
   }
 }

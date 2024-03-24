@@ -48,7 +48,10 @@ export class SaqueComponent{
        },
        error => {
         console.error("Erro ao efetuar o saque:", error);
-       }
-     );
+        if (error.status === 400) {
+          this.errorMessage = "Saldo insuficiente";
+        }
+      }
+    );
   }
 }

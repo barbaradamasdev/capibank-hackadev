@@ -16,6 +16,7 @@ export class TransferenciaComponent {
   idConta : number = this.apiService.idTitularLogado; //FIXME remover ao criar login
   errorMessage!: string;
   valor?: number;
+  cpfTitular? : any;
 
   transferencia = new FormGroup({
     valor: new FormControl('', [Validators.required, Validators.min(0)]),
@@ -39,10 +40,31 @@ export class TransferenciaComponent {
       this.errorMessage = 'O valor não pode ser menor ou igual a zero';
       return;
     }
-    //TODO validacao caso saldo negativo
 
-    localStorage.setItem('valorTransferencia', valorTransferencia.toString());
-    this.router.navigateByUrl(`/cliente/nova/transferencia/destinatario`);
+    this.apiService.GetTitularPorId(this.idConta).subscribe(
+      titular => {
+        this.cpfTitular = titular.cpf;
+        console.log(this.cpfTitular);
 
+        if (this.cpfTitular !== null) {
+          this.apiService.GetNomeESaldo(this.cpfTitular).subscribe(
+            titular => {
+              console.log(titular);
+              if (valorTransferencia > titular.saldo) {
+                this.errorMessage = "Saldo insuficiente";
+              } else {
+                this.errorMessage = "";
+                localStorage.setItem('valorTransferencia', valorTransferencia.toString());
+                this.router.navigateByUrl(`/cliente/nova/transferencia/destinatario`);
+              }
+            }
+          );
+        }
+      },
+      error => {
+        console.error("Erro ao obter titular:", error);
+        this.errorMessage = "Erro ao obter titular";
+      }
+    );
   }
 }

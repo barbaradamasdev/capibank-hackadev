@@ -36,19 +36,10 @@ export class DestinatarioComponent {
     const cpfInput = this.destinatario.get('cpf')?.value;
     const cpfNumero = parseInt(cpfInput!);
 
-
-    console.log(cpfInput)
-    console.log(cpfNumero)
-
-
     if (cpfInput === null) {
       this.errorMessage = 'Precisamos de um CPF para finalizar a transação';
       return;
     }
-
-    // if (cpfNumero === null) {
-    //   this.errorMessage = 'CPF inválido, confira novamente';
-    // }
 
     this.apiService.GetTitulares().subscribe(
       titulares => {

@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ApiService } from '../../../../Services/api.service';
 import { CommonModule } from '@angular/common';
+import { Atendimento } from '../../../../Models/Atendimento';
 
 @Component({
   selector: 'app-form-chamado',
@@ -11,9 +12,11 @@ import { CommonModule } from '@angular/common';
   templateUrl: './form-chamado.component.html',
   styleUrl: './form-chamado.component.css'
 })
-export class FormChamadoComponent {
+export class FormChamadoComponent implements OnInit {
   chamado: FormGroup;
   sucessMessage!: string;
+  atendimentos: Atendimento[] = [];
+  atendimento? : Atendimento;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -32,23 +35,44 @@ export class FormChamadoComponent {
     if (this.chamado.valid) {
       const dados = {
         titularId: this.apiService.idTitularLogado,
-        descricao: this.chamado.get('descricao')?.value,
-        resposta: 'nao sei'
+        descricao: this.chamado.get('descricao')?.value
       };
 
-      // this.apiService.PostAtendimento(dados).subscribe(response => {
-      //   console.log('Resposta do servidor:', response);
+      this.apiService.PostAtendimento(dados).subscribe(response => {
+        console.log('Resposta do servidor:', response);
+        this.sucessMessage = "Chamado enviado com sucesso! Aguarde o retorno em até 1 dia útil.";
+        this.exibirModal("Chamado enviado com sucesso! Aguarde o retorno em até 1 dia útil.");
+      }, error => {
+        console.error('Erro ao enviar dados:', error);
+      });
 
-      // }, error => {
-      //   console.error('Erro ao enviar dados:', error);
-      // });
-
-      this.sucessMessage = "Chamado enviado com sucesso! Aguarde o retorno em até 1 dia útil.";
-      this.exibirModal("Chamado enviado com sucesso! Aguarde o retorno em até 1 dia útil.");
     } else {
       alert('Preencha todos os campos')
     }
   }
+
+ngOnInit(): void {
+  this.listarChamados();
+}
+
+// TODO finalizar chamados
+// TODO receber id do titular e nao do atendimento
+
+listarChamados() {
+  this.apiService.GetAtendimentoPorId(1).subscribe(chamados => {
+  // this.apiService.GetAtendimentoPorId(this.apiService.idTitularLogado).subscribe(chamados => {
+    this.atendimento = chamados;
+
+    if (this.atendimentos === undefined || this.atendimentos === null) {
+      this.atendimentos = [];
+    }
+
+    this.atendimentos.push(this.atendimento);
+
+    console.log("Atendimento:", this.atendimento);
+    console.log("Atendimentos:", this.atendimentos);
+  });
+}
 
   exibirModal(mensagem: string): void {
     const modalElement = document.createElement('div');

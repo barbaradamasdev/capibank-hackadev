@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Transacao } from '../Models/Transacao';
 import { Observable, map } from 'rxjs';
 import { Titular } from '../Models/Titular';
+import { Atendimento } from '../Models/Atendimento';
 import { ContaCorrente } from '../Models/ContaCorrente';
 
 @Injectable({
@@ -90,6 +91,10 @@ export class ApiService {
 
   PostAtendimento(data: any): Observable<any> {
     return this.http.post<any>(`${this.apiUrl}Atendimento/criaratendimento`, data);
+  }
+
+  GetAtendimentoPorId(idConta:number) : Observable<Atendimento> {
+    return this.http.get<Atendimento>(`${this.apiUrl}Atendimento/listarporid/${idConta}`)
   }
 
 }

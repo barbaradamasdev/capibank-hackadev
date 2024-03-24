@@ -39,6 +39,23 @@ textarea {
   .contato .buttons > button {
     width: 100%;
   }
+}
 
+.descricao{
+  text-transform: capitalize;
+  font-weight: 500;
+}
 
+table {
+  width: 100%;
+  margin-top: 20px;
+}
+
+tr {
+  border: 1px solid rgba(104, 104, 104, 0.12);
+  border-radius: 15px;
+}
+
+td {
+  padding: 20px;
 }

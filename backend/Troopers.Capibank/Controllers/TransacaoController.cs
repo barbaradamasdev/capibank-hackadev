@@ -143,4 +143,63 @@ public class TransacaoController : DefaultController
         await _context.SaveChangesAsync();
         return Ok(enviada);
     }
+    /// <summary>
+    /// Método para realizar pix de valores, da conta origem localizada pelo ID par conta
+    /// destino localizada pelo CPF ou email do titular.
+    /// </summary>
+    /// <param name="id"></param>
+    /// <param name="pix"></param>
+    /// <returns></returns>
+    [HttpPost("pix/{id}")]
+    public async Task<IActionResult> Pixar(int id, TransacaoPixDTO pix)
+    {
+        var contaOrigem = await _context.ContasCorrente.Where(c=> c.Id == id).FirstOrDefaultAsync();
+        decimal valor = pix.Valor;
+        var contaDestino = await _context.ContasCorrente.Where(c=> c.Titular.CPF == pix.CPF).FirstOrDefaultAsync();
+        if (contaOrigem is null) return NotFound("Conta não encontrada");
+        if (valor <= 0) return BadRequest("Valor inválido");
+        if (valor > contaOrigem.Saldo) return BadRequest("Saldo insuficiente");
+        contaOrigem.Sacar(valor);
+        contaOrigem.AlteradaEm = pix.DataTransacao;
+
+        if (contaDestino is null || !contaDestino.EstaAtiva)
+        {
+            contaOrigem.Depositar(valor);
+            Transacao t = new()
+            {
+                ContaId = contaOrigem.Id,
+                Valor = valor,
+                TipoTransacao = Operacao.PIX_ENVIADO,
+                DataTransacao = pix.DataTransacao,
+                Situacao = SituacaoTransacao.CANCELADA
+            };
+            await _context.Transacoes.AddAsync(t);
+            await _context.SaveChangesAsync();
+            return NotFound("Conta destino não encontrada");
+        }
+        contaDestino.Depositar(valor);
+        contaDestino.AlteradaEm = pix.DataTransacao;
+        Transacao enviada = new()
+        {
+            ContaId = contaOrigem.Id,
+            Valor = valor,
+            TipoTransacao = Operacao.PIX_ENVIADO,
+            DataTransacao = pix.DataTransacao,
+            Situacao = SituacaoTransacao.SUCEDIDA,
+            ContaDestinoOrigemId = contaDestino.Id
+        };
+        Transacao recebida = new()
+        {
+            ContaId = contaDestino.Id,
+            Valor = valor,
+            TipoTransacao = Operacao.PIX_RECEBIDO,
+            DataTransacao = pix.DataTransacao,
+            Situacao = SituacaoTransacao.SUCEDIDA,
+            ContaDestinoOrigemId = contaOrigem.Id
+        };
+        await _context.Transacoes.AddAsync(recebida);
+        await _context.Transacoes.AddAsync(enviada);
+        await _context.SaveChangesAsync();
+        return Ok(enviada);
+    }
 }
