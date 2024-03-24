@@ -6,12 +6,12 @@ GET {{Troopers.Capibank_HostAddress}}/contacorrente/Listartodasascontas/
 POST {{Troopers.Capibank_HostAddress}}/contacorrente/criarconta/
 Content-Type: application/json
 {
-  "numeroConta": 12345,
+  "numeroConta": 369258,
   "titular": {
-    "nome": "Jackson Moraes",
-    "email": "luciana@uol.com.br",
+    "nome": "Lais Moraes",
+    "email": "lais@uol.com.br",
     "senha":"12345678",
-    "cpf": "26139506840",
+    "cpf": "12345678911",
     "endereco": {
       
       "cep": "12248516",
@@ -51,4 +51,33 @@ Content-Type: application/json
     "cidade": "Sao José dos Campos",
     "uf": "SP"
   }
+}
+  
+###
+
+POST {{Troopers.Capibank_HostAddress}}/atendimento/criaratendimento/
+Content-Type: application/json
+{
+ 
+  
+  "titularId": 1,
+  "descricao": "duvidas sobre contas",
+  "dataChamado": "2024-03-23T09:02:40.765Z",
+  "resposta": "string",
+  "dataResposta": "2024-03-23T09:06:47.831Z",
+  "emAberto": true
+}
+  
+
+###
+PUT {{Troopers.Capibank_HostAddress}}/atendimento/alteraratendimento
+Content-Type: application/json
+{
+  "id": 8,
+  "titularId": 2,
+  "descricao": "saldo errado",
+  "dataChamado": "2024-03-23T09:06:47.831Z",
+  "resposta": "Verficado lancamentos e ok",
+  "dataResposta": "2024-03-23T09:06:47.831Z",
+  "emAberto": false
 }

@@ -15,13 +15,13 @@ section {
   background-size: contain;
 }
 
+
 .dados{
   flex-direction: column;
 }
 
 .dados h4{
   color: #FFFFFF;
-  width: 120px;
   margin: auto;
   margin-left: 0;
 }

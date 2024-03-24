@@ -54,7 +54,7 @@ export class DestinatarioComponent {
 
         if (this.titularEncontrado) {
           this.errorMessage = 'CPF encontrado';
-          localStorage.setItem('cpfDestino', cpfNumero.toString());
+          sessionStorage.setItem('cpfDestino', cpfNumero.toString());
           this.router.navigateByUrl(`/cliente/nova/transferencia/validacao`);
         } else {
           this.errorMessage = 'CPF não encontrado';

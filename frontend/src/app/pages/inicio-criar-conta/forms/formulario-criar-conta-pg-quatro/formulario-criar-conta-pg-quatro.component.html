@@ -1,39 +1,25 @@
 <div class="container-form p-4">
-
-  <h6 class="section-title">Abra sua conta</h6>
-
-  <form (input)="checkPasswordRequirements()">
+  <h6 class="section-title">Crie sua senha</h6>
+  <form [formGroup]="senhaForm" (ngSubmit)="onSubmit($event)">
     <div class="form-group">
-      <p class="form-title">E qual o seu e-mail e Senha</p>
-
-      <input type="password" class="form-control"
-               [ngClass]="{'input-valid': passwordIsValid(), 'input-invalid': !passwordIsValid() && newPassword.length > 0, 'input-touched': hasStartedTyping}"
-               [(ngModel)]="newPassword" [ngModelOptions]="{standalone: true}"
-               (input)="onPasswordInput()" placeholder="Nova senha" required>
-               <input type="password" class="form-control"
-               [ngClass]="{'input-valid': passwordsMatch() && passwordIsValid(), 'input-invalid': confirmPassword.length > 0 && !passwordsMatch(), 'input-touched': hasStartedTyping}"
-               [(ngModel)]="confirmPassword" [ngModelOptions]="{standalone: true}"
-               (input)="onPasswordInput()" placeholder="Repita a nova senha" required>
+      <input type="password" class="form-control" formControlName="newPassword" placeholder="Nova senha">
+      <input type="password" class="form-control" formControlName="confirmPassword" placeholder="Confirmar senha">
     </div>
-    <div *ngIf="confirmPassword && newPassword !== confirmPassword" class="alert alert-danger">
+
+    <div *ngIf="!passwordsMatch() && senhaForm.get('confirmPassword')?.dirty" class="warn-text text-danger">
       As senhas não coincidem.
     </div>
 
     <ul class="text-muted validation-list validacoes">
-      <li [class]="(passwordRequirements.length ? 'validation-item valid' : 'validation-item') + (hasStartedTyping ? ' input-touched' : '')">A senha deve ter no mínimo 8 caracteres</li>
-      <li [class]="(passwordRequirements.number ? 'validation-item valid' : 'validation-item') + (hasStartedTyping ? ' input-touched' : '')">A senha deve conter ao menos 1 número</li>
-      <li [class]="(passwordRequirements.lowercase ? 'validation-item valid' : 'validation-item') + (hasStartedTyping ? ' input-touched' : '')">A senha deve conter ao menos 1 letra minúscula</li>
-      <li [class]="(passwordRequirements.uppercase ? 'validation-item valid' : 'validation-item') + (hasStartedTyping ? ' input-touched' : '')">A senha deve conter ao menos 1 letra maiúscula</li>
+      <li [ngClass]="{'valido': hasLength()}">A senha deve ter no mínimo 8 caracteres</li>
+      <li [ngClass]="{'valido': hasNumber()}">A senha deve conter ao menos 1 número</li>
+      <li [ngClass]="{'valido': hasLowercase()}">A senha deve conter ao menos 1 letra minúscula</li>
+      <li [ngClass]="{'valido': hasUpperCase()}">A senha deve conter ao menos 1 letra maiúscula</li>
     </ul>
 
     <div class="buttons flex">
-      <button  routerLink="/cadastrar/passo-5" class="botao-principal">
-        Próximo
-      </button>
-      <button  routerLink="/cadastrar/passo-3" class="botao-secundario">
-        Voltar
-      </button>
-
+      <button type="submit" class="botao-principal">Finalizar</button>
+      <button  routerLink="/cadastrar/passo-3" class="botao-secundario">Voltar</button>
     </div>
   </form>
 </div>

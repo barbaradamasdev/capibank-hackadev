@@ -41,11 +41,8 @@ export class TransferenciaComponent {
     }
     //TODO validacao caso saldo negativo
 
-    localStorage.setItem('valorTransferencia', valorTransferencia.toString());
+    sessionStorage.setItem('valorTransferencia', valorTransferencia.toString());
     this.router.navigateByUrl(`/cliente/nova/transferencia/destinatario`);
 
   }
 }
-
-//cpf
-//33333333333

@@ -1,46 +1,16 @@
 <div class="container-form p-4">
-
-    <h6 class="section-title">Abra sua conta</h6>
-
-    <form>
-      <div class="form-group">
-
-        <p class="form-title">Me fale um pouco sobre você</p>
-
-        <input
-            formControlName="nome"
-            type="text"
-            class="form-control"
-            placeholder="Nome Completo"
-        />
-
-        <input
-            type="number"
-            class="form-control"
-            id="cpf"
-            placeholder="CPF"
-            minlength="11"
-            maxlength="12"
-        />
-
-        <input
-          formControlName="email"
-          type="text"
-          class="form-control"
-          id="email"
-          placeholder="E-mail" />
-      </div>
-
-      <div class="buttons flex">
-        <button routerLink="/cadastrar/passo-2"  type="submit" class="botao-principal">
-          Próximo
-        </button>
-        <button routerLink="/login" type="submit" class="botao-secundario">
-          Voltar
-        </button>
-      </div>
-
-    </form>
-
-  </div>
-
+  <h6 class="section-title">Abra sua conta</h6>
+  <form [formGroup]="passoUmForm" (ngSubmit)="onSubmit($event)">
+    <div class="form-group">
+      <p class="form-title">Me fale um pouco sobre você</p>
+      <input formControlName="nome" type="text" class="form-control" placeholder="Nome Completo" />
+      <input formControlName="cpf" type="text" class="form-control" placeholder="CPF" minlength="11" maxlength="11" (input)="onCpfInput($event)" (blur)="onBlurCpf()" />
+      <input formControlName="email" type="text" class="form-control" placeholder="E-mail" (blur)="onBlurEmail()"/>
+    </div>
+    <div *ngIf="errorMessage" class="warn-text text-danger">{{ errorMessage }}</div>
+    <div class="buttons flex">
+      <button type="submit" class="botao-principal">Próximo</button>
+      <button routerLink="/login" type="submit" class="botao-secundario">Voltar</button>
+    </div>
+  </form>
+</div>
