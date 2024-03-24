@@ -4,6 +4,8 @@ import { FormGroup, FormControl, Validators, FormsModule, ReactiveFormsModule, F
 import { EnderecoService } from '../../../../servicos/endereco.service';
 import { Endereco } from '../../../../Models/Endereco';
 import { CommonModule } from '@angular/common';
+import { debounce } from 'rxjs/operators';
+import { timer } from 'rxjs';
 
 @Component({
   selector: 'app-formulario-criar-conta-pg-dois',
@@ -14,6 +16,7 @@ import { CommonModule } from '@angular/common';
 })
 export class FormularioCriarContaPgDoisComponent {
   entradaCep: FormGroup;
+  errorMessage!: string;
   uf? : string;
 
   constructor(
@@ -23,22 +26,27 @@ export class FormularioCriarContaPgDoisComponent {
   ) {
     this.entradaCep = this.formBuilder.group({
       cep: ['', [Validators.required, Validators.pattern(/^\d{8}$/)]],
-      rua: [{ value: '', disabled: true }],
-      numero: [''],
-      bairro: [{ value: '', disabled: true }],
-      cidade: [{ value: '', disabled: true }],
+      rua: [{ value: '', disabled: true }, [Validators.required]],
+      numero: ['', [Validators.required]],
+      bairro: [{ value: '', disabled: true }, [Validators.required]],
+      cidade: [{ value: '', disabled: true }, [Validators.required]],
       complemento: ['']
     });
   }
 
   buscarEndereco(): void {
     const cep = this.entradaCep.get('cep')?.value.replace(/\D/g, '');
+
     if (cep.length !== 8) {
-      alert('CEP deve ter 8 dígitos');
+      this.errorMessage = 'CEP inválido';
       return;
+    } else {
+      this.errorMessage = '';
     }
 
-    this.servicoEndereco.buscaCep(cep).subscribe(
+    this.servicoEndereco.buscaCep(cep)
+      .pipe(debounce(() => timer(500)))
+      .subscribe(
       (dados: Endereco) => {
         if (dados) {
           this.entradaCep.patchValue({
@@ -68,12 +76,12 @@ export class FormularioCriarContaPgDoisComponent {
     );
   }
 
-  onSubmit(): void {
+  onSubmit(event: Event): void {
+    event.preventDefault();
     if (this.entradaCep.valid) {
       const cep = this.entradaCep.get('cep')?.value.replace(/\D/g, '');
       const numero = this.entradaCep.get('numero')?.value;
       const complemento = this.entradaCep.get('complemento')?.value;
-
       const rua = this.entradaCep.get('rua')?.value;
       const bairro = this.entradaCep.get('bairro')?.value;
       const cidade = this.entradaCep.get('cidade')?.value;
@@ -90,8 +98,6 @@ export class FormularioCriarContaPgDoisComponent {
 
       localStorage.setItem('dadosPassoDois', JSON.stringify(dadosPassoDois));
       this.router.navigateByUrl('/cadastrar/passo-3');
-    } else {
-      alert("Erro no envio")
     }
   }
 }

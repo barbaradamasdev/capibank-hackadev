@@ -17,6 +17,8 @@ builder.Services.AddScoped<IContaCorrenteRepository, ContaCorrenteRepository>();
 builder.Services.AddScoped<IContaCorrenteService, ContaCorrenteService>();
 builder.Services.AddScoped<ITitularRepository, TitularRepository>();
 builder.Services.AddScoped<ITitularService, TitularService>();
+builder.Services.AddScoped<IAtendimentoRepository, AtendimentoRepository>();
+builder.Services.AddScoped<IAtendimentoService, AtendimentoService>();
 
 
 builder.Services.AddControllers();

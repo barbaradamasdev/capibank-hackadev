@@ -32,6 +32,9 @@ namespace Troopers.Capibank.Migrations
                     b.Property<string>("Descricao")
                         .HasColumnType("TEXT");
 
+                    b.Property<bool>("EmAberto")
+                        .HasColumnType("INTEGER");
+
                     b.Property<string>("Resposta")
                         .IsRequired()
                         .HasColumnType("TEXT");

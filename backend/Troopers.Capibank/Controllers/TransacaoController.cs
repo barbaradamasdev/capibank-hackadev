@@ -40,10 +40,8 @@ public class TransacaoController : DefaultController
     {
         var conta = await _context.ContasCorrente.Where(c => c.Id == id).FirstOrDefaultAsync();
         decimal valor = depositoDTO.Valor;
-        if (conta == null)
-            return NotFound("Conta não encontrada");
-        if (valor <= 0)
-            return BadRequest("Valor inválido");
+        if (conta == null) return NotFound("Conta não encontrada");
+        if (valor <= 0) return BadRequest("Valor inválido");
         conta.Depositar(valor);
         conta.AlteradaEm = DateTime.Now;
         Transacao deposito = new()
@@ -69,10 +67,9 @@ public class TransacaoController : DefaultController
     {
         var conta = await _context.ContasCorrente.Where(c => c.Id == id).FirstOrDefaultAsync();
         decimal valor = saqueDTO.Valor;
-        if (conta is null)
-            return NotFound("Conta não encontrada");
-        if (valor <= 0)
-            return BadRequest("Valor inválido");
+        if (conta is null) return NotFound("Conta não encontrada");
+        if (valor <= 0) return BadRequest("Valor inválido");
+        if (valor > conta.Saldo) return BadRequest("Saldo insuficiente");
         conta.Sacar(valor);
         conta.AlteradaEm = saqueDTO.DataTransacao;
         Transacao saque = new()
@@ -116,7 +113,6 @@ public class TransacaoController : DefaultController
                 TipoTransacao = Operacao.TRANSFERENCIA_ENVIADA,
                 DataTransacao = transferencia.DataTransacao,
                 Situacao = SituacaoTransacao.CANCELADA
-
             };
             await _context.Transacoes.AddAsync(t);
             await _context.SaveChangesAsync();
@@ -146,6 +142,5 @@ public class TransacaoController : DefaultController
         await _context.Transacoes.AddAsync(enviada);
         await _context.SaveChangesAsync();
         return Ok(enviada);
-
     }
 }

@@ -15,5 +15,6 @@ public class TitularProfile : Profile
         CreateMap<TitularLoginEmailResponseDTO, Titular>().ReverseMap();
         CreateMap<TitularLoginCPFResponseDTO, Titular>().ReverseMap();
         CreateMap<TitularSaldoResponseDTO, Titular>().ReverseMap();
+        CreateMap<TitularAtendimentoResponseDTO, Titular>().ReverseMap();
     }
 }

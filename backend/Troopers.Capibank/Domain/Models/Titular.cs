@@ -10,5 +10,6 @@ public class Titular
     public DateTime? CriadoEm { get; set;} = DateTime.Now;
     public DateTime? AlteradoEm { get; set; } = DateTime.Now;
     public Endereco? Endereco { get; set; }
-    
+    public IEnumerable<Atendimento> ListaAtendimentos = [];
+
 }
