@@ -93,7 +93,7 @@ export class ApiService {
   }
   PostPix(valorPix: number, cpfDestino: string, idContaDestino: number): Observable<string> {
     const pix = { valor: valorPix, cpf: cpfDestino, id: idContaDestino};
-    return this.http.post<string>(`${this.apiUrl}Transacao/transferir/${idContaDestino}`, pix);
+    return this.http.post<string>(`${this.apiUrl}Transacao/pix/${idContaDestino}`, pix);
   }
 
   ///////////////////
