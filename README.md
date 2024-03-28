@@ -194,7 +194,7 @@ A equipe Sharp Troopers é um grupo de desenvolvedores habilidosos participando 
       </sub>
     </td>
     <td align="center">
-      <a href="https://github.com/p0llus"> <img src="https://media.licdn.com/dms/image/C4E03AQHNja9VTWKrGw/profile-displayphoto-shrink_800_800/0/1516991103066?e=1712188800&v=beta&t=vU07l5bhz2amSYxCo4jX67pvtD39gSw5bcXHZ25a9bU" width="150"/> </a>
+      <a href="https://github.com/p0llus"> <img src="https://avatars.githubusercontent.com/u/17978041?v=4" width="150"/> </a>
       <br>
       <sub>
         <p>Alisson Meireles</p>
